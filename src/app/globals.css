@@ -5,22 +5,94 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-j-deep-black: #101217;
+  --color-j-celestial-white: #E6DFF5;
+  --color-j-celestial-cooper: #F56962;
+  --color-j-celestial-blue: #0043CE;
+
+  --color-coffi-blue: #6E91FF;
+  --color-coffi-purple: #533FFF;
+  --color-coffi-gradient: linear-gradient(to right, var(--color-coffi-blue), var(--color-coffi-purple));
+  --color-coffi-gradient-reverse: linear-gradient(to right, var(--color-coffi-purple), var(--color-coffi-blue));
+
+  --font-sf-pro: var(--font-sf-pro);
+  --font-tn-roman: var(--font-tn-roman);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Custom cursor styles */
+html, body {
+  cursor: none !important;
+}
+
+a, button, [role="button"], [type="button"], [type="submit"] {
+  cursor: none !important;
+}
+
+.cursor-dot {
+  position: fixed;
+  z-index: 999;
+  pointer-events: none;
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s;
+  mix-blend-mode: difference;
+}
+
+.cursor-dot-clicking {
+  width: 12px;
+  height: 12px;
+}
+
+.cursor-ring {
+  position: fixed;
+  z-index: 998;
+  pointer-events: none;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, border 0.3s;
+  mix-blend-mode: difference;
+}
+
+.cursor-pointer {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.cursor-clicking {
+  width: 24px;
+  height: 24px;
+  border-width: 2px;
+}
+
+/* Hide cursor when needed */
+.cursor-hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Elements that need to show default cursor */
+.hide-cursor {
+  cursor: auto !important;
 }
