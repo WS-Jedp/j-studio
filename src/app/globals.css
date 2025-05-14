@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --radial-spotlight: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 35%, rgba(255, 255, 255, 0) 70%);
 }
 
 * {
@@ -15,6 +16,7 @@
   --color-j-celestial-cooper: #F56962;
   --color-j-celestial-blue: #0043CE;
 
+  --color-coffi-white: #EFEFF9;
   --color-coffi-blue: #6E91FF;
   --color-coffi-purple: #533FFF;
   --color-coffi-gradient: linear-gradient(to right, var(--color-coffi-blue), var(--color-coffi-purple));
@@ -25,26 +27,115 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes glowFlow {
+  0% {
+    background-position: 0% 100%;
+    opacity: 0.4;
+  }
+
+  25% {
+    opacity: 0.9;
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+
+  75% {
+    opacity: 0.8;
+  }
+
+  100% {
+    background-position: 0% 0%;
+    opacity: 0.4;
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100%) scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: translateY(-100%) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes floatDown {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(100%) scale(0.4);
+    opacity: 0;
+  }
 }
 
 .animate-fadeIn {
   animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Updated to CSS-first approach for Tailwind */
+@layer utilities {
+
+  /* Use CSS-first approach for animations */
+  .animate-glow-flow {
+    animation: glowFlow 3s ease-in-out infinite;
+  }
+
+  .animate-float-up {
+    animation: floatUp 6s ease-out forwards;
+  }
+
+  .animate-float-down {
+    animation: floatDown 4s ease-in forwards;
+  }
+
+  /* Radial spotlight gradient */
+  .bg-radial-spotlight {
+    background-image: var(--radial-spotlight);
+  }
+}
+
 /* Custom cursor styles */
-html, body {
+html,
+body {
   cursor: none !important;
 }
 
-a, button, [role="button"], [type="button"], [type="submit"] {
+a,
+button,
+[role="button"],
+[type="button"],
+[type="submit"] {
   cursor: none !important;
 }
 
 .cursor-dot {
   position: fixed;
-  z-index: 999;
+  z-index: 9999 !important;
   pointer-events: none;
   width: 8px;
   height: 8px;
@@ -62,7 +153,7 @@ a, button, [role="button"], [type="button"], [type="submit"] {
 
 .cursor-ring {
   position: fixed;
-  z-index: 998;
+  z-index: 9998 !important;
   pointer-events: none;
   width: 32px;
   height: 32px;

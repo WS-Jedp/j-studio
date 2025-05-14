@@ -86,15 +86,15 @@ export default function AboutJ() {
       <div className="absolute bottom-[5%] left-[5%] w-[80px] h-[80px] rounded-full bg-purple-500/10 blur-[30px] z-0"></div>
       <div className="absolute top-[15%] right-[15%] w-2 h-2 rounded-full bg-blue-400/70"></div>
       <div className="absolute bottom-[20%] left-[10%] w-1.5 h-1.5 rounded-full bg-purple-400/70"></div>
-      
+
       <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[length:20px_20px] pointer-events-none"></div>
-      
+
       <motion.section 
         className="w-full h-1/5 row-span-1 rounded-3xl border-white/10 border shadow-md shadow-j-celestial-white/10 backdrop-blur-lg px-6 py-4 mb-6 relative overflow-hidden group"
         variants={itemVariants}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-        
+
         <motion.div 
           key={currentContent.title}
           initial={{ opacity: 0, y: 10 }}
@@ -176,7 +176,7 @@ export default function AboutJ() {
           <div className="flex flex-row flex-nowrap items-center justify-center space-x-3">
             {/* GitHub Icon */}
             <motion.a 
-              href="https://github.com/username" // Replace with actual GitHub profile URL
+              href="https://github.com/WS-Jedp" // Replace with actual GitHub profile URL
               className="w-[30px] h-[30px] rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -190,7 +190,7 @@ export default function AboutJ() {
             
             {/* LinkedIn Icon */}
             <motion.a 
-              href="https://linkedin.com/in/username" // Replace with actual LinkedIn profile URL
+              href="https://www.linkedin.com/in/juan-esteban-deossa-pertuz-6351261ba/" // Replace with actual LinkedIn profile URL
               className="w-[30px] h-[30px] rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}

@@ -674,7 +674,7 @@ export default function Introduction() {
           )}
         </AnimatePresence>
         
-        <h2 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-cyan-200 to-blue-300 text-transparent bg-clip-text">+4</h2>
+        <h2 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-cyan-200 to-blue-300 text-transparent bg-clip-text">+5</h2>
         <p className="font-light text-white/80">Years of Experience Building Digital Products</p>
         <div className="absolute right-6 bottom-6 w-10 h-10 border border-white/10 rounded-full flex items-center justify-center opacity-70">
           <span className="text-xs text-white/80">02</span>

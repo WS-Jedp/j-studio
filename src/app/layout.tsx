@@ -1,88 +1,88 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
+import "./globals.css";
 
 // Configure SF Pro font
 const sfPro = localFont({
   src: [
     {
-      path: '../../public/assets/fonts/sf-pro/SF-Pro-Text-Regular.otf',
-      weight: '400',
-      style: 'normal'
+      path: "../../public/assets/fonts/sf-pro/SF-Pro-Text-Regular.otf",
+      weight: "400",
+      style: "normal",
     },
     {
-      path: '../../public/assets/fonts/sf-pro/SF-Pro-Text-Bold.otf',
-      weight: '700',
-      style: 'normal'
+      path: "../../public/assets/fonts/sf-pro/SF-Pro-Text-Bold.otf",
+      weight: "700",
+      style: "normal",
     },
     {
-      path: '../../public/assets/fonts/sf-pro/SF-Pro-Text-Semibold.otf',
-      weight: '600',
-      style: 'normal'
+      path: "../../public/assets/fonts/sf-pro/SF-Pro-Text-Semibold.otf",
+      weight: "600",
+      style: "normal",
     },
     {
-      path: '../../public/assets/fonts/sf-pro/SF-Pro-Text-Medium.otf',
-      weight: '500',
-      style: 'normal'
+      path: "../../public/assets/fonts/sf-pro/SF-Pro-Text-Medium.otf",
+      weight: "500",
+      style: "normal",
     },
     {
-      path: '../../public/assets/fonts/sf-pro/SF-Pro-Text-Light.otf',
-      weight: '300',
-      style: 'normal'
+      path: "../../public/assets/fonts/sf-pro/SF-Pro-Text-Light.otf",
+      weight: "300",
+      style: "normal",
     },
     {
-      path: '../../public/assets/fonts/sf-pro/SF-Pro-Text-Ultralight.otf',
-      weight: '200',
-      style: 'normal'
+      path: "../../public/assets/fonts/sf-pro/SF-Pro-Text-Ultralight.otf",
+      weight: "200",
+      style: "normal",
     },
     {
-      path: '../../public/assets/fonts/sf-pro/SF-Pro-Text-Thin.otf',
-      weight: '100',
-      style: 'normal'
+      path: "../../public/assets/fonts/sf-pro/SF-Pro-Text-Thin.otf",
+      weight: "100",
+      style: "normal",
     },
     {
-      path: '../../public/assets/fonts/sf-pro/SF-Pro-Text-Heavy.otf',
-      weight: '800',
-      style: 'normal'
+      path: "../../public/assets/fonts/sf-pro/SF-Pro-Text-Heavy.otf",
+      weight: "800",
+      style: "normal",
     },
     {
-      path: '../../public/assets/fonts/sf-pro/SF-Pro-Text-Black.otf',
-      weight: '900',
-      style: 'normal'
+      path: "../../public/assets/fonts/sf-pro/SF-Pro-Text-Black.otf",
+      weight: "900",
+      style: "normal",
     },
   ],
-  display: 'swap', // Use 'swap' to show text immediately with fallback until font loads
+  display: "swap", // Use 'swap' to show text immediately with fallback until font loads
   preload: true,
-  variable: '--font-sf-pro', // Optional: define a CSS variable
+  variable: "--font-sf-pro", // Optional: define a CSS variable
 });
 
 const tnRoman = localFont({
   src: [
     {
-      path: '../../public/assets/fonts/times-new-roman/times-new-roman.ttf',
-      weight: '400',
-      style: 'normal'
+      path: "../../public/assets/fonts/times-new-roman/times-new-roman.ttf",
+      weight: "400",
+      style: "normal",
     },
     {
-      path: '../../public/assets/fonts/times-new-roman/times-new-roman-bold.ttf',
-      weight: '700',
-      style: 'normal'
+      path: "../../public/assets/fonts/times-new-roman/times-new-roman-bold.ttf",
+      weight: "700",
+      style: "normal",
     },
     {
-      path: '../../public/assets/fonts/times-new-roman/times-new-roman-bold-italic.ttf',
-      weight: '700',
-      style: 'italic'
+      path: "../../public/assets/fonts/times-new-roman/times-new-roman-bold-italic.ttf",
+      weight: "700",
+      style: "italic",
     },
     {
-      path: '../../public/assets/fonts/times-new-roman/times-new-roman-italic.ttf',
-      weight: '400',
-      style: 'italic'
-    }
+      path: "../../public/assets/fonts/times-new-roman/times-new-roman-italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
   ],
-  display: 'swap', // Use 'swap' to show text immediately with fallback until font loads
+  display: "swap", // Use 'swap' to show text immediately with fallback until font loads
   preload: true,
-  variable: '--font-tn-roman', // Optional: define a CSS variable
+  variable: "--font-tn-roman", // Optional: define a CSS variable
 });
 
 export const metadata: Metadata = {
@@ -106,4 +106,3 @@ export default function RootLayout({
     </html>
   );
 }
-

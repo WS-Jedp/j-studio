@@ -10,7 +10,8 @@ import { useRef, useEffect, useState } from "react";
 
 export default function Home() {
   const jobExperienceRef = useRef<HTMLDivElement>(null);
-  const [jobExperienceScrollEnds, setJobExperienceScrollEnds] = useState<boolean>(false);
+  const [jobExperienceScrollEnds, setJobExperienceScrollEnds] =
+    useState<boolean>(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,13 +37,12 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if(jobExperienceScrollEnds) {
+    if (jobExperienceScrollEnds) {
       // Enable scrolling
       document.body.style.overflow = "auto";
     }
-  }, [jobExperienceScrollEnds])
+  }, [jobExperienceScrollEnds]);
 
-  
   return (
     <main
       className="
@@ -66,7 +66,9 @@ export default function Home() {
             ref={jobExperienceRef}
           >
             {/* Horizontal scroll */}
-            <JobExperience onScrollEnd={() => setJobExperienceScrollEnds(true)} />
+            <JobExperience
+              onScrollEnd={() => setJobExperienceScrollEnds(true)}
+            />
           </section>
           <section className="hidden md:block w-full h-[90vh]" />
 

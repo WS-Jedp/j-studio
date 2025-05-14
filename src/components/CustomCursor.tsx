@@ -76,14 +76,14 @@ const CustomCursor = () => {
   return (
     <>
       <div 
-        className={`cursor-dot ${isClicking ? 'cursor-dot-clicking' : ''} ${isHidden ? 'cursor-hidden' : ''}`}
+        className={`cursor-dot ${isClicking ? 'cursor-dot-clicking' : ''} ${isHidden ? 'cursor-hidden' : ''} z-[9999]`}
         style={{ 
           left: `${position.x}px`, 
           top: `${position.y}px`,
         }}
       />
       <div 
-        className={`cursor-ring ${isPointer ? 'cursor-pointer' : ''} ${isClicking ? 'cursor-clicking' : ''} ${isHidden ? 'cursor-hidden' : ''}`}
+        className={`cursor-ring ${isPointer ? 'cursor-pointer' : ''} ${isClicking ? 'cursor-clicking' : ''} ${isHidden ? 'cursor-hidden' : ''} z-[9998`}
         style={{ 
           left: `${position.x}px`, 
           top: `${position.y}px`, 
