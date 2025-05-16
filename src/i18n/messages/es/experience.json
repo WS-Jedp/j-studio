@@ -24,17 +24,17 @@
         },
         "worldskills": {
             "companyName": "WorldSkills",
-            "role": "Competidor en Desarrollo Web",
+            "role": "Competidor en Tecnologías Web",
             "mission": "Entrenado para construir soluciones web centradas en el usuario bajo presión, combinando código, diseño y rendimiento para cumplir con estándares globales.",
             "keyAchievements": [
-                "🥇 1º – Campeón de Desarrollo Web (Ciudad, Regional y Nacional, Colombia)",
+                "🥇 1º – Campeón de Tecnologías Web (Regional y Nacional, Colombia)",
                 "🥈 2º – WorldSkills Américas 2021 (Guatemala)",
                 "🌍 14º – WorldSkills Global 2022 (Corea del Sur)"
             ]
         },
         "platzimaster": {
             "companyName": "Platzi Master",
-            "role": "Pista de Frontend – Primera Generación",
+            "role": "Frontend Track – Primera Generación",
             "mission": "Entrenado en ingeniería moderna de frontend con mentoría de ingenieros senior y educadores líderes en tecnología de habla hispana.",
             "keyAchievements": [
                 "Flujos de trabajo modernos de React (Hooks, Redux, SSR)",

@@ -1,0 +1,124 @@
+{
+  "companyName": "WorldSkills",
+  "role": "Web Development Competitor",
+  "mission": "Trained to build user-focused web solutions under pressure, blending code, design, and performance to meet global standards.",
+  "keyAchievements": [
+    {
+      "title": "🥇 1st – Web Dev Champion (City, Regional & National, Colombia)",
+      "description": "Crowned national champion in Web Development after winning a series of competitive rounds across city, regional, and national levels — demonstrating technical mastery, creativity, and performance under pressure."
+    },
+    {
+      "title": "🥈 2nd – WorldSkills Americas 2021 (Guatemala)",
+      "description": "Earned second place among the top web developers in the Americas, showcasing excellence in real-world problem solving, user experience, and rapid delivery of high-quality code in a timed environment."
+    },
+    {
+      "title": "🌍 14th – WorldSkills Global 2022 (South Korea)",
+      "description": "Represented Colombia at the global stage, ranking 14th worldwide in the Web Technologies category — competing under international standards and working closely with elite coaches from South Korea and Latin America."
+    }
+  ],
+  "timelineSubtitle": "Competition Period",
+  "backButton": "Back to Portfolio",
+  "summary": {
+    "title": "Summary"
+  },
+  "about": {
+    "title": "About WorldSkills",
+    "description": "WorldSkills Competitions are the gold standard of skills excellence. They inspire young competitors to reach new heights, helping them turn their passion into a profession. The competition journey spans from regional qualifiers to national championships, culminating in international competitions where the world's best young professionals showcase their talents. Beyond competition, WorldSkills develops skills through global training standards and benchmarking systems, while influencing industry, government, and educators through cooperation and research — building a global platform of skills for all."
+  },
+  "metrics": {
+    "title": "Key Metrics",
+    "levels": { "label": "Competition Levels", "description": "City, Regional, National, International" },
+    "competitors": { "label": "Competitors Faced", "description": "Across all stages" },
+    "techStack": { "label": "Technologies Used", "description": "Core stack during competitions" },
+    "testProjects": { "label": "Test Projects", "description": "Completed under pressure" }
+  },
+  "techStack": {
+    "title": "Technology Stack",
+    "subtitle": "Primary tools and languages"
+  },
+  "pillars": {
+    "title": "Pillars of WorldSkills",
+    "subtitle": "Core Values & Impact",
+    "items": [
+      {
+        "title": "Inspire",
+        "description": "WorldSkills inspires young people to develop a passion for skills and pursue excellence through competitions and promotions. As a competitor, I was motivated to push my technical boundaries, mastering both creative and engineering aspects of web development while performing under pressure in front of audiences and judges."
+      },
+      {
+        "title": "Develop",
+        "description": "The competition develops skills through global training standards and benchmarking systems that enhance industry engagement. Training for WorldSkills improved my technical precision, time management, problem-solving abilities, and adaptability to work with varied technologies and requirements."
+      },
+      {
+        "title": "Influence",
+        "description": "WorldSkills influences industry, government, and educators through cooperation and research — building a global platform of skills for all. Participating in this global movement connected me with industry experts, educational leaders, and fellow competitors, creating a professional network spanning multiple countries."
+      },
+      {
+        "title": "Web Technologies Skill",
+        "description": "Web design and development is one of the most complex and diverse skills in the competition. It requires establishing professional relationships with clients, deep understanding of requirements, strong design and communication skills, and technical abilities to create databases, build programs, test and debug websites under tight deadlines."
+      }
+    ]
+  },
+  "journey": {
+    "title": "My WorldSkills Journey",
+    "levelLabel": "Competition Level",
+    "achievementLabel": "Key Achievement",
+    "phases": [
+      {
+        "title": "Phase 1: Regional Competitions",
+        "description": "Started the WorldSkills journey at the local level, competing against skilled peers from my region.",
+        "solution": "Demonstrated proficiency in core web technologies through timed test projects that evaluated both technical skills and creativity. Successfully secured first place, earning advancement to the national level competition and establishing a foundation for progressive technical development.",
+        "level": "Regional",
+        "achievement": "1st Place"
+      },
+      {
+        "title": "Phase 2: National Championships",
+        "description": "Represented my region at Colombia's national WorldSkills competition, facing the country's most talented web developers.",
+        "solution": "Competed in multi-day challenges that tested full-stack abilities, design thinking, and performance under pressure. Won the gold medal in the Web Technologies skill, becoming the national champion and qualifying to represent Colombia at international competitions.",
+        "level": "National",
+        "achievement": "Gold Medal"
+      },
+      {
+        "title": "Phase 3: WorldSkills Americas",
+        "description": "Competed against champions from countries across the Americas region, raising the technical difficulty and performance standards.",
+        "solution": "Completed complex projects with stricter requirements and tighter time constraints than previous levels. Secured a silver medal (2nd place) at the continental level, demonstrating Colombia's competitive capabilities in web development on an international stage.",
+        "level": "Continental (Americas)",
+        "achievement": "Silver Medal (2nd Place)"
+      },
+      {
+        "title": "Phase 4: WorldSkills International",
+        "description": "Represented Colombia at the global skills Olympics in South Korea, competing against the world's elite young web developers.",
+        "solution": "Underwent intensive preparation with international experts, followed by four days of rigorous competition at the highest level. Achieved 14th place globally, gaining invaluable experience through cultural exchange and technical mastery while establishing connections with industry leaders and fellow competitors worldwide.",
+        "level": "International (Global)",
+        "achievement": "14th Place Worldwide"
+      }
+    ]
+  },
+  "training": {
+    "title": "Key Training Projects",
+    "challengeLabel": "Challenge",
+    "solutionLabel": "Solution & Learning",
+    "tags": {
+      "project1": { "type": "International Program", "focus": "Cross-Cultural Learning" },
+      "project2": { "type": "", "focus": "" },
+      "project3": { "type": "", "focus": "" }
+    }
+  },
+  "projects": [
+    {
+        "title": "South Korea & Colombia Knowledge Exchange Program",
+        "description":
+          "Two-week international training initiative designed to foster collaboration between WorldSkills experts and competitors from South Korea and Colombia.",
+        "solution":
+          "Participated in a cross-cultural learning environment focused on high-performance strategies for international competition. Shared techniques, refined technical skills, and absorbed global best practices in web development, teamwork, and time-constrained execution."
+    }
+  ],
+  "nav": {
+    "prev": "Certiblock",
+    "studio": "J Studio",
+    "next": "Platzi Master"
+  },
+  "notFound": {
+    "title": "Job Not Found",
+    "returnHome": "Return to Home"
+  }
+}

@@ -327,7 +327,7 @@ export const SkillCardGroup = ({
         </motion.div>
 
         {/* Modified the structure to keep main container stable while animating inner content */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none  overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={`lightbeam-${displayGroup || "empty"}`}

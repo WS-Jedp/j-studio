@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Mail, ArrowRight, Download, Github, Linkedin } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export const Contact = () => {
   const t = useTranslations("contact");
@@ -257,6 +258,13 @@ export const Contact = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
+          <Image
+            src="/assets/icons/j-icon@2x.png"
+            alt="J Studio Logo"
+            width={42}
+            height={42}
+            className="object-cover mb-4"
+          />
           <h3 className="font-light text-sm mb-1">J Studio</h3>
           <p className="font-extralight opacity-30 text-xs mb-3 max-w-sm">{t("jStudioLabel")}</p>
           <motion.div

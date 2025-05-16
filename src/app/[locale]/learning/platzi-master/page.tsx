@@ -1,25 +1,31 @@
 "use client";
 
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
-import Image from "next/image";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { JobsExperienceData } from "@/data/jobs";
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowLeft,
   Calendar,
-  Code,
   Clock,
-  Award,
-  Users,
-  Lightbulb,
   GraduationCap,
+  Users,
+  Code,
+  Lightbulb,
+  Award,
 } from "lucide-react";
 import { ScrollProgressBar } from "@/components/scrollProgression";
+import { useLocale, useTranslations } from "next-intl";
+import { JobsExperienceData } from "@/data/jobs";
 
 export default function PlatziMaster() {
-  // Find the Platzi Master job data
-  const jobData = JobsExperienceData[4];
+  const locale = useLocale();
+  const beereadersData = JobsExperienceData[3];
+  const t = useTranslations("platzi-master");
+  const jobData = {
+    ...beereadersData,
+    ...t.raw("data"),
+  } as any; // Cast to any to avoid type errors for now
   const [activeSection, setActiveSection] = useState("summary");
 
   // Main scroll container ref for animations
@@ -144,9 +150,9 @@ export default function PlatziMaster() {
   if (!jobData) {
     return (
       <section className="w-full h-auto min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-4xl">Job data not found</h1>
+        <h1 className="text-4xl">{t("notFound.title")}</h1>
         <Link href="/" className="mt-4 text-blue-500 hover:underline">
-          Return home
+          {t("notFound.returnHome")}
         </Link>
       </section>
     );
@@ -158,11 +164,11 @@ export default function PlatziMaster() {
       className="w-full h-auto min-h-screen bg-j-deep-black text-j-celestial-white overflow-x-hidden"
     >
       {/* Progress Bar */}
-      <ScrollProgressBar progress={scrollYProgress} />
+      <ScrollProgressBar progress={scrollYProgress} color="bg-[#07e98a]/40" />
 
       {/* Back button with hover effect */}
       <Link
-        href="/"
+        href={`/${locale}`}
         className="fixed top-6 left-6 z-50 flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md hover:bg-teal-500/10 hover:border-teal-500/20 transition-all duration-300 group"
       >
         <motion.div
@@ -172,7 +178,7 @@ export default function PlatziMaster() {
           <ArrowLeft size={14} />
         </motion.div>
         <span className="text-xs group-hover:text-teal-400 transition-colors duration-300">
-          Back
+          {t("pageText.backButton")}
         </span>
       </Link>
 
@@ -298,10 +304,10 @@ export default function PlatziMaster() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
-                className="flex items-center gap-2 text-white/40 mt-2 text-xs"
+                className="gap-2 w-auto text-white/40 mt-2 text-xs text-right"
               >
-                <Clock size={12} />
-                <span>5-month intensive + continued growth</span>
+                <Clock size={12} className="inline-flex mr-2" />
+                <span>{t("pageText.headerTimeline")}</span>
               </motion.div>
             </div>
           </div>
@@ -337,7 +343,7 @@ export default function PlatziMaster() {
               >
                 <div className="sticky top-32">
                   <h3 className="text-xs font-mono tracking-widest text-teal-400 uppercase">
-                    Program Summary
+                    {t("pageText.summarySection.title")}
                   </h3>
                   <motion.div
                     initial={{ width: 0 }}
@@ -382,20 +388,10 @@ export default function PlatziMaster() {
 
                   <div className="p-6 border border-teal-500/20 backdrop-blur-sm relative z-10">
                     <h4 className="text-xl font-semibold text-teal-300 mb-3">
-                      About Platzi Master
+                      {t("pageText.summarySection.aboutTitle")}
                     </h4>
                     <p className="text-white/70 leading-relaxed">
-                      An intensive five-month educational program launched in
-                      2020, designed to elevate technical skills and foster
-                      professional growth in frontend, backend, data analysis,
-                      and data engineering. While the core program lasted five months, 
-                      the learning journey continued as participants refined their skills, 
-                      built their portfolios, and networked until they secured positions 
-                      at modern tech companies. The program combined personalized
-                      mentoring, specialized workshops, and access to an
-                      exclusive network of experts, preparing participants to
-                      face the challenges of the rapidly evolving tech
-                      landscape.
+                      {t("pageText.summarySection.aboutDescription")}
                     </p>
                   </div>
                 </motion.div>
@@ -420,7 +416,7 @@ export default function PlatziMaster() {
                 className="flex items-center gap-2 mb-6"
               >
                 <h3 className="text-xs font-mono tracking-widest text-teal-400 uppercase">
-                  Program Metrics
+                  {t("pageText.metricsSection.title")}
                 </h3>
                 <motion.div
                   className="h-px flex-grow bg-teal-400/20"
@@ -435,27 +431,35 @@ export default function PlatziMaster() {
                 {[
                   {
                     icon: <GraduationCap size={16} className="text-teal-300" />,
-                    label: "Duration",
-                    value: "5 Months",
-                    description: "Intensive training",
+                    label: t("pageText.metricsSection.durationLabel"),
+                    value: t("pageText.metricsSection.durationValue"),
+                    description: t(
+                      "pageText.metricsSection.durationDescription"
+                    ),
                   },
                   {
                     icon: <Users size={16} className="text-teal-300" />,
-                    label: "Participants",
-                    value: "250+",
-                    description: "First generation",
+                    label: t("pageText.metricsSection.participantsLabel"),
+                    value: t("pageText.metricsSection.participantsValue"),
+                    description: t(
+                      "pageText.metricsSection.participantsDescription"
+                    ),
                   },
                   {
                     icon: <Code size={16} className="text-teal-300" />,
-                    label: "Tech Stack",
+                    label: t("pageText.metricsSection.techStackLabel"),
                     value: jobData.technologies.length,
-                    description: "Core technologies",
+                    description: t(
+                      "pageText.metricsSection.techStackDescription"
+                    ),
                   },
                   {
                     icon: <Lightbulb size={16} className="text-teal-300" />,
-                    label: "Projects",
-                    value: "16+",
-                    description: "Weeks of practical work",
+                    label: t("pageText.metricsSection.projectsLabel"),
+                    value: t("pageText.metricsSection.projectsValue"),
+                    description: t(
+                      "pageText.metricsSection.projectsDescription"
+                    ),
                   },
                 ].map((metric, index) => (
                   <motion.div
@@ -501,7 +505,7 @@ export default function PlatziMaster() {
                 className="flex items-center justify-between mb-6"
               >
                 <h3 className="text-xs font-mono tracking-widest text-teal-400 uppercase">
-                  Technology Stack
+                  {t("pageText.techStackSection.title")}
                 </h3>
                 <div className="flex items-center gap-1.5">
                   <motion.div
@@ -516,13 +520,13 @@ export default function PlatziMaster() {
                     }}
                   />
                   <span className="text-xs text-white/50">
-                    Core competencies
+                    {t("pageText.techStackSection.coreCompetencies")}
                   </span>
                 </div>
               </motion.div>
 
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {jobData.technologies.map((tech, index) => (
+                {jobData.technologies.map((tech: any, index: number) => (
                   <motion.div
                     key={index}
                     variants={itemFadeIn}
@@ -574,7 +578,7 @@ export default function PlatziMaster() {
               <motion.div variants={itemFadeIn} className="md:col-span-3">
                 <div className="sticky top-32">
                   <h3 className="text-xs font-mono tracking-widest text-teal-400 uppercase mb-4">
-                    Program Components
+                    {t("pageText.programComponentsSection.title")}
                   </h3>
                   <motion.div
                     initial={{ height: 0 }}
@@ -585,35 +589,20 @@ export default function PlatziMaster() {
                   />
                   <div className="flex items-center gap-2 text-xs text-white/50 mt-4">
                     <Award className="text-teal-400/80" size={14} />
-                    <span>Core curriculum elements</span>
+                    <span>
+                      {t("pageText.programComponentsSection.coreCurriculum")}
+                    </span>
                   </div>
                 </div>
               </motion.div>
 
               <div className="md:col-span-9">
                 <div className="relative border-l border-white/10 pl-8 ml-2 space-y-12">
-                  {[
-                    {
-                      title: "Personalized Mentorship",
-                      description:
-                        "One-on-one guidance from industry professionals who provided tailored feedback and career advice. Mentors helped identify strengths and areas for improvement, sharing real-world experiences and best practices from the field.",
-                    },
-                    {
-                      title: "Specialized Technical Workshops",
-                      description:
-                        "In-depth sessions on modern frontend frameworks, backend architecture, and industry best practices. These workshops provided both theoretical knowledge and hands-on implementation opportunities in small groups.",
-                    },
-                    {
-                      title: "Real-world Project Development",
-                      description:
-                        "Collaborative 16-week projects that simulated professional development environments. Students worked in agile teams to deliver functional applications while managing code quality, performance, and user experience.",
-                    },
-                    {
-                      title: "Professional Network Building",
-                      description:
-                        "Access to an exclusive community of technology leaders and fellow participants. Regular networking events, speaker sessions, and collaboration opportunities helped establish valuable industry connections.",
-                    },
-                  ].map((achievement, index) => (
+                  {(
+                    t.raw(
+                      "pageText.programComponentsSection.components"
+                    ) as any[]
+                  ).map((achievement, index) => (
                     <motion.div
                       key={index}
                       variants={itemFadeIn}
@@ -675,7 +664,7 @@ export default function PlatziMaster() {
               transition={{ duration: 0.7 }}
             >
               <h2 className="text-2xl font-semibold text-white">
-                Program Phases
+                {t("pageText.programPhasesSection.title")}
               </h2>
               <motion.div
                 className="h-px flex-grow bg-gradient-to-r from-teal-500/30 to-transparent"
@@ -687,148 +676,104 @@ export default function PlatziMaster() {
             </motion.div>
 
             <div className="space-y-24">
-              {[
-                {
-                  title: "Phase 1: Diagnosis",
-                  description:
-                    "Comprehensive assessment of technical and professional skills to identify strengths and growth opportunities.",
-                  solution:
-                    "Through personalized interviews and practical challenges, participants received a detailed evaluation of their technical proficiency and professional competencies. This assessment created the foundation for a tailored learning path throughout the program.",
-                },
-                {
-                  title: "Phase 2: Development",
-                  description:
-                    "Immersive 16-week project experience with mentor support and specialized workshop participation.",
-                  solution:
-                    "Participants were assigned to collaborative teams where they worked on practical projects. With mentor guidance, they explored new concepts and techniques, participated in specialized workshops, and refined their technical skills while building production-quality applications.",
-                },
-                {
-                  title: "Phase 3: Feedback",
-                  description:
-                    "Reflection on progress and constructive feedback on performance to prepare for career advancement.",
-                  solution:
-                    "The final phase provided participants with a comprehensive review of their growth throughout the program. Armed with constructive feedback and a personalized action plan, graduates were prepared to confidently take the next step in their careers.",
-                },
-                {
-                  title: "Phase 4: Career Progression",
-                  description:
-                    "Continuing the learning journey beyond the core program to secure positions in modern tech companies.",
-                  solution:
-                    "After completing the intensive 5-month program, participants continued to develop their skills through self-directed learning, portfolio building, networking, and interview preparation. This extended phase was crucial for translating program learnings into real-world career advancement opportunities.",
-                },
-              ].map((phase, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, delay: 0.1 * index }}
-                  className="grid grid-cols-1 md:grid-cols-12 gap-6 relative"
-                >
-                  {/* Background accent */}
+              {(t.raw("pageText.programPhasesSection.phases") as any[]).map(
+                (phase, index) => (
                   <motion.div
-                    className="absolute top-[-20px] bottom-[-20px] inset-x-[-20px] bg-teal-500/[0.02] rounded-xl -z-10"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    style={{ rotateZ: index % 2 === 0 ? -1 : 1 }}
-                  />
-
-                  {/* Project number */}
-                  <div className="md:col-span-1 flex md:justify-end items-start pt-1">
-                    <motion.span
-                      className="text-xs font-mono text-teal-400/80 bg-teal-500/10 py-1 px-2 rounded"
-                      whileHover={{
-                        scale: 1.1,
-                        backgroundColor: "rgba(20, 184, 166, 0.2)",
-                      }}
-                    >
-                      {(index + 1).toString().padStart(2, "0")}
-                    </motion.span>
-                  </div>
-
-                  {/* Project details */}
-                  <div className="md:col-span-11">
-                    <motion.h3
-                      className="text-2xl font-semibold text-teal-300 mb-4"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                    >
-                      {phase.title}
-                    </motion.h3>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6">
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                      >
-                        <h4 className="text-xs uppercase tracking-wider text-teal-400/60 mb-2">
-                          Purpose
-                        </h4>
-                        <p className="text-white/70 leading-relaxed">
-                          {phase.description}
-                        </p>
-                      </motion.div>
-
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.5 }}
-                      >
-                        <h4 className="text-xs uppercase tracking-wider text-teal-400/60 mb-2">
-                          Process
-                        </h4>
-                        <p className="text-white/70 leading-relaxed">
-                          {phase.solution}
-                        </p>
-                      </motion.div>
-                    </div>
-
-                    {/* Project timeline/type indicator */}
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: 0.1 * index }}
+                    className="grid grid-cols-1 md:grid-cols-12 gap-6 relative"
+                  >
+                    {/* Background accent */}
                     <motion.div
-                      className="flex items-center gap-2 mt-6 text-xs text-white/50"
+                      className="absolute top-[-20px] bottom-[-20px] inset-x-[-20px] bg-teal-500/[0.02] rounded-xl -z-10"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.6 }}
-                    >
-                      <div className="h-px w-8 bg-teal-500/30"></div>
-                      <span>
-                        {index === 0
-                          ? "Assessment Period"
-                          : index === 1
-                          ? "Project Period"
-                          : index === 2
-                          ? "Evaluation Period"
-                          : "Extended Learning"}
-                      </span>
-                      <div className="ml-auto px-2 py-1 rounded bg-white/5 border border-white/10">
-                        {index === 0
-                          ? "Week 1-2"
-                          : index === 1
-                          ? "Week 3-18"
-                          : index === 2
-                          ? "Week 19-20"
-                          : "Post Program"}
+                      transition={{ duration: 1, delay: 0.5 }}
+                      style={{ rotateZ: index % 2 === 0 ? -1 : 1 }}
+                    />
+
+                    {/* Project number */}
+                    <div className="md:col-span-1 flex md:justify-end items-start pt-1">
+                      <motion.span
+                        className="text-xs font-mono text-teal-400/80 bg-teal-500/10 py-1 px-2 rounded"
+                        whileHover={{
+                          scale: 1.1,
+                          backgroundColor: "rgba(20, 184, 166, 0.2)",
+                        }}
+                      >
+                        {(index + 1).toString().padStart(2, "0")}
+                      </motion.span>
+                    </div>
+
+                    {/* Project details */}
+                    <div className="md:col-span-11">
+                      <motion.h3
+                        className="text-2xl font-semibold text-teal-300 mb-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                      >
+                        {phase.title}
+                      </motion.h3>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6">
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: 0.4 }}
+                        >
+                          <h4 className="text-xs uppercase tracking-wider text-teal-400/60 mb-2">
+                            {phase.purposeLabel}
+                          </h4>
+                          <p className="text-white/70 leading-relaxed">
+                            {phase.description}
+                          </p>
+                        </motion.div>
+
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: 0.5 }}
+                        >
+                          <h4 className="text-xs uppercase tracking-wider text-teal-400/60 mb-2">
+                            {phase.processLabel}
+                          </h4>
+                          <p className="text-white/70 leading-relaxed">
+                            {phase.solution}
+                          </p>
+                        </motion.div>
                       </div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              ))}
+
+                      {/* Project timeline/type indicator */}
+                      <motion.div
+                        className="flex items-center gap-2 mt-6 text-xs text-white/50"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.6 }}
+                      >
+                        <div className="h-px w-8 bg-teal-500/30"></div>
+                        <span>{phase.timelineLabel}</span>
+                        <div className="ml-auto px-2 py-1 rounded bg-white/5 border border-white/10">
+                          {phase.timelineDetail}
+                        </div>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                )
+              )}
             </div>
           </motion.div>
 
           {/* Key Projects Section */}
-          <motion.div
-            style={{ y: projectsParallax }}
-            className="mb-24"
-          >
+          <motion.div style={{ y: projectsParallax }} className="mb-24">
             <motion.div
               className="flex items-center gap-3 mb-12"
               initial={{ opacity: 0, y: 20 }}
@@ -837,7 +782,7 @@ export default function PlatziMaster() {
               transition={{ duration: 0.7 }}
             >
               <h2 className="text-2xl font-semibold text-white">
-                Key Projects
+                {t("pageText.keyProjectsSection.title")}
               </h2>
               <motion.div
                 className="h-px flex-grow bg-gradient-to-r from-teal-500/30 to-transparent"
@@ -849,7 +794,7 @@ export default function PlatziMaster() {
             </motion.div>
 
             <div className="space-y-24">
-              {jobData.projects.map((project, index) => (
+              {t.raw("data.projects").map((project: any, index: number) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
@@ -901,7 +846,7 @@ export default function PlatziMaster() {
                         transition={{ duration: 0.5, delay: 0.4 }}
                       >
                         <h4 className="text-xs uppercase tracking-wider text-teal-400/60 mb-2">
-                          Challenge
+                          {t("pageText.keyProjectsSection.challengeLabel")}
                         </h4>
                         <p className="text-white/70 leading-relaxed">
                           {project.description}
@@ -915,7 +860,7 @@ export default function PlatziMaster() {
                         transition={{ duration: 0.5, delay: 0.5 }}
                       >
                         <h4 className="text-xs uppercase tracking-wider text-teal-400/60 mb-2">
-                          Outcome
+                          {t("pageText.keyProjectsSection.outcomeLabel")}
                         </h4>
                         <p className="text-white/70 leading-relaxed">
                           {project.solution}
@@ -933,18 +878,18 @@ export default function PlatziMaster() {
                     >
                       <div className="h-px w-8 bg-teal-500/30"></div>
                       <span>
-                        {index === 0
-                          ? "Architecture & Development"
-                          : index === 1
-                          ? "Collaboration & Teamwork"
-                          : "Learning & Growth"}
+                        {(
+                          t.raw(
+                            "pageText.keyProjectsSection.projectTags"
+                          ) as any[]
+                        )[index]?.tagLine || ""}
                       </span>
                       <div className="ml-auto px-2 py-1 rounded bg-white/5 border border-white/10">
-                        {index === 0
-                          ? "Technical Focus"
-                          : index === 1
-                          ? "Professional Skills"
-                          : "Meta Learning"}
+                        {(
+                          t.raw(
+                            "pageText.keyProjectsSection.projectTags"
+                          ) as any[]
+                        )[index]?.tagDetail || ""}
                       </div>
                     </motion.div>
                   </div>
@@ -963,20 +908,28 @@ export default function PlatziMaster() {
           >
             <motion.div whileHover={{ x: -5 }} transition={{ duration: 0.3 }}>
               <Link
-                href="/learning/worldskills"
+                href={`/${locale}/learning/worldskills`}
                 className="flex items-center gap-2 text-xs text-white/60 hover:text-pink-400 transition-colors duration-300"
               >
                 <ArrowLeft size={12} />
-                <span>WorldSkills</span>
+                <span>{t("pageText.navigation.prevPageName")}</span>
               </Link>
             </motion.div>
 
             <motion.div
-              className="text-center"
-              whileHover={{ scale: 1.1 }}
+              className="flex flex-col items-center text-center"
               transition={{ duration: 0.3 }}
             >
-              <span className="text-xs text-white/40">J Studio</span>
+              <Image
+                src="/assets/icons/j-icon.png"
+                alt="J Studio Logo"
+                width={42}
+                height={42}
+                className="w-10 h-10   mb-1"
+              />
+              <span className="text-xs text-white/40">
+                {t("pageText.navigation.jStudio")}
+              </span>
             </motion.div>
           </motion.div>
         </div>

@@ -25,6 +25,15 @@ export async function loadMessages(locale: string) {
   const certiblock = (
     await import(`../../i18n/messages/${locale}/certiblock.json`)
   ).default;
+  const worldskills = (
+    await import(`../../i18n/messages/${locale}/worldskills.json`)
+  ).default;
+  const platziMasters = (
+    await import(`../../i18n/messages/${locale}/platzi-master.json`)
+  ).default;
+  const coffiPage = (
+    await import(`../../i18n/messages/${locale}/coffi-project-page.json`)
+  ).default;
 
 
   return {
@@ -36,6 +45,9 @@ export async function loadMessages(locale: string) {
     contact,
     skills,
     beereaders,
-    certiblock
+    certiblock,
+    worldskills,
+    "platzi-master": platziMasters,
+    "coffi-page": coffiPage
   };
 }

@@ -684,10 +684,16 @@ export default function Beereaders() {
             </motion.div>
             
             <motion.div 
-              className="text-center"
-              whileHover={{ scale: 1.1 }}
+              className="flex flex-col items-center justify-center text-center"
               transition={{ duration: 0.3 }}
             >
+              <Image
+                src="/assets/icons/j-icon.png"
+                alt="J Studio Logo"
+                width={42}
+                height={42}
+                className="w-10 h-10 mb-1"
+              />
               <span className="text-xs text-white/40">J Studio</span>
             </motion.div>
             

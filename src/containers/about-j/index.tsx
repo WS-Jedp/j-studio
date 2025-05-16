@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Globe, ChevronDown } from "lucide-react";
 import { useRouter, usePathname } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function AboutJ() {
   const [activeSection, setActiveSection] = useState("introduction");
@@ -169,17 +170,14 @@ export default function AboutJ() {
         <motion.article className="relative z-10" variants={textRevealVariants}>
           <div className="flex flex-row flex-nowrap items-center justify-between space-x-2 mb-3">
             <div className="flex flex-row flex-nowrap items-center space-x-2">
-              <motion.div
-                className="bg-j-celestial-white w-[15px] h-[15px] rounded-full"
-                animate={{
-                  boxShadow: [
-                    "0 0 0 rgba(255, 255, 255, 0.4)",
-                    "0 0 8px rgba(255, 255, 255, 0.6)",
-                    "0 0 0 rgba(255, 255, 255, 0.4)",
-                  ],
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-              ></motion.div>
+              <Image
+                width={24}
+                height={24}
+                src="/assets/icons/j-icon.png"
+                alt="J Studio Logo"
+                className="object-cover"
+                priority
+              />
               <p className="text-j-celestial-white">J Studio</p>
             </div>
 

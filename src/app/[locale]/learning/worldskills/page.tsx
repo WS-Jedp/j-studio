@@ -13,11 +13,13 @@ import {
   Award,
   Users,
   Lightbulb,
-  GraduationCap,
 } from "lucide-react";
 import { ScrollProgressBar } from "@/components/scrollProgression";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function WorldSkills() {
+  const t = useTranslations("worldskills");
+  const locale = useLocale();
   // Find the WorldSkills job data
   const jobData = JobsExperienceData[3];
   const [activeSection, setActiveSection] = useState("summary");
@@ -144,9 +146,9 @@ export default function WorldSkills() {
   if (!jobData) {
     return (
       <section className="w-full h-auto min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-4xl">Job data not found</h1>
+        <h1 className="text-4xl">{t("notFound.title")}</h1>
         <Link href="/" className="mt-4 text-blue-500 hover:underline">
-          Return home
+          {t("notFound.returnHome")}
         </Link>
       </section>
     );
@@ -158,7 +160,7 @@ export default function WorldSkills() {
       className="w-full h-auto min-h-screen bg-j-deep-black text-j-celestial-white overflow-x-hidden"
     >
       {/* Progress Bar */}
-      <ScrollProgressBar progress={scrollYProgress} />
+      <ScrollProgressBar progress={scrollYProgress} color="bg-[#D51067]/40" />
 
       {/* Back button with hover effect */}
       <Link
@@ -172,7 +174,7 @@ export default function WorldSkills() {
           <ArrowLeft size={14} />
         </motion.div>
         <span className="text-xs group-hover:text-pink-400 transition-colors duration-300">
-          Back
+          {t("backButton")}
         </span>
       </Link>
 
@@ -234,7 +236,7 @@ export default function WorldSkills() {
                 />
                 <Image
                   src="/assets/jobs/worldskills-logo.svg"
-                  alt="WorldSkills Logo"
+                  alt={t("companyName")}
                   width={120}
                   height={80}
                   className="w-auto h-24 relative z-10"
@@ -250,7 +252,7 @@ export default function WorldSkills() {
                 transition={{ duration: 0.7, ease: "easeOut" }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-pink-200 to-pink-400 text-transparent bg-clip-text"
               >
-                {jobData.companyName}
+                {t("companyName")}
               </motion.h1>
 
               <motion.h2
@@ -259,7 +261,7 @@ export default function WorldSkills() {
                 transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
                 className="text-xl md:text-2xl font-light text-white/70 mt-2"
               >
-                {jobData.role}
+                {t("role")}
               </motion.h2>
             </div>
 
@@ -284,7 +286,7 @@ export default function WorldSkills() {
                 className="flex items-center gap-2 text-white/40 mt-2 text-xs"
               >
                 <Clock size={12} />
-                <span>Regional to International Journey</span>
+                <span>{t("timelineSubtitle")}</span>
               </motion.div>
             </div>
           </div>
@@ -320,7 +322,7 @@ export default function WorldSkills() {
               >
                 <div className="sticky top-32">
                   <h3 className="text-xs font-mono tracking-widest text-pink-400 uppercase">
-                    Competition Summary
+                    {t("summary.title")}
                   </h3>
                   <motion.div
                     initial={{ width: 0 }}
@@ -343,7 +345,7 @@ export default function WorldSkills() {
                   }}
                   className="text-2xl md:text-3xl font-medium text-white/90 leading-relaxed mb-8"
                 >
-                  {jobData.mission}
+                  {t("mission")}
                 </motion.p>
 
                 <motion.div
@@ -365,21 +367,10 @@ export default function WorldSkills() {
 
                   <div className="p-6 border border-pink-500/20 backdrop-blur-sm relative z-10">
                     <h4 className="text-xl font-semibold text-pink-300 mb-3">
-                      About WorldSkills
+                      {t("about.title")}
                     </h4>
                     <p className="text-white/70 leading-relaxed">
-                      WorldSkills Competitions are the gold standard of skills
-                      excellence. They inspire young competitors to reach new
-                      heights, helping them turn their passion into a
-                      profession. The competition journey spans from regional
-                      qualifiers to national championships, culminating in
-                      international competitions where the world's best young
-                      professionals showcase their talents. Beyond competition,
-                      WorldSkills develops skills through global training
-                      standards and benchmarking systems, while influencing
-                      industry, government, and educators through cooperation
-                      and research — building a global platform of skills for
-                      all.
+                      {t("about.description")}
                     </p>
                   </div>
                 </motion.div>
@@ -404,7 +395,7 @@ export default function WorldSkills() {
                 className="flex items-center gap-2 mb-6"
               >
                 <h3 className="text-xs font-mono tracking-widest text-pink-400 uppercase">
-                  Competition Metrics
+                  {t("metrics.title")}
                 </h3>
                 <motion.div
                   className="h-px flex-grow bg-pink-400/20"
@@ -419,27 +410,27 @@ export default function WorldSkills() {
                 {[
                   {
                     icon: <Award size={16} className="text-pink-300" />,
-                    label: "Competition Levels",
+                    label: t("metrics.levels.label"),
                     value: "4",
-                    description: "Regional to Global",
+                    description: t("metrics.levels.description"),
                   },
                   {
                     icon: <Users size={16} className="text-pink-300" />,
-                    label: "Global Competitors",
+                    label: t("metrics.competitors.label"),
                     value: "63+",
-                    description: "Web Technologies",
+                    description: t("metrics.competitors.description"),
                   },
                   {
                     icon: <Code size={16} className="text-pink-300" />,
-                    label: "Tech Stack",
+                    label: t("metrics.techStack.label"),
                     value: jobData.technologies.length,
-                    description: "Core technologies",
+                    description: t("metrics.techStack.description"),
                   },
                   {
                     icon: <Lightbulb size={16} className="text-pink-300" />,
-                    label: "Test Projects",
+                    label: t("metrics.testProjects.label"),
                     value: "12+",
-                    description: "Competitive modules",
+                    description: t("metrics.testProjects.description"),
                   },
                 ].map((metric, index) => (
                   <motion.div
@@ -485,7 +476,7 @@ export default function WorldSkills() {
                 className="flex items-center justify-between mb-6"
               >
                 <h3 className="text-xs font-mono tracking-widest text-pink-400 uppercase">
-                  Technology Stack
+                  {t("techStack.title")}
                 </h3>
                 <div className="flex items-center gap-1.5">
                   <motion.div
@@ -500,7 +491,7 @@ export default function WorldSkills() {
                     }}
                   />
                   <span className="text-xs text-white/50">
-                    Competition technologies
+                    {t("techStack.subtitle")}
                   </span>
                 </div>
               </motion.div>
@@ -558,7 +549,7 @@ export default function WorldSkills() {
               <motion.div variants={itemFadeIn} className="md:col-span-3">
                 <div className="sticky top-32">
                   <h3 className="text-xs font-mono tracking-widest text-pink-400 uppercase mb-4">
-                    WorldSkills Pillars
+                    {t("pillars.title")}
                   </h3>
                   <motion.div
                     initial={{ height: 0 }}
@@ -569,77 +560,66 @@ export default function WorldSkills() {
                   />
                   <div className="flex items-center gap-2 text-xs text-white/50 mt-4">
                     <Award className="text-pink-400/80" size={14} />
-                    <span>Foundation of excellence</span>
+                    <span>{t("pillars.subtitle")}</span>
                   </div>
                 </div>
               </motion.div>
 
               <div className="md:col-span-9">
                 <div className="relative border-l border-white/10 pl-8 ml-2 space-y-12">
-                  {[
-                    {
-                      title: "Inspire",
-                      description:
-                        "WorldSkills inspires young people to develop a passion for skills and pursue excellence through competitions and promotions. As a competitor, I was motivated to push my technical boundaries, mastering both creative and engineering aspects of web development while performing under pressure in front of audiences and judges.",
-                    },
-                    {
-                      title: "Develop",
-                      description:
-                        "The competition develops skills through global training standards and benchmarking systems that enhance industry engagement. Training for WorldSkills improved my technical precision, time management, problem-solving abilities, and adaptability to work with varied technologies and requirements.",
-                    },
-                    {
-                      title: "Influence",
-                      description:
-                        "WorldSkills influences industry, government, and educators through cooperation and research — building a global platform of skills for all. Participating in this global movement connected me with industry experts, educational leaders, and fellow competitors, creating a professional network spanning multiple countries.",
-                    },
-                    {
-                      title: "Web Technologies Skill",
-                      description:
-                        "Web design and development is one of the most complex and diverse skills in the competition. It requires establishing professional relationships with clients, deep understanding of requirements, strong design and communication skills, and technical abilities to create databases, build programs, test and debug websites under tight deadlines.",
-                    },
-                  ].map((achievement, index) => (
-                    <motion.div
-                      key={index}
-                      variants={itemFadeIn}
-                      className="relative"
-                    >
-                      {/* Timeline connector */}
-                      <motion.div
-                        className="absolute left-[-41px] w-[40px] h-[1px] bg-white/20"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: 40 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.2 + index * 0.2 }}
-                      />
+                  {t
+                    .raw("pillars.items")
+                    .map(
+                      (
+                        achievement: { title: string; description: string },
+                        index: number
+                      ) => (
+                        <motion.div
+                          key={index}
+                          variants={itemFadeIn}
+                          className="relative"
+                        >
+                          {/* Timeline connector */}
+                          <motion.div
+                            className="absolute left-[-41px] w-[40px] h-[1px] bg-white/20"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: 40 }}
+                            viewport={{ once: true }}
+                            transition={{
+                              duration: 0.5,
+                              delay: 0.2 + index * 0.2,
+                            }}
+                          />
 
-                      <div className="relative">
-                        <motion.h4
-                          className="text-xl font-semibold text-pink-300 mb-3"
-                          initial={{ opacity: 0, x: 20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{
-                            duration: 0.7,
-                            delay: 0.3 + index * 0.2,
-                          }}
-                        >
-                          {achievement.title}
-                        </motion.h4>
-                        <motion.p
-                          className="text-white/70 leading-relaxed"
-                          initial={{ opacity: 0, x: 20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{
-                            duration: 0.7,
-                            delay: 0.4 + index * 0.2,
-                          }}
-                        >
-                          {achievement.description}
-                        </motion.p>
-                      </div>
-                    </motion.div>
-                  ))}
+                          <div className="relative">
+                            <motion.h4
+                              className="text-xl font-semibold text-pink-300 mb-3"
+                              initial={{ opacity: 0, x: 20 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true }}
+                              transition={{
+                                duration: 0.7,
+                                delay: 0.3 + index * 0.2,
+                              }}
+                            >
+                              {achievement.title}
+                            </motion.h4>
+                            <motion.p
+                              className="text-white/70 leading-relaxed"
+                              initial={{ opacity: 0, x: 20 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true }}
+                              transition={{
+                                duration: 0.7,
+                                delay: 0.4 + index * 0.2,
+                              }}
+                            >
+                              {achievement.description}
+                            </motion.p>
+                          </div>
+                        </motion.div>
+                      )
+                    )}
                 </div>
               </div>
             </div>
@@ -659,7 +639,7 @@ export default function WorldSkills() {
               transition={{ duration: 0.7 }}
             >
               <h2 className="text-2xl font-semibold text-white">
-                Competition Journey
+                {t("journey.title")}
               </h2>
               <motion.div
                 className="h-px flex-grow bg-gradient-to-r from-pink-500/30 to-transparent"
@@ -671,140 +651,110 @@ export default function WorldSkills() {
             </motion.div>
 
             <div className="space-y-24">
-              {[
-                {
-                  title: "Phase 1: Regional Competitions",
-                  description:
-                    "Started the WorldSkills journey at the local level, competing against skilled peers from my region.",
-                  solution:
-                    "Demonstrated proficiency in core web technologies through timed test projects that evaluated both technical skills and creativity. Successfully secured first place, earning advancement to the national level competition and establishing a foundation for progressive technical development.",
-                },
-                {
-                  title: "Phase 2: National Championships",
-                  description:
-                    "Represented my region at Colombia's national WorldSkills competition, facing the country's most talented web developers.",
-                  solution:
-                    "Competed in multi-day challenges that tested full-stack abilities, design thinking, and performance under pressure. Won the gold medal in the Web Technologies skill, becoming the national champion and qualifying to represent Colombia at international competitions.",
-                },
-                {
-                  title: "Phase 3: WorldSkills Americas",
-                  description:
-                    "Competed against champions from countries across the Americas region, raising the technical difficulty and performance standards.",
-                  solution:
-                    "Completed complex projects with stricter requirements and tighter time constraints than previous levels. Secured a silver medal (2nd place) at the continental level, demonstrating Colombia's competitive capabilities in web development on an international stage.",
-                },
-                {
-                  title: "Phase 4: WorldSkills International",
-                  description:
-                    "Represented Colombia at the global skills Olympics in South Korea, competing against the world's elite young web developers.",
-                  solution:
-                    "Underwent intensive preparation with international experts, followed by four days of rigorous competition at the highest level. Achieved 14th place globally, gaining invaluable experience through cultural exchange and technical mastery while establishing connections with industry leaders and fellow competitors worldwide.",
-                },
-              ].map((phase, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, delay: 0.1 * index }}
-                  className="grid grid-cols-1 md:grid-cols-12 gap-6 relative"
-                >
-                  {/* Background accent */}
-                  <motion.div
-                    className="absolute top-[-20px] bottom-[-20px] inset-x-[-20px] bg-pink-500/[0.02] rounded-xl -z-10"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    style={{ rotateZ: index % 2 === 0 ? -1 : 1 }}
-                  />
-
-                  {/* Project number */}
-                  <div className="md:col-span-1 flex md:justify-end items-start pt-1">
-                    <motion.span
-                      className="text-xs font-mono text-pink-400/80 bg-pink-500/10 py-1 px-2 rounded"
-                      whileHover={{
-                        scale: 1.1,
-                        backgroundColor: "rgba(213, 16, 103, 0.2)",
-                      }}
-                    >
-                      {(index + 1).toString().padStart(2, "0")}
-                    </motion.span>
-                  </div>
-
-                  {/* Project details */}
-                  <div className="md:col-span-11">
-                    <motion.h3
-                      className="text-2xl font-semibold text-pink-300 mb-4"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                    >
-                      {phase.title}
-                    </motion.h3>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6">
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                      >
-                        <h4 className="text-xs uppercase tracking-wider text-pink-400/60 mb-2">
-                          Level
-                        </h4>
-                        <p className="text-white/70 leading-relaxed">
-                          {phase.description}
-                        </p>
-                      </motion.div>
-
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.5 }}
-                      >
-                        <h4 className="text-xs uppercase tracking-wider text-pink-400/60 mb-2">
-                          Achievement
-                        </h4>
-                        <p className="text-white/70 leading-relaxed">
-                          {phase.solution}
-                        </p>
-                      </motion.div>
-                    </div>
-
-                    {/* Competition level indicator */}
+              {t
+                .raw("journey.phases")
+                .map(
+                  (
+                    phase: {
+                      title: string;
+                      description: string;
+                      solution: string;
+                      level: string;
+                      achievement: string;
+                    },
+                    index: number
+                  ) => (
                     <motion.div
-                      className="flex items-center gap-2 mt-6 text-xs text-white/50"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.6 }}
+                      key={index}
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.8, delay: 0.1 * index }}
+                      className="grid grid-cols-1 md:grid-cols-12 gap-6 relative"
                     >
-                      <div className="h-px w-8 bg-pink-500/30"></div>
-                      <span>
-                        {index === 0
-                          ? "Local Level"
-                          : index === 1
-                          ? "National Level"
-                          : index === 2
-                          ? "Continental Level"
-                          : "Global Level"}
-                      </span>
-                      <div className="ml-auto px-2 py-1 rounded bg-white/5 border border-white/10">
-                        {index === 0
-                          ? "Gold Medal"
-                          : index === 1
-                          ? "Gold Medal"
-                          : index === 2
-                          ? "Silver Medal"
-                          : "14th Place"}
+                      {/* Background accent */}
+                      <motion.div
+                        className="absolute top-[-20px] bottom-[-20px] inset-x-[-20px] bg-pink-500/[0.02] rounded-xl -z-10"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                        style={{ rotateZ: index % 2 === 0 ? -1 : 1 }}
+                      />
+
+                      {/* Project number */}
+                      <div className="md:col-span-1 flex md:justify-end items-start pt-1">
+                        <motion.span
+                          className="text-xs font-mono text-pink-400/80 bg-pink-500/10 py-1 px-2 rounded"
+                          whileHover={{
+                            scale: 1.1,
+                            backgroundColor: "rgba(213, 16, 103, 0.2)",
+                          }}
+                        >
+                          {(index + 1).toString().padStart(2, "0")}
+                        </motion.span>
+                      </div>
+
+                      {/* Project details */}
+                      <div className="md:col-span-11">
+                        <motion.h3
+                          className="text-2xl font-semibold text-pink-300 mb-4"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: 0.3 }}
+                        >
+                          {phase.title}
+                        </motion.h3>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6">
+                          <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                          >
+                            <h4 className="text-xs uppercase tracking-wider text-pink-400/60 mb-2">
+                              {t("journey.levelLabel")}
+                            </h4>
+                            <p className="text-white/70 leading-relaxed">
+                              {phase.description}
+                            </p>
+                          </motion.div>
+
+                          <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.5 }}
+                          >
+                            <h4 className="text-xs uppercase tracking-wider text-pink-400/60 mb-2">
+                              {t("journey.achievementLabel")}
+                            </h4>
+                            <p className="text-white/70 leading-relaxed">
+                              {phase.solution}
+                            </p>
+                          </motion.div>
+                        </div>
+
+                        {/* Competition level indicator */}
+                        <motion.div
+                          className="flex items-center gap-2 mt-6 text-xs text-white/50"
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: 0.6 }}
+                        >
+                          <div className="h-px w-8 bg-pink-500/30"></div>
+                          <span>{phase.level}</span>
+                          <div className="ml-auto px-2 py-1 rounded bg-white/5 border border-white/10">
+                            {phase.achievement}
+                          </div>
+                        </motion.div>
                       </div>
                     </motion.div>
-                  </div>
-                </motion.div>
-              ))}
+                  )
+                )}
             </div>
           </motion.div>
 
@@ -818,7 +768,7 @@ export default function WorldSkills() {
               transition={{ duration: 0.7 }}
             >
               <h2 className="text-2xl font-semibold text-white">
-                International Training
+                {t("training.title")}
               </h2>
               <motion.div
                 className="h-px flex-grow bg-gradient-to-r from-pink-500/30 to-transparent"
@@ -830,107 +780,118 @@ export default function WorldSkills() {
             </motion.div>
 
             <div className="space-y-24">
-              {jobData.projects.map((project, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, delay: 0.1 * index }}
-                  className="grid grid-cols-1 md:grid-cols-12 gap-6 relative"
-                >
-                  {/* Background accent */}
-                  <motion.div
-                    className="absolute top-[-20px] bottom-[-20px] inset-x-[-20px] bg-pink-500/[0.02] rounded-xl -z-10"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    style={{ rotateZ: index % 2 === 0 ? -1 : 1 }}
-                  />
-
-                  {/* Project number */}
-                  <div className="md:col-span-1 flex md:justify-end items-start pt-1">
-                    <motion.span
-                      className="text-xs font-mono text-pink-400/80 bg-pink-500/10 py-1 px-2 rounded"
-                      whileHover={{
-                        scale: 1.1,
-                        backgroundColor: "rgba(213, 16, 103, 0.2)",
-                      }}
-                    >
-                      {(index + 1).toString().padStart(2, "0")}
-                    </motion.span>
-                  </div>
-
-                  {/* Project details */}
-                  <div className="md:col-span-11">
-                    <motion.h3
-                      className="text-2xl font-semibold text-pink-300 mb-4"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                    >
-                      {project.title}
-                    </motion.h3>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6">
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                      >
-                        <h4 className="text-xs uppercase tracking-wider text-pink-400/60 mb-2">
-                          Challenge
-                        </h4>
-                        <p className="text-white/70 leading-relaxed">
-                          {project.description}
-                        </p>
-                      </motion.div>
-
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.5 }}
-                      >
-                        <h4 className="text-xs uppercase tracking-wider text-pink-400/60 mb-2">
-                          Solution
-                        </h4>
-                        <p className="text-white/70 leading-relaxed">
-                          {project.solution}
-                        </p>
-                      </motion.div>
-                    </div>
-
-                    {/* Project tags */}
+              {t
+                .raw("projects")
+                .map(
+                  (
+                    project: {
+                      title: string;
+                      description: string;
+                      solution: string;
+                    },
+                    index: number
+                  ) => (
                     <motion.div
-                      className="flex items-center gap-2 mt-6 text-xs text-white/50"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.6 }}
+                      key={index}
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.8, delay: 0.1 * index }}
+                      className="grid grid-cols-1 md:grid-cols-12 gap-6 relative"
                     >
-                      <div className="h-px w-8 bg-pink-500/30"></div>
-                      <span>
-                        {index === 0
-                          ? "Frontend & Backend"
-                          : index === 1
-                          ? "Content Management"
-                          : "User Experience & Data"}
-                      </span>
-                      <div className="ml-auto px-2 py-1 rounded bg-white/5 border border-white/10">
-                        {index === 0
-                          ? "Time-constrained Challenge"
-                          : index === 1
-                          ? "Modular Development"
-                          : "Client Requirements"}
+                      {/* Background accent */}
+                      <motion.div
+                        className="absolute top-[-20px] bottom-[-20px] inset-x-[-20px] bg-pink-500/[0.02] rounded-xl -z-10"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                        style={{ rotateZ: index % 2 === 0 ? -1 : 1 }}
+                      />
+
+                      {/* Project number */}
+                      <div className="md:col-span-1 flex md:justify-end items-start pt-1">
+                        <motion.span
+                          className="text-xs font-mono text-pink-400/80 bg-pink-500/10 py-1 px-2 rounded"
+                          whileHover={{
+                            scale: 1.1,
+                            backgroundColor: "rgba(213, 16, 103, 0.2)",
+                          }}
+                        >
+                          {(index + 1).toString().padStart(2, "0")}
+                        </motion.span>
+                      </div>
+
+                      {/* Project details */}
+                      <div className="md:col-span-11">
+                        <motion.h3
+                          className="text-2xl font-semibold text-pink-300 mb-4"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: 0.3 }}
+                        >
+                          {project.title}
+                        </motion.h3>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6">
+                          <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                          >
+                            <h4 className="text-xs uppercase tracking-wider text-pink-400/60 mb-2">
+                              {t("training.challengeLabel")}
+                            </h4>
+                            <p className="text-white/70 leading-relaxed">
+                              {project.description}
+                            </p>
+                          </motion.div>
+
+                          <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.5 }}
+                          >
+                            <h4 className="text-xs uppercase tracking-wider text-pink-400/60 mb-2">
+                              {t("training.solutionLabel")}
+                            </h4>
+                            <p className="text-white/70 leading-relaxed">
+                              {project.solution}
+                            </p>
+                          </motion.div>
+                        </div>
+
+                        {/* Project tags */}
+                        <motion.div
+                          className="flex items-center gap-2 mt-6 text-xs text-white/50"
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: 0.6 }}
+                        >
+                          <div className="h-px w-8 bg-pink-500/30"></div>
+                          <span>
+                            {index === 0
+                              ? t("training.tags.project1.type")
+                              : index === 1
+                              ? t("training.tags.project2.type")
+                              : t("training.tags.project3.type")}
+                          </span>
+                          <div className="ml-auto px-2 py-1 rounded bg-white/5 border border-white/10">
+                            {index === 0
+                              ? t("training.tags.project1.focus")
+                              : index === 1
+                              ? t("training.tags.project2.focus")
+                              : t("training.tags.project3.focus")}
+                          </div>
+                        </motion.div>
                       </div>
                     </motion.div>
-                  </div>
-                </motion.div>
-              ))}
+                  )
+                )}
             </div>
           </motion.div>
 
@@ -944,28 +905,34 @@ export default function WorldSkills() {
           >
             <motion.div whileHover={{ x: -5 }} transition={{ duration: 0.3 }}>
               <Link
-                href="/jobs/certiblock"
+                href={`/${locale}/jobs/certiblock`}
                 className="flex items-center gap-2 text-xs text-white/60 hover:text-emerald-400 transition-colors duration-300"
               >
                 <ArrowLeft size={12} />
-                <span>Certiblock</span>
+                <span>{t("nav.prev")}</span>
               </Link>
             </motion.div>
 
             <motion.div
-              className="text-center"
-              whileHover={{ scale: 1.1 }}
+              className="flex flex-col items-center text-center"
               transition={{ duration: 0.3 }}
             >
-              <span className="text-xs text-white/40">J Studio</span>
+              <Image
+                src="/assets/icons/j-icon.png"
+                alt="J Studio Logo"
+                width={42}
+                height={42}
+                className="w-10 h-10 mb-1"
+              />
+              <span className="text-xs text-white/40">{t("nav.studio")}</span>
             </motion.div>
 
             <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.3 }}>
               <Link
-                href="/learning/platzi-master"
+                href={`/${locale}/learning/platzi-master`}
                 className="text-xs text-white/60 hover:text-[#07e98a] transition-colors duration-300"
               >
-                Next: Platzi Master →
+                {t("nav.next")} →
               </Link>
             </motion.div>
           </motion.div>

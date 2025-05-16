@@ -17,10 +17,22 @@ import {
   ChevronDown,
 } from "lucide-react";
 import { ScrollProgressBar } from "@/components/scrollProgression";
+import { useLocale } from "next-intl";
+import { useTranslations } from "use-intl";
 
 export default function Certiblock() {
-  // Find the Certiblock job data
-  const jobData = JobsExperienceData[2];
+  const locale = useLocale();
+  const t = useTranslations("certiblock");
+
+  const jobData = {
+    ...JobsExperienceData[2],
+    companyName: t("companyName"),
+    role: t("role"),
+    mission: t("mission"),
+    keyAchievements: t.raw("achievements"),
+    projects: t.raw("projects"),
+  };
+
   const [activeSection, setActiveSection] = useState("summary");
 
   // Main scroll container ref for animations
@@ -159,7 +171,7 @@ export default function Certiblock() {
       className="w-full h-auto min-h-screen bg-j-deep-black text-j-celestial-white overflow-x-hidden"
     >
       {/* Progress Bar */}
-      <ScrollProgressBar progress={scrollYProgress} />
+      <ScrollProgressBar progress={scrollYProgress} color="bg-emerald-400/30" />
 
       {/* Back button with hover effect */}
       <Link
@@ -173,7 +185,7 @@ export default function Certiblock() {
           <ArrowLeft size={14} />
         </motion.div>
         <span className="text-xs group-hover:text-green-400 transition-colors duration-300">
-          Back
+          {t("actions.back")}
         </span>
       </Link>
 
@@ -274,7 +286,7 @@ export default function Certiblock() {
               >
                 <Calendar size={14} />
                 <span className="text-sm">
-                  {jobData.yearFrom} — {jobData.yearTo}
+                  {jobData.yearFrom} — {t("labels.present")}
                 </span>
               </motion.div>
 
@@ -285,7 +297,7 @@ export default function Certiblock() {
                 className="flex items-center gap-2 text-white/40 mt-2 text-xs"
               >
                 <Clock size={12} />
-                <span>Current position</span>
+                <span>{t("labels.currentPosition")}</span>
               </motion.div>
             </div>
           </div>
@@ -321,7 +333,7 @@ export default function Certiblock() {
               >
                 <div className="sticky top-32">
                   <h3 className="text-xs font-mono tracking-widest text-green-400 uppercase">
-                    Professional Summary
+                    {t("titles.professionalSummary")}
                   </h3>
                   <motion.div
                     initial={{ width: 0 }}
@@ -337,27 +349,27 @@ export default function Certiblock() {
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
+                  transition={{
                     duration: 0.7,
                     delay: 0.4,
-                    ease: "easeOut"
+                    ease: "easeOut",
                   }}
                   className="text-2xl md:text-3xl font-medium text-white/90 leading-relaxed mb-8"
                 >
                   {jobData.mission}
                 </motion.p>
 
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.7, 
+                  transition={{
+                    duration: 0.7,
                     delay: 0.6,
-                    ease: "easeOut"
+                    ease: "easeOut",
                   }}
                   className="relative overflow-hidden rounded-xl"
                 >
-                  <motion.div 
+                  <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-emerald-700/5"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -366,14 +378,10 @@ export default function Certiblock() {
 
                   <div className="p-6 border border-green-500/20 backdrop-blur-sm relative z-10">
                     <h4 className="text-xl font-semibold text-green-300 mb-3">
-                      About Certiblock
+                      {t("titles.about")}
                     </h4>
                     <p className="text-white/70 leading-relaxed">
-                      Colombian company revolutionizing business security
-                      through Blockchain technology. Creating digital twins on
-                      Blockchain to combat product counterfeiting and tampering,
-                      with over 4.3 million digitized assets enabling product
-                      authenticity verification through simple mobile scanning.
+                      {t("about")}
                     </p>
                   </div>
                 </motion.div>
@@ -398,7 +406,7 @@ export default function Certiblock() {
                 className="flex items-center gap-2 mb-6"
               >
                 <h3 className="text-xs font-mono tracking-widest text-green-400 uppercase">
-                  Key Metrics
+                  {t("titles.keyMetrics")}
                 </h3>
                 <motion.div
                   className="h-px flex-grow bg-green-400/20"
@@ -413,31 +421,31 @@ export default function Certiblock() {
                 {[
                   {
                     icon: <BarChart3 size={16} className="text-green-300" />,
-                    label: "Assets",
-                    value: "4.3M+",
-                    description: "Digitized products",
+                    label: t("metrics.0.label"),
+                    value: t("metrics.0.value"),
+                    description: t("metrics.0.description"),
                   },
                   {
                     icon: (
                       <BriefcaseBusiness size={16} className="text-green-300" />
                     ),
-                    label: "Projects",
-                    value: "3",
-                    description: "Major deployments",
+                    label: t("metrics.1.label"),
+                    value: t("metrics.1.value"),
+                    description: t("metrics.1.description"),
                   },
                   {
                     icon: <Code size={16} className="text-green-300" />,
-                    label: "Tech Stack",
+                    label: t("metrics.2.label"),
                     value: jobData.technologies.length,
-                    description: "Core technologies",
+                    description: t("metrics.2.description"),
                   },
                   {
                     icon: (
                       <BookOpenCheck size={16} className="text-green-300" />
                     ),
-                    label: "Impact",
-                    value: "20+",
-                    description: "Brand partners",
+                    label: t("metrics.3.label"),
+                    value: t("metrics.3.value"),
+                    description: t("metrics.3.description"),
                   },
                 ].map((metric, index) => (
                   <motion.div
@@ -483,7 +491,7 @@ export default function Certiblock() {
                 className="flex items-center justify-between mb-6"
               >
                 <h3 className="text-xs font-mono tracking-widest text-green-400 uppercase">
-                  Technology Stack
+                  {t("titles.technologyStack")}
                 </h3>
                 <div className="flex items-center gap-1.5">
                   <motion.div
@@ -498,7 +506,7 @@ export default function Certiblock() {
                     }}
                   />
                   <span className="text-xs text-white/50">
-                    Core competencies
+                    {t("labels.coreCompetencies")}
                   </span>
                 </div>
               </motion.div>
@@ -556,7 +564,7 @@ export default function Certiblock() {
               <motion.div variants={itemFadeIn} className="md:col-span-3">
                 <div className="sticky top-32">
                   <h3 className="text-xs font-mono tracking-widest text-green-400 uppercase mb-4">
-                    Key Achievements
+                    {t("titles.keyAchievements")}
                   </h3>
                   <motion.div
                     initial={{ height: 0 }}
@@ -567,56 +575,64 @@ export default function Certiblock() {
                   />
                   <div className="flex items-center gap-2 text-xs text-white/50 mt-4">
                     <Award className="text-green-400/80" size={14} />
-                    <span>Notable contributions</span>
+                    <span>{t("labels.notableContributions")}</span>
                   </div>
                 </div>
               </motion.div>
 
               <div className="md:col-span-9">
                 <div className="relative border-l border-white/10 pl-8 ml-2 space-y-12">
-                  {jobData.keyAchievements.map((achievement, index) => (
-                    <motion.div
-                      key={index}
-                      variants={itemFadeIn}
-                      className="relative"
-                    >
-                      {/* Timeline connector */}
+                  {jobData.keyAchievements.map(
+                    (
+                      achievement: { title: string; description: string },
+                      index: number
+                    ) => (
                       <motion.div
-                        className="absolute left-[-41px] w-[40px] h-[1px] bg-white/20"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: 40 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.2 + index * 0.2 }}
-                      />
+                        key={index}
+                        variants={itemFadeIn}
+                        className="relative"
+                      >
+                        {/* Timeline connector */}
+                        <motion.div
+                          className="absolute left-[-41px] w-[40px] h-[1px] bg-white/20"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: 40 }}
+                          viewport={{ once: true }}
+                          transition={{
+                            duration: 0.5,
+                            delay: 0.2 + index * 0.2,
+                          }}
+                        />
 
-                      <div className="relative">
-                        <motion.h4
-                          className="text-xl font-semibold text-green-300 mb-3"
-                          initial={{ opacity: 0, x: 20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{
-                            duration: 0.7,
-                            delay: 0.3 + index * 0.2,
-                          }}
-                        >
-                          {achievement.title}
-                        </motion.h4>
-                        <motion.p
-                          className="text-white/70 leading-relaxed"
-                          initial={{ opacity: 0, x: 20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{
-                            duration: 0.7,
-                            delay: 0.4 + index * 0.2,
-                          }}
-                        >
-                          {achievement.description}
-                        </motion.p>
-                      </div>
-                    </motion.div>
-                  ))}
+                        <div className="relative">
+                          <motion.h4
+                            className="text-xl font-semibold text-green-300 mb-3"
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{
+                              duration: 0.7,
+                              delay: 0.3 + index * 0.2,
+                            }}
+                          >
+                            {achievement.title}
+                          </motion.h4>
+                          <motion.p
+                            className="text-white/70 leading-relaxed"
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{
+                              duration: 0.7,
+                              delay: 0.4 + index * 0.2,
+                            }}
+                          >
+                            {achievement.description}
+                          </motion.p>
+                        </div>
+                      </motion.div>
+                    )
+                  )}
                 </div>
               </div>
             </div>
@@ -636,7 +652,7 @@ export default function Certiblock() {
               transition={{ duration: 0.7 }}
             >
               <h2 className="text-2xl font-semibold text-white">
-                Key Projects
+                {t("titles.keyProjects")}
               </h2>
               <motion.div
                 className="h-px flex-grow bg-gradient-to-r from-green-500/30 to-transparent"
@@ -648,105 +664,114 @@ export default function Certiblock() {
             </motion.div>
 
             <div className="space-y-24">
-              {jobData.projects.map((project, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, delay: 0.1 * index }}
-                  className="grid grid-cols-1 md:grid-cols-12 gap-6 relative"
-                >
-                  {/* Background accent */}
+              {jobData.projects.map(
+                (
+                  project: {
+                    title: string;
+                    description: string;
+                    solution: string;
+                  },
+                  index: number
+                ) => (
                   <motion.div
-                    className="absolute top-[-20px] bottom-[-20px] inset-x-[-20px] bg-green-500/[0.02] rounded-xl -z-10"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    style={{ rotateZ: index % 2 === 0 ? -1 : 1 }}
-                  />
-
-                  {/* Project number */}
-                  <div className="md:col-span-1 flex md:justify-end items-start pt-1">
-                    <motion.span
-                      className="text-xs font-mono text-green-400/80 bg-green-500/10 py-1 px-2 rounded"
-                      whileHover={{
-                        scale: 1.1,
-                        backgroundColor: "rgba(34, 197, 94, 0.2)",
-                      }}
-                    >
-                      {(index + 1).toString().padStart(2, "0")}
-                    </motion.span>
-                  </div>
-
-                  {/* Project details */}
-                  <div className="md:col-span-11">
-                    <motion.h3
-                      className="text-2xl font-semibold text-green-300 mb-4"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
-                    >
-                      {project.title}
-                    </motion.h3>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6">
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                      >
-                        <h4 className="text-xs uppercase tracking-wider text-green-400/60 mb-2">
-                          Challenge
-                        </h4>
-                        <p className="text-white/70 leading-relaxed">
-                          {project.description}
-                        </p>
-                      </motion.div>
-
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.5 }}
-                      >
-                        <h4 className="text-xs uppercase tracking-wider text-green-400/60 mb-2">
-                          Solution
-                        </h4>
-                        <p className="text-white/70 leading-relaxed">
-                          {project.solution}
-                        </p>
-                      </motion.div>
-                    </div>
-
-                    {/* Project timeline/type indicator */}
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: 0.1 * index }}
+                    className="grid grid-cols-1 md:grid-cols-12 gap-6 relative"
+                  >
+                    {/* Background accent */}
                     <motion.div
-                      className="flex items-center gap-2 mt-6 text-xs text-white/50"
+                      className="absolute top-[-20px] bottom-[-20px] inset-x-[-20px] bg-green-500/[0.02] rounded-xl -z-10"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.6 }}
-                    >
-                      <div className="h-px w-8 bg-green-500/30"></div>
-                      <span>
-                        {index % 2 === 0
-                          ? "Infrastructure Project"
-                          : "Platform Initiative"}
-                      </span>
-                      <div className="ml-auto px-2 py-1 rounded bg-white/5 border border-white/10">
-                        {index % 3 === 0
-                          ? "Q4 2023"
-                          : index % 3 === 1
-                          ? "Q2 2025"
-                          : "Q3 2025"}
+                      transition={{ duration: 1, delay: 0.5 }}
+                      style={{ rotateZ: index % 2 === 0 ? -1 : 1 }}
+                    />
+
+                    {/* Project number */}
+                    <div className="md:col-span-1 flex md:justify-end items-start pt-1">
+                      <motion.span
+                        className="text-xs font-mono text-green-400/80 bg-green-500/10 py-1 px-2 rounded"
+                        whileHover={{
+                          scale: 1.1,
+                          backgroundColor: "rgba(34, 197, 94, 0.2)",
+                        }}
+                      >
+                        {(index + 1).toString().padStart(2, "0")}
+                      </motion.span>
+                    </div>
+
+                    {/* Project details */}
+                    <div className="md:col-span-11">
+                      <motion.h3
+                        className="text-2xl font-semibold text-green-300 mb-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                      >
+                        {project.title}
+                      </motion.h3>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6">
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: 0.4 }}
+                        >
+                          <h4 className="text-xs uppercase tracking-wider text-green-400/60 mb-2">
+                            {t("labels.challenge")}
+                          </h4>
+                          <p className="text-white/70 leading-relaxed">
+                            {project.description}
+                          </p>
+                        </motion.div>
+
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.5, delay: 0.5 }}
+                        >
+                          <h4 className="text-xs uppercase tracking-wider text-green-400/60 mb-2">
+                            {t("labels.solution")}
+                          </h4>
+                          <p className="text-white/70 leading-relaxed">
+                            {project.solution}
+                          </p>
+                        </motion.div>
                       </div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              ))}
+
+                      {/* Project timeline/type indicator */}
+                      <motion.div
+                        className="flex items-center gap-2 mt-6 text-xs text-white/50"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.6 }}
+                      >
+                        <div className="h-px w-8 bg-green-500/30"></div>
+                        <span>
+                          {index === 0
+                            ? t("labels.infrastructureProject")
+                            : t("labels.platformInitiative")}
+                        </span>
+                        <div className="ml-auto px-2 py-1 rounded bg-white/5 border border-white/10">
+                          {index % 3 === 0
+                            ? "Q4 2023"
+                            : index % 3 === 1
+                            ? "Q2 2025"
+                            : "Q3 2025"}
+                        </div>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                )
+              )}
             </div>
           </motion.div>
 
@@ -760,7 +785,7 @@ export default function Certiblock() {
           >
             <motion.div whileHover={{ x: -5 }} transition={{ duration: 0.3 }}>
               <Link
-                href="/jobs/beereaders"
+                href={`/${locale}/jobs/beereaders`}
                 className="flex items-center gap-2 text-xs text-white/60 hover:text-[#ffcf01] transition-colors duration-300"
               >
                 <ArrowLeft size={12} />
@@ -769,16 +794,25 @@ export default function Certiblock() {
             </motion.div>
 
             <motion.div
-              className="text-center"
-              whileHover={{ scale: 1.1 }}
+              className="flex flex-col items-center text-center"
               transition={{ duration: 0.3 }}
             >
+              <Image
+                src="/assets/icons/j-icon.png"
+                alt="J Studio Logo"
+                width={42}
+                height={42}
+                className="w-10 h-10 mb-1"
+              />
               <span className="text-xs text-white/40">J Studio</span>
             </motion.div>
 
             <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.3 }}>
-              <Link href="/learning/worldskills" className="text-xs text-white/60 hover:text-[#D51067] transition-colors duration-300">
-                Next: WorldSkills →
+              <Link
+                href={`/${locale}/learning/worldskills`}
+                className="text-xs text-white/60 hover:text-[#D51067] transition-colors duration-300"
+              >
+                WorldSkills →
               </Link>
             </motion.div>
           </motion.div>

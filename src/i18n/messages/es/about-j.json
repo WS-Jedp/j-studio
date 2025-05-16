@@ -1,15 +1,15 @@
 {
   "introduction": {
-    "title": "Saludos, soy Juanes",
-    "description": "Ingeniero de software full-stack colombiano de 24 años, viviendo en Medellín. Me apasiona crear experiencias digitales que conecten, inspiren y generen impacto real en la vida de las personas."
+    "title": "Hola, soy Juanes",
+    "description": "Ingeniero full-stack desde Medellín — creo experiencias digitales que conectan, inspiran y generan impacto real."
   },
   "experience": {
-    "title": "Estudiante de la Vida",
-    "description": "Ser ingeniero de software no es solo un trabajo; es un estilo de vida. Estoy en constante aprendizaje y evolución, siempre buscando nuevos desafíos y oportunidades para crecer."
+    "title": "Aprendiz de la Vida",
+    "description": "La curiosidad guía mi camino. Crezco con cada reto, exploro a través del código y dejo que cada proyecto me transforme."
   },
   "about-me": {
     "title": "Sobre Mí",
-    "description": "Soy un apasionado ingeniero de software con una sólida experiencia en desarrollo full-stack. Disfruto enfrentar desafíos y encontrar soluciones innovadoras a problemas complejos."
+    "description": "Veo el código como una forma de poesía — una manera de convertir pensamiento en forma. Creo con intención, y dejo que el movimiento, las personas y las ideas inspiren la siguiente línea."
   },
   "main": {
     "heading": "Diseñando Experiencias Digitales Desde la Idea",

@@ -1,0 +1,138 @@
+{
+  "data": {
+    "companyName": "Platzi Master",
+    "role": "Frontend Track – Primera Generación",
+    "mission": "Formado en ingeniería frontend moderna con mentoría de ingenieros senior y educadores líderes en tecnología de habla hispana.",
+    "keyAchievements": [
+      { "title": "Flujos de trabajo modernos con React (Hooks, Redux, SSR)", "description": "" },
+      { "title": "Diseño de componentes escalables y accesibilidad", "description": "" },
+      { "title": "Trabajo en equipo ágil con entrega de proyectos del mundo real", "description": "" },
+      { "title": "Coaching directo de ingenieros senior y mentores expertos", "description": "" }
+    ],
+    "projects": [
+      {
+        "title": "Arquitectura Frontend Avanzada",
+        "description": "Capacitado para construir sistemas frontend escalables y de alto rendimiento utilizando React y herramientas modernas.",
+        "solution": "Aprendí a ir más allá de la implementación, diseñando sistemas de componentes mantenibles, escribiendo código legible para humanos y optimizando el rendimiento a escala. Desarrollé habilidades para cerrar la brecha entre los sistemas de diseño y la ingeniería con una mentalidad centrada en el producto."
+      },
+      {
+        "title": "Colaboración Ágil Remota",
+        "description": "Trabajé en equipos remotos internacionales de alta presión utilizando flujos de trabajo de productos modernos.",
+        "solution": "Colaboré con desarrolladores de América Latina y Europa utilizando metodologías ágiles, reuniones diarias y entregas iterativas. Aprendí a adaptarme rápidamente, planificar eficazmente y ejecutar bajo las limitaciones de tiempo del mundo real."
+      },
+      {
+        "title": "Sistemas de Eficiencia de Aprendizaje",
+        "description": "Desarrollé un sistema para dominar rápidamente nuevas tecnologías bajo un entrenamiento de alta intensidad.",
+        "solution": "Construí flujos de estudio personalizados utilizando principios de meta-aprendizaje para absorber temas complejos más rápido. Apliqué esto para aprender tecnologías full-stack en plazos comprimidos, lo que resultó en una entrega más rápida y una visión técnica más profunda."
+      }
+    ]
+  },
+  "pageText": {
+    "backButton": "Volver al Portafolio",
+    "headerTimeline": "5 meses intensivos + crecimiento continuo",
+    "summarySection": {
+      "title": "Resumen del Programa",
+      "aboutTitle": "Acerca de Platzi Master",
+      "aboutDescription": "Un programa educativo intensivo de cinco meses lanzado en 2020, diseñado para elevar las habilidades técnicas y fomentar el crecimiento profesional en frontend, backend, análisis de datos e ingeniería de datos. Si bien el programa principal duró cinco meses, el viaje de aprendizaje continuó mientras los participantes refinaban sus habilidades, construían sus portafolios y establecían contactos hasta asegurar posiciones en empresas tecnológicas modernas. El programa combinó mentoría personalizada, talleres especializados y acceso a una red exclusiva de expertos, preparando a los participantes para enfrentar los desafíos del panorama tecnológico en rápida evolución."
+    },
+    "metricsSection": {
+      "title": "Métricas del Programa",
+      "durationLabel": "Duración",
+      "durationValue": "5 Meses",
+      "durationDescription": "Entrenamiento intensivo",
+      "participantsLabel": "Participantes",
+      "participantsValue": "250+",
+      "participantsDescription": "Primera generación",
+      "techStackLabel": "Stack Tecnológico",
+      "techStackDescription": "Tecnologías principales",
+      "projectsLabel": "Proyectos",
+      "projectsValue": "16+",
+      "projectsDescription": "Semanas de trabajo práctico"
+    },
+    "techStackSection": {
+      "title": "Stack Tecnológico",
+      "coreCompetencies": "Competencias principales"
+    },
+    "programComponentsSection": {
+      "title": "Componentes del Programa",
+      "coreCurriculum": "Elementos centrales del currículo",
+      "components": [
+        {
+          "title": "Mentoría Personalizada",
+          "description": "Orientación individualizada de profesionales de la industria que proporcionaron retroalimentación personalizada y asesoramiento profesional. Los mentores ayudaron a identificar fortalezas y áreas de mejora, compartiendo experiencias del mundo real y mejores prácticas del campo."
+        },
+        {
+          "title": "Talleres Técnicos Especializados",
+          "description": "Sesiones profundas sobre frameworks frontend modernos, arquitectura backend y mejores prácticas de la industria. Estos talleres proporcionaron tanto conocimiento teórico como oportunidades de implementación práctica en grupos pequeños."
+        },
+        {
+          "title": "Desarrollo de Proyectos del Mundo Real",
+          "description": "Proyectos colaborativos de 16 semanas que simularon entornos de desarrollo profesional. Los estudiantes trabajaron en equipos ágiles para entregar aplicaciones funcionales mientras gestionaban la calidad del código, el rendimiento y la experiencia del usuario."
+        },
+        {
+          "title": "Construcción de Redes Profesionales",
+          "description": "Acceso a una comunidad exclusiva de líderes tecnológicos y compañeros participantes. Eventos de networking regulares, sesiones con ponentes y oportunidades de colaboración ayudaron a establecer valiosas conexiones en la industria."
+        }
+      ]
+    },
+    "programPhasesSection": {
+      "title": "Fases del Programa",
+      "phases": [
+        {
+          "title": "Fase 1: Diagnóstico",
+          "description": "Evaluación integral de habilidades técnicas y profesionales para identificar fortalezas y oportunidades de crecimiento.",
+          "solution": "A través de entrevistas personalizadas y desafíos prácticos, los participantes recibieron una evaluación detallada de su competencia técnica y competencias profesionales. Esta evaluación sentó las bases para un plan de aprendizaje personalizado durante todo el programa.",
+          "purposeLabel": "Propósito",
+          "processLabel": "Proceso",
+          "timelineLabel": "Período de Evaluación",
+          "timelineDetail": "Semana 1-2"
+        },
+        {
+          "title": "Fase 2: Desarrollo",
+          "description": "Experiencia inmersiva de proyecto de 16 semanas con apoyo de mentores y participación en talleres especializados.",
+          "solution": "Se asignó a los participantes a equipos colaborativos donde trabajaron en proyectos prácticos. Con la guía de mentores, exploraron nuevos conceptos y técnicas, participaron en talleres especializados y refinaron sus habilidades técnicas mientras construían aplicaciones con calidad de producción.",
+          "purposeLabel": "Propósito",
+          "processLabel": "Proceso",
+          "timelineLabel": "Período de Proyecto",
+          "timelineDetail": "Semana 3-18"
+        },
+        {
+          "title": "Fase 3: Retroalimentación",
+          "description": "Reflexión sobre el progreso y retroalimentación constructiva sobre el desempeño para prepararse para el avance profesional.",
+          "solution": "La fase final proporcionó a los participantes una revisión integral de su crecimiento a lo largo del programa. Armados con retroalimentación constructiva y un plan de acción personalizado, los graduados estaban preparados para dar con confianza el siguiente paso en sus carreras.",
+          "purposeLabel": "Propósito",
+          "processLabel": "Proceso",
+          "timelineLabel": "Período de Evaluación",
+          "timelineDetail": "Semana 19-20"
+        },
+        {
+          "title": "Fase 4: Progresión Profesional",
+          "description": "Continuar el viaje de aprendizaje más allá del programa principal para asegurar posiciones en empresas tecnológicas modernas.",
+          "solution": "Después de completar el programa intensivo de 5 meses, los participantes continuaron desarrollando sus habilidades a través del aprendizaje autodirigido, la creación de portafolios, el networking y la preparación para entrevistas. Esta fase extendida fue crucial para traducir los aprendizajes del programa en oportunidades reales de avance profesional.",
+          "purposeLabel": "Propósito",
+          "processLabel": "Proceso",
+          "timelineLabel": "Aprendizaje Extendido",
+          "timelineDetail": "Post Programa"
+        }
+      ]
+    },
+    "keyProjectsSection": {
+      "title": "Proyectos Clave",
+      "challengeLabel": "Desafío",
+      "outcomeLabel": "Resultado",
+      "projectTags": [
+        { "tagLine": "Arquitectura y Desarrollo", "tagDetail": "Enfoque Técnico" },
+        { "tagLine": "Colaboración y Trabajo en Equipo", "tagDetail": "Habilidades Profesionales" },
+        { "tagLine": "Aprendizaje y Crecimiento", "tagDetail": "Meta Aprendizaje" }
+      ]
+    },
+    "navigation": {
+      "prevPageName": "WorldSkills",
+      "jStudio": "J Studio"
+    },
+    "notFound": {
+      "title": "Datos del trabajo no encontrados",
+      "returnHome": "Volver al inicio"
+    }
+  }
+}

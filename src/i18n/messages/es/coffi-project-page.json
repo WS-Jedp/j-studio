@@ -1,0 +1,128 @@
+{
+  "navigation": {
+    "back": "Volver"
+  },
+  "hero": {
+    "logoSubtitle": "Be Where You Thrive",
+    "title": "Proyecto Coffi",
+    "description": "En un mundo donde la libertad de trabajar desde cualquier lugar se está convirtiendo en la norma, construí una plataforma que te ayuda a encontrar el espacio perfecto para prosperar."
+  },
+  "mainContent": {
+    "quote": "No solo una aplicación, sino un reflejo de cómo debería sentirse el trabajo moderno: intencional, flexible y humano.",
+    "genesis": {
+      "sectionTitle": "Génesis",
+      "title": "De una Idea Simple a Algo Más Grande",
+      "mainContent": "Lo que comenzó como una idea simple —ayudar a los nómadas digitales a encontrar los mejores cafés para trabajar o estudiar— evolucionó hacia algo mucho más grande: una plataforma de descubrimiento social en tiempo real, impulsada por un propósito, para exploradores digitales.",
+      "need": {
+        "title": "La Necesidad",
+        "description": "Como creador remoto que se desplaza de un lugar a otro, anhelaba más que café y Wi-Fi: quería espacios donde realmente pudiera concentrarme, conectarme y crear."
+      },
+      "response": {
+        "title": "La Respuesta",
+        "description": "Coffi se convirtió en mi respuesta: una plataforma que entiende lo que los creadores y nómadas realmente necesitan en sus entornos."
+      },
+      "evolution": {
+        "title": "La Evolución",
+        "description": "Desde encontrar cafés hasta descubrir entornos alineados con un propósito de todo tipo, el concepto creció con cada iteración."
+      },
+      "pullQuote": "Coffi no se trata solo de lugares, se trata de encontrar tu momento perfecto en el espacio."
+    },
+    "vision": {
+      "sectionTitle": "La Visión",
+      "title": "Una Guía en Tiempo Real para Nómadas con Propósito",
+      "description": "Coffi no es solo un directorio de espacios de trabajo, es una plataforma social basada en lugares impulsada por datos de la comunidad y filtrado inteligente. Ya sea que estés tratando de concentrarte en el trabajo profundo, conocer a otros nómadas o tomar un descanso rejuvenecedor, Coffi recomienda el entorno adecuado en tiempo real."
+    },
+    "architecture": {
+      "sectionTitle": "La Arquitectura",
+      "title": "Stack Tecnológico y Estructura",
+      "frontend": {
+        "title": "Frontend",
+        "text": "React, TypeScript, TailwindCSS, Redux Toolkit"
+      },
+      "backend": {
+        "title": "Backend",
+        "text": "NestJS, WebSockets, MongoDB (GeoIndexado)"
+      },
+      "realTime": {
+        "title": "Tiempo Real",
+        "text": "Redis Pub/Sub + Cache"
+      },
+      "devOps": {
+        "title": "DevOps",
+        "text": "AWS Elastic Beanstalk, S3, CloudFront, CI/CD"
+      }
+    },
+    "differentiation": {
+      "sectionTitle": "La Diferencia",
+      "title": "Diferenciación del Producto",
+      "mainContent": "Cada lugar en Coffi tiene información estática y se aumenta con actualizaciones de la comunidad en vivo, lo que llamamos una Sesión. Las Sesiones son historias ambientales en tiempo real vinculadas a un lugar, no a una persona.",
+      "tagline": "Piensa en historias de Instagram + Google Maps + Reddit = Coffi."
+    },
+    "evolutionToEverywhere": {
+      "sectionTitle": "La Evolución",
+      "title": "De Cafés a Todas Partes",
+      "mainContent": "Inicialmente enfocado en cafés, nos expandimos a parques, miradores, librerías y más. Los lugares son polimórficos, con atributos y filtros únicos según el tipo.",
+      "secondaryContent": "Las Sesiones también se adaptan: vibras en una terraza vs. tranquilidad en una biblioteca. Esta flexibilidad hace que Coffi sea valioso en diferentes contextos."
+    },
+    "communityDrivenDesign": {
+      "sectionTitle": "Filosofía",
+      "title": "Diseño Impulsado por la Comunidad",
+      "subtitle": "Un espacio donde momentos y lugares convergen para crear algo más grande",
+      "mainContent": "Coffi se comporta como las redes sociales basadas en historias, pero para lugares. Las personas comparten momentos de forma anónima por ubicación. No hay un feed de personas, solo actualizaciones de vibras. Este enfoque crea una atmósfera única donde el foco está en la calidad del espacio en lugar de quién está publicando.",
+      "secondaryContent": "Cada lugar se convierte en un lienzo de experiencias en tiempo real, moldeado colectivamente y enriquecido con cada nuevo visitante. Es inclusivo, ambiental e impulsado por un propósito.",
+      "placeFirst": {
+        "title": "Primero el Lugar",
+        "description": "A diferencia de las redes centradas en la persona, Coffi prioriza el espacio sobre la identidad."
+      },
+      "collectiveIntelligence": {
+        "title": "Inteligencia Colectiva",
+        "description": "Los conocimientos de la comunidad crean guías dinámicas en tiempo real para cada ubicación."
+      },
+      "ambientAwareness": {
+        "title": "Conciencia Ambiental",
+        "description": "Las \"vibras\" en tiempo real ayudan a los usuarios a encontrar la combinación perfecta para sus necesidades actuales."
+      },
+      "quote": "En un mundo de plataformas impulsadas por la personalidad, Coffi elige poner el foco en los lugares, dejando que los espacios hablen por sí mismos."
+    },
+    "businessStrategy": {
+      "sectionTitle": "El Negocio",
+      "title": "Estrategia de Monetización",
+      "freeLayer": {
+        "title": "Capa Gratuita",
+        "description": "Acceso completo a la base de datos + reseñas y filtrado básico"
+      },
+      "premiumLayer": {
+        "title": "Capa Premium",
+        "description": "Sesiones en tiempo real, personalización, lugares exclusivos"
+      },
+      "gamification": {
+        "title": "Gamificación",
+        "description": "Puntos por contribuciones, canjeables por beneficios"
+      },
+      "venueDashboard": {
+        "title": "Panel de Control para Locales",
+        "description": "Información para dueños de negocios (próximamente)"
+      }
+    },
+    "longTermVision": {
+      "sectionTitle": "Mirando Hacia Adelante",
+      "title": "Visión a Largo Plazo",
+      "description": "Coffi está configurado para evolucionar más allá de una simple herramienta de descubrimiento hacia un ecosistema que apoya a los nómadas digitales a lo largo de su viaje:",
+      "item1": "Motor de recomendación inteligente impulsado por IA",
+      "item2": "Integración de herramientas de productividad",
+      "item3": "Capa Web3 para confianza y verificación de recompensas",
+      "item4": "Gráfico global de nómadas que conecta personas y lugares"
+    },
+    "concluding": {
+        "title": [
+        "Donde la",
+        "Tecnología",
+        "se Encuentra con la",
+        "Serendipia"
+      ],
+      "description": "Diseñé y construí toda la plataforma, desde el frontend hasta el backend, la infraestructura en la nube y los sistemas en tiempo real, porque el mundo merece mejores formas de conectarse con el espacio y el propósito.",
+      "buttonTry": "Prueba Coffi Ahora",
+      "buttonFollow": "Sigue a @letscoffi"
+    }
+  }
+}

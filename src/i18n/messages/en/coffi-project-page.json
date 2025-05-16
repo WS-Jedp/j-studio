@@ -1,0 +1,128 @@
+{
+  "navigation": {
+    "back": "Back"
+  },
+  "hero": {
+    "logoSubtitle": "Be Where You Thrive",
+    "title": "Coffi Project",
+    "description": "In a world where freedom to work from anywhere is becoming the norm, I built a platform that helps you find the perfect space to thrive."
+  },
+  "mainContent": {
+    "quote": "Not just an app, but a reflection of how modern work should feel: intentional, flexible, and human.",
+    "genesis": {
+      "sectionTitle": "The Genesis",
+      "title": "From Simple Idea to Something Bigger",
+      "mainContent": "What began as a simple idea—to help digital nomads find the best cafés to work or study—evolved into something much bigger: a real-time, purpose-driven social discovery platform for digital explorers.",
+      "need": {
+        "title": "The Need",
+        "description": "As a remote creator moving from place to place, I craved more than coffee and Wi-Fi — I wanted spaces where I could truly focus, connect, and create."
+      },
+      "response": {
+        "title": "The Response",
+        "description": "Coffi became my answer — a platform that understands what creators and nomads truly need in their environments."
+      },
+      "evolution": {
+        "title": "The Evolution",
+        "description": "From finding cafés to discovering purpose-aligned environments of all kinds — the concept grew with each iteration."
+      },
+      "pullQuote": "Coffi isn't just about places, it's about finding your perfect moment in space."
+    },
+    "vision": {
+      "sectionTitle": "The Vision",
+      "title": "A Real-Time Guide for Purposeful Nomads",
+      "description": "Coffi is not just a workspace directory—it's a place-based social platform powered by community data and smart filtering. Whether you're trying to crush deep work, meet fellow nomads, or take a rejuvenating break, Coffi recommends the right environment in real-time."
+    },
+    "architecture": {
+      "sectionTitle": "The Architecture",
+      "title": "Tech Stack & Structure",
+      "frontend": {
+        "title": "Frontend",
+        "text": "React, TypeScript, TailwindCSS, Redux Toolkit"
+      },
+      "backend": {
+        "title": "Backend",
+        "text": "NestJS, WebSockets, MongoDB (GeoIndexed)"
+      },
+      "realTime": {
+        "title": "Real-Time",
+        "text": "Redis Pub/Sub + Cache"
+      },
+      "devOps": {
+        "title": "DevOps",
+        "text": "AWS Elastic Beanstalk, S3, CloudFront, CI/CD"
+      }
+    },
+    "differentiation": {
+      "sectionTitle": "The Difference",
+      "title": "Product Differentiation",
+      "mainContent": "Each place on Coffi has static information and is augmented by live community updates—what we call a Session. Sessions are real-time ambient stories tied to a place, not a person.",
+      "tagline": "Think Instagram stories + Google Maps + Reddit = Coffi."
+    },
+    "evolutionToEverywhere": {
+      "sectionTitle": "The Evolution",
+      "title": "From Coffees to Everywhere",
+      "mainContent": "Initially focused on cafés, we expanded to parks, lookouts, libraries, and more. Places are polymorphic, with unique attributes and filters depending on type.",
+      "secondaryContent": "Sessions adapt too—vibes in a rooftop vs. quietness in a library. This flexibility makes Coffi valuable across different contexts."
+    },
+    "communityDrivenDesign": {
+      "sectionTitle": "Philosophy",
+      "title": "Community-Driven Design",
+      "subtitle": "A space where moments and places converge to create something greater",
+      "mainContent": "Coffi behaves like story-based social media, but for places. People share moments anonymously by location. There's no feed of people—only updates of vibes. This approach creates a unique atmosphere where the focus is on the quality of the space rather than who's posting.",
+      "secondaryContent": "Each place becomes a canvas of real-time experiences, shaped collectively and enriched with every new visitor. It's inclusive, ambient, and purpose-driven.",
+      "placeFirst": {
+        "title": "Place-First",
+        "description": "Unlike person-centered networks, Coffi prioritizes space over identity."
+      },
+      "collectiveIntelligence": {
+        "title": "Collective Intelligence",
+        "description": "Community insights create dynamic, real-time guides to each location."
+      },
+      "ambientAwareness": {
+        "title": "Ambient Awareness",
+        "description": "Real-time \"vibes\" help users find the perfect match for their current needs."
+      },
+      "quote": "In a world of personality-driven platforms, Coffi chooses to put the spotlight on places—letting the spaces speak for themselves."
+    },
+    "businessStrategy": {
+      "sectionTitle": "The Business",
+      "title": "Monetization Strategy",
+      "freeLayer": {
+        "title": "Free Layer",
+        "description": "Full database access + reviews and basic filtering"
+      },
+      "premiumLayer": {
+        "title": "Premium Layer",
+        "description": "Real-time sessions, personalization, exclusive places"
+      },
+      "gamification": {
+        "title": "Gamification",
+        "description": "Points for contributions, redeemable for benefits"
+      },
+      "venueDashboard": {
+        "title": "Venue Dashboard",
+        "description": "Insights for business owners (coming soon)"
+      }
+    },
+    "longTermVision": {
+      "sectionTitle": "Looking Forward",
+      "title": "Long-Term Vision",
+      "description": "Coffi is set to evolve beyond a simple discovery tool into an ecosystem that supports digital nomads throughout their journey:",
+      "item1": "Smart recommendation engine powered by AI",
+      "item2": "Productivity tools integration",
+      "item3": "Web3 layer for reward trust and verification",
+      "item4": "Global nomad graph connecting people and places"
+    },
+    "concluding": {
+      "title": [
+        "Where",
+        "Technology",
+        "Meets",
+        "Serendipity"
+      ],
+      "description": "I designed and built the entire platform—from frontend to backend, cloud infrastructure to real-time systems—because the world deserves better ways to connect with space and purpose.",
+      "buttonTry": "Try Coffi Now",
+      "buttonFollow": "Follow @letscoffi"
+    }
+  }
+}

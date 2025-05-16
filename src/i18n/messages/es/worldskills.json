@@ -1,0 +1,124 @@
+{
+  "companyName": "WorldSkills",
+  "role": "Competidor en Desarrollo Web",
+  "mission": "Entrenado para construir soluciones web centradas en el usuario bajo presión, combinando código, diseño y rendimiento para cumplir con estándares globales.",
+  "keyAchievements": [
+    {
+      "title": "🥇 1º – Campeón de Desarrollo Web (Ciudad, Regional y Nacional, Colombia)",
+      "description": "Coronado campeón nacional en Desarrollo Web tras ganar una serie de rondas competitivas a nivel de ciudad, regional y nacional — demostrando dominio técnico, creatividad y rendimiento bajo presión."
+    },
+    {
+      "title": "🥈 2º – WorldSkills Américas 2021 (Guatemala)",
+      "description": "Obtuvo el segundo lugar entre los mejores desarrolladores web de las Américas, destacándose en la resolución de problemas del mundo real, experiencia de usuario y entrega rápida de código de alta calidad en un entorno cronometrado."
+    },
+    {
+      "title": "🌍 14º – WorldSkills Global 2022 (Corea del Sur)",
+      "description": "Representó a Colombia en el escenario global, clasificándose en el puesto 14 a nivel mundial en la categoría de Tecnologías Web — compitiendo bajo estándares internacionales y trabajando estrechamente con entrenadores de élite de Corea del Sur y América Latina."
+    }
+  ],
+  "timelineSubtitle": "Periodo de Competición",
+  "backButton": "Volver al Portafolio",
+  "summary": {
+    "title": "Resumen"
+  },
+  "about": {
+    "title": "Acerca de WorldSkills",
+    "description": "Las competencias de WorldSkills son el estándar de oro en excelencia de habilidades. Inspiran a los jóvenes competidores a alcanzar nuevas alturas, ayudándolos a convertir su pasión en una profesión. El recorrido de la competencia abarca desde clasificatorias regionales hasta campeonatos nacionales, culminando en competencias internacionales donde los mejores jóvenes profesionales del mundo muestran su talento. Más allá de la competencia, WorldSkills desarrolla habilidades a través de estándares globales de formación y sistemas de evaluación comparativa, mientras influye en la industria, el gobierno y los educadores mediante la cooperación y la investigación — construyendo una plataforma global de habilidades para todos."
+  },
+  "metrics": {
+    "title": "Métricas Clave",
+    "levels": { "label": "Niveles de Competición", "description": "Ciudad, Regional, Nacional, Internacional" },
+    "competitors": { "label": "Competidores Enfrentados", "description": "En todas las etapas" },
+    "techStack": { "label": "Tecnologías Usadas", "description": "Stack principal durante las competencias" },
+    "testProjects": { "label": "Proyectos de Prueba", "description": "Completados bajo presión" }
+  },
+  "techStack": {
+    "title": "Stack Tecnológico",
+    "subtitle": "Herramientas y lenguajes principales"
+  },
+  "pillars": {
+    "title": "Pilares de WorldSkills",
+    "subtitle": "Valores Fundamentales e Impacto",
+    "items": [
+      {
+        "title": "Inspirar",
+        "description": "WorldSkills inspira a los jóvenes a desarrollar una pasión por las habilidades y buscar la excelencia a través de competencias y promociones. Como competidor, me motivó a superar mis límites técnicos, dominando tanto los aspectos creativos como de ingeniería del desarrollo web mientras actuaba bajo presión frente a audiencias y jueces."
+      },
+      {
+        "title": "Desarrollar",
+        "description": "La competencia desarrolla habilidades a través de estándares globales de formación y sistemas de evaluación comparativa que mejoran la participación de la industria. Entrenar para WorldSkills mejoró mi precisión técnica, gestión del tiempo, habilidades para resolver problemas y adaptabilidad para trabajar con tecnologías y requisitos variados."
+      },
+      {
+        "title": "Influir",
+        "description": "WorldSkills influye en la industria, el gobierno y los educadores mediante la cooperación y la investigación — construyendo una plataforma global de habilidades para todos. Participar en este movimiento global me conectó con expertos de la industria, líderes educativos y otros competidores, creando una red profesional que abarca múltiples países."
+      },
+      {
+        "title": "Habilidad en Tecnologías Web",
+        "description": "El diseño y desarrollo web es una de las habilidades más complejas y diversas en la competencia. Requiere establecer relaciones profesionales con clientes, un profundo entendimiento de los requisitos, sólidas habilidades de diseño y comunicación, y capacidades técnicas para crear bases de datos, construir programas, probar y depurar sitios web bajo plazos ajustados."
+      }
+    ]
+  },
+  "journey": {
+    "title": "Mi Trayectoria en WorldSkills",
+    "levelLabel": "Nivel de Competición",
+    "achievementLabel": "Logro Clave",
+    "phases": [
+      {
+        "title": "Fase 1: Competencias Regionales",
+        "description": "Comenzó el recorrido de WorldSkills a nivel local, compitiendo contra compañeros talentosos de mi región.",
+        "solution": "Demostró competencia en tecnologías web básicas a través de proyectos de prueba cronometrados que evaluaron tanto habilidades técnicas como creatividad. Aseguró con éxito el primer lugar, ganando el avance a la competencia a nivel nacional y estableciendo una base para el desarrollo técnico progresivo.",
+        "level": "Regional",
+        "achievement": "1er Lugar"
+      },
+      {
+        "title": "Fase 2: Campeonatos Nacionales",
+        "description": "Representó a mi región en la competencia nacional de WorldSkills en Colombia, enfrentando a los desarrolladores web más talentosos del país.",
+        "solution": "Compitió en desafíos de varios días que pusieron a prueba habilidades de desarrollo full-stack, pensamiento de diseño y rendimiento bajo presión. Ganó la medalla de oro en la habilidad de Tecnologías Web, convirtiéndose en el campeón nacional y calificando para representar a Colombia en competencias internacionales.",
+        "level": "Nacional",
+        "achievement": "Medalla de Oro"
+      },
+      {
+        "title": "Fase 3: WorldSkills Américas",
+        "description": "Compitió contra campeones de países de toda la región de las Américas, elevando la dificultad técnica y los estándares de rendimiento.",
+        "solution": "Completó proyectos complejos con requisitos más estrictos y plazos más ajustados que los niveles anteriores. Obtuvo una medalla de plata (2º lugar) a nivel continental, demostrando las capacidades competitivas de Colombia en desarrollo web en un escenario internacional.",
+        "level": "Continental (Américas)",
+        "achievement": "Medalla de Plata (2º Lugar)"
+      },
+      {
+        "title": "Fase 4: WorldSkills Internacional",
+        "description": "Representó a Colombia en las olimpiadas globales de habilidades en Corea del Sur, compitiendo contra los jóvenes desarrolladores web más destacados del mundo.",
+        "solution": "Se sometió a una preparación intensiva con expertos internacionales, seguida de cuatro días de competencia rigurosa al más alto nivel. Logró el puesto 14 a nivel mundial, ganando una experiencia invaluable a través del intercambio cultural y el dominio técnico mientras establecía conexiones con líderes de la industria y otros competidores en todo el mundo.",
+        "level": "Internacional (Global)",
+        "achievement": "14º Puesto Mundial"
+      }
+    ]
+  },
+  "training": {
+    "title": "Proyectos Clave de Entrenamiento",
+    "challengeLabel": "Desafío",
+    "solutionLabel": "Solución y Aprendizaje",
+    "tags": {
+      "project1": { "type": "Programa Internacional", "focus": "Aprendizaje Intercultural" },
+      "project2": { "type": "", "focus": "" },
+      "project3": { "type": "", "focus": "" }
+    }
+  },
+  "projects": [
+    {
+        "title": "Programa de Intercambio de Conocimientos entre Corea del Sur y Colombia",
+        "description":
+          "Iniciativa de formación internacional de dos semanas diseñada para fomentar la colaboración entre expertos y competidores de WorldSkills de Corea del Sur y Colombia.",
+        "solution":
+          "Participé en un entorno de aprendizaje intercultural centrado en estrategias de alto rendimiento para competencias internacionales. Compartí técnicas, refiné habilidades técnicas y absorbí mejores prácticas globales en desarrollo web, trabajo en equipo y ejecución bajo límites de tiempo."
+        }
+  ],
+  "nav": {
+    "prev": "Certiblock",
+    "studio": "J Studio",
+    "next": "Platzi Master"
+  },
+  "notFound": {
+    "title": "Trabajo No Encontrado",
+    "returnHome": "Volver al Inicio"
+  }
+}

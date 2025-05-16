@@ -1,0 +1,138 @@
+{
+  "data": {
+    "companyName": "Platzi Master",
+    "role": "Frontend Track – First Generation",
+    "mission": "Trained in modern frontend engineering with mentorship from senior engineers and leading Spanish-speaking tech educators.",
+    "keyAchievements": [
+      { "title": "Modern React workflows (Hooks, Redux, SSR)", "description": "" },
+      { "title": "Scalable component design & accessibility", "description": "" },
+      { "title": "Agile teamwork with real-world project delivery", "description": "" },
+      { "title": "Direct coaching from senior engineers & expert mentors", "description": "" }
+    ],
+    "projects": [
+      {
+        "title": "Advanced Frontend Architecture",
+        "description": "Trained to build scalable, high-performance frontend systems using React and modern tooling.",
+        "solution": "Learned to go beyond implementation — designing maintainable component systems, writing human-readable code, and optimizing performance at scale. Developed skills to bridge the gap between design systems and engineering with a product-focused mindset."
+      },
+      {
+        "title": "Remote Agile Collaboration",
+        "description": "Worked in high-pressure, international remote teams using modern product workflows.",
+        "solution": "Collaborated with developers across Latin America and Europe using agile methodologies, daily standups, and iterative delivery. Learned how to adapt quickly, plan effectively, and execute under real-world time constraints."
+      },
+      {
+        "title": "Learning Efficiency Systems",
+        "description": "Developed a system for mastering new technologies fast under high-intensity training.",
+        "solution": "Built personalized study workflows using meta-learning principles to absorb complex topics faster. Applied this to learn full-stack technologies in compressed timelines, resulting in faster delivery and deeper technical insight."
+      }
+    ]
+  },
+  "pageText": {
+    "backButton": "Back to Portfolio",
+    "headerTimeline": "5-month intensive + continued growth",
+    "summarySection": {
+      "title": "Program Summary",
+      "aboutTitle": "About Platzi Master",
+      "aboutDescription": "An intensive five-month educational program launched in 2020, designed to elevate technical skills and foster professional growth in frontend, backend, data analysis, and data engineering. While the core program lasted five months, the learning journey continued as participants refined their skills, built their portfolios, and networked until they secured positions at modern tech companies. The program combined personalized mentoring, specialized workshops, and access to an exclusive network of experts, preparing participants to face the challenges of the rapidly evolving tech landscape."
+    },
+    "metricsSection": {
+      "title": "Program Metrics",
+      "durationLabel": "Duration",
+      "durationValue": "5 Months",
+      "durationDescription": "Intensive training",
+      "participantsLabel": "Participants",
+      "participantsValue": "250+",
+      "participantsDescription": "First generation",
+      "techStackLabel": "Tech Stack",
+      "techStackDescription": "Core technologies",
+      "projectsLabel": "Projects",
+      "projectsValue": "16+",
+      "projectsDescription": "Weeks of practical work"
+    },
+    "techStackSection": {
+      "title": "Technology Stack",
+      "coreCompetencies": "Core competencies"
+    },
+    "programComponentsSection": {
+      "title": "Program Components",
+      "coreCurriculum": "Core curriculum elements",
+      "components": [
+        {
+          "title": "Personalized Mentorship",
+          "description": "One-on-one guidance from industry professionals who provided tailored feedback and career advice. Mentors helped identify strengths and areas for improvement, sharing real-world experiences and best practices from the field."
+        },
+        {
+          "title": "Specialized Technical Workshops",
+          "description": "In-depth sessions on modern frontend frameworks, backend architecture, and industry best practices. These workshops provided both theoretical knowledge and hands-on implementation opportunities in small groups."
+        },
+        {
+          "title": "Real-world Project Development",
+          "description": "Collaborative 16-week projects that simulated professional development environments. Students worked in agile teams to deliver functional applications while managing code quality, performance, and user experience."
+        },
+        {
+          "title": "Professional Network Building",
+          "description": "Access to an exclusive community of technology leaders and fellow participants. Regular networking events, speaker sessions, and collaboration opportunities helped establish valuable industry connections."
+        }
+      ]
+    },
+    "programPhasesSection": {
+      "title": "Program Phases",
+      "phases": [
+        {
+          "title": "Phase 1: Diagnosis",
+          "description": "Comprehensive assessment of technical and professional skills to identify strengths and growth opportunities.",
+          "solution": "Through personalized interviews and practical challenges, participants received a detailed evaluation of their technical proficiency and professional competencies. This assessment created the foundation for a tailored learning path throughout the program.",
+          "purposeLabel": "Purpose",
+          "processLabel": "Process",
+          "timelineLabel": "Assessment Period",
+          "timelineDetail": "Week 1-2"
+        },
+        {
+          "title": "Phase 2: Development",
+          "description": "Immersive 16-week project experience with mentor support and specialized workshop participation.",
+          "solution": "Participants were assigned to collaborative teams where they worked on practical projects. With mentor guidance, they explored new concepts and techniques, participated in specialized workshops, and refined their technical skills while building production-quality applications.",
+          "purposeLabel": "Purpose",
+          "processLabel": "Process",
+          "timelineLabel": "Project Period",
+          "timelineDetail": "Week 3-18"
+        },
+        {
+          "title": "Phase 3: Feedback",
+          "description": "Reflection on progress and constructive feedback on performance to prepare for career advancement.",
+          "solution": "The final phase provided participants with a comprehensive review of their growth throughout the program. Armed with constructive feedback and a personalized action plan, graduates were prepared to confidently take the next step in their careers.",
+          "purposeLabel": "Purpose",
+          "processLabel": "Process",
+          "timelineLabel": "Evaluation Period",
+          "timelineDetail": "Week 19-20"
+        },
+        {
+          "title": "Phase 4: Career Progression",
+          "description": "Continuing the learning journey beyond the core program to secure positions in modern tech companies.",
+          "solution": "After completing the intensive 5-month program, participants continued to develop their skills through self-directed learning, portfolio building, networking, and interview preparation. This extended phase was crucial for translating program learnings into real-world career advancement opportunities.",
+          "purposeLabel": "Purpose",
+          "processLabel": "Process",
+          "timelineLabel": "Extended Learning",
+          "timelineDetail": "Post Program"
+        }
+      ]
+    },
+    "keyProjectsSection": {
+      "title": "Key Projects",
+      "challengeLabel": "Challenge",
+      "outcomeLabel": "Outcome",
+      "projectTags": [
+        { "tagLine": "Architecture & Development", "tagDetail": "Technical Focus" },
+        { "tagLine": "Collaboration & Teamwork", "tagDetail": "Professional Skills" },
+        { "tagLine": "Learning & Growth", "tagDetail": "Meta Learning" }
+      ]
+    },
+    "navigation": {
+      "prevPageName": "WorldSkills",
+      "jStudio": "J Studio"
+    },
+    "notFound": {
+      "title": "Job data not found",
+      "returnHome": "Return home"
+    }
+  }
+}

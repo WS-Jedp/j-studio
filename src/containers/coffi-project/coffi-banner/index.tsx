@@ -3,20 +3,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import { CoffiSimpleButton } from "../coffi-buttons";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export function CoffiBanner({ scrollY }: { scrollY: number }) {
+  const locale = useLocale();
   const t = useTranslations("coffi-container");
   const router = useRouter();
+
+  // Calculate transform values once to avoid recalculations in style
+  const translateY = Math.min(scrollY * 0.03, 50); // Capped maximum value
+  const scale = 1 + Math.min(scrollY * 0.00002, 0.05); // Capped maximum scale
+  const opacityValue = Math.max(1 - scrollY * 0.0003, 0.5); // Minimum opacity of 0.5
 
   return (
     <article
       className="relative w-full md:w-auto row-span-5 md:row-auto h-full text-j-deep-black p-9 rounded-3xl col-span-1 md:col-span-4 ease-linear transition-all duration-500 bg-gradient-to-br from-white to-white shadow-lg hover:shadow-xl hover:-translate-y-1 border border-white/10 backdrop-blur-sm overflow-hidden"
       style={{
-        transform: `translateY(${scrollY * 0.05}px) scale(${
-          1 + scrollY * 0.00003
-        })`,
-        opacity: `${1 - scrollY * 0.0005}`,
+        transform: `translateY(${translateY}px) scale(${scale})`,
+        opacity: opacityValue,
+        willChange: 'transform, opacity'
       }}
     >
       {/* Grid pattern */}
@@ -81,7 +86,7 @@ export function CoffiBanner({ scrollY }: { scrollY: number }) {
       <div className="relative w-full md:w-3/5 mt-6 z-10">
         <CoffiSimpleButton
           text={t("coffiBanner.learnMore")}
-          action={() => router.push("/coffi-project")}
+          action={() => router.push(`${locale}/coffi-project`)}
           full
         />
       </div>
