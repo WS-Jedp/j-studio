@@ -2,8 +2,11 @@ import { useEffect, useState } from "react";
 import { CoffiSimpleDarkButton } from "../coffi-buttons";
 import Image from "next/image";
 import { Clock, MapPin, Trophy } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export const CoffiTryTheApp = ({ scrollY }: { scrollY: number }) => {
+  const t = useTranslations("coffi-container");
+
   return (
     <article
       className="relative flex flex-col items-center justify-between w-full md:w-auto row-span-2 md:row-auto h-full p-9 rounded-3xl col-span-1 md:col-span-2 ease-linear transition-all duration-500 bg-gradient-to-br from-coffi-blue/90 to-coffi-purple/90 shadow-lg hover:shadow-xl hover:-translate-y-1 backdrop-blur-sm overflow-hidden"
@@ -24,16 +27,10 @@ export const CoffiTryTheApp = ({ scrollY }: { scrollY: number }) => {
 
       <div>
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-          Try Coffi{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-coffi-blue/80">
-            —
-          </span>{" "}
-          Work Where You Thrive
+          {t("coffiTryTheApp.title")}
         </h2>
         <p className="text-md font-light mt-6 leading-relaxed opacity-90">
-          Discover cafés, coworks, and hidden corners curated for deep work and
-          real connection — powered by community insights and designed for
-          modern digital nomads.
+          {t("coffiTryTheApp.description")}
         </p>
       </div>
 
@@ -41,28 +38,28 @@ export const CoffiTryTheApp = ({ scrollY }: { scrollY: number }) => {
         <div className="relative w-full flex flex-col md:flex-row items-center justify-center gap-6 py-4">
           {/* Feature Highlights */}
           <div className="flex flex-col gap-3 text-white max-w-[300px]">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-start text-start gap-2">
               <div className="bg-white/20 p-2 rounded-full">
                 <MapPin size={15} />
               </div>
               <span className="text-sm font-medium">
-                Find perfect workspaces nearby
+                {t("coffiTryTheApp.features.workspaces")}
               </span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-start text-start gap-2">
               <div className="bg-white/20 p-2 rounded-full">
                 <Trophy size={15} />
               </div>
               <span className="text-sm font-medium">
-                Redeem rewards and discounts
+                {t("coffiTryTheApp.features.rewards")}
               </span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center text-start gap-2">
               <div className="bg-white/20 p-2 rounded-full">
                 <Clock size={15} />
               </div>
               <span className="text-sm font-medium">
-                Real-time insights updates
+                {t("coffiTryTheApp.features.insights")}
               </span>
             </div>
           </div>
@@ -70,7 +67,7 @@ export const CoffiTryTheApp = ({ scrollY }: { scrollY: number }) => {
       </section>
 
       <CoffiSimpleDarkButton
-        text="Explore your next workspace"
+        text={t("coffiTryTheApp.cta")}
         action={() => window.open("https://coffi.com.co", "_blank")}
         full
         shimmer

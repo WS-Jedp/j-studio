@@ -1,0 +1,61 @@
+{
+  "beginnings": {
+    "title": "01 / INICIOS",
+    "heading": [
+      "No me convertí en ingeniero de software para escribir código.",
+      "Me convertí en uno para construir mundos."
+    ],
+    "content": [
+      "Comencé joven, impulsado por la curiosidad — no solo sobre cómo funcionan las cosas, sino por qué las personas las usan.",
+      "No me conformaba con construir herramientas; quería crear experiencias — de esas que hacen la vida más fácil, fluida y significativa.",
+      "Lo que me cautivó fue la idea de que con unas pocas pulsaciones de teclas, podías dar forma a algo real — algo útil, hermoso, vivo."
+    ]
+  },
+  "process": {
+    "title": "02 / PROCESO",
+    "heading": "Construí una capa a la vez — hasta que pude construirlo todo.",
+    "content": [
+      "Desde prototipos iniciales hasta sistemas listos para producción, he recorrido todo el stack y de vuelta.",
+      "He usado todos los sombreros: diseñador, arquitecto, artesano del frontend, estratega del backend. He convertido bocetos en servilletas en plataformas completas.",
+      "Eventualmente, construí Coffi — mi creación más orgullosa, donde lideré cada paso desde el concepto hasta la escala, creando no solo una aplicación, sino una visión para el futuro del trabajo digital, una plataforma nacida desde cero y crecida con propósito."
+    ]
+  },
+  "competition": {
+    "title": "03 / COMPETENCIA",
+    "heading": [
+      "Aprendí a construir rápido, bajo presión —",
+      "y con gracia."
+    ],
+    "content": [
+      "Representando a Colombia en WorldSkills, me convertí en campeón nacional, luego escalé las filas internacionales. Allí, perfeccioné no solo habilidades — sino claridad, resistencia a la presión y desempeño bajo condiciones extremas.",
+      "Esos meses intensos me enseñaron cómo rendir bajo presión, cómo aprender rápido y cómo construir con precisión y belleza."
+    ]
+  },
+  "design": {
+    "title": "04 / DISEÑO",
+    "heading": [
+      "No separo el diseño del código —",
+      "Los veo como una conversación."
+    ],
+    "content": [
+      "El diseño y el código no son disciplinas separadas. Son voces en la misma conversación.",
+      "Codifico como un diseñador, y diseño como un ingeniero. Creo en sistemas que se sientan bien de usar, porque la intuición también debe ser diseñada."
+    ]
+  },
+  "lifestyle": {
+    "title": "05 / ESTILO DE VIDA",
+    "heading": "Me muevo libremente — y lo que construyo también.",
+    "content": [
+      "Vivo y trabajo con ligereza. Remoto por defecto. Impulsado por la curiosidad.",
+      "Nómada por elección, recolecto lugares, ideas e inspiraciones y las vierto en las cosas que construyo.",
+      "Porque el gran software, como una gran vida, debe ser adaptable, intencional y libre."
+    ]
+  },
+  "future": {
+    "title": "06 / FUTURO",
+    "heading": "Sigo aprendiendo. Sigo construyendo. Siempre persiguiendo algo mejor.",
+    "content": [
+      "Un ingeniero. Un diseñador. Un fundador de espíritu. Arraigado en la creatividad, entrenado bajo presión y siempre en movimiento — hacia lo que sigue."
+    ]
+  }
+}

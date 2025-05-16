@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
 
@@ -49,6 +50,7 @@ export const JobCard: React.FC<JobCardProps & { action: () => void }> = ({
   backgroundColor = "#5A67D8", // Default purple background if none provided
   action,
 }) => {
+  const t = useTranslations("experience")
   // Convert hex to rgba for background with opacity
   const getRgbaFromHex = (hex: string, alpha = 0.1) => {
     // Remove # if present
@@ -155,7 +157,7 @@ export const JobCard: React.FC<JobCardProps & { action: () => void }> = ({
         <div>
           <div className="mb-4">
             <h3 className="text-xl font-bold text-j-celestial-white mb-1">
-              Resume
+              {t('jobs.resume')}
             </h3>
             <p className="text-sm font-light text-j-celestial-white/70">
               {mission}

@@ -1,0 +1,80 @@
+{
+  "companyName": "BeeReaders",
+  "role": "Semi-Senior Software Engineer",
+  "mission": "Owned frontend delivery and bridged backend/frontend workflows for an EdTech platform used across LATAM.",
+  "keyAchievements": [
+    {
+      "title": "LATAM Payment System Integration",
+      "description": "Led multi-provider checkout development (Wompi, Mercado Pago) across multiple countries."
+    },
+    {
+      "title": "Full Product Lifecycle",
+      "description": "Delivered mobile apps, internal tools, and infrastructure in sync with product and business goals."
+    },
+    {
+      "title": "Cloud & Scalability",
+      "description": "Supported AWS + Terraform-based infrastructure to handle high traffic and concurrent users."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Reader Level Detection Algorithm",
+      "description": "Developed a custom algorithm to automatically detect reading proficiency and classify users based on their oral reading performance, using AI-generated transcriptions.",
+      "solution": "Designed a system that analyzes AI-transcribed audio to identify mispronunciations, skipped words, and fluency errors. The algorithm classifies users by reading level and error type, enabling automated assessments for schools across LATAM."
+    },
+    {
+      "title": "School Locator Tool for Non-Client Outreach",
+      "description": "Internal platform built to support the marketing team in identifying potential school leads based on geolocation.",
+      "solution": "Implemented a scraping and API integration system with government data sources, allowing users to filter schools by distance and region using latitude/longitude. Delivered a web tool to streamline lead generation based on proximity to target zones."
+    },
+    {
+      "title": "Multi-Region Payment Checkout Integration",
+      "description": "Unified payment flow for the web platform supporting different providers across Latin America.",
+      "solution": "Led the frontend/backend integration of Wompi (Colombia) and Mercado Pago (other countries). Built a dynamic, UX-optimized flow that routes users to the correct payment processor based on region and required data fields."
+    },
+    {
+      "title": "Frontend Engineering Leadership",
+      "description": "Led the development of all user-facing web projects across BeeReaders.",
+      "solution": "Responsible for major updates, architecture, and feature implementations on the main user platform, landing pages, data visualization dashboards, and marketing interfaces. Ensured consistency in design systems and scalability of frontend modules."
+    },
+    {
+      "title": "Book Reading Experience Upgrade",
+      "description": "Redesigned the core digital book reading feature to enhance user engagement and retention.",
+      "solution": "Implemented a new UI/UX that allowed users to track progress, take inline notes, and leave comments within books. Focused on accessibility, performance, and modular design to enable future feature expansions."
+    }
+  ],
+    "backToPortfolio": "Back to Portfolio",
+    "summaryTitle": "Summary",
+    "aboutTitle": "About BeeReaders",
+    "aboutDescription": "BeeReaders is an EdTech platform that bridges the gap between technology and education, focusing on improving literacy across LATAM.",
+    "keyAchievementsTitle": "Key Achievements",
+    "keyProjectsTitle": "Key Projects",
+    "challengeTitle": "Challenge",
+    "solutionTitle": "Solution",
+    "jobDataNotFound": "Job data not found.",
+    "returnHome": "Return to Home",
+    "portfolio": "Portfolio",
+    "studio": "Studio",
+    "certiblock": "Certiblock",
+    "schoolsLabel": "Schools",
+    "schoolsValue": "500+",
+    "schoolsDescription": "Schools impacted across LATAM.",
+    "projectsLabel": "Projects",
+    "projectsValue": "10+",
+    "projectsDescription": "Major projects delivered.",
+    "techStackLabel": "Tech Stack",
+    "techStackDescription": "Technologies used in BeeReaders.",
+    "impactLabel": "Impact",
+    "impactValue": "100k+",
+    "impactDescription": "Students benefited from the platform.",
+    "coreCompetencies": "Core Competencies",
+    "notableContributions": "Notable Contributions",
+    "developmentProject": "Development Project",
+    "productInitiative": "Product Initiative",
+    "timelineQ4": "Q4 2024",
+    "timelineQ2": "Q2 2023",
+    "timelineQ1": "Q1 2022",
+    "keyMetricsTitle": "Key Metrics",
+    "techStackTitle": "Technology Stack",
+    "experienceYears": "years experience"
+}

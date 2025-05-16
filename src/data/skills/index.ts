@@ -74,7 +74,7 @@ export const skillGroupInfo: Record<SkillGroup, SkillGroupInfo> = {
 export const languages: Skill[] = [
   {
     name: "Node",
-    icon: "javascript",
+    icon: "node",
     description:
       "The language of the web. I use JS for interactive web applications.",
     groupType: SkillGroup.LANGUAGE,
@@ -258,7 +258,7 @@ export const database: Skill[] = [
   },
   {
     name: "Amazon RDS",
-    icon: "aws",
+    icon: "awsRDS",
     description: "Managed SQL service for scalability and reliability.",
     groupType: SkillGroup.DATABASE,
     skillType: SkillType.CORE,
@@ -266,7 +266,7 @@ export const database: Skill[] = [
   {
     name: "DynamoDB",
     description: "AWS-native NoSQL DB, scalable and fast.",
-    icon: "dynamodb",
+    icon: "dynamoDB",
     groupType: SkillGroup.DATABASE,
     skillType: SkillType.CORE,
   },
@@ -551,7 +551,7 @@ export const threeColumnSkills: Skill[][] = [
     },
     {
       name: "Node",
-      icon: "javascript",
+      icon: "node",
       description:
         "The language of the web. I use JS for interactive web applications.",
       groupType: SkillGroup.LANGUAGE,

@@ -1,0 +1,25 @@
+{
+  "introduction": {
+    "title": "Greetings, I'm Juanes",
+    "description": "24-year-old Colombian Full-stack Software Engineer based in Medellín, passionate about crafting software solutions that inspire, connect, and genuinely transform people's lives."
+  },
+  "experience": {
+    "title": "Student Of Life",
+    "description": "Being a software engineer is not just a job; it is a way of life. I am constantly learning and evolving, always seeking new challenges and opportunities to grow."
+  },
+  "about-me": {
+    "title": "About Me",
+    "description": "I am a passionate software engineer with a strong background in full-stack development. I thrive on challenges and enjoy finding innovative solutions to complex problems."
+  },
+  "main": {
+    "heading": "Crafting Digital Experiences From Concept to Scale",
+    "paragraph": "Art and Technology may seem like two different and distant worlds, but building a bridge between them gives us the opportunity to discover a new world full of possibilities, where we can create and express human potential without limits."
+  },
+  "footer": {
+    "name": "Juan Esteban Deossa Pertuz",
+    "role": "Software Engineer"
+  },
+  "actions": {
+    "download": "Download CV"
+  }
+}

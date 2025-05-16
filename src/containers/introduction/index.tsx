@@ -1,7 +1,10 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useTranslations } from 'next-intl';
 
 export default function Introduction() {
+    const t = useTranslations("introduction");
+  
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -88,9 +91,7 @@ export default function Introduction() {
   // Execute card-specific actions when loading completes
   const executeCardAction = (cardType: string) => {
     // TODO: Add your action logic here according to the card type
-    console.log(`Action complete for ${cardType} card!`);
     
-    // Reset after 2 seconds
     setTimeout(() => {
       setIsActionComplete(false);
       setClickedCard('');
@@ -628,10 +629,10 @@ export default function Introduction() {
         </AnimatePresence>
         
         <h2 className="font-bold text-4xl md:text-7xl bg-gradient-to-r from-blue-200 to-purple-300 text-transparent bg-clip-text">
-          End to End Digital Development
+          {t('e2e.title')}
         </h2>
         <p className="mt-4 text-md text-start text-white/80">
-          Crafting seamless experiences through code, design, and innovative thinking
+          {t('e2e.description')}
         </p>
         <div className="absolute right-6 bottom-6 w-12 h-12 border border-white/10 rounded-full flex items-center justify-center opacity-70">
           <span className="text-xs text-white/80">01</span>
@@ -647,7 +648,7 @@ export default function Introduction() {
         custom={1}
         onMouseEnter={() => handleMouseEnter({ 
           title: 'Experience', 
-          description: 'Over 4 years building innovative digital products',
+          description: 'Over 5 years building innovative digital products',
           type: 'experience'
         })}
         onMouseLeave={handleMouseLeave}
@@ -675,7 +676,7 @@ export default function Introduction() {
         </AnimatePresence>
         
         <h2 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-cyan-200 to-blue-300 text-transparent bg-clip-text">+5</h2>
-        <p className="font-light text-white/80">Years of Experience Building Digital Products</p>
+        <p className="font-light text-white/80">{t('experience.description')}</p>
         <div className="absolute right-6 bottom-6 w-10 h-10 border border-white/10 rounded-full flex items-center justify-center opacity-70">
           <span className="text-xs text-white/80">02</span>
         </div>
@@ -718,8 +719,8 @@ export default function Introduction() {
           )}
         </AnimatePresence>
         
-        <h2 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-purple-200 to-pink-300 text-transparent bg-clip-text">International</h2>
-        <p className="font-light text-white/80">Award-Winning Competition Experience</p>
+        <h2 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-purple-200 to-pink-300 text-transparent bg-clip-text">{t('internationalAwwardWinning.title')}</h2>
+        <p className="font-light text-white/80">{t('internationalAwwardWinning.description')}</p>
         <div className="absolute right-6 bottom-6 w-10 h-10 border border-white/10 rounded-full flex items-center justify-center opacity-70">
           <span className="text-xs text-white/80">03</span>
         </div>
@@ -761,8 +762,8 @@ export default function Introduction() {
           )}
         </AnimatePresence>
         
-        <h2 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-emerald-200 to-cyan-300 text-transparent bg-clip-text">Full Stack</h2>
-        <p className="font-light text-white/80">Software Engineer</p>
+        <h2 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-emerald-200 to-cyan-300 text-transparent bg-clip-text">{t('fullstack.title')}</h2>
+        <p className="font-light text-white/80">{t('fullstack.description')}</p>
         <div className="absolute right-6 bottom-6 w-10 h-10 border border-white/10 rounded-full flex items-center justify-center opacity-70">
           <span className="text-xs text-white/80">04</span>
         </div>
@@ -805,7 +806,7 @@ export default function Introduction() {
         </AnimatePresence>
         
         <h2 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-amber-200 to-orange-300 text-transparent bg-clip-text">UI/UX</h2>
-        <p className="font-light text-white/80">Transforming Ideas into Powerful Solutions</p>
+        <p className="font-light text-white/80">{t('uiux.description')}</p>
         <div className="absolute right-6 bottom-6 w-10 h-10 border border-white/10 rounded-full flex items-center justify-center opacity-70">
           <span className="text-xs text-white/80">05</span>
         </div>

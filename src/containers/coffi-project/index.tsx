@@ -1,9 +1,10 @@
 import { useParallax } from "@/hooks/useParallax";
 import { CoffiBanner } from "./coffi-banner";
 import { CoffiTryTheApp } from "./coffi-try-the-app";
-
+import { useTranslations } from "next-intl";
 
 export default function CoffiProject() {
+  const t = useTranslations("coffi-container");
   const { ref: sectionRef, scrollY } = useParallax();
 
   return (
@@ -22,7 +23,7 @@ export default function CoffiProject() {
             opacity: `${Math.max(1 - scrollY * 0.001, 0)}`,
           }}
         >
-          Coffi Project
+          {t("coffiProject.title")}
         </h2>
         <p
           className="max-w-lg text-center ease-linear transition-transform duration-500 z-0"
@@ -31,11 +32,7 @@ export default function CoffiProject() {
             opacity: `${Math.max(1 - scrollY * 0.001, 0)}`,
           }}
         >
-          a platform built from the ground up to help digital nomads and remote
-          workers find spaces where they can truly thrive. From idea to
-          deployment, every line of code, design choice, and business decision
-          was made by me — not just to solve a problem, but to craft an
-          experience that moves with the way we live and work today.
+          {t("coffiProject.description")}
         </p>
       </section>
       <div className="w-full h-[90%] md:h-[90vh] grid grid-cols-1 md:grid-cols-6 gap-6 mt-12 p-0 md:p-9">

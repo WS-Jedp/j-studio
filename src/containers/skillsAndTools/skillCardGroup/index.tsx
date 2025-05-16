@@ -1,6 +1,7 @@
 import { allSkilsByGroup, SkillGroup, skillGroupInfo } from "@/data/skills";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useState, useEffect, useMemo } from "react";
 
 interface SkillGroupInfo {
@@ -12,6 +13,7 @@ export const SkillCardGroup = ({
   selectedGroup,
   setSelectedGroup,
 }: SkillGroupInfo) => {
+  const t = useTranslations("skills");
   const [displayGroup, setDisplayGroup] = useState(selectedGroup);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -96,8 +98,8 @@ export const SkillCardGroup = ({
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             {selectedGroup
-              ? skillGroupInfo[selectedGroup].title
-              : "My Language of Building"}
+              ? t(`groups.${selectedGroup}.title`)
+              : t('general.title')}
           </motion.h2>
 
           <motion.p
@@ -107,29 +109,33 @@ export const SkillCardGroup = ({
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             {selectedGroup
-              ? skillGroupInfo[selectedGroup].description
-              : "Every tool here is part of how I think — chosen not by trend, but by intent. This is the stack I use to imagine, shape, and scale meaningful digital experiences."}
+              ? t(`groups.${selectedGroup}.description`)
+              : t('general.description')}
           </motion.p>
 
           <div className="mt-4 relative z-20">
             {/* Enhanced dropdown for skill group selection */}
             <div className="relative">
-              <button 
+              <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 className={`w-full text-start flex items-center justify-between py-3 px-4 rounded-md 
                   bg-white/10 backdrop-blur-sm border border-white/10 transition-all duration-200 
                   hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/20
-                  ${selectedGroup ? 'text-white font-medium' : 'text-white/80'}`}
+                  ${
+                    selectedGroup ? "text-white font-medium" : "text-white/80"
+                  }`}
                 aria-haspopup="listbox"
                 aria-expanded={dropdownOpen}
               >
                 <span className="flex items-center gap-2">
                   {selectedGroup && (
-                    <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${titleGradient}`}></div>
+                    <div
+                      className={`w-2 h-2 rounded-full bg-gradient-to-r ${titleGradient}`}
+                    ></div>
                   )}
-                  {selectedGroup 
-                    ? skillGroupInfo[selectedGroup].title 
-                    : "Select a skill group"}
+                  {selectedGroup
+                    ? t(`groups.${selectedGroup}.title`)
+                    : t("general.selectSkillGroup")}
                 </span>
                 <motion.div
                   animate={{ rotate: dropdownOpen ? 180 : 0 }}
@@ -138,38 +144,38 @@ export const SkillCardGroup = ({
                   <ChevronDown size={18} className="text-white/70" />
                 </motion.div>
               </button>
-              
+
               {/* Improved dropdown menu */}
               <AnimatePresence>
                 {dropdownOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: -5, height: 0 }}
-                    animate={{ 
-                      opacity: 1, 
-                      y: 0, 
-                      height: 'auto',
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                      height: "auto",
                       transition: {
                         opacity: { duration: 0.2 },
                         y: { duration: 0.2 },
-                        height: { duration: 0.25 }
-                      }
+                        height: { duration: 0.25 },
+                      },
                     }}
-                    exit={{ 
-                      opacity: 0, 
-                      y: -5, 
+                    exit={{
+                      opacity: 0,
+                      y: -5,
                       height: 0,
                       transition: {
                         opacity: { duration: 0.15 },
                         y: { duration: 0.15 },
-                        height: { duration: 0.2 }
-                      }
+                        height: { duration: 0.2 },
+                      },
                     }}
                     className="fixed w-full mt-1.5 bg-black/70 border border-white/10 
                       backdrop-blur-lg rounded-md overflow-hidden z-50 shadow-xl"
                     style={{
-                      width: 'var(--dropdown-width)',
-                      left: 'var(--dropdown-left)',
-                      top: 'var(--dropdown-top)',
+                      width: "var(--dropdown-width)",
+                      left: "var(--dropdown-left)",
+                      top: "var(--dropdown-top)",
                     }}
                     ref={(node) => {
                       if (node && dropdownOpen) {
@@ -177,19 +183,35 @@ export const SkillCardGroup = ({
                         if (button) {
                           const rect = button.getBoundingClientRect();
                           const spaceBelow = window.innerHeight - rect.bottom;
-                          const dropdownHeight = node.getBoundingClientRect().height;
-                          
+                          const dropdownHeight =
+                            node.getBoundingClientRect().height;
+
                           // Set custom properties for positioning
-                          node.style.setProperty('--dropdown-width', `${rect.width}px`);
-                          node.style.setProperty('--dropdown-left', `${rect.left}px`);
-                          
+                          node.style.setProperty(
+                            "--dropdown-width",
+                            `${rect.width}px`
+                          );
+                          node.style.setProperty(
+                            "--dropdown-left",
+                            `${rect.left}px`
+                          );
+
                           // Position above or below based on available space
-                          if (spaceBelow < dropdownHeight && rect.top > dropdownHeight) {
+                          if (
+                            spaceBelow < dropdownHeight &&
+                            rect.top > dropdownHeight
+                          ) {
                             // Position above if not enough space below but enough space above
-                            node.style.setProperty('--dropdown-top', `${rect.top - dropdownHeight - 6}px`);
+                            node.style.setProperty(
+                              "--dropdown-top",
+                              `${rect.top - dropdownHeight - 6}px`
+                            );
                           } else {
                             // Position below (default)
-                            node.style.setProperty('--dropdown-top', `${rect.bottom + 6}px`);
+                            node.style.setProperty(
+                              "--dropdown-top",
+                              `${rect.bottom + 6}px`
+                            );
                           }
                         }
                       }
@@ -206,35 +228,55 @@ export const SkillCardGroup = ({
                           }}
                           className={`w-full text-start px-4 py-2.5 hover:bg-white/10 transition-colors 
                             group flex items-center justify-between ${
-                            selectedGroup === group ? 'bg-white/15 font-medium' : ''
-                          }`}
+                              selectedGroup === group
+                                ? "bg-white/15 font-medium"
+                                : ""
+                            }`}
                           whileHover={{ x: 3 }}
                           transition={{ duration: 0.15 }}
                           role="option"
                           aria-selected={selectedGroup === group}
                         >
                           <span className="flex items-center gap-2">
-                            <motion.div 
-                              initial={selectedGroup !== group ? { scale: 0, opacity: 0 } : { scale: 1, opacity: 1 }}
-                              animate={selectedGroup === group ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+                            <motion.div
+                              initial={
+                                selectedGroup !== group
+                                  ? { scale: 0, opacity: 0 }
+                                  : { scale: 1, opacity: 1 }
+                              }
+                              animate={
+                                selectedGroup === group
+                                  ? { scale: 1, opacity: 1 }
+                                  : { scale: 0, opacity: 0 }
+                              }
                               className={`w-2 h-2 rounded-full bg-gradient-to-r ${
-                                group === SkillGroup.LANGUAGE ? "from-indigo-400 to-blue-500" :
-                                group === SkillGroup.FRONTEND ? "from-cyan-400 to-blue-500" :
-                                group === SkillGroup.BACKEND ? "from-emerald-400 to-teal-500" :
-                                group === SkillGroup.MOBILE ? "from-orange-400 to-amber-500" :
-                                group === SkillGroup.DATABASE ? "from-red-400 to-rose-500" :
-                                group === SkillGroup.CLOUD ? "from-sky-400 to-blue-500" :
-                                group === SkillGroup.DESIGN ? "from-fuchsia-400 to-purple-500" :
-                                group === SkillGroup.DEV_TOOLS ? "from-violet-400 to-purple-500" :
-                                "from-blue-400 to-purple-500"
+                                group === SkillGroup.LANGUAGE
+                                  ? "from-indigo-400 to-blue-500"
+                                  : group === SkillGroup.FRONTEND
+                                  ? "from-cyan-400 to-blue-500"
+                                  : group === SkillGroup.BACKEND
+                                  ? "from-emerald-400 to-teal-500"
+                                  : group === SkillGroup.MOBILE
+                                  ? "from-orange-400 to-amber-500"
+                                  : group === SkillGroup.DATABASE
+                                  ? "from-red-400 to-rose-500"
+                                  : group === SkillGroup.CLOUD
+                                  ? "from-sky-400 to-blue-500"
+                                  : group === SkillGroup.DESIGN
+                                  ? "from-fuchsia-400 to-purple-500"
+                                  : group === SkillGroup.DEV_TOOLS
+                                  ? "from-violet-400 to-purple-500"
+                                  : "from-blue-400 to-purple-500"
                               }`}
                             />
                             {skillGroupInfo[group].title}
                           </span>
-                          <div className={`text-xs text-white/50 group-hover:text-white/70 transition-colors ${
-                            selectedGroup === group ? 'text-white/70' : ''
-                          }`}>
-                            {allSkilsByGroup[group].length} skills
+                          <div
+                            className={`text-xs text-white/50 group-hover:text-white/70 transition-colors ${
+                              selectedGroup === group ? "text-white/70" : ""
+                            }`}
+                          >
+                            {allSkilsByGroup[group].length} {t(`utils.skills`)}
                           </div>
                         </motion.button>
                       ))}
@@ -243,7 +285,7 @@ export const SkillCardGroup = ({
                 )}
               </AnimatePresence>
             </div>
-            
+
             {/* Display skills for the selected group with improved animation */}
             <AnimatePresence>
               {selectedGroup && (
@@ -255,8 +297,10 @@ export const SkillCardGroup = ({
                   className="mt-5"
                 >
                   <h3 className="text-xs uppercase tracking-wider font-medium mb-2.5 flex items-center text-white/70">
-                    <div className={`w-1 h-1 rounded-full bg-gradient-to-r ${titleGradient} mr-1.5`}></div>
-                    Skills ({allSkilsByGroup[selectedGroup].length})
+                    <div
+                      className={`w-1 h-1 rounded-full bg-gradient-to-r ${titleGradient} mr-1.5`}
+                    ></div>
+                    {t(`utils.skills`)} ({allSkilsByGroup[selectedGroup].length})
                   </h3>
                   <div className="flex flex-wrap gap-1.5">
                     {allSkilsByGroup[selectedGroup].map((skill, index) => (
@@ -264,10 +308,10 @@ export const SkillCardGroup = ({
                         key={index}
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ 
-                          duration: 0.1, 
+                        transition={{
+                          duration: 0.1,
                           delay: 0.01 * index,
-                          ease: "easeOut"
+                          ease: "easeOut",
                         }}
                         className="text-xs py-1 px-2 rounded-md bg-white/5 hover:bg-white/10 
                           border border-white/5 transition-all group inline-flex items-center"
@@ -283,9 +327,7 @@ export const SkillCardGroup = ({
         </motion.div>
 
         {/* Modified the structure to keep main container stable while animating inner content */}
-        <div
-          className="absolute inset-0 pointer-events-none overflow-hidden"
-        >
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={`lightbeam-${displayGroup || "empty"}`}

@@ -1,0 +1,49 @@
+{
+  "titles": {
+    "professionalSummary": "Professional Summary",
+    "keyMetrics": "Key Metrics",
+    "technologyStack": "Technology Stack",
+    "keyAchievements": "Key Achievements",
+    "keyProjects": "Key Projects"
+  },
+  "certiblock": {
+    "about": "Colombian company revolutionizing business security through Blockchain technology. Creating digital twins on Blockchain to combat product counterfeiting and tampering, with over 4.3 million digitized assets enabling product authenticity verification through simple mobile scanning.",
+    "metrics": [
+      { "label": "Assets", "value": "4.3M+", "description": "Digitized products" },
+      { "label": "Projects", "value": "3", "description": "Major deployments" },
+      { "label": "Tech Stack", "value": "3", "description": "Core technologies" },
+      { "label": "Impact", "value": "20+", "description": "Brand partners" }
+    ],
+    "achievements": [
+      {
+        "title": "Scalable System Refactor",
+        "description": "Redesigned the system's architecture (frontend, backend, DB) to improve performance and scalability."
+      },
+      {
+        "title": "CI/CD & DevOps Integration",
+        "description": "Implemented GitHub-AWS pipelines for automated deployments and faster iterations."
+      },
+      {
+        "title": "Frontend Leadership",
+        "description": "Led UI/UX development, aligning product features with business needs and tech scalability."
+      }
+    ],
+    "projects": [
+      {
+        "title": "AWS Infrastructure Overhaul",
+        "description": "Led the implementation of a scalable, secure, and CI/CD-powered AWS infrastructure to support Certiblock's full-stack operations.",
+        "solution": "Provisioned and automated cloud infrastructure for backend services, databases, web hosting, and domain management using Elastic Beanstalk, Route 53, S3, and EC2. Integrated CI/CD pipelines with GitHub Actions to accelerate development and deployment speed. Leveraged AWS services for security, authentication, and transactional email delivery."
+      },
+      {
+        "title": "End-to-End Platform Refactor",
+        "description": "Co-led the strategic planning and execution of a complete system refactor to simplify complexity and improve maintainability across the entire product.",
+        "solution": "Re-architected the data model, backend services, and frontend architecture to align with a cleaner domain-driven design. The refactor reduced tech debt, improved scalability, and simplified onboarding for future developers."
+      },
+      {
+        "title": "UI/UX Design Leadership for Platform Redesign",
+        "description": "Directed the UI/UX vision and execution for the full platform redesign aligned with the new product strategy.",
+        "solution": "Led the design process for new product interfaces across all services. Created a design system, prototypes, and flows in Figma to ensure consistency, usability, and a seamless user experience. Collaborated with engineering to ensure pixel-perfect, component-driven implementation."
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "e2e": {
+        "title": "Desarrollo Digital de Extremo a Extremo",
+        "description": "Creando experiencias fluidas a través de código, diseño y pensamiento innovador"
+    },
+    "experience": {
+        "description": "Años de experiencia construyendo productos digitales"
+    },
+    "internationalAwwardWinning": {
+        "title": "Internacional",
+        "description": "Experiencia ganadora de premios en competencias"
+    },
+    "fullstack": {
+        "title": "Full Stack",
+        "description": "Ingeniero de Software"
+    },
+    "uiux": {
+        "description": "Transformando ideas en soluciones poderosas"
+    }
+}

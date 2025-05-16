@@ -1,0 +1,81 @@
+{
+    "companyName": "BeeReaders",
+    "role": "Ingeniero de Software Semi-Senior",
+    "mission": "Encargado de la entrega del frontend y de conectar los flujos de trabajo entre el backend y el frontend para una plataforma EdTech utilizada en toda LATAM.",
+    "keyAchievements": [
+        {
+            "title": "Integración del Sistema de Pagos en LATAM",
+            "description": "Lideró el desarrollo de un sistema de pago con múltiples proveedores (Wompi, Mercado Pago) en varios países."
+        },
+        {
+            "title": "Ciclo de Vida Completo del Producto",
+            "description": "Entregó aplicaciones móviles, herramientas internas e infraestructura en sincronía con los objetivos del producto y del negocio."
+        },
+        {
+            "title": "Nube y Escalabilidad",
+            "description": "Soportó infraestructura basada en AWS + Terraform para manejar alto tráfico y usuarios concurrentes."
+        }
+    ],
+    "projects": [
+        {
+            "title": "Algoritmo de Detección de Nivel de Lectura",
+            "description": "Desarrolló un algoritmo personalizado para detectar automáticamente la competencia lectora y clasificar a los usuarios según su rendimiento en lectura oral, utilizando transcripciones generadas por IA.",
+            "solution": "Diseñó un sistema que analiza audio transcrito por IA para identificar errores de pronunciación, palabras omitidas y errores de fluidez. El algoritmo clasifica a los usuarios por nivel de lectura y tipo de error, permitiendo evaluaciones automatizadas para escuelas en toda LATAM."
+        },
+        {
+            "title": "Herramienta de Localización de Escuelas para Alcance de No Clientes",
+            "description": "Plataforma interna creada para apoyar al equipo de marketing en la identificación de posibles clientes escolares basados en geolocalización.",
+            "solution": "Implementó un sistema de scraping e integración de API con fuentes de datos gubernamentales, permitiendo a los usuarios filtrar escuelas por distancia y región utilizando latitud/longitud. Entregó una herramienta web para optimizar la generación de prospectos basada en la proximidad a zonas objetivo."
+        },
+        {
+            "title": "Integración de Pagos en Múltiples Regiones",
+            "description": "Flujo de pago unificado para la plataforma web que soporta diferentes proveedores en América Latina.",
+            "solution": "Lideró la integración frontend/backend de Wompi (Colombia) y Mercado Pago (otros países). Construyó un flujo dinámico y optimizado para UX que dirige a los usuarios al procesador de pagos correcto según la región y los datos requeridos."
+        },
+        {
+            "title": "Liderazgo en Ingeniería de Frontend",
+            "description": "Lideró el desarrollo de todos los proyectos web orientados al usuario en BeeReaders.",
+            "solution": "Responsable de actualizaciones importantes, arquitectura e implementaciones de características en la plataforma principal de usuarios, páginas de aterrizaje, paneles de visualización de datos e interfaces de marketing. Aseguró la consistencia en los sistemas de diseño y la escalabilidad de los módulos de frontend."
+        },
+        {
+            "title": "Mejora de la Experiencia de Lectura de Libros",
+            "description": "Rediseñó la característica principal de lectura digital de libros para mejorar el compromiso y la retención de los usuarios.",
+            "solution": "Implementó una nueva UI/UX que permitió a los usuarios rastrear el progreso, tomar notas en línea y dejar comentarios dentro de los libros. Se enfocó en accesibilidad, rendimiento y diseño modular para habilitar futuras expansiones de características."
+        }
+    ],
+    "backToPortfolio": "Volver al Portafolio",
+    "summaryTitle": "Resumen",
+    "aboutTitle": "Acerca de BeeReaders",
+    "aboutDescription": "BeeReaders es una plataforma EdTech que conecta la tecnología con la educación, enfocándose en mejorar la alfabetización en toda LATAM.",
+    "keyAchievementsTitle": "Logros Clave",
+    "keyProjectsTitle": "Proyectos Clave",
+    "challengeTitle": "Desafío",
+    "solutionTitle": "Solución",
+    "jobDataNotFound": "Datos del trabajo no encontrados.",
+    "returnHome": "Volver a Inicio",
+    "portfolio": "Portafolio",
+    "studio": "Estudio",
+    "certiblock": "Certiblock",
+    "schoolsLabel": "Escuelas",
+    "schoolsValue": "500+",
+    "schoolsDescription": "Escuelas impactadas en toda LATAM.",
+    "projectsLabel": "Proyectos",
+    "projectsValue": "10+",
+    "projectsDescription": "Proyectos principales entregados.",
+    "techStackLabel": "Stack Tecnológico",
+    "techStackDescription": "Tecnologías utilizadas en BeeReaders.",
+    "impactLabel": "Impacto",
+    "impactValue": "100k+",
+    "impactDescription": "Estudiantes beneficiados por la plataforma.",
+    "coreCompetencies": "Competencias Clave",
+    "notableContributions": "Contribuciones Notables",
+    "developmentProject": "Proyecto de Desarrollo",
+    "productInitiative": "Iniciativa de Producto",
+    "timelineQ4": "Q4 2024",
+    "timelineQ2": "Q2 2023",
+    "timelineQ1": "Q1 2022",
+    "keyMetricsTitle": "Métricas Clave",
+    "techStackTitle": "Stack de Tecnologías",
+    "experienceYears": "años de experiencia"
+
+}

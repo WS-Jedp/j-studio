@@ -1,0 +1,47 @@
+{
+    "title": "Experience",
+    "jobs": {
+        "resume": "Resume",
+        "beereaders": {
+            "companyName": "BeeReaders",
+            "role": "Semi-Senior Software Engineer",
+            "mission": "Owned frontend delivery and bridged backend/frontend workflows for an EdTech platform used across LATAM.",
+            "keyAchievements": [
+                "LATAM Payment System Integration",
+                "Full Product Lifecycle",
+                "Cloud & Scalability"
+            ]
+        },
+        "certiblock": {
+            "companyName": "Certiblock",
+            "role": "Full Stack Developer & AWS Architect",
+            "mission": "Architecting scalable infrastructure and leading frontend initiatives for high-growth blockchain and certification platforms.",
+            "keyAchievements": [
+                "Scalable System Refactor",
+                "CI/CD & DevOps Integration",
+                "Frontend Leadership"
+            ]
+        },
+        "worldskills": {
+            "companyName": "WorldSkills",
+            "role": "Web Development Competitor",
+            "mission": "Trained to build user-focused web solutions under pressure, blending code, design, and performance to meet global standards.",
+            "keyAchievements": [
+                "🥇 1st – Web Dev Champion (City, Regional & National, Colombia)",
+                "🥈 2nd – WorldSkills Americas 2021 (Guatemala)",
+                "🌍 14th – WorldSkills Global 2022 (South Korea)"
+            ]
+        },
+        "platzimaster": {
+            "companyName": "Platzi Master",
+            "role": "Frontend Track – First Generation",
+            "mission": "Trained in modern frontend engineering with mentorship from senior engineers and leading Spanish-speaking tech educators.",
+            "keyAchievements": [
+                "Modern React workflows (Hooks, Redux, SSR)",
+                "Scalable component design & accessibility",
+                "Agile teamwork with real-world project delivery",
+                "Direct coaching from senior engineers & expert mentors"
+            ]
+        }
+    }
+}

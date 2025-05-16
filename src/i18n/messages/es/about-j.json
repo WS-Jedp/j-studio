@@ -1,0 +1,25 @@
+{
+  "introduction": {
+    "title": "Saludos, soy Juanes",
+    "description": "Ingeniero de software full-stack colombiano de 24 años, viviendo en Medellín. Me apasiona crear experiencias digitales que conecten, inspiren y generen impacto real en la vida de las personas."
+  },
+  "experience": {
+    "title": "Estudiante de la Vida",
+    "description": "Ser ingeniero de software no es solo un trabajo; es un estilo de vida. Estoy en constante aprendizaje y evolución, siempre buscando nuevos desafíos y oportunidades para crecer."
+  },
+  "about-me": {
+    "title": "Sobre Mí",
+    "description": "Soy un apasionado ingeniero de software con una sólida experiencia en desarrollo full-stack. Disfruto enfrentar desafíos y encontrar soluciones innovadoras a problemas complejos."
+  },
+  "main": {
+    "heading": "Diseñando Experiencias Digitales Desde la Idea",
+    "paragraph": "El Arte y la Tecnología pueden parecer dos mundos diferentes y distantes, pero construir un puente entre ellos nos da la oportunidad de descubrir un nuevo mundo lleno de posibilidades, donde podemos crear y expresar el potencial humano sin límites."
+  },
+  "footer": {
+    "name": "Juan Esteban Deossa Pertuz",
+    "role": "Ingeniero de Software"
+  },
+  "actions": {
+    "download": "Descargar CV"
+  }
+}

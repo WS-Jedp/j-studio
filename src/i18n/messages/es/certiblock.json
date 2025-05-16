@@ -1,0 +1,49 @@
+{
+  "titles": {
+    "professionalSummary": "Resumen Profesional",
+    "keyMetrics": "Métricas Clave",
+    "technologyStack": "Pila Tecnológica",
+    "keyAchievements": "Logros Clave",
+    "keyProjects": "Proyectos Clave"
+  },
+  "certiblock": {
+    "about": "Empresa colombiana que revoluciona la seguridad empresarial a través de la tecnología Blockchain. Creando gemelos digitales en Blockchain para combatir la falsificación y manipulación de productos, con más de 4.3 millones de activos digitalizados que permiten la verificación de autenticidad de productos mediante un simple escaneo móvil.",
+    "metrics": [
+      { "label": "Activos", "value": "4.3M+", "description": "Productos digitalizados" },
+      { "label": "Proyectos", "value": "3", "description": "Implementaciones principales" },
+      { "label": "Pila Tecnológica", "value": "3", "description": "Tecnologías principales" },
+      { "label": "Impacto", "value": "20+", "description": "Marcas asociadas" }
+    ],
+    "achievements": [
+      {
+        "title": "Reestructuración del Sistema Escalable",
+        "description": "Rediseñó la arquitectura del sistema (frontend, backend, BD) para mejorar el rendimiento y la escalabilidad."
+      },
+      {
+        "title": "Integración de CI/CD y DevOps",
+        "description": "Implementó pipelines de GitHub-AWS para despliegues automatizados e iteraciones más rápidas."
+      },
+      {
+        "title": "Liderazgo en Frontend",
+        "description": "Lideró el desarrollo de UI/UX, alineando las características del producto con las necesidades del negocio y la escalabilidad tecnológica."
+      }
+    ],
+    "projects": [
+      {
+        "title": "Reestructuración de Infraestructura AWS",
+        "description": "Lideró la implementación de una infraestructura AWS escalable, segura y con CI/CD para respaldar las operaciones de Certiblock.",
+        "solution": "Provisionó y automatizó la infraestructura en la nube para servicios backend, bases de datos, alojamiento web y gestión de dominios utilizando Elastic Beanstalk, Route 53, S3 y EC2. Integró pipelines de CI/CD con GitHub Actions para acelerar la velocidad de desarrollo y despliegue. Aprovechó los servicios de AWS para seguridad, autenticación y entrega de correos transaccionales."
+      },
+      {
+        "title": "Reestructuración Completa de la Plataforma",
+        "description": "Co-lideró la planificación estratégica y ejecución de una reestructuración completa del sistema para simplificar la complejidad y mejorar el mantenimiento en todo el producto.",
+        "solution": "Rearquitectó el modelo de datos, los servicios backend y la arquitectura frontend para alinearlos con un diseño de dominio más limpio. La reestructuración redujo la deuda técnica, mejoró la escalabilidad y simplificó la incorporación de futuros desarrolladores."
+      },
+      {
+        "title": "Liderazgo en Diseño UI/UX para la Rediseño de la Plataforma",
+        "description": "Dirigió la visión y ejecución de UI/UX para el rediseño completo de la plataforma alineado con la nueva estrategia de producto.",
+        "solution": "Lideró el proceso de diseño para nuevas interfaces de producto en todos los servicios. Creó un sistema de diseño, prototipos y flujos en Figma para garantizar consistencia, usabilidad y una experiencia de usuario fluida. Colaboró con ingeniería para asegurar una implementación precisa y basada en componentes."
+      }
+    ]
+  }
+}

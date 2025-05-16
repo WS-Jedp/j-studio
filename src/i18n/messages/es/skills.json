@@ -1,0 +1,93 @@
+{
+    "general": {
+        "title": "Mi Lenguaje de Construcción",
+        "description": "Cada herramienta aquí es parte de cómo pienso — elegida no por tendencia, sino por intención. Este es el stack que uso para imaginar, dar forma y escalar experiencias digitales significativas.",
+        "selectSkillGroup": "Selecciona un grupo de habilidades"
+    },
+    "language": {
+        "node": "El lenguaje de la web. Uso JS para aplicaciones web interactivas.",
+        "typescript": "Tipado o nada. Uso TS en todas partes: pequeños scripts o plataformas escalables.",
+        "python": "Uso Python para ciencia de datos, aprendizaje automático y desarrollo web.",
+        "java": "Uso Java para aplicaciones empresariales y sistemas backend.",
+        "php": "Uso PHP para scripting del lado del servidor y desarrollo web."
+    },
+    "frontend": {
+        "react": "Mi opción preferida para MVPs e interfaces que se sienten vivas.",
+        "nextjs": "Para SEO, rendimiento y fácil despliegue.",
+        "redux": "Manejo de estado claro y modular para aplicaciones en crecimiento.",
+        "tailwindcss": "Primero utilitario. Personalizable. No más bibliotecas de UI pesadas.",
+        "framer-motion": "Para animaciones e interacciones que hacen que las interfaces se sientan vivas.",
+        "vuejs": "Ideal para paneles de control y aplicaciones estructuradas como e-commerce.",
+        "angular": "Ideal para proyectos empresariales grandes y con muchos componentes."
+    },
+    "backend": {
+        "nestjs": "Arquitectura backend modular y escalable.",
+        "prisma": "ORM intuitivo para proyectos pequeños y medianos.",
+        "express": "Configuración rápida de API — ideal para MVPs y experimentos rápidos.",
+        "fastapi": "Ligero, basado en Python y excelente para la colaboración en equipo.",
+        "spring-boot": "Elección poderosa para aplicaciones empresariales de alto nivel."
+    },
+    "mobile": {
+        "ionic": "Forma rápida de construir aplicaciones móviles híbridas usando tecnología web.",
+        "react-native": "Para aplicaciones móviles con una sensación más nativa."
+    },
+    "design": {
+        "figma": "Prototipado rápido y colaborativo para flujos de trabajo de UI/UX.",
+        "adobe-xd": "Herramienta de diseño alternativa — ideal para flujos de UI rápidos.",
+        "illustrator": "Utilizado para branding, sistemas de iconos y activos de diseño."
+    },
+    "database": {
+        "postgresql": "Base de datos relacional confiable para datos estructurados.",
+        "mongodb": "Base de datos NoSQL flexible, ideal para esquemas dinámicos.",
+        "aws": "Servicio SQL administrado para escalabilidad y confiabilidad.",
+        "dynamodb": "Base de datos NoSQL nativa de AWS, escalable y rápida.",
+        "redis": "Mi opción para almacenamiento en caché y mejoras de rendimiento en tiempo real."
+    },
+    "cloud": {
+        "aws": "Mi base de infraestructura para escalar aplicaciones listas para producción.",
+        "google-cloud": "Limpio y eficiente para aplicaciones pequeñas y medianas.",
+        "digital-ocean": "Amigable para desarrolladores, despliegues rápidos para proyectos personales o startups.",
+        "github-actions": "Pipelines CI/CD que automatizan despliegues y pruebas."
+    },
+    "dev-tools": {
+        "copilot": "Sugerencias de código impulsadas por IA que aceleran el desarrollo.",
+        "vscode": "Mi IDE preferido para todo lo que construyo."
+    },
+    "groups": {
+        "language": {
+            "title": "Lenguajes de Programación",
+            "description": "La base de todo lo que construyo. Estos son los lenguajes que domino, desde código listo para producción hasta proyectos experimentales."
+        },
+        "frontend": {
+            "title": "Desarrollo Frontend",
+            "description": "Crear interfaces de usuario intuitivas, receptivas y atractivas es donde destaco. Estas son mis herramientas preferidas para construir experiencias web excepcionales."
+        },
+        "backend": {
+            "title": "Sistemas Backend",
+            "description": "La columna vertebral de cualquier aplicación robusta. Estas tecnologías impulsan mi lógica del lado del servidor, APIs y procesamiento de datos."
+        },
+        "mobile": {
+            "title": "Desarrollo Móvil",
+            "description": "Construyendo aplicaciones móviles multiplataforma que se sienten nativas y ofrecen experiencias de usuario excepcionales."
+        },
+        "design": {
+            "title": "Diseño & UI/UX",
+            "description": "Combinando estética con funcionalidad. Estas son las herramientas que utilizo para crear interfaces hermosas e intuitivas y activos visuales."
+        },
+        "database": {
+            "title": "Soluciones de Bases de Datos",
+            "description": "El almacenamiento y recuperación de datos confiables son críticos. Aprovecho estas tecnologías para construir sistemas de bases de datos eficientes y escalables."
+        },
+        "cloud": {
+            "title": "Infraestructura en la Nube",
+            "description": "Soluciones en la nube escalables y confiables que impulsan aplicaciones modernas. Estas plataformas y herramientas forman la base de mis implementaciones."
+        },
+        "dev-tools": {
+            "title": "Herramientas de Desarrollo",
+            "description": "Mi conjunto de herramientas diario que mejora la productividad y me ayuda a construir mejor software de manera más rápida y eficiente."
+        }
+    },
+    "utils": {
+        "skills": "Habilidades"
+    }
+}

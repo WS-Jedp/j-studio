@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Skill, SkillGroup } from "@/data/skills";
 import Image from "next/image";
 import { useMemo } from "react";
+import { useTranslations } from "next-intl";
 
 type SkillCardProps = {
   skill: Skill & { index: number };
@@ -10,6 +11,7 @@ type SkillCardProps = {
 };
 
 export const SkillCard = ({ skill, selectedGroup, index }: SkillCardProps) => {
+  const t = useTranslations("skills");
   // Check if this skill should be highlighted
   const isHighlighted = useMemo(() => {
     // If no group is selected, or this skill belongs to the selected group
@@ -220,7 +222,7 @@ export const SkillCard = ({ skill, selectedGroup, index }: SkillCardProps) => {
 
       {/* Description with better readability */}
       <p className="text-j-celestial-white/80 text-sm font-bold mb-2.5 group-hover:text-j-celestial-white/95 transition-colors relative z-10">
-        {skill.description}
+        {t(`${skill.groupType}.${skill.icon}`)}
       </p>
 
     </motion.div>

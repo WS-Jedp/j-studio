@@ -1,0 +1,27 @@
+{
+  "title": "Let's Build Something Great!",
+  "description": "Whether you're building a startup, scaling a platform, or shaping a product with purpose — I'd love to hear about it. I work best with bold ideas, thoughtful design, and teams who care about the craft.",
+  "currentStatus": {
+    "heading": [
+        "Currently open to",
+        "New Opportunities"
+    ],
+    "details": [
+      "product-focused roles, remote-first teams, or founder-led missions that value design and scale.",
+      "Based in Medellín, Colombia (GMT-5)",
+      "Async-friendly • Flexible • Fully remote-ready"
+    ]
+  },
+  "cta": {
+    "emailLabel": "Let's go for a Coffee ☕️",
+    "email": "jedp082@gmail.com",
+    "downloadCV": "Download CV",
+    "socialMedia": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "closingText": "Let's make dreams reality!"
+  },
+  "footer": "J Studio",
+  "jStudioLabel": "A son of the Humankind, a son of the Stars"
+}

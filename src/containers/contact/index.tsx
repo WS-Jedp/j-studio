@@ -1,8 +1,10 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Mail, ArrowRight, Download, Github, Linkedin } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export const Contact = () => {
+  const t = useTranslations("contact");
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -51,7 +53,7 @@ export const Contact = () => {
               transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1] }}
               className="block bg-gradient-to-r from-blue-200 to-purple-300 text-transparent bg-clip-text"
             >
-              Let's Build Something Great!
+              {t("title")}
             </motion.span>
           </h2>
 
@@ -63,10 +65,7 @@ export const Contact = () => {
               variants={textRevealVariants}
               className="text-lg leading-relaxed text-gray-200/90 mb-16"
             >
-              Whether you're building a startup, scaling a platform, or shaping
-              a product with purpose — I'd love to hear about it. I work best
-              with bold ideas, thoughtful design, and teams who care about the
-              craft.
+              {t("description")}
             </motion.p>
           </div>
         </motion.article>
@@ -76,39 +75,37 @@ export const Contact = () => {
           style={{ y: y2, scale: scale1 }}
           className="md:col-span-10  lg:col-span-8 lg:col-start-3 mb-28 grid grid-cols-1 md:grid-cols-12 gap-y-8 md:gap-y-0 md:gap-x-6"
         >
-        
-          
           {/* Main text column */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.3 }}
             className="md:col-span-12 text-left flex flex-col items-start justify-start space-y-6"
           >
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-2xl font-light tracking-tight text-gray-100"
             >
-              Currently open to <span className="font-medium">New Opportunities</span>
+              {t("currentStatus.heading.0")}{" "}
+              <span className="font-medium">
+                {t("currentStatus.heading.1")}
+              </span>
             </motion.h3>
-            
+
             <div className="space-y-4">
               <p className="text-base leading-relaxed text-gray-200/90">
-                product-focused roles,
-                remote-first teams, or founder-led missions that value design and
-                scale.
-                
+                {t("currentStatus.details.0")}
               </p>
-              
+
               <div className="flex items-center space-x-3 text-sm text-gray-400/90 italic leading-relaxed">
                 <span className="inline-block w-12 h-px bg-gradient-to-r from-blue-500/40 to-transparent"></span>
-                <p>Based in Medellín, Colombia (GMT-5)</p>
+                <p>{t("currentStatus.details.1")}</p>
               </div>
-              
+
               <p className="text-sm text-gray-400/80">
-                Async-friendly • Flexible • Fully remote-ready
+                {t("currentStatus.details.2")}
               </p>
             </div>
           </motion.div>
@@ -137,7 +134,7 @@ export const Contact = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-xs tracking-wider text-gray-400 mb-4"
             >
-              Let's go for a Coffee ☕️
+              {t('cta.emailLabel')}
             </motion.p>
 
             {/* Refined elegant CTA */}
@@ -171,7 +168,7 @@ export const Contact = () => {
                 href=""
                 className="px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300 text-white/90 border border-white/20 flex items-center space-x-2 group"
               >
-                <span className="text-xs">Download CV</span>
+                <span className="text-xs">{t('cta.downloadCV')}</span>
                 <svg
                   className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
                   viewBox="0 0 20 20"
@@ -232,8 +229,8 @@ export const Contact = () => {
                 </div>
               </motion.div>
 
-               {/* Light divider */}
-               <motion.div
+              {/* Light divider */}
+              <motion.div
                 initial={{ width: "0%" }}
                 whileInView={{ width: "60px" }}
                 transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
@@ -248,7 +245,7 @@ export const Contact = () => {
               transition={{ duration: 0.5, delay: 0.9 }}
               className="mt-14 text-sm font-light italic text-gray-400/80 max-w-xs mx-auto leading-relaxed"
             >
-              Let's make dreams reality!
+              {t('cta.closingText')}
             </motion.p>
           </div>
         </motion.article>
@@ -260,7 +257,8 @@ export const Contact = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
-          <h3 className="font-light text-sm mb-3">J Studio</h3>
+          <h3 className="font-light text-sm mb-1">J Studio</h3>
+          <p className="font-extralight opacity-30 text-xs mb-3 max-w-sm">{t("jStudioLabel")}</p>
           <motion.div
             initial={{ width: "0%" }}
             whileInView={{ width: "50px" }}

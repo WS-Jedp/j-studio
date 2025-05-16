@@ -1,0 +1,61 @@
+{
+  "beginnings": {
+    "title": "01 / BEGINNINGS",
+    "heading": [
+      "I didn't become a software engineer to write code.",
+      "I became one to build worlds."
+    ],
+    "content": [
+      "I started young, driven by curiosity — not just about how things work, but why people use them.",
+      "I wasn't content building tools; I wanted to build experiences — the kind that make life easier, smoother, more meaningful.",
+      "What captured me was the idea that with a few keystrokes, you could shape something real — something useful, beautiful, alive."
+    ]
+  },
+  "process": {
+    "title": "02 / PROCESS",
+    "heading": "I built one layer at a time — until I could build it all.",
+    "content": [
+      "From early prototypes to production-ready systems, I've walked the full stack and back.",
+      "I've worn every hat: designer, architect, frontend craftsman, backend strategist. I've turned napkin sketches into full-blown platforms.",
+      "Eventually, I built Coffi — my proudest creation, where I led every step from concept to scale, crafting not just an app, but a vision for the future of digital work, a platform born from scratch and grown with purpose."
+    ]
+  },
+  "competition": {
+    "title": "03 / COMPETITION",
+    "heading": [
+      "I learned how to build fast, under fire —",
+      "and with grace."
+    ],
+    "content": [
+      "Representing Colombia in WorldSkills, I became national champion, then climbed the international ranks. There, I honed not just skill — but clarity, pressure-resilience, and performance under extreme stakes.",
+      "Those intense months taught me how to perform under pressure, how to learn fast, and how to build with both precision and beauty."
+    ]
+  },
+  "design": {
+    "title": "04 / DESIGN",
+    "heading": [
+      "I don't separate design from code —",
+      "I see them as conversation."
+    ],
+    "content": [
+      "Design and code are not separate disciplines. They're voices in the same conversation.",
+      "I code like a designer, and design like an engineer. I believe in systems that feel good to use, because intuition should be engineered too."
+    ]
+  },
+  "lifestyle": {
+    "title": "05 / LIFESTYLE",
+    "heading": "I move freely — and so does what I build.",
+    "content": [
+      "I live and work lightly. Remote by default. Grounded by curiosity.",
+      "Nomadic by choice, I collect places, ideas, and inspirations and pour them into the things I build.",
+      "Because great software, like great living, should be adaptive, intentional, and free."
+    ]
+  },
+  "future": {
+    "title": "06 / FUTURE",
+    "heading": "Still learning. Still building. Always chasing better.",
+    "content": [
+      "An engineer. A designer. A founder in spirit. Rooted in creativity, trained through pressure, and always in motion — toward whatever's next."
+    ]
+  }
+}

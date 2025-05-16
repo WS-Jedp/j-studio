@@ -3,12 +3,15 @@ import { JobCard } from "@/components/cards/jobCard";
 import { useRef, useEffect, useState } from "react";
 import { JobsExperienceData } from "@/data/jobs";
 import { useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function JobExperience({
   onScrollEnd,
 }: {
   onScrollEnd: () => void;
 }) {
+  const t = useTranslations("experience");
+  const locale = useLocale();
   const navigation = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const horizontalScrollRef = useRef<HTMLDivElement>(null);
@@ -118,7 +121,7 @@ export default function JobExperience({
       ref={containerRef}
     >
       <h2 className="absolute top-[-9%] left-6 md:left-[36%] text-6xl md:text-8xl z-0 font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-coffi-purple to-coffi-purple/40">
-        Experience
+        { t('title') }
       </h2>
       {/* Horizontal scrolling container */}
       <section
@@ -136,18 +139,18 @@ export default function JobExperience({
         >
           <JobCard
             id="BEEREADERS"
-            companyName={JobsExperienceData[1].companyName}
-            role={JobsExperienceData[1].role}
+            companyName={t("jobs.beereaders.companyName")}
+            role={t('jobs.beereaders.role')}
             yearFrom={JobsExperienceData[1].yearFrom}
             yearTo={JobsExperienceData[1].yearTo}
-            mission={JobsExperienceData[1].mission}
+            mission={t('jobs.beereaders.mission')}
             keyAchievements={JobsExperienceData[1].keyAchievements}
             technologies={JobsExperienceData[1].technologies}
             projects={[]}
             accentColor="#ffcf01"
             backgroundColor="#ffcf01"
             companyLogo="/assets/jobs/beereaders-logo.svg"
-            action={() => navigation.push("/jobs/beereaders")}
+            action={() => navigation.push(`/${locale}/jobs/beereaders`)}
           />
         </article>
         <article
@@ -159,18 +162,18 @@ export default function JobExperience({
         >
           <JobCard
             id="CERTIBLOCK"
-            companyName={JobsExperienceData[2].companyName}
-            role={JobsExperienceData[2].role}
+            companyName={t('jobs.certiblock.companyName')}
+            role={t('jobs.certiblock.role')}
             yearFrom={JobsExperienceData[2].yearFrom}
             yearTo={JobsExperienceData[2].yearTo}
-            mission={JobsExperienceData[2].mission}
+            mission={t('jobs.certiblock.mission')}
             keyAchievements={JobsExperienceData[2].keyAchievements}
             technologies={JobsExperienceData[2].technologies}
             projects={[]}
             companyLogo="/assets/jobs/certiblock-logo.svg"
             accentColor="#00d40d"
             backgroundColor="#00d40d"
-            action={() => navigation.push("/jobs/certiblock")}
+            action={() => navigation.push(`${locale}/jobs/certiblock`)}
           />
         </article>
         <article
@@ -182,18 +185,18 @@ export default function JobExperience({
         >
           <JobCard
             id="WORLDSKILLS"
-            companyName={JobsExperienceData[3].companyName}
-            role={JobsExperienceData[3].role}
+            companyName={t('jobs.worldskills.companyName')}
+            role={t('jobs.worldskills.role')}
             yearFrom={JobsExperienceData[3].yearFrom}
             yearTo={JobsExperienceData[3].yearTo}
-            mission={JobsExperienceData[3].mission}
+            mission={t('jobs.worldskills.mission')}
             keyAchievements={JobsExperienceData[3].keyAchievements}
             technologies={JobsExperienceData[3].technologies}
             projects={[]}
             companyLogo="/assets/jobs/worldskills-logo.svg"
             accentColor="#D51067"
             backgroundColor="#D51067"
-            action={() => navigation.push("/learning/worldskills")}
+            action={() => navigation.push(`${locale}/learning/worldskills`)}
           />
         </article>
         <article
@@ -205,18 +208,18 @@ export default function JobExperience({
         >
           <JobCard
             id="PLATZIMASTER"
-            companyName={JobsExperienceData[4].companyName}
-            role={JobsExperienceData[4].role}
+            companyName={t('jobs.platzimaster.companyName')}
+            role={t('jobs.platzimaster.role')}
             yearFrom={JobsExperienceData[4].yearFrom}
             yearTo={JobsExperienceData[4].yearTo}
-            mission={JobsExperienceData[4].mission}
+            mission={t('jobs.platzimaster.mission')}
             keyAchievements={JobsExperienceData[4].keyAchievements}
             technologies={JobsExperienceData[4].technologies}
             projects={[]}
             svgIcon="/assets/jobs/platzi-logo.svg"
             accentColor="#07e98a"
             backgroundColor="#07e98a"
-            action={() => navigation.push("/learning/platzi-master")}
+            action={() => navigation.push(`${locale}/learning/platzi-master`)}
           />
         </article>
       </section>

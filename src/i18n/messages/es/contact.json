@@ -1,0 +1,27 @@
+{
+  "title": "¡Construyamos algo grandioso!",
+  "description": "Ya sea que estés construyendo una startup, escalando una plataforma o dando forma a un producto con propósito, me encantaría saber de ello. Trabajo mejor con ideas audaces, diseño reflexivo y equipos que valoran el arte de crear.",
+  "currentStatus": {
+    "heading": [
+        "Actualmente abierto a",
+        "Nuevas Oportunidades"
+    ],
+    "details": [
+      "Roles enfocados en productos, equipos remotos o misiones lideradas por fundadores que valoren el diseño y la escalabilidad.",
+      "Ubicado en Medellín, Colombia (GMT-5)",
+      "Amigable con lo asíncrono • Flexible • Totalmente preparado para remoto"
+    ]
+  },
+  "cta": {
+    "emailLabel": "Vamos por un café ☕️",
+    "email": "jedp082@gmail.com",
+    "downloadCV": "Descargar CV",
+    "socialMedia": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "closingText": "¡Hagamos realidad los sueños!"
+  },
+  "footer": "J Studio",
+"jStudioLabel": "Un hijo de la Humanidad, un hijo de las Estrellas"
+}

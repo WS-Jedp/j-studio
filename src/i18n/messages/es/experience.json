@@ -1,0 +1,47 @@
+{
+    "title": "Experiencia",
+    "jobs": {
+        "resume": "Resumen",
+        "beereaders": {
+            "companyName": "BeeReaders",
+            "role": "Ingeniero de Software Semi-Senior",
+            "mission": "Encargado de la entrega del frontend y de conectar los flujos de trabajo entre el backend y el frontend para una plataforma EdTech utilizada en toda LATAM.",
+            "keyAchievements": [
+                "Integración del Sistema de Pagos en LATAM",
+                "Ciclo de Vida Completo del Producto",
+                "Nube y Escalabilidad"
+            ]
+        },
+        "certiblock": {
+            "companyName": "Certiblock",
+            "role": "Desarrollador Full Stack y Arquitecto AWS",
+            "mission": "Arquitectura de infraestructura escalable y liderazgo en iniciativas de frontend para plataformas de blockchain y certificación de alto crecimiento.",
+            "keyAchievements": [
+                "Refactorización del Sistema Escalable",
+                "Integración de CI/CD y DevOps",
+                "Liderazgo en Frontend"
+            ]
+        },
+        "worldskills": {
+            "companyName": "WorldSkills",
+            "role": "Competidor en Desarrollo Web",
+            "mission": "Entrenado para construir soluciones web centradas en el usuario bajo presión, combinando código, diseño y rendimiento para cumplir con estándares globales.",
+            "keyAchievements": [
+                "🥇 1º – Campeón de Desarrollo Web (Ciudad, Regional y Nacional, Colombia)",
+                "🥈 2º – WorldSkills Américas 2021 (Guatemala)",
+                "🌍 14º – WorldSkills Global 2022 (Corea del Sur)"
+            ]
+        },
+        "platzimaster": {
+            "companyName": "Platzi Master",
+            "role": "Pista de Frontend – Primera Generación",
+            "mission": "Entrenado en ingeniería moderna de frontend con mentoría de ingenieros senior y educadores líderes en tecnología de habla hispana.",
+            "keyAchievements": [
+                "Flujos de trabajo modernos de React (Hooks, Redux, SSR)",
+                "Diseño de componentes escalables y accesibilidad",
+                "Trabajo en equipo ágil con entrega de proyectos reales",
+                "Mentoría directa de ingenieros senior y expertos"
+            ]
+        }
+    }
+}

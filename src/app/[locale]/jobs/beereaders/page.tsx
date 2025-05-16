@@ -7,10 +7,23 @@ import { JobsExperienceData } from "@/data/jobs";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Code, Clock, Award, BriefcaseBusiness, BookOpenCheck, BarChart3, ChevronDown } from "lucide-react";
 import { ScrollProgressBar } from "@/components/scrollProgression";
+import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 
 export default function Beereaders() {
-  // Find the BeeReaders job data
-  const jobData = JobsExperienceData[1];
+  const t = useTranslations("beereaders");
+  const locale = useLocale();
+
+
+  const jobData = {
+    ...JobsExperienceData[1],
+    companyName: t("companyName"),
+    role: t("role"),
+    mission: t("mission"),
+    keyAchievements: t.raw("keyAchievements"),
+    projects: t.raw("projects"),
+  };
+
   const [activeSection, setActiveSection] = useState("summary");
   
   // Main scroll container ref for animations
@@ -106,8 +119,8 @@ export default function Beereaders() {
   if (!jobData) {
     return (
       <section className="w-full h-auto min-h-screen flex flex-col items-center justify-center">
-        <h1 className="text-4xl">Job data not found</h1>
-        <Link href="/" className="mt-4 text-blue-500 hover:underline">Return home</Link>
+        <h1 className="text-4xl">{t("jobDataNotFound")}</h1>
+        <Link href="/" className="mt-4 text-blue-500 hover:underline">{t("returnHome")}</Link>
       </section>
     );
   }
@@ -115,11 +128,11 @@ export default function Beereaders() {
   return (
     <main ref={containerRef} className="w-full h-auto min-h-screen bg-j-deep-black text-j-celestial-white overflow-x-hidden">
       {/* Progress Bar */}
-      <ScrollProgressBar progress={scrollYProgress} />
+      <ScrollProgressBar color="bg-[#ffcf01]/30" progress={scrollYProgress} />
 
       {/* Back button with hover effect */}
       <Link 
-        href="/" 
+        href={`/${locale}`} 
         className="fixed top-6 left-6 z-50 flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md hover:bg-yellow-500/10 hover:border-yellow-500/20 transition-all duration-300 group"
       >
         <motion.div
@@ -128,7 +141,7 @@ export default function Beereaders() {
         >
           <ArrowLeft size={14} />
         </motion.div>
-        <span className="text-xs group-hover:text-yellow-400 transition-colors duration-300">Back</span>
+        <span className="text-xs group-hover:text-yellow-400 transition-colors duration-300">{t("backToPortfolio")}</span>
       </Link>
 
       {/* Decorative background elements with parallax */}
@@ -237,7 +250,7 @@ export default function Beereaders() {
                 className="flex items-center gap-2 text-white/40 mt-2 text-xs"
               >
                 <Clock size={12} />
-                <span>3 years experience</span>
+                <span>3 {t('experienceYears')}</span>
               </motion.div>
             </div>
           </div>
@@ -274,7 +287,7 @@ export default function Beereaders() {
                 }}
               >
                 <div className="sticky top-32">
-                  <h3 className="text-xs font-mono tracking-widest text-yellow-400 uppercase">Professional Summary</h3>
+                  <h3 className="text-xs font-mono tracking-widest text-yellow-400 uppercase">{t("summaryTitle")}</h3>
                   <motion.div 
                     initial={{ width: 0 }}
                     animate={{ width: 40 }}
@@ -316,10 +329,9 @@ export default function Beereaders() {
                   />
                   
                   <div className="p-6 border border-yellow-500/20 backdrop-blur-sm relative z-10">
-                    <h4 className="text-xl font-semibold text-yellow-300 mb-3">About BeeReaders</h4>
+                    <h4 className="text-xl font-semibold text-yellow-300 mb-3">{t("aboutTitle")}</h4>
                     <p className="text-white/70 leading-relaxed">
-                      EdTech platform transforming literacy education with AI-powered tools for students across Latin America.
-                      Working with schools, teachers, and students to improve reading proficiency and provide access to digital books.
+                      {t("aboutDescription")}
                     </p>
                   </div>
                 </motion.div>
@@ -343,7 +355,7 @@ export default function Beereaders() {
                 variants={itemFadeIn}
                 className="flex items-center gap-2 mb-6"
               >
-                <h3 className="text-xs font-mono tracking-widest text-yellow-400 uppercase">Key Metrics</h3>
+                <h3 className="text-xs font-mono tracking-widest text-yellow-400 uppercase">{t("keyMetricsTitle")}</h3>
                 <motion.div 
                   className="h-px flex-grow bg-yellow-400/20"
                   initial={{ width: 0 }}
@@ -357,27 +369,27 @@ export default function Beereaders() {
                 {[
                   { 
                     icon: <BarChart3 size={16} className="text-yellow-300" />,
-                    label: "Schools",
-                    value: "300+",
-                    description: "Schools in LATAM"
+                    label: t("schoolsLabel"),
+                    value: t("schoolsValue"),
+                    description: t("schoolsDescription")
                   },
                   { 
                     icon: <BriefcaseBusiness size={16} className="text-yellow-300" />,
-                    label: "Projects",
-                    value: "5",
-                    description: "Major feature launches"
+                    label: t("projectsLabel"),
+                    value: t("projectsValue"),
+                    description: t("projectsDescription")
                   },
                   { 
                     icon: <Code size={16} className="text-yellow-300" />,
-                    label: "Tech Stack",
+                    label: t("techStackLabel"),
                     value: jobData.technologies.length,
-                    description: "Core technologies"
+                    description: t("techStackDescription")
                   },
                   { 
                     icon: <BookOpenCheck size={16} className="text-yellow-300" />,
-                    label: "Impact",
-                    value: "200k+",
-                    description: "Students reached"
+                    label: t("impactLabel"),
+                    value: t("impactValue"),
+                    description: t("impactDescription")
                   }
                 ].map((metric, index) => (
                   <motion.div 
@@ -415,7 +427,7 @@ export default function Beereaders() {
                 variants={itemFadeIn}
                 className="flex items-center justify-between mb-6"
               >
-                <h3 className="text-xs font-mono tracking-widest text-yellow-400 uppercase">Technology Stack</h3>
+                <h3 className="text-xs font-mono tracking-widest text-yellow-400 uppercase">{t("techStackTitle")}</h3>
                 <div className="flex items-center gap-1.5">
                   <motion.div 
                     className="w-2 h-2 rounded-full bg-yellow-500/40"
@@ -428,7 +440,7 @@ export default function Beereaders() {
                       repeat: Infinity
                     }}
                   />
-                  <span className="text-xs text-white/50">Core competencies</span>
+                  <span className="text-xs text-white/50">{t("coreCompetencies")}</span>
                 </div>
               </motion.div>
               
@@ -484,7 +496,7 @@ export default function Beereaders() {
                 className="md:col-span-3"
               >
                 <div className="sticky top-32">
-                  <h3 className="text-xs font-mono tracking-widest text-yellow-400 uppercase mb-4">Key Achievements</h3>
+                  <h3 className="text-xs font-mono tracking-widest text-yellow-400 uppercase mb-4">{t("keyAchievementsTitle")}</h3>
                   <motion.div 
                     initial={{ height: 0 }}
                     whileInView={{ height: 100 }}
@@ -494,14 +506,14 @@ export default function Beereaders() {
                   />
                   <div className="flex items-center gap-2 text-xs text-white/50 mt-4">
                     <Award className="text-yellow-400/80" size={14} />
-                    <span>Notable contributions</span>
+                    <span>{t("notableContributions")}</span>
                   </div>
                 </div>
               </motion.div>
               
               <div className="md:col-span-9">
                 <div className="relative border-l border-white/10 pl-8 ml-2 space-y-12">
-                  {jobData.keyAchievements.map((achievement, index) => (
+                  {jobData.keyAchievements.map((achievement: {title: string, description: string}, index: number) => (
                     <motion.div 
                       key={index}
                       variants={itemFadeIn}
@@ -556,7 +568,7 @@ export default function Beereaders() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <h2 className="text-2xl font-semibold text-white">Key Projects</h2>
+              <h2 className="text-2xl font-semibold text-white">{t("keyProjectsTitle")}</h2>
               <motion.div 
                 className="h-px flex-grow bg-gradient-to-r from-yellow-500/30 to-transparent"
                 initial={{ width: 0 }}
@@ -567,7 +579,7 @@ export default function Beereaders() {
             </motion.div>
             
             <div className="space-y-24">
-              {jobData.projects.map((project, index) => (
+              {jobData.projects.map((project: {title: string, description: string, solution: string}, index: number) => (
                 <motion.div 
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
@@ -618,7 +630,7 @@ export default function Beereaders() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                       >
-                        <h4 className="text-xs uppercase tracking-wider text-yellow-400/60 mb-2">Challenge</h4>
+                        <h4 className="text-xs uppercase tracking-wider text-yellow-400/60 mb-2">{t("challengeTitle")}</h4>
                         <p className="text-white/70 leading-relaxed">{project.description}</p>
                       </motion.div>
                       
@@ -628,7 +640,7 @@ export default function Beereaders() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.5 }}
                       >
-                        <h4 className="text-xs uppercase tracking-wider text-yellow-400/60 mb-2">Solution</h4>
+                        <h4 className="text-xs uppercase tracking-wider text-yellow-400/60 mb-2">{t("solutionTitle")}</h4>
                         <p className="text-white/70 leading-relaxed">{project.solution}</p>
                       </motion.div>
                     </div>
@@ -642,9 +654,9 @@ export default function Beereaders() {
                       transition={{ duration: 0.5, delay: 0.6 }}
                     >
                       <div className="h-px w-8 bg-yellow-500/30"></div>
-                      <span>{index % 2 === 0 ? 'Development Project' : 'Product Initiative'}</span>
+                      <span>{index % 2 === 0 ? t("developmentProject") : t("productInitiative")}</span>
                       <div className="ml-auto px-2 py-1 rounded bg-white/5 border border-white/10">
-                        {index % 3 === 0 ? 'Q4 2022' : index % 3 === 1 ? 'Q2 2023' : 'Q1 2024'}
+                        {index % 3 === 0 ? t("timelineQ4") : index % 3 === 1 ? t("timelineQ2") : t("timelineQ1")}
                       </div>
                     </motion.div>
                   </div>
@@ -663,11 +675,11 @@ export default function Beereaders() {
           >
             <motion.div whileHover={{ x: -5 }} transition={{ duration: 0.3 }}>
               <Link 
-                href="/"
+                href={`/${locale}`}
                 className="flex items-center gap-2 text-xs text-white/60 hover:text-yellow-400 transition-colors duration-300"
               >
                 <ArrowLeft size={12} />
-                <span>Portfolio</span>
+                <span>{t("portfolio")}</span>
               </Link>
             </motion.div>
             
@@ -680,8 +692,8 @@ export default function Beereaders() {
             </motion.div>
             
             <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.3 }}>
-              <Link href="/jobs/certiblock" className="text-xs text-white/60 hover:text-green-400 transition-colors duration-300">
-                Next: CertiBlock →
+              <Link href={`/${locale}/jobs/certiblock`} className="text-xs text-white/60 hover:text-green-400 transition-colors duration-300">
+                {t("certiblock")} →
               </Link>
             </motion.div>
           </motion.div>

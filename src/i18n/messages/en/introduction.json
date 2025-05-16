@@ -1,0 +1,20 @@
+{
+    "e2e": {
+        "title": "End to End Digital Development",
+        "description": "Crafting seamless experiences through code, design, and innovative thinking"
+    },
+    "experience": {
+        "description": "Years of Experience Building Digital Products"
+    },
+    "internationalAwwardWinning": {
+        "title": "International",
+        "description": "Award-Winning Competition Experience"
+    },
+    "fullstack": {
+        "title": "Full Stack",
+        "description": "Software Engineer"
+    },
+    "uiux": {
+        "description": "Transforming Ideas into Powerful Solutions"
+    }
+}

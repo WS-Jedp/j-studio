@@ -1,12 +1,14 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowBigDown, Eye } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export const JPersonalInformation = () => {
+  const t = useTranslations("personal-information");
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   // Create different transform values for staggered parallax effect
@@ -32,9 +34,9 @@ export const JPersonalInformation = () => {
       transition: {
         delay: i * 0.1,
         duration: 0.8,
-        ease: [0.215, 0.61, 0.355, 1]
-      }
-    })
+        ease: [0.215, 0.61, 0.355, 1],
+      },
+    }),
   };
 
   // Staggered letter animation for headings
@@ -46,17 +48,20 @@ export const JPersonalInformation = () => {
       transition: {
         delay: i * 0.03,
         duration: 0.5,
-        ease: [0.215, 0.61, 0.355, 1]
-      }
-    })
+        ease: [0.215, 0.61, 0.355, 1],
+      },
+    }),
   };
 
   return (
-    <section ref={containerRef} className="w-full min-h-[180vh] pt-[60vh] relative overflow-hidden z-50">
+    <section
+      ref={containerRef}
+      className="w-full min-h-[180vh] pt-[60vh] relative overflow-hidden z-50"
+    >
       {/* Background decorative elements with parallax */}
 
       {/* Circle from top - Related to Software Engineering */}
-      <motion.div 
+      <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -200]) }}
         className="absolute flex items-center justify-center top-1/6 md:top-1/4 right-0 w-32 h-32 rounded-full border-2 border-gray-200 overflow-hidden -z-10 opacity-10 md:opacity-90"
       >
@@ -64,7 +69,7 @@ export const JPersonalInformation = () => {
       </motion.div>
 
       {/* Circle from bottom - Related to Design and UX */}
-      <motion.div 
+      <motion.div
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -120]) }}
         className="absolute flex items-center justify-center bottom-1/3 right-0 md:right-[auto] md:left-0 w-48 h-48 rounded-full border-2 border-gray-200 overflow-hidden -z-10 opacity-10 md:opacity-90"
       >
@@ -74,19 +79,19 @@ export const JPersonalInformation = () => {
       {/* Editorial style grid container */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-24 md:gap-y-40 relative z-10">
         {/* Why I Started - with parallax */}
-        <motion.article 
+        <motion.article
           style={{ y: y1, opacity: opacity1 }}
           className="md:col-span-10 md:col-start-2 lg:col-span-8 lg:col-start-3 relative"
         >
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             className="block text-sm font-mono tracking-widest text-gray-500 mb-4"
           >
-            01 / BEGINNINGS
+            {t("beginnings.title")}
           </motion.span>
-          <motion.div 
+          <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "4rem" }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -99,15 +104,19 @@ export const JPersonalInformation = () => {
               transition={{ duration: 0.7, ease: [0.215, 0.61, 0.355, 1] }}
               className="block"
             >
-              I didn't become a software engineer to write code.
+              {t.raw("beginnings.heading")[0]}
             </motion.span>
             <motion.span
               initial={{ y: 100, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.2, ease: [0.215, 0.61, 0.355, 1] }}
+              transition={{
+                duration: 0.7,
+                delay: 0.2,
+                ease: [0.215, 0.61, 0.355, 1],
+              }}
               className="block mt-2"
             >
-              I became one to build worlds.
+              {t.raw("beginnings.heading")[1]}
             </motion.span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-lg">
@@ -117,8 +126,7 @@ export const JPersonalInformation = () => {
               whileInView="visible"
               variants={textRevealVariants}
             >
-              I started young, driven by curiosity — not just about how things
-              work, but why people use them.
+              {t.raw("beginnings.content")[0]}
             </motion.p>
             <motion.p
               custom={1}
@@ -126,8 +134,7 @@ export const JPersonalInformation = () => {
               whileInView="visible"
               variants={textRevealVariants}
             >
-              I wasn't content building tools; I wanted to build experiences —
-              the kind that make life easier, smoother, more meaningful.
+              {t.raw("beginnings.content")[1]}
             </motion.p>
             <motion.p
               custom={2}
@@ -136,26 +143,25 @@ export const JPersonalInformation = () => {
               variants={textRevealVariants}
               className="md:col-span-2 italic text-xs mt-4 border-l-4 border-gray-300 pl-6 py-2"
             >
-              What captured me was the idea that with a few keystrokes, you
-              could shape something real — something useful, beautiful, alive.
+              {t.raw("beginnings.content")[2]}
             </motion.p>
           </div>
         </motion.article>
 
         {/* How I did it - with different parallax speed */}
-        <motion.article 
+        <motion.article
           style={{ y: y2, scale: scale1 }}
           className="md:col-span-8 md:col-start-1 lg:col-span-7 lg:col-start-1 relative"
         >
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             className="block text-sm font-mono tracking-widest text-gray-500 mb-4"
           >
-            02 / PROCESS
+            {t("process.title")}
           </motion.span>
-          <motion.div 
+          <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "4rem" }}
             transition={{ duration: 1.5, delay: 0.9 }}
@@ -163,21 +169,23 @@ export const JPersonalInformation = () => {
           ></motion.div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-12 mt-6 overflow-hidden">
             <motion.div>
-              {"I built one layer at a time — until I could build it all.".split(" ").map((char, index) => ((
-                <motion.span
-                  key={index}
-                  custom={index}
-                  variants={letterAnimation}
-                  initial="hidden"
-                  whileInView="visible"
-                  style={{ 
-                    display: "inline-block",
-                    whiteSpace:  "pre"
-                  }}
-                >
-                  {char + " "}
-                </motion.span>
-              )))}
+              {t("process.heading")
+                .split(" ")
+                .map((char, index) => (
+                  <motion.span
+                    key={index}
+                    custom={index}
+                    variants={letterAnimation}
+                    initial="hidden"
+                    whileInView="visible"
+                    style={{
+                      display: "inline-block",
+                      whiteSpace: "pre",
+                    }}
+                  >
+                    {char + " "}
+                  </motion.span>
+                ))}
             </motion.div>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-lg">
@@ -187,37 +195,27 @@ export const JPersonalInformation = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="md:col-span-2 border-l-4 border-gray-300 pl-4 text-sm"
             >
-              From early prototypes to production-ready systems, I've walked the
-              full stack and back.
+              {t.raw("process.content")[0]}
             </motion.p>
-            <p>
-              I've worn every hat: designer, architect, frontend craftsman,
-              backend strategist. I've turned napkin sketches into full-blown
-              platforms.
-            </p>
-            <p>
-              Eventually, I built Coffi — my proudest creation, where I led
-              every step from concept to scale, crafting not just an app, but a
-              vision for the future of digital work, a platform born from
-              scratch and grown with purpose.
-            </p>
+            <p>{t.raw("process.content")[1]}</p>
+            <p>{t.raw("process.content")[2]}</p>
           </div>
         </motion.article>
 
         {/* Competence Experience - with parallax */}
-        <motion.article 
+        <motion.article
           style={{ y: y3 }}
           className="md:col-span-10 md:col-start-3 lg:col-span-8 lg:col-start-5 relative"
         >
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             className="block text-sm font-mono tracking-widest text-gray-500 mb-4"
           >
-            03 / COMPETITION
+            {t("competition.title")}
           </motion.span>
-          <motion.div 
+          <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "4rem" }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -225,52 +223,49 @@ export const JPersonalInformation = () => {
           ></motion.div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-12 mt-6">
             <motion.div
-              style={{ 
+              style={{
                 opacity: useTransform(
                   scrollYProgress,
                   [0.4, 0.5, 0.6],
                   [0.6, 1, 1]
-                )
+                ),
               }}
             >
               <motion.span
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.8, 
-                  ease: [0.215, 0.61, 0.355, 1] 
+                transition={{
+                  duration: 0.8,
+                  ease: [0.215, 0.61, 0.355, 1],
                 }}
                 className="block"
               >
-                I learned how to build fast, under fire —
+                {t.raw("competition.heading")[0]}
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.8, 
-                  delay: 0.2, 
-                  ease: [0.215, 0.61, 0.355, 1] 
+                transition={{
+                  duration: 0.8,
+                  delay: 0.2,
+                  ease: [0.215, 0.61, 0.355, 1],
                 }}
                 className="block"
               >
-                and with grace.
+                {t.raw("competition.heading")[1]}
               </motion.span>
             </motion.div>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-lg">
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
               className="md:col-span-2"
             >
-              Representing Colombia in WorldSkills, I became national champion,
-              then climbed the international ranks. There, I honed not just
-              skill — but clarity, pressure-resilience, and performance under
-              extreme stakes.
+              {t.raw("competition.content")[0]}
             </motion.p>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.5 }}
@@ -282,29 +277,28 @@ export const JPersonalInformation = () => {
                 transition={{ duration: 1.2, ease: "easeOut" }}
                 className="block h-px w-full bg-gradient-to-r from-indigo-500/30 via-purple-500/30 to-transparent mb-6"
               />
-              Those intense months taught me how to perform under pressure, how
-              to learn fast, and how to build with both precision and beauty.
+              {t.raw("competition.content")[1]}
             </motion.p>
           </div>
         </motion.article>
 
         {/* Design And Art Passion - with enhanced effects */}
-        <motion.article 
-          style={{ 
+        <motion.article
+          style={{
             y: useTransform(scrollYProgress, [0, 1], [0, -120]),
-            scale: useTransform(scrollYProgress, [0, 0.5], [0.98, 1.02]) 
+            scale: useTransform(scrollYProgress, [0, 0.5], [0.98, 1.02]),
           }}
           className="md:col-span-8 md:col-start-2 lg:col-span-6 lg:col-start-4 relative"
         >
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             className="block text-sm font-mono tracking-widest text-gray-500 mb-4"
           >
-            04 / DESIGN
+            {t("design.title")}
           </motion.span>
-          <motion.div 
+          <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: "4rem" }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -312,17 +306,17 @@ export const JPersonalInformation = () => {
           ></motion.div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-12 mt-6">
             <motion.div
-              style={{ 
+              style={{
                 filter: useTransform(
-                  scrollYProgress, 
-                  [0.3, 0.4, 0.5], 
+                  scrollYProgress,
+                  [0.3, 0.4, 0.5],
                   ["blur(4px)", "blur(0px)", "blur(0px)"]
                 ),
                 opacity: useTransform(
                   scrollYProgress,
                   [0.3, 0.4, 0.6],
                   [0.5, 1, 1]
-                )
+                ),
               }}
             >
               <motion.span
@@ -331,7 +325,7 @@ export const JPersonalInformation = () => {
                 transition={{ duration: 0.7, ease: "easeOut" }}
                 className="block"
               >
-                I don't separate design from code —
+                {t.raw("design.heading")[0]}
               </motion.span>
               <motion.span
                 initial={{ x: 50, opacity: 0 }}
@@ -339,12 +333,12 @@ export const JPersonalInformation = () => {
                 transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
                 className="block"
               >
-                I see them as conversation.
+                {t.raw("design.heading")[1]}
               </motion.span>
             </motion.div>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 text-lg">
-            <motion.div 
+            <motion.div
               whileInView={{ scale: [0.96, 1], opacity: [0.8, 1] }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="relative group overflow-hidden"
@@ -362,12 +356,11 @@ export const JPersonalInformation = () => {
               </div>
 
               <p className="backdrop-blur-sm p-8 border border-gray-200/20 rounded-md shadow-sm transition-all duration-300 group-hover:shadow-md relative z-10">
-                Design and code are not separate disciplines. They're voices in
-                the same conversation.
+                {t.raw("design.content")[0]}
               </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               whileInView={{ scale: [0.96, 1], opacity: [0.8, 1] }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               className="relative group overflow-hidden"
@@ -380,25 +373,26 @@ export const JPersonalInformation = () => {
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:14px_14px]"></div>
 
               <p className="backdrop-blur-sm p-8 border border-gray-200/20 rounded-md shadow-sm transition-all duration-300 group-hover:shadow-md relative z-10">
-                I code like a designer, and design like an engineer. I believe
-                in systems that feel good to use, because intuition should be
-                engineered too.
+                {t.raw("design.content")[1]}
               </p>
             </motion.div>
           </div>
 
           {/* Additional tech design element - with enhanced typing animation effect */}
-          <motion.div 
-            whileInView={{ 
+          <motion.div
+            whileInView={{
               backdropFilter: ["blur(0px)", "blur(4px)"],
-              boxShadow: ["0 0 0px rgba(0,0,0,0)", "0 10px 30px rgba(0,0,0,0.1)"]
+              boxShadow: [
+                "0 0 0px rgba(0,0,0,0)",
+                "0 10px 30px rgba(0,0,0,0.1)",
+              ],
             }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             className="mt-12 relative overflow-hidden rounded-md"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/5 to-gray-800/5"></div>
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:20px_20px]"></div>
-            <motion.div 
+            <motion.div
               initial={{ width: "0%" }}
               whileInView={{ width: "100%" }}
               transition={{ duration: 1.5, ease: "easeOut" }}
@@ -407,10 +401,14 @@ export const JPersonalInformation = () => {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 1.8, ease: "easeOut", staggerChildren: 0.1 }}
+              transition={{
+                duration: 1.8,
+                ease: "easeOut",
+                staggerChildren: 0.1,
+              }}
               className="text-sm font-mono p-4 text-gray-500 tracking-wider"
             >
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -418,15 +416,16 @@ export const JPersonalInformation = () => {
               >
                 function
               </motion.span>{" "}
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
                 className="text-purple-500"
               >
                 design
-              </motion.span>() {"{"} <br />
-              <motion.span 
+              </motion.span>
+              () {"{"} <br />
+              <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
@@ -434,40 +433,42 @@ export const JPersonalInformation = () => {
               >
                 return
               </motion.span>{" "}
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
                 className="text-green-500"
               >
                 'aesthetic'
-              </motion.span> +{" "}
-              <motion.span 
+              </motion.span>{" "}
+              +{" "}
+              <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 1 }}
                 className="text-green-500"
               >
                 'functional'
-              </motion.span>; <br />
+              </motion.span>
+              ; <br />
               {"}"}
             </motion.p>
           </motion.div>
         </motion.article>
 
         {/* Nomadic Life By Choice */}
-        <motion.article 
-          style={{ 
-            y: useTransform(scrollYProgress, [0, 1], [0, -60]) 
+        <motion.article
+          style={{
+            y: useTransform(scrollYProgress, [0, 1], [0, -60]),
           }}
           className="md:col-span-9 md:col-start-1 lg:col-span-7 lg:col-start-2 relative"
         >
           <span className="block text-sm font-mono tracking-widest text-gray-500 mb-4">
-            05 / LIFESTYLE
+            {t("lifestyle.title")}
           </span>
           <div className="absolute top-8 left-0 w-16 h-1 bg-gray-800"></div>
-          <motion.h2 
-            style={{ 
+          <motion.h2
+            style={{
               rotateX: useTransform(scrollYProgress, [0.6, 0.8], [10, 0]),
               perspective: "1000px",
               transformStyle: "preserve-3d",
@@ -479,16 +480,12 @@ export const JPersonalInformation = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.1 }}
             >
-              I move freely — and so does what I build.
+             {t("lifestyle.heading")}
             </motion.span>
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-6 text-lg">
-            {[
-              "I live and work lightly. Remote by default. Grounded by curiosity.",
-              "Nomadic by choice, I collect places, ideas, and inspirations and pour them into the things I build.",
-              "Because great software, like great living, should be adaptive, intentional, and free."
-            ].map((text, index) => (
-              <motion.p 
+            {t.raw("lifestyle.content").map((text: string, index: number) => (
+              <motion.p
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -502,30 +499,28 @@ export const JPersonalInformation = () => {
         </motion.article>
 
         {/* Keep Moving Forward */}
-        <motion.article 
-          style={{ 
-            y: useTransform(scrollYProgress, [0, 1], [0, -40]) 
+        <motion.article
+          style={{
+            y: useTransform(scrollYProgress, [0, 1], [0, -40]),
           }}
           className="md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-7 relative z-[99]"
         >
           <span className="block text-sm font-mono tracking-widest text-gray-500 mb-4">
-            06 / FUTURE
+          {t("future.title")}
           </span>
           <div className="absolute top-8 right-0 w-16 h-1 bg-gray-800"></div>
-          <motion.h2 
-            style={{ 
+          <motion.h2
+            style={{
               x: useTransform(scrollYProgress, [0.7, 0.9], [50, 0]),
-              opacity: useTransform(scrollYProgress, [0.7, 0.8], [0.5, 1])
+              opacity: useTransform(scrollYProgress, [0.7, 0.8], [0.5, 1]),
             }}
             className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-12 mt-6"
           >
-            Still learning. Still building. Always chasing better.
+            {t("future.heading")}
           </motion.h2>
           <div className="text-sm italic font-light border-l-4 border-gray-300 pl-6 py-2">
             <p>
-              An engineer. A designer. A founder in spirit. Rooted in
-              creativity, trained through pressure, and always in motion —
-              toward whatever's next.
+            {t.raw("future.content")[0]}
             </p>
           </div>
         </motion.article>

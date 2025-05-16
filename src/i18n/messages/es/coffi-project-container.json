@@ -1,0 +1,23 @@
+{
+  "coffiProject": {
+    "title": "Proyecto Coffi",
+    "description": "Una plataforma creada desde cero para ayudar a los nómadas digitales y trabajadores remotos a encontrar espacios donde realmente puedan prosperar. Desde la idea hasta el despliegue, cada línea de código, decisión de diseño y decisión empresarial fue hecha por mí, no solo para resolver un problema, sino para crear una experiencia que se adapte a la forma en que vivimos y trabajamos hoy."
+  },
+"coffiBanner": {
+    "title": "Donde la Idea se Convirtió en el Producto",
+    "description": "Construí Coffi porque lo necesitaba. Como creador remoto que se mueve de un lugar a otro, anhelaba más que café y Wi-Fi: quería espacios donde realmente pudiera concentrarme, conectarme y crear. Coffi se convirtió en mi respuesta a esa búsqueda, no solo una aplicación, sino un reflejo de cómo creo que debería sentirse el trabajo moderno: intencional, flexible y humano.",
+    "website": "Sitio Web",
+    "instagram": "Instagram",
+    "learnMore": "Conoce Más Sobre El Pensamiento Detrás De Coffi"
+  },
+  "coffiTryTheApp": {
+    "title": "Prueba Coffi — Trabaja Donde Prosperes",
+    "description": "Descubre cafés, coworks y rincones ocultos seleccionados para un trabajo profundo y una conexión real, impulsados por ideas de la comunidad y diseñados para los nómadas digitales modernos.",
+    "features": {
+      "workspaces": "Encuentra espacios de trabajo perfectos cerca de ti",
+      "rewards": "Canjea recompensas y descuentos",
+      "insights": "Actualizaciones de información en tiempo real"
+    },
+    "cta": "Explora tu próximo espacio de trabajo"
+  }
+}

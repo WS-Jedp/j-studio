@@ -1,0 +1,93 @@
+{
+    "general": {
+        "title": "My Language of Building",
+        "description": "Every tool here is part of how I think — chosen not by trend, but by intent. This is the stack I use to imagine, shape, and scale meaningful digital experiences.",
+        "selectSkillGroup": "Select a skill group" 
+    },
+    "language": {
+        "node": "The language of the web. I use JS for interactive web applications.",
+        "typescript": "Type-safe or no deal. I use TS everywhere: small scripts or scalable platforms.",
+        "python": "I use Python for data science, machine learning, and web development.",
+        "java": "I use Java for enterprise-level applications and backend systems.",
+        "php": "I use PHP for server-side scripting and web development."
+    },
+    "frontend": {
+        "react": "My go-to for MVPs and interfaces that feel alive.",
+        "nextjs": "For SEO, performance, and easy deployment.",
+        "redux": "Clear and modular state handling for growing apps.",
+        "tailwindcss": "Utility-first. Customizable. No more heavy UI libraries.",
+        "framer-motion": "For animations and micro-interactions that make interfaces feel alive.",
+        "vuejs": "Great for dashboards and structured apps like e-commerce.",
+        "angular": "Ideal for large, component-heavy enterprise projects."
+    },
+    "backend": {
+        "nestjs": "Modular and scalable backend architecture.",
+        "prisma": "Intuitive ORM for small-to-medium projects.",
+        "express": "Fast API setup — great for MVPs and quick experiments.",
+        "fastapi": "Python-based, lightweight and great for team collaboration.",
+        "spring-boot": "Powerful backend choice for enterprise-grade applications."
+    },
+    "mobile": {
+        "ionic": "Fast way to build hybrid mobile apps using web tech.",
+        "react-native": "For more native-feeling mobile apps."
+    },
+    "design": {
+        "figma": "Fast and collaborative prototyping for UI/UX workflows.",
+        "adobe-xd": "Alternative design tool — great for quick UI flows.",
+        "illustrator": "Used for branding, icon systems, and design assets."
+    },
+    "database": {
+        "postgresql": "Reliable relational DB for structured data.",
+        "mongodb": "Flexible NoSQL database, great for dynamic schemas.",
+        "aws": "Managed SQL service for scalability and reliability.",
+        "dynamodb": "AWS-native NoSQL DB, scalable and fast.",
+        "redis": "Go-to for caching and real-time performance boosts."
+    },
+    "cloud": {
+        "aws": "My infrastructure base for scaling production-ready apps.",
+        "google-cloud": "Clean and efficient for small-to-medium-sized apps.",
+        "digital-ocean": "Developer-friendly, quick deploys for personal or startup projects.",
+        "github-actions": "CI/CD pipelines that automate deployments and tests."
+    },
+    "dev-tools": {
+        "copilot": "AI-powered code suggestions that speed up development.",
+        "vscode": "My IDE of choice for everything I build."
+    },
+    "groups": {
+        "language": {
+            "title": "Programming Languages",
+            "description": "The foundation of everything I build. These are the languages I'm fluent in, from production-ready code to experimental projects."
+        },
+        "frontend": {
+            "title": "Frontend Development",
+            "description": "Creating intuitive, responsive and engaging user interfaces is where I shine. These are my tools of choice for building exceptional web experiences."
+        },
+        "backend": {
+            "title": "Backend Systems",
+            "description": "The backbone of any robust application. These technologies power my server-side logic, APIs, and data processing."
+        },
+        "mobile": {
+            "title": "Mobile Development",
+            "description": "Building cross-platform mobile applications that feel native and deliver exceptional user experiences."
+        },
+        "design": {
+            "title": "Design & UI/UX",
+            "description": "Blending aesthetics with functionality. These are the tools I use to create beautiful, intuitive interfaces and visual assets."
+        },
+        "database": {
+            "title": "Database Solutions",
+            "description": "Reliable data storage and retrieval are critical. I leverage these technologies to build efficient, scalable database systems."
+        },
+        "cloud": {
+            "title": "Cloud Infrastructure",
+            "description": "Scalable, reliable cloud solutions that power modern applications. These platforms and tools form the foundation of my deployments."
+        },
+        "dev-tools": {
+            "title": "Development Tools",
+            "description": "My everyday toolkit that enhances productivity and helps me build better software faster and more efficiently."
+        }
+    },
+    "utils": {
+        "skills": "Skills"
+    }
+}
