@@ -7,8 +7,29 @@ const CustomCursor = () => {
   const [isPointer, setIsPointer] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
+    // Check if device is desktop based on hover capability
+    const checkIfDesktop = () => {
+      return window.matchMedia('(hover: hover)').matches && window.innerWidth >= 1024;
+    };
+    
+    setIsDesktop(checkIfDesktop());
+    
+    // Update on window resize
+    const handleResize = () => {
+      setIsDesktop(checkIfDesktop());
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    // Only add cursor event listeners if it's a desktop device
+    if (!isDesktop) return;
+    
     const updatePosition = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
@@ -71,7 +92,10 @@ const CustomCursor = () => {
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [position.x, position.y]);
+  }, [position.x, position.y, isDesktop]);
+
+  // Don't render custom cursor for non-desktop devices
+  if (!isDesktop) return null;
 
   return (
     <>

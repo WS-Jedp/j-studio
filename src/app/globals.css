@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -93,6 +94,46 @@
   }
 }
 
+@keyframes up {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes seamless-up {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes seamless-down {
+  0% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .animate-fadeIn {
   animation: fadeIn 0.5s ease-in-out;
 }
@@ -113,9 +154,78 @@
     animation: floatDown 4s ease-in forwards;
   }
 
+  .animate-up {
+    animation: up 20s linear infinite;
+  }
+
+  .animate-down {
+    animation: down 20s linear infinite;
+  }
+
+  /* More flexible animation classes that work with dynamic durations */
+  .animate-seamless-up {
+    animation-name: seamless-up;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  .animate-seamless-down {
+    animation-name: seamless-down;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  @keyframes seamless-left {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes seamless-right {
+    0% {
+      transform: translateX(-50%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
   /* Radial spotlight gradient */
   .bg-radial-spotlight {
     background-image: var(--radial-spotlight);
+  }
+
+  /* Add pause-on-hover utility */
+  .pause-on-hover:hover .animation-container {
+    animation-play-state: paused !important;
+  }
+
+  /* Add grayscale transition for skill cards */
+  .skill-card-transition {
+    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  /* Different hover effect for highlighted vs non-highlighted cards */
+  .skill-card-highlighted:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  .skill-card-dimmed:hover {
+    opacity: 0.8 !important;
+    filter: grayscale(0.5) brightness(0.7) !important;
   }
 }
 
@@ -186,4 +296,69 @@ button,
 /* Elements that need to show default cursor */
 .hide-cursor {
   cursor: auto !important;
+}
+
+
+/* Coffi Project Styles */
+
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(81, 50, 193, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(81, 50, 193, 0.05) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+/* Dot pattern alternative - choose one */
+.bg-dot-pattern {
+  background-size: 20px 20px;
+  background-image: radial-gradient(rgba(81, 50, 193, 0.1) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+}
+
+/* For the tech circuit-board effect */
+.bg-circuit {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 50 L80 50 M50 20 L50 80' stroke='rgba(81, 50, 193, 0.05)' stroke-width='1' fill='none'/%3E%3Ccircle cx='50' cy='50' r='3' fill='rgba(81, 50, 193, 0.1)'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+}
+
+/* Add gradient effect to the top and bottom of the section */
+.section-gradient {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-gradient::before,
+.section-gradient::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50px;
+  /* Adjust height as needed */
+  z-index: 10;
+}
+
+.section-gradient::before {
+  top: 0;
+  background: linear-gradient(to bottom, #1c1e25, transparent);
+}
+
+.section-gradient::after {
+  bottom: 0;
+  background: linear-gradient(to top, #1c1e25, transparent);
+}
+
+/* Embla Carousel */
+.embla__container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.embla__slide {
+  flex: 0 0 auto;
+  min-height: 0;
+  max-height: none;
+  position: relative;
 }

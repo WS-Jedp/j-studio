@@ -6,15 +6,7 @@ import Image from "next/image";
 import { JobsExperienceData } from "@/data/jobs";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Code, Clock, Award, BriefcaseBusiness, BookOpenCheck, BarChart3, ChevronDown } from "lucide-react";
-
-// Custom component for scroll-driven progress bars
-const ScrollProgressBar = ({ progress }: { progress: MotionValue<number> }) => {
-  const scaleX = useTransform(progress, [0, 1], [0, 1]);
-  
-  return (
-    <motion.div className="fixed top-0 left-0 right-0 h-0.5 bg-yellow-400/40 z-50 origin-left" style={{ scaleX }} />
-  );
-};
+import { ScrollProgressBar } from "@/components/scrollProgression";
 
 export default function Beereaders() {
   // Find the BeeReaders job data
@@ -688,7 +680,7 @@ export default function Beereaders() {
             </motion.div>
             
             <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.3 }}>
-              <Link href="/jobs/certiblock" className="text-xs text-white/60 hover:text-green-400 cursor-pointer transition-colors duration-300">
+              <Link href="/jobs/certiblock" className="text-xs text-white/60 hover:text-green-400 transition-colors duration-300">
                 Next: CertiBlock →
               </Link>
             </motion.div>

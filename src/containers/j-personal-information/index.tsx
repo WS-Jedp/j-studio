@@ -58,7 +58,7 @@ export const JPersonalInformation = () => {
       {/* Circle from top - Related to Software Engineering */}
       <motion.div 
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -200]) }}
-        className="absolute flex items-center justify-center top-1/4 right-0 w-32 h-32 rounded-full border-2 border-gray-200 overflow-hidden"
+        className="absolute flex items-center justify-center top-1/6 md:top-1/4 right-0 w-32 h-32 rounded-full border-2 border-gray-200 overflow-hidden -z-10 opacity-10 md:opacity-90"
       >
         <ArrowBigDown size={42} />
       </motion.div>
@@ -66,28 +66,10 @@ export const JPersonalInformation = () => {
       {/* Circle from bottom - Related to Design and UX */}
       <motion.div 
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -120]) }}
-        className="absolute flex items-center justify-center bottom-1/3 left-0 w-48 h-48 rounded-full border-2 border-gray-200 opacity-90 overflow-hidden"
+        className="absolute flex items-center justify-center bottom-1/3 right-0 md:right-[auto] md:left-0 w-48 h-48 rounded-full border-2 border-gray-200 overflow-hidden -z-10 opacity-10 md:opacity-90"
       >
         <Eye size={60} />
       </motion.div>
-
-      {/* Add floating tech elements that respond to scroll */}
-      <motion.div
-        style={{ 
-          rotate: useTransform(scrollYProgress, [0, 1], [0, 45]),
-          scale: useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.2, 0.9]),
-          x: useTransform(scrollYProgress, [0, 1], [0, 100])
-        }}
-        className="absolute top-[15%] left-[10%] w-16 h-16 bg-gradient-to-br from-blue-400/20 to-indigo-500/20 rounded-lg z-0"
-      />
-      <motion.div
-        style={{ 
-          rotate: useTransform(scrollYProgress, [0, 1], [0, -30]),
-          scale: useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1.1, 0.8]),
-          x: useTransform(scrollYProgress, [0, 1], [0, -80])
-        }}
-        className="absolute bottom-[25%] right-[15%] w-20 h-20 bg-gradient-to-tl from-purple-400/20 to-pink-500/20 rounded-lg z-0"
-      />
 
       {/* Editorial style grid container */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-24 md:gap-y-40 relative z-10">
@@ -524,7 +506,7 @@ export const JPersonalInformation = () => {
           style={{ 
             y: useTransform(scrollYProgress, [0, 1], [0, -40]) 
           }}
-          className="md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-7 relative bg-j-deep-black z-[99]"
+          className="md:col-span-8 md:col-start-5 lg:col-span-6 lg:col-start-7 relative z-[99]"
         >
           <span className="block text-sm font-mono tracking-widest text-gray-500 mb-4">
             06 / FUTURE

@@ -201,15 +201,18 @@ export const JobsExperienceData: JobCardProps[] = [
       {
         title:
           "🥇 1st – Web Dev Champion (City, Regional & National, Colombia)",
-        description: "",
+        description:
+          "Crowned national champion in Web Development after winning a series of competitive rounds across city, regional, and national levels — demonstrating technical mastery, creativity, and performance under pressure.",
       },
       {
         title: "🥈 2nd – WorldSkills Americas 2021 (Guatemala)",
-        description: "",
+        description:
+          "Earned second place among the top web developers in the Americas, showcasing excellence in real-world problem solving, user experience, and rapid delivery of high-quality code in a timed environment.",
       },
       {
         title: "🌍 14th – WorldSkills Global 2022 (South Korea)",
-        description: "",
+        description:
+          "Represented Colombia at the global stage, ranking 14th worldwide in the Web Technologies category — competing under international standards and working closely with elite coaches from South Korea and Latin America.",
       },
     ],
     technologies: [
@@ -221,7 +224,18 @@ export const JobsExperienceData: JobCardProps[] = [
     accentColor: "#D51067",
     backgroundColor: "#D51067",
     companyLogo: "/assets/jobs/worldskills-logo.svg",
-    projects: [],
+    projects: [
+      {
+        title: "South Korea & Colombia Knowledge Exchange Program",
+        description:
+          "Two-week international training initiative designed to foster collaboration between WorldSkills experts and competitors from South Korea and Colombia.",
+        solution:
+          "Participated in a cross-cultural learning environment focused on high-performance strategies for international competition. Shared techniques, refined technical skills, and absorbed global best practices in web development, teamwork, and time-constrained execution.",
+        images: [
+          /* image URLs here */
+        ],
+      },
+    ],
   },
   {
     id: "PLATZIMASTER",
@@ -251,12 +265,43 @@ export const JobsExperienceData: JobCardProps[] = [
     ],
     technologies: [
       { name: "React" },
-      { name: "Node.js" },
       { name: "Express" },
+      { name: "graphql" },
       { name: "MongoDB" },
     ],
     accentColor: "#FBBF24",
     backgroundColor: "#FBBF24",
-    projects: [],
+    projects: [
+      {
+        title: "Advanced Frontend Architecture",
+        description:
+          "Trained to build scalable, high-performance frontend systems using React and modern tooling.",
+        solution:
+          "Learned to go beyond implementation — designing maintainable component systems, writing human-readable code, and optimizing performance at scale. Developed skills to bridge the gap between design systems and engineering with a product-focused mindset.",
+        images: [
+          /* image URLs here */
+        ],
+      },
+      {
+        title: "Remote Agile Collaboration",
+        description:
+          "Worked in high-pressure, international remote teams using modern product workflows.",
+        solution:
+          "Collaborated with developers across Latin America and Europe using agile methodologies, daily standups, and iterative delivery. Learned how to adapt quickly, plan effectively, and execute under real-world time constraints.",
+        images: [
+          /* image URLs here */
+        ],
+      },
+      {
+        title: "Learning Efficiency Systems",
+        description:
+          "Developed a system for mastering new technologies fast under high-intensity training.",
+        solution:
+          "Built personalized study workflows using meta-learning principles to absorb complex topics faster. Applied this to learn full-stack technologies in compressed timelines, resulting in faster delivery and deeper technical insight.",
+        images: [
+          /* image URLs here */
+        ],
+      },
+    ],
   },
 ];

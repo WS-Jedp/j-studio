@@ -15,91 +15,102 @@ export default function JobExperience({
   const [isHorizontalScrollEnd, setIsHorizontalScrollEnd] = useState(false);
   const [isHorizontalScrollStart, setIsHorizontalScrollStart] = useState(true);
   const [hoverCardIndex, setHoverCardIndex] = useState<number | null>(null);
+  const [isInView, setIsInView] = useState(false);
 
-  const handleHorizontalScroll = (e: WheelEvent) => {
+  // Check if component is in view
+  const checkIfInView = () => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const threshold = 1; // 80% visibility threshold
+
+      const visibleHeight =
+        Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+      const isVisible = visibleHeight >= rect.height * threshold;
+
+      setIsInView(isVisible);
+
+      // If component is in view, disable body scroll
+      if (isVisible && !isHorizontalScrollEnd && !isHorizontalScrollStart) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+    }
+  };
+
+  // Check horizontal scroll position
+  const checkScrollPosition = () => {
     if (horizontalScrollRef.current) {
-      const scrollLeft = horizontalScrollRef.current.scrollLeft;
-      const scrollWidth = horizontalScrollRef.current.scrollWidth;
-      const clientWidth = horizontalScrollRef.current.clientWidth;
-
+      const { scrollLeft, scrollWidth, clientWidth } = horizontalScrollRef.current;
       const tolerance = 2; // Tolerance for floating-point inaccuracies
+
       const isAtEnd = scrollLeft + clientWidth >= scrollWidth - tolerance;
       const isAtStart = scrollLeft <= tolerance;
 
       setIsHorizontalScrollEnd(isAtEnd);
       setIsHorizontalScrollStart(isAtStart);
 
-      const isScrollingDown = e.deltaY >= 0;
-
-      if (isScrollingDown && isAtEnd) {
+      // Re-enable vertical scrolling if at the edges
+      if ((isAtEnd || isAtStart) && isInView) {
         onScrollEnd();
-      }
-
-      if (!isScrollingDown && isAtStart) {
-        onScrollEnd();
-      }
-
-      // Prevent default scrolling behavior
-      if (
-        (isScrollingDown && !isAtStart) ||
-        !isAtEnd ||
-        (!isAtStart && !isAtEnd)
-      ) {
-        e.preventDefault();
-        horizontalScrollRef.current.scrollLeft += e.deltaY;
-      }
-
-      if (
-        (!isScrollingDown && isAtEnd && !isAtStart) ||
-        (!isAtEnd && !isAtStart)
-      ) {
-        e.preventDefault();
-        horizontalScrollRef.current.scrollLeft += e.deltaY;
       }
     }
   };
 
-  const detectContainerInView = () => {
-    if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <=
-          (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <=
-          (window.innerWidth || document.documentElement.clientWidth)
-      );
+  // Handle wheel events
+  const handleWheel = (e: WheelEvent) => {
+    if (!isInView || !horizontalScrollRef.current) return;
+
+    const isScrollingDown = e.deltaY > 0;
+
+    // If at the end and scrolling down or at the start and scrolling up, let default scroll happen
+    if (
+      (isHorizontalScrollEnd && isScrollingDown) ||
+      (isHorizontalScrollStart && !isScrollingDown)
+    ) {
+      return;
     }
-    return false;
+
+    // Otherwise, prevent default scroll and handle horizontal scrolling
+    e.preventDefault();
+    horizontalScrollRef.current.scrollLeft += e.deltaY;
+
+    // Check scroll position after scrolling
+    checkScrollPosition();
   };
 
   useEffect(() => {
-    const onWheel = (e: WheelEvent) => {
-      const inView = detectContainerInView();
-      if (inView) {
-        const isScrollingDown = e.deltaY > 0;
-        const isScrollingUp = e.deltaY < 0;
+    window.addEventListener("scroll", checkIfInView, { passive: true });
+    window.addEventListener("resize", checkIfInView, { passive: true });
+    window.addEventListener("wheel", handleWheel, { passive: false });
 
-        if (
-          (isScrollingDown && isHorizontalScrollEnd) ||
-          (isScrollingUp && isHorizontalScrollStart)
-        ) {
-          // Allow normal window scrolling
-          return;
-        }
-
-        handleHorizontalScroll(e);
-      }
-    };
-
-    window.addEventListener("wheel", onWheel, { passive: false });
+    // Initial check
+    checkIfInView();
 
     return () => {
       document.body.style.overflow = "auto";
-      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("scroll", checkIfInView);
+      window.removeEventListener("resize", checkIfInView);
+      window.removeEventListener("wheel", handleWheel);
     };
-  }, [isHorizontalScrollEnd, isHorizontalScrollStart]);
+  }, [isInView, isHorizontalScrollEnd, isHorizontalScrollStart]);
+
+  // Add scroll event listener to the horizontal scroll container
+  useEffect(() => {
+    const scrollContainer = horizontalScrollRef.current;
+    if (scrollContainer) {
+      scrollContainer.addEventListener("scroll", checkScrollPosition, {
+        passive: true,
+      });
+
+      // Initial check
+      checkScrollPosition();
+
+      return () => {
+        scrollContainer.removeEventListener("scroll", checkScrollPosition);
+      };
+    }
+  }, []);
 
   return (
     <section
@@ -112,7 +123,7 @@ export default function JobExperience({
       {/* Horizontal scrolling container */}
       <section
         ref={horizontalScrollRef}
-        className="relative w-full h-auto flex flex-row space-x-6 py-12 z-50 items-end overflow-x-scroll"
+        className="relative w-full h-auto flex flex-row space-x-6 py-12 z-50 items-end overflow-x-scroll scrollbar-hide"
       >
         {/* Job card */}
         <article className="hidden md:block min-w-[36%] h-[81vh]"></article>
@@ -182,7 +193,7 @@ export default function JobExperience({
             companyLogo="/assets/jobs/worldskills-logo.svg"
             accentColor="#D51067"
             backgroundColor="#D51067"
-            action={() => {}}
+            action={() => navigation.push("/learning/worldskills")}
           />
         </article>
         <article
@@ -205,7 +216,7 @@ export default function JobExperience({
             svgIcon="/assets/jobs/platzi-logo.svg"
             accentColor="#07e98a"
             backgroundColor="#07e98a"
-            action={() => {}}
+            action={() => navigation.push("/learning/platzi-master")}
           />
         </article>
       </section>

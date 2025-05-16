@@ -3,8 +3,20 @@ import { Skill, SkillGroup } from "@/data/skills";
 import Image from "next/image";
 import { useMemo } from "react";
 
-export const SkillCard = ({ skill }: { skill: Skill }) => {
-  // Color schemes based on skill group
+type SkillCardProps = {
+  skill: Skill & { index: number };
+  selectedGroup: SkillGroup | null;
+  index: number;
+};
+
+export const SkillCard = ({ skill, selectedGroup, index }: SkillCardProps) => {
+  // Check if this skill should be highlighted
+  const isHighlighted = useMemo(() => {
+    // If no group is selected, or this skill belongs to the selected group
+    return !selectedGroup || skill.groupType === selectedGroup;
+  }, [selectedGroup, skill.groupType]);
+
+  // Memoize colors to prevent recalculation
   const colors = useMemo(() => {
     switch (skill.groupType) {
       case SkillGroup.LANGUAGE:
@@ -135,47 +147,37 @@ export const SkillCard = ({ skill }: { skill: Skill }) => {
     }
   }, [skill.groupType]);
 
+  // Simplified animation settings
+  const cardAnimation = {
+    initial: { opacity: 0.7, y: 10 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.3 },
+  };
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      whileHover={{
-        scale: 1.03,
-        boxShadow: `0 8px 20px ${colors.glow}`,
-      }}
-      key={skill.name}
-      className={`relative w-full h-[330px] p-4 bg-gradient-to-br ${colors.gradient} 
+      {...cardAnimation}
+      className={`relative w-full h-[180px] p-4 bg-gradient-to-br ${colors.gradient} 
                 border ${colors.border} rounded-xl backdrop-blur-md 
-                flex flex-col justify-between overflow-hidden group`}
+                flex flex-col justify-between overflow-hidden group
+                ${!isHighlighted ? 'grayscale brightness-50 opacity-50' : ''}`}
+      style={{
+        contain: "content",
+        willChange: "transform",
+        transform: "translateZ(0)",
+        transition: "filter 0.3s ease, opacity 0.3s ease",
+      }}
     >
-      {/* Glass reflection effect */}
-      <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-xl"></div>
-      <div className={`absolute -bottom-10 -left-10 w-40 h-40 ${colors.reflectionColor} rounded-full blur-xl`}></div>
-
-      {/* Enhanced glass border highlight */}
-      <div className={`absolute inset-0 rounded-xl border ${colors.border} overflow-hidden pointer-events-none`}></div>
-
-      {/* Cosmic background elements - simplified */}
-      <div className="absolute inset-0 overflow-hidden opacity-10">
-        <div className="absolute top-1/4 left-1/4 w-1.5 h-1.5 rounded-full bg-blue-300 animate-pulse"></div>
-        <div className="absolute top-3/4 left-1/2 w-1 h-1 rounded-full bg-purple-300 animate-pulse"></div>
-      </div>
-
-      {/* Tech circuit lines - simplified */}
-      <div className={`absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r ${colors.circuitLine}`}></div>
-      <div className={`absolute top-0 right-0 w-0.5 h-12 bg-gradient-to-b ${colors.circuitLine}`}></div>
-
       {/* Header with icon and name */}
       <div className="relative z-10 mb-1.5 flex flex-row items-center justify-between">
         <div className="flex flex-row flex-nowrap items-center">
           {false ? (
-            <div className={`w-8 h-8 mr-2 flex-shrink-0 ${colors.icon} rounded-lg flex items-center justify-center overflow-hidden backdrop-blur-sm border ${colors.iconBorder}`}>
+            <div className={`w-4 h-4 mr-1 flex-shrink-0 ${colors.icon} rounded-lg flex items-center justify-center overflow-hidden backdrop-blur-sm border ${colors.iconBorder}`}>
               <Image
                 src={`/icons/${skill.icon}.svg`}
                 alt={skill.name}
-                width={20}
-                height={20}
+                width={15}
+                height={15}
                 className="object-contain"
                 onError={(e) => {
                   // Fallback if image fails to load
@@ -185,11 +187,11 @@ export const SkillCard = ({ skill }: { skill: Skill }) => {
               />
             </div>
           ) : (
-            <div className={`w-8 h-8 mr-2 flex-shrink-0 ${colors.icon} rounded-lg flex items-center justify-center backdrop-blur-sm border ${colors.iconBorder}`}>
+            <div className={`w-5 h-5 mr-1 flex-shrink-0 ${colors.icon} rounded-sm flex items-center justify-center backdrop-blur-sm border ${colors.iconBorder}`}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="12"
+                height="12"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -202,7 +204,7 @@ export const SkillCard = ({ skill }: { skill: Skill }) => {
               </svg>
             </div>
           )}
-          <h3 className={`text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r ${colors.title}`}>
+          <h3 className={`text-md font-bold text-transparent bg-clip-text bg-gradient-to-r ${colors.title}`}>
             {skill.name}
           </h3>
         </div>
@@ -217,9 +219,10 @@ export const SkillCard = ({ skill }: { skill: Skill }) => {
       </div>
 
       {/* Description with better readability */}
-      <p className="text-j-celestial-white/80 text-3xl font-bold mb-2.5 group-hover:text-j-celestial-white/95 transition-colors relative z-10">
+      <p className="text-j-celestial-white/80 text-sm font-bold mb-2.5 group-hover:text-j-celestial-white/95 transition-colors relative z-10">
         {skill.description}
       </p>
+
     </motion.div>
   );
 };

@@ -11,16 +11,15 @@ import {
   Code,
   Clock,
   Award,
-  BriefcaseBusiness,
-  BookOpenCheck,
-  BarChart3,
-  ChevronDown,
+  Users,
+  Lightbulb,
+  GraduationCap,
 } from "lucide-react";
 import { ScrollProgressBar } from "@/components/scrollProgression";
 
-export default function Certiblock() {
-  // Find the Certiblock job data
-  const jobData = JobsExperienceData[2];
+export default function WorldSkills() {
+  // Find the WorldSkills job data
+  const jobData = JobsExperienceData[3];
   const [activeSection, setActiveSection] = useState("summary");
 
   // Main scroll container ref for animations
@@ -164,22 +163,22 @@ export default function Certiblock() {
       {/* Back button with hover effect */}
       <Link
         href="/"
-        className="fixed top-6 left-6 z-50 flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md hover:bg-green-500/10 hover:border-green-500/20 transition-all duration-300 group"
+        className="fixed top-6 left-6 z-50 flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md hover:bg-pink-500/10 hover:border-pink-500/20 transition-all duration-300 group"
       >
         <motion.div
           whileHover={{ x: -3 }}
-          className="text-white/70 group-hover:text-green-400"
+          className="text-white/70 group-hover:text-pink-400"
         >
           <ArrowLeft size={14} />
         </motion.div>
-        <span className="text-xs group-hover:text-green-400 transition-colors duration-300">
+        <span className="text-xs group-hover:text-pink-400 transition-colors duration-300">
           Back
         </span>
       </Link>
 
       {/* Decorative background elements with parallax */}
       <motion.div
-        className="fixed top-[20%] left-[10%] w-64 h-64 rounded-full bg-green-500/5 blur-[100px] pointer-events-none"
+        className="fixed top-[20%] left-[10%] w-64 h-64 rounded-full bg-pink-500/5 blur-[100px] pointer-events-none"
         style={{
           x: bgElement1X,
           y: bgElement1Y,
@@ -188,7 +187,7 @@ export default function Certiblock() {
       />
 
       <motion.div
-        className="fixed bottom-[30%] right-[5%] w-80 h-80 rounded-full bg-green-400/10 blur-[120px] pointer-events-none"
+        className="fixed bottom-[30%] right-[5%] w-80 h-80 rounded-full bg-pink-400/10 blur-[120px] pointer-events-none"
         style={{
           x: bgElement2X,
           y: bgElement2Y,
@@ -199,7 +198,7 @@ export default function Certiblock() {
 
       {/* Rotating grid pattern */}
       <motion.div
-        className="fixed inset-0 bg-[linear-gradient(rgba(0,212,13,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,212,13,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0"
+        className="fixed inset-0 bg-[linear-gradient(rgba(213,16,103,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(213,16,103,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0"
         style={{
           rotate: useTransform(scrollYProgress, [0, 1], [0, 15]),
           scale: useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.1, 1]),
@@ -222,7 +221,7 @@ export default function Certiblock() {
                 className="relative"
               >
                 <motion.div
-                  className="absolute inset-0 bg-green-400/20 rounded-full blur-lg"
+                  className="absolute inset-0 bg-pink-400/20 rounded-full blur-lg"
                   animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.5, 0.8, 0.5],
@@ -234,10 +233,10 @@ export default function Certiblock() {
                   }}
                 />
                 <Image
-                  src="/assets/jobs/certiblock-logo.svg"
-                  alt="Certiblock Logo"
-                  width={130}
-                  height={90}
+                  src="/assets/jobs/worldskills-logo.svg"
+                  alt="WorldSkills Logo"
+                  width={120}
+                  height={80}
                   className="w-auto h-24 relative z-10"
                 />
               </motion.div>
@@ -249,7 +248,7 @@ export default function Certiblock() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-green-200 to-green-400 text-transparent bg-clip-text"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-pink-200 to-pink-400 text-transparent bg-clip-text"
               >
                 {jobData.companyName}
               </motion.h1>
@@ -270,7 +269,7 @@ export default function Certiblock() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-                className="flex items-center gap-2 text-green-400/80 font-mono"
+                className="flex items-center gap-2 text-pink-400/80 font-mono"
               >
                 <Calendar size={14} />
                 <span className="text-sm">
@@ -285,7 +284,7 @@ export default function Certiblock() {
                 className="flex items-center gap-2 text-white/40 mt-2 text-xs"
               >
                 <Clock size={12} />
-                <span>Current position</span>
+                <span>Regional to International Journey</span>
               </motion.div>
             </div>
           </div>
@@ -320,15 +319,15 @@ export default function Certiblock() {
                 transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
               >
                 <div className="sticky top-32">
-                  <h3 className="text-xs font-mono tracking-widest text-green-400 uppercase">
-                    Professional Summary
+                  <h3 className="text-xs font-mono tracking-widest text-pink-400 uppercase">
+                    Competition Summary
                   </h3>
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: 40 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    className="h-0.5 bg-green-400/30 mt-4"
+                    className="h-0.5 bg-pink-400/30 mt-4"
                   />
                 </div>
               </motion.div>
@@ -337,43 +336,50 @@ export default function Certiblock() {
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
+                  transition={{
                     duration: 0.7,
                     delay: 0.4,
-                    ease: "easeOut"
+                    ease: "easeOut",
                   }}
                   className="text-2xl md:text-3xl font-medium text-white/90 leading-relaxed mb-8"
                 >
                   {jobData.mission}
                 </motion.p>
 
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.7, 
+                  transition={{
+                    duration: 0.7,
                     delay: 0.6,
-                    ease: "easeOut"
+                    ease: "easeOut",
                   }}
                   className="relative overflow-hidden rounded-xl"
                 >
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-emerald-700/5"
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-pink-700/5"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 0.8 }}
                   />
 
-                  <div className="p-6 border border-green-500/20 backdrop-blur-sm relative z-10">
-                    <h4 className="text-xl font-semibold text-green-300 mb-3">
-                      About Certiblock
+                  <div className="p-6 border border-pink-500/20 backdrop-blur-sm relative z-10">
+                    <h4 className="text-xl font-semibold text-pink-300 mb-3">
+                      About WorldSkills
                     </h4>
                     <p className="text-white/70 leading-relaxed">
-                      Colombian company revolutionizing business security
-                      through Blockchain technology. Creating digital twins on
-                      Blockchain to combat product counterfeiting and tampering,
-                      with over 4.3 million digitized assets enabling product
-                      authenticity verification through simple mobile scanning.
+                      WorldSkills Competitions are the gold standard of skills
+                      excellence. They inspire young competitors to reach new
+                      heights, helping them turn their passion into a
+                      profession. The competition journey spans from regional
+                      qualifiers to national championships, culminating in
+                      international competitions where the world's best young
+                      professionals showcase their talents. Beyond competition,
+                      WorldSkills develops skills through global training
+                      standards and benchmarking systems, while influencing
+                      industry, government, and educators through cooperation
+                      and research — building a global platform of skills for
+                      all.
                     </p>
                   </div>
                 </motion.div>
@@ -397,11 +403,11 @@ export default function Certiblock() {
                 variants={itemFadeIn}
                 className="flex items-center gap-2 mb-6"
               >
-                <h3 className="text-xs font-mono tracking-widest text-green-400 uppercase">
-                  Key Metrics
+                <h3 className="text-xs font-mono tracking-widest text-pink-400 uppercase">
+                  Competition Metrics
                 </h3>
                 <motion.div
-                  className="h-px flex-grow bg-green-400/20"
+                  className="h-px flex-grow bg-pink-400/20"
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
                   viewport={{ once: true }}
@@ -412,32 +418,28 @@ export default function Certiblock() {
               <div className="grid grid-cols-2 gap-6">
                 {[
                   {
-                    icon: <BarChart3 size={16} className="text-green-300" />,
-                    label: "Assets",
-                    value: "4.3M+",
-                    description: "Digitized products",
+                    icon: <Award size={16} className="text-pink-300" />,
+                    label: "Competition Levels",
+                    value: "4",
+                    description: "Regional to Global",
                   },
                   {
-                    icon: (
-                      <BriefcaseBusiness size={16} className="text-green-300" />
-                    ),
-                    label: "Projects",
-                    value: "3",
-                    description: "Major deployments",
+                    icon: <Users size={16} className="text-pink-300" />,
+                    label: "Global Competitors",
+                    value: "63+",
+                    description: "Web Technologies",
                   },
                   {
-                    icon: <Code size={16} className="text-green-300" />,
+                    icon: <Code size={16} className="text-pink-300" />,
                     label: "Tech Stack",
                     value: jobData.technologies.length,
                     description: "Core technologies",
                   },
                   {
-                    icon: (
-                      <BookOpenCheck size={16} className="text-green-300" />
-                    ),
-                    label: "Impact",
-                    value: "20+",
-                    description: "Brand partners",
+                    icon: <Lightbulb size={16} className="text-pink-300" />,
+                    label: "Test Projects",
+                    value: "12+",
+                    description: "Competitive modules",
                   },
                 ].map((metric, index) => (
                   <motion.div
@@ -447,10 +449,10 @@ export default function Certiblock() {
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <motion.div
-                        className="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500/20 to-green-600/30 flex items-center justify-center"
+                        className="w-8 h-8 rounded-lg bg-gradient-to-br from-pink-500/20 to-pink-600/30 flex items-center justify-center"
                         whileHover={{
                           scale: 1.1,
-                          backgroundColor: "rgba(34, 197, 94, 0.3)",
+                          backgroundColor: "rgba(213, 16, 103, 0.3)",
                         }}
                       >
                         {metric.icon}
@@ -482,12 +484,12 @@ export default function Certiblock() {
                 variants={itemFadeIn}
                 className="flex items-center justify-between mb-6"
               >
-                <h3 className="text-xs font-mono tracking-widest text-green-400 uppercase">
+                <h3 className="text-xs font-mono tracking-widest text-pink-400 uppercase">
                   Technology Stack
                 </h3>
                 <div className="flex items-center gap-1.5">
                   <motion.div
-                    className="w-2 h-2 rounded-full bg-green-500/40"
+                    className="w-2 h-2 rounded-full bg-pink-500/40"
                     animate={{
                       scale: [1, 1.5, 1],
                       opacity: [0.4, 0.8, 0.4],
@@ -498,7 +500,7 @@ export default function Certiblock() {
                     }}
                   />
                   <span className="text-xs text-white/50">
-                    Core competencies
+                    Competition technologies
                   </span>
                 </div>
               </motion.div>
@@ -511,13 +513,13 @@ export default function Certiblock() {
                     custom={index}
                     whileHover={{
                       scale: 1.05,
-                      backgroundColor: "rgba(34, 197, 94, 0.08)",
-                      borderColor: "rgba(34, 197, 94, 0.4)",
+                      backgroundColor: "rgba(213, 16, 103, 0.08)",
+                      borderColor: "rgba(213, 16, 103, 0.4)",
                     }}
                     className="flex items-center gap-2 p-3 border border-white/10 rounded-lg bg-white/[0.03] transition-all duration-300 group"
                   >
                     <motion.div
-                      className="w-6 h-6 rounded-md bg-gradient-to-br from-green-500/20 to-green-600/20 flex items-center justify-center"
+                      className="w-6 h-6 rounded-md bg-gradient-to-br from-pink-500/20 to-pink-600/20 flex items-center justify-center"
                       whileHover={{
                         rotate: [0, 10, -10, 0],
                         transition: { duration: 0.5 },
@@ -531,10 +533,10 @@ export default function Certiblock() {
                           height={12}
                         />
                       ) : (
-                        <Code size={12} className="text-green-400/80" />
+                        <Code size={12} className="text-pink-400/80" />
                       )}
                     </motion.div>
-                    <span className="text-white/80 text-xs group-hover:text-green-300 transition-colors duration-300">
+                    <span className="text-white/80 text-xs group-hover:text-pink-300 transition-colors duration-300">
                       {tech.name}
                     </span>
                   </motion.div>
@@ -555,26 +557,47 @@ export default function Certiblock() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-6">
               <motion.div variants={itemFadeIn} className="md:col-span-3">
                 <div className="sticky top-32">
-                  <h3 className="text-xs font-mono tracking-widest text-green-400 uppercase mb-4">
-                    Key Achievements
+                  <h3 className="text-xs font-mono tracking-widest text-pink-400 uppercase mb-4">
+                    WorldSkills Pillars
                   </h3>
                   <motion.div
                     initial={{ height: 0 }}
                     whileInView={{ height: 100 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, delay: 0.5 }}
-                    className="w-px h-24 bg-gradient-to-b from-green-400/50 to-transparent ml-1"
+                    className="w-px h-24 bg-gradient-to-b from-pink-400/50 to-transparent ml-1"
                   />
                   <div className="flex items-center gap-2 text-xs text-white/50 mt-4">
-                    <Award className="text-green-400/80" size={14} />
-                    <span>Notable contributions</span>
+                    <Award className="text-pink-400/80" size={14} />
+                    <span>Foundation of excellence</span>
                   </div>
                 </div>
               </motion.div>
 
               <div className="md:col-span-9">
                 <div className="relative border-l border-white/10 pl-8 ml-2 space-y-12">
-                  {jobData.keyAchievements.map((achievement, index) => (
+                  {[
+                    {
+                      title: "Inspire",
+                      description:
+                        "WorldSkills inspires young people to develop a passion for skills and pursue excellence through competitions and promotions. As a competitor, I was motivated to push my technical boundaries, mastering both creative and engineering aspects of web development while performing under pressure in front of audiences and judges.",
+                    },
+                    {
+                      title: "Develop",
+                      description:
+                        "The competition develops skills through global training standards and benchmarking systems that enhance industry engagement. Training for WorldSkills improved my technical precision, time management, problem-solving abilities, and adaptability to work with varied technologies and requirements.",
+                    },
+                    {
+                      title: "Influence",
+                      description:
+                        "WorldSkills influences industry, government, and educators through cooperation and research — building a global platform of skills for all. Participating in this global movement connected me with industry experts, educational leaders, and fellow competitors, creating a professional network spanning multiple countries.",
+                    },
+                    {
+                      title: "Web Technologies Skill",
+                      description:
+                        "Web design and development is one of the most complex and diverse skills in the competition. It requires establishing professional relationships with clients, deep understanding of requirements, strong design and communication skills, and technical abilities to create databases, build programs, test and debug websites under tight deadlines.",
+                    },
+                  ].map((achievement, index) => (
                     <motion.div
                       key={index}
                       variants={itemFadeIn}
@@ -591,7 +614,7 @@ export default function Certiblock() {
 
                       <div className="relative">
                         <motion.h4
-                          className="text-xl font-semibold text-green-300 mb-3"
+                          className="text-xl font-semibold text-pink-300 mb-3"
                           initial={{ opacity: 0, x: 20 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
@@ -636,10 +659,169 @@ export default function Certiblock() {
               transition={{ duration: 0.7 }}
             >
               <h2 className="text-2xl font-semibold text-white">
-                Key Projects
+                Competition Journey
               </h2>
               <motion.div
-                className="h-px flex-grow bg-gradient-to-r from-green-500/30 to-transparent"
+                className="h-px flex-grow bg-gradient-to-r from-pink-500/30 to-transparent"
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2 }}
+              />
+            </motion.div>
+
+            <div className="space-y-24">
+              {[
+                {
+                  title: "Phase 1: Regional Competitions",
+                  description:
+                    "Started the WorldSkills journey at the local level, competing against skilled peers from my region.",
+                  solution:
+                    "Demonstrated proficiency in core web technologies through timed test projects that evaluated both technical skills and creativity. Successfully secured first place, earning advancement to the national level competition and establishing a foundation for progressive technical development.",
+                },
+                {
+                  title: "Phase 2: National Championships",
+                  description:
+                    "Represented my region at Colombia's national WorldSkills competition, facing the country's most talented web developers.",
+                  solution:
+                    "Competed in multi-day challenges that tested full-stack abilities, design thinking, and performance under pressure. Won the gold medal in the Web Technologies skill, becoming the national champion and qualifying to represent Colombia at international competitions.",
+                },
+                {
+                  title: "Phase 3: WorldSkills Americas",
+                  description:
+                    "Competed against champions from countries across the Americas region, raising the technical difficulty and performance standards.",
+                  solution:
+                    "Completed complex projects with stricter requirements and tighter time constraints than previous levels. Secured a silver medal (2nd place) at the continental level, demonstrating Colombia's competitive capabilities in web development on an international stage.",
+                },
+                {
+                  title: "Phase 4: WorldSkills International",
+                  description:
+                    "Represented Colombia at the global skills Olympics in South Korea, competing against the world's elite young web developers.",
+                  solution:
+                    "Underwent intensive preparation with international experts, followed by four days of rigorous competition at the highest level. Achieved 14th place globally, gaining invaluable experience through cultural exchange and technical mastery while establishing connections with industry leaders and fellow competitors worldwide.",
+                },
+              ].map((phase, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.8, delay: 0.1 * index }}
+                  className="grid grid-cols-1 md:grid-cols-12 gap-6 relative"
+                >
+                  {/* Background accent */}
+                  <motion.div
+                    className="absolute top-[-20px] bottom-[-20px] inset-x-[-20px] bg-pink-500/[0.02] rounded-xl -z-10"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    style={{ rotateZ: index % 2 === 0 ? -1 : 1 }}
+                  />
+
+                  {/* Project number */}
+                  <div className="md:col-span-1 flex md:justify-end items-start pt-1">
+                    <motion.span
+                      className="text-xs font-mono text-pink-400/80 bg-pink-500/10 py-1 px-2 rounded"
+                      whileHover={{
+                        scale: 1.1,
+                        backgroundColor: "rgba(213, 16, 103, 0.2)",
+                      }}
+                    >
+                      {(index + 1).toString().padStart(2, "0")}
+                    </motion.span>
+                  </div>
+
+                  {/* Project details */}
+                  <div className="md:col-span-11">
+                    <motion.h3
+                      className="text-2xl font-semibold text-pink-300 mb-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                    >
+                      {phase.title}
+                    </motion.h3>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 mb-6">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                      >
+                        <h4 className="text-xs uppercase tracking-wider text-pink-400/60 mb-2">
+                          Level
+                        </h4>
+                        <p className="text-white/70 leading-relaxed">
+                          {phase.description}
+                        </p>
+                      </motion.div>
+
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                      >
+                        <h4 className="text-xs uppercase tracking-wider text-pink-400/60 mb-2">
+                          Achievement
+                        </h4>
+                        <p className="text-white/70 leading-relaxed">
+                          {phase.solution}
+                        </p>
+                      </motion.div>
+                    </div>
+
+                    {/* Competition level indicator */}
+                    <motion.div
+                      className="flex items-center gap-2 mt-6 text-xs text-white/50"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.6 }}
+                    >
+                      <div className="h-px w-8 bg-pink-500/30"></div>
+                      <span>
+                        {index === 0
+                          ? "Local Level"
+                          : index === 1
+                          ? "National Level"
+                          : index === 2
+                          ? "Continental Level"
+                          : "Global Level"}
+                      </span>
+                      <div className="ml-auto px-2 py-1 rounded bg-white/5 border border-white/10">
+                        {index === 0
+                          ? "Gold Medal"
+                          : index === 1
+                          ? "Gold Medal"
+                          : index === 2
+                          ? "Silver Medal"
+                          : "14th Place"}
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Key Projects Section */}
+          <motion.div style={{ y: projectsParallax }} className="mb-24">
+            <motion.div
+              className="flex items-center gap-3 mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <h2 className="text-2xl font-semibold text-white">
+                International Training
+              </h2>
+              <motion.div
+                className="h-px flex-grow bg-gradient-to-r from-pink-500/30 to-transparent"
                 initial={{ width: 0 }}
                 whileInView={{ width: "100%" }}
                 viewport={{ once: true }}
@@ -659,7 +841,7 @@ export default function Certiblock() {
                 >
                   {/* Background accent */}
                   <motion.div
-                    className="absolute top-[-20px] bottom-[-20px] inset-x-[-20px] bg-green-500/[0.02] rounded-xl -z-10"
+                    className="absolute top-[-20px] bottom-[-20px] inset-x-[-20px] bg-pink-500/[0.02] rounded-xl -z-10"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
@@ -670,10 +852,10 @@ export default function Certiblock() {
                   {/* Project number */}
                   <div className="md:col-span-1 flex md:justify-end items-start pt-1">
                     <motion.span
-                      className="text-xs font-mono text-green-400/80 bg-green-500/10 py-1 px-2 rounded"
+                      className="text-xs font-mono text-pink-400/80 bg-pink-500/10 py-1 px-2 rounded"
                       whileHover={{
                         scale: 1.1,
-                        backgroundColor: "rgba(34, 197, 94, 0.2)",
+                        backgroundColor: "rgba(213, 16, 103, 0.2)",
                       }}
                     >
                       {(index + 1).toString().padStart(2, "0")}
@@ -683,7 +865,7 @@ export default function Certiblock() {
                   {/* Project details */}
                   <div className="md:col-span-11">
                     <motion.h3
-                      className="text-2xl font-semibold text-green-300 mb-4"
+                      className="text-2xl font-semibold text-pink-300 mb-4"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
@@ -699,7 +881,7 @@ export default function Certiblock() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                       >
-                        <h4 className="text-xs uppercase tracking-wider text-green-400/60 mb-2">
+                        <h4 className="text-xs uppercase tracking-wider text-pink-400/60 mb-2">
                           Challenge
                         </h4>
                         <p className="text-white/70 leading-relaxed">
@@ -713,7 +895,7 @@ export default function Certiblock() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.5 }}
                       >
-                        <h4 className="text-xs uppercase tracking-wider text-green-400/60 mb-2">
+                        <h4 className="text-xs uppercase tracking-wider text-pink-400/60 mb-2">
                           Solution
                         </h4>
                         <p className="text-white/70 leading-relaxed">
@@ -722,7 +904,7 @@ export default function Certiblock() {
                       </motion.div>
                     </div>
 
-                    {/* Project timeline/type indicator */}
+                    {/* Project tags */}
                     <motion.div
                       className="flex items-center gap-2 mt-6 text-xs text-white/50"
                       initial={{ opacity: 0 }}
@@ -730,18 +912,20 @@ export default function Certiblock() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: 0.6 }}
                     >
-                      <div className="h-px w-8 bg-green-500/30"></div>
+                      <div className="h-px w-8 bg-pink-500/30"></div>
                       <span>
-                        {index % 2 === 0
-                          ? "Infrastructure Project"
-                          : "Platform Initiative"}
+                        {index === 0
+                          ? "Frontend & Backend"
+                          : index === 1
+                          ? "Content Management"
+                          : "User Experience & Data"}
                       </span>
                       <div className="ml-auto px-2 py-1 rounded bg-white/5 border border-white/10">
-                        {index % 3 === 0
-                          ? "Q4 2023"
-                          : index % 3 === 1
-                          ? "Q2 2025"
-                          : "Q3 2025"}
+                        {index === 0
+                          ? "Time-constrained Challenge"
+                          : index === 1
+                          ? "Modular Development"
+                          : "Client Requirements"}
                       </div>
                     </motion.div>
                   </div>
@@ -760,11 +944,11 @@ export default function Certiblock() {
           >
             <motion.div whileHover={{ x: -5 }} transition={{ duration: 0.3 }}>
               <Link
-                href="/jobs/beereaders"
-                className="flex items-center gap-2 text-xs text-white/60 hover:text-[#ffcf01] transition-colors duration-300"
+                href="/jobs/certiblock"
+                className="flex items-center gap-2 text-xs text-white/60 hover:text-emerald-400 transition-colors duration-300"
               >
                 <ArrowLeft size={12} />
-                <span>BeeReaders</span>
+                <span>Certiblock</span>
               </Link>
             </motion.div>
 
@@ -777,8 +961,11 @@ export default function Certiblock() {
             </motion.div>
 
             <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.3 }}>
-              <Link href="/learning/worldskills" className="text-xs text-white/60 hover:text-[#D51067] transition-colors duration-300">
-                Next: WorldSkills →
+              <Link
+                href="/learning/platzi-master"
+                className="text-xs text-white/60 hover:text-[#07e98a] transition-colors duration-300"
+              >
+                Next: Platzi Master →
               </Link>
             </motion.div>
           </motion.div>

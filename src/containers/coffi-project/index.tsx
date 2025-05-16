@@ -1,45 +1,7 @@
-import { Globe, Instagram } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import { BsInstagram } from "react-icons/bs";
+import { useParallax } from "@/hooks/useParallax";
 import { CoffiBanner } from "./coffi-banner";
 import { CoffiTryTheApp } from "./coffi-try-the-app";
 
-// Custom hook for parallax effect
-function useParallax() {
-  const [scrollY, setScrollY] = useState(0);
-  const ref = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const rect = element.getBoundingClientRect();
-          setScrollY(-rect.top);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    // Initial calculation
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  return { ref, scrollY };
-}
 
 export default function CoffiProject() {
   const { ref: sectionRef, scrollY } = useParallax();
@@ -47,17 +9,17 @@ export default function CoffiProject() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-[150vh] flex flex-col items-center justify-center text-center md:max-w-7xl md:p-9 xl:max-w-[2080px] px-6 md:px-0"
+      className="relative w-full h-[150vh] flex flex-col items-center justify-center text-center md:max-w-7xl md:p-9 xl:max-w-[2080px] px-6 md:px-0 mb-[30vh]"
     >
       {/* Parallax effect */}
       <section className="w-full text-center flex flex-col items-center justify-center">
         <h2
           className="text-8xl font-bold ease-linear transition-transform duration-500 text-center text-transparent bg-clip-text bg-gradient-to-br from-coffi-blue to-coffi-purple z-10"
           style={{
-            transform: `translateY(${scrollY * 0.3}px) scale(${
-              1 + scrollY * 0.0003
+            transform: `translateY(${Math.min(scrollY * 0.3, 150)}px) scale(${
+              Math.min(1 + scrollY * 0.0003, 1.1)
             })`,
-            opacity: `${1 - scrollY * 0.001}`,
+            opacity: `${Math.max(1 - scrollY * 0.001, 0)}`,
           }}
         >
           Coffi Project
@@ -65,8 +27,8 @@ export default function CoffiProject() {
         <p
           className="max-w-lg text-center ease-linear transition-transform duration-500 z-0"
           style={{
-            transform: `translateY(${scrollY * 0.1}px)`,
-            opacity: `${1 - scrollY * 0.001}`,
+            transform: `translateY(${Math.min(scrollY * 0.1, 100)}px)`,
+            opacity: `${Math.max(1 - scrollY * 0.001, 0)}`,
           }}
         >
           a platform built from the ground up to help digital nomads and remote

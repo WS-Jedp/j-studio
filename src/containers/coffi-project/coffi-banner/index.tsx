@@ -1,8 +1,11 @@
 import { Globe, Instagram } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 import { CoffiSimpleButton } from "../coffi-buttons";
 export function CoffiBanner({ scrollY }: { scrollY: number }) {
+  const router = useRouter();
+  
   return (
     <article
       className="relative w-full md:w-auto row-span-5 md:row-auto h-full text-j-deep-black p-9 rounded-3xl col-span-1 md:col-span-4 ease-linear transition-all duration-500 bg-gradient-to-br from-white to-white shadow-lg hover:shadow-xl hover:-translate-y-1 border border-white/10 backdrop-blur-sm overflow-hidden"
@@ -81,7 +84,7 @@ export function CoffiBanner({ scrollY }: { scrollY: number }) {
       <div className="relative w-full md:w-3/5 mt-6 z-10">
         <CoffiSimpleButton
             text="Learn More About The Thinking Behind Coffi"
-            action={() => {}}
+            action={() => router.push("/coffi-project")}
             full
         />
       </div>
