@@ -243,7 +243,8 @@ export default function AboutJ() {
           variants={textRevealVariants}
         >
           <a
-            href=""
+            href={locale === "en" ? "/cv/JuanEstebanDeossaPertuz_CV_V4.pdf" : "/cv/JuanEstebanDeossaPertuz_CV_V4_es.pdf"}
+            download
             className="px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300 text-white/90 border border-white/20 flex items-center space-x-2 group"
           >
             <span className="text-xs">{t('actions.download')}</span>

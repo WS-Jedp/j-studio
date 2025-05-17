@@ -1,10 +1,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Mail, ArrowRight, Download, Github, Linkedin } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { ArrowRight } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 
 export const Contact = () => {
+  const locale = useLocale();
   const t = useTranslations("contact");
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -135,7 +136,7 @@ export const Contact = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-xs tracking-wider text-gray-400 mb-4"
             >
-              {t('cta.emailLabel')}
+              {t("cta.emailLabel")}
             </motion.p>
 
             {/* Refined elegant CTA */}
@@ -166,10 +167,15 @@ export const Contact = () => {
             >
               {/* CV Download button */}
               <a
-                href=""
+                href={
+                  locale === "en"
+                    ? "/cv/JuanEstebanDeossaPertuz_CV_V4.pdf"
+                    : "/cv/JuanEstebanDeossaPertuz_CV_V4_es.pdf"
+                }
+                download
                 className="px-5 py-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300 text-white/90 border border-white/20 flex items-center space-x-2 group"
               >
-                <span className="text-xs">{t('cta.downloadCV')}</span>
+                <span className="text-xs">{t("cta.downloadCV")}</span>
                 <svg
                   className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300"
                   viewBox="0 0 20 20"
@@ -246,7 +252,7 @@ export const Contact = () => {
               transition={{ duration: 0.5, delay: 0.9 }}
               className="mt-14 text-sm font-light italic text-gray-400/80 max-w-xs mx-auto leading-relaxed"
             >
-              {t('cta.closingText')}
+              {t("cta.closingText")}
             </motion.p>
           </div>
         </motion.article>
@@ -266,7 +272,9 @@ export const Contact = () => {
             className="object-cover mb-4"
           />
           <h3 className="font-light text-sm mb-1">J Studio</h3>
-          <p className="font-extralight opacity-30 text-xs mb-3 max-w-sm">{t("jStudioLabel")}</p>
+          <p className="font-extralight opacity-30 text-xs mb-3 max-w-sm">
+            {t("jStudioLabel")}
+          </p>
           <motion.div
             initial={{ width: "0%" }}
             whileInView={{ width: "50px" }}

@@ -70,6 +70,7 @@ export default function JobExperience({
 
   // Handle wheel events
   const handleWheel = (e: WheelEvent) => {
+    
     if (!isInView || !horizontalScrollRef.current) return;
 
     const isScrollingDown = e.deltaY > 0;
