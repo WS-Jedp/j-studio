@@ -59,33 +59,6 @@ const sfPro = localFont({
   variable: "--font-sf-pro", // Optional: define a CSS variable
 });
 
-const tnRoman = localFont({
-  src: [
-    {
-      path: "../../../public/assets/fonts/times-new-roman/times-new-roman.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../../public/assets/fonts/times-new-roman/times-new-roman-bold.ttf",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../../../public/assets/fonts/times-new-roman/times-new-roman-bold-italic.ttf",
-      weight: "700",
-      style: "italic",
-    },
-    {
-      path: "../../../public/assets/fonts/times-new-roman/times-new-roman-italic.ttf",
-      weight: "400",
-      style: "italic",
-    },
-  ],
-  display: "swap", // Use 'swap' to show text immediately with fallback until font loads
-  preload: true,
-  variable: "--font-tn-roman", // Optional: define a CSS variable
-});
 
 export const metadata: Metadata = {
   title: "J Studio | Full Stack Software Engineer ",
@@ -120,7 +93,7 @@ export default async function RootLayout({
   return (
     <html lang={currentLocale}>
       <body
-        className={`${sfPro.variable} ${tnRoman.variable} w-full font-sf-pro-roman bg-j-deep-black`}
+        className={`${sfPro.variable} w-full font-sf-pro-roman bg-j-deep-black`}
       >
         <NextIntlClientProvider locale={currentLocale} messages={messages}>
           <CustomCursor />
