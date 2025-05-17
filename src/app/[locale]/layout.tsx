@@ -93,7 +93,7 @@ export default async function RootLayout({
   return (
     <html lang={currentLocale}>
       <body
-        className={`${sfPro.variable} w-full font-sf-pro-roman bg-j-deep-black`}
+        className={`${sfPro.variable} w-full font-sf-pro-roman bg-j-deep-black scroll-smooth antialiased`}
       >
         <NextIntlClientProvider locale={currentLocale} messages={messages}>
           <CustomCursor />

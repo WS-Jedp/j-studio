@@ -39,7 +39,7 @@ export const CoffiTryTheApp = ({ scrollY }: { scrollY: number }) => {
       </div>
 
       <section className="w-full">
-        <div className="relative w-full flex flex-col md:flex-row items-center justify-center gap-6 py-4">
+        <div className="relative w-full flex flex-col md:flex-row items-start justify-center gap-6 py-4">
           {/* Feature Highlights */}
           <div className="flex flex-col gap-3 text-white max-w-[300px]">
             <div className="flex items-center justify-start text-start gap-2">
@@ -58,7 +58,7 @@ export const CoffiTryTheApp = ({ scrollY }: { scrollY: number }) => {
                 {t("coffiTryTheApp.features.rewards")}
               </span>
             </div>
-            <div className="flex items-center justify-center text-start gap-2">
+            <div className="flex items-center justify-start  text-start gap-2">
               <div className="bg-white/20 p-2 rounded-full">
                 <Clock size={15} />
               </div>

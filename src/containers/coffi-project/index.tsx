@@ -10,7 +10,7 @@ export default function CoffiProject() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-[150vh] flex flex-col items-center justify-center text-center md:max-w-7xl md:p-9 xl:max-w-[2080px] px-6 md:px-0 mb-[30vh]"
+      className="relative w-full min-h-[210vh] md:min-h-auto md:h-[150vh] flex flex-col items-center justify-center text-center md:max-w-7xl md:p-9 xl:max-w-[2080px] px-6 md:px-0 mb-[30vh]"
     >
       {/* Parallax effect */}
       <section className="w-full text-center flex flex-col items-center justify-center">

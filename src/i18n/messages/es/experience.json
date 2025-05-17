@@ -1,5 +1,11 @@
 {
     "title": "Experiencia",
+    "scrolling": {
+        "start": "Inicio",
+        "scroll": "Desplazar",
+        "end": "Fin",
+        "hint": "Sigue desplazándote hacia arriba o abajo para explorar"
+    },
     "jobs": {
         "resume": "Resumen",
         "beereaders": {

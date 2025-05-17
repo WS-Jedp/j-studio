@@ -1,5 +1,11 @@
 {
     "title": "Experience",
+    "scrolling": {
+        "start": "Start",
+        "scroll": "Scroll",
+        "end": "End",
+        "hint": "Keep scrolling up or down to explore"
+    },
     "jobs": {
         "resume": "Resume",
         "beereaders": {

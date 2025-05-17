@@ -4,6 +4,8 @@ import { useRef, useEffect, useState } from "react";
 import { JobsExperienceData } from "@/data/jobs";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { ChevronRight, Mouse } from "lucide-react";
 
 export default function JobExperience({
   onScrollEnd,
@@ -19,6 +21,7 @@ export default function JobExperience({
   const [isHorizontalScrollStart, setIsHorizontalScrollStart] = useState(true);
   const [hoverCardIndex, setHoverCardIndex] = useState<number | null>(null);
   const [isInView, setIsInView] = useState(false);
+  const [scrollPercentage, setScrollPercentage] = useState(0);
 
   // Check if component is in view
   const checkIfInView = () => {
@@ -52,6 +55,11 @@ export default function JobExperience({
 
       setIsHorizontalScrollEnd(isAtEnd);
       setIsHorizontalScrollStart(isAtStart);
+
+      // Calculate scroll percentage
+      const maxScrollLeft = scrollWidth - clientWidth;
+      const percentage = maxScrollLeft > 0 ? (scrollLeft / maxScrollLeft) * 100 : 0;
+      setScrollPercentage(percentage);
 
       // Re-enable vertical scrolling if at the edges
       if ((isAtEnd || isAtStart) && isInView) {
@@ -121,12 +129,32 @@ export default function JobExperience({
       ref={containerRef}
     >
       <h2 className="absolute top-[-9%] left-6 md:left-[36%] text-6xl md:text-8xl z-0 font-semibold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-coffi-purple to-coffi-purple/40">
-        { t('title') }
+        {t("title")}
       </h2>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="hidden md:block absolute top-[-5%] right-[5%] z-10"
+        animate={{ opacity: isInView ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="w-[200px] h-px bg-white/10 rounded-full overflow-hidden">
+          <motion.div
+            className="h-full bg-gradient-to-r from-coffi-purple to-coffi-purple/40 rounded-full"
+            style={{ width: `${scrollPercentage}%` }}
+          />
+        </div>
+        <div className="flex justify-between mt-1 text-j-celestial-white/30 text-xs font-extralight">
+          <span>{t('scrolling.start')}</span>
+          <span>{t('scrolling.scroll')}</span>
+          <span>{t('scrolling.end')}</span>
+        </div>
+      </motion.div>
+
       {/* Horizontal scrolling container */}
       <section
         ref={horizontalScrollRef}
-        className="relative w-full h-auto flex flex-row space-x-6 py-12 z-50 items-end overflow-x-scroll scrollbar-hide"
+        className="relative w-full h-auto flex flex-row space-x-6 py-12 z-50 items-end overflow-x-scroll custom-horizontal-scroll"
       >
         {/* Job card */}
         <article className="hidden md:block min-w-[36%] h-[81vh]"></article>
@@ -140,10 +168,10 @@ export default function JobExperience({
           <JobCard
             id="BEEREADERS"
             companyName={t("jobs.beereaders.companyName")}
-            role={t('jobs.beereaders.role')}
+            role={t("jobs.beereaders.role")}
             yearFrom={JobsExperienceData[1].yearFrom}
             yearTo={JobsExperienceData[1].yearTo}
-            mission={t('jobs.beereaders.mission')}
+            mission={t("jobs.beereaders.mission")}
             keyAchievements={JobsExperienceData[1].keyAchievements}
             technologies={JobsExperienceData[1].technologies}
             projects={[]}
@@ -162,11 +190,11 @@ export default function JobExperience({
         >
           <JobCard
             id="CERTIBLOCK"
-            companyName={t('jobs.certiblock.companyName')}
-            role={t('jobs.certiblock.role')}
+            companyName={t("jobs.certiblock.companyName")}
+            role={t("jobs.certiblock.role")}
             yearFrom={JobsExperienceData[2].yearFrom}
             yearTo={JobsExperienceData[2].yearTo}
-            mission={t('jobs.certiblock.mission')}
+            mission={t("jobs.certiblock.mission")}
             keyAchievements={JobsExperienceData[2].keyAchievements}
             technologies={JobsExperienceData[2].technologies}
             projects={[]}
@@ -185,11 +213,11 @@ export default function JobExperience({
         >
           <JobCard
             id="WORLDSKILLS"
-            companyName={t('jobs.worldskills.companyName')}
-            role={t('jobs.worldskills.role')}
+            companyName={t("jobs.worldskills.companyName")}
+            role={t("jobs.worldskills.role")}
             yearFrom={JobsExperienceData[3].yearFrom}
             yearTo={JobsExperienceData[3].yearTo}
-            mission={t('jobs.worldskills.mission')}
+            mission={t("jobs.worldskills.mission")}
             keyAchievements={JobsExperienceData[3].keyAchievements}
             technologies={JobsExperienceData[3].technologies}
             projects={[]}
@@ -208,11 +236,11 @@ export default function JobExperience({
         >
           <JobCard
             id="PLATZIMASTER"
-            companyName={t('jobs.platzimaster.companyName')}
-            role={t('jobs.platzimaster.role')}
+            companyName={t("jobs.platzimaster.companyName")}
+            role={t("jobs.platzimaster.role")}
             yearFrom={JobsExperienceData[4].yearFrom}
             yearTo={JobsExperienceData[4].yearTo}
-            mission={t('jobs.platzimaster.mission')}
+            mission={t("jobs.platzimaster.mission")}
             keyAchievements={JobsExperienceData[4].keyAchievements}
             technologies={JobsExperienceData[4].technologies}
             projects={[]}
@@ -223,6 +251,22 @@ export default function JobExperience({
           />
         </article>
       </section>
+
+      {/* Subtle scroll hint for users */}
+      <motion.div
+        className="hidden md:flex absolute bottom-3 right-6 text-j-celestial-white/30 items-center gap-2 text-xs"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isInView && !isHorizontalScrollEnd ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <span>{t("scrolling.hint")}</span>
+        <motion.div
+          animate={{ y: [0, -3, 0] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Mouse className="w-4 h-4 text-j-celestial-white/30" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

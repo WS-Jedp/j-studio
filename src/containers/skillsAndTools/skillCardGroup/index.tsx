@@ -78,7 +78,7 @@ export const SkillCardGroup = ({
   }, [displayGroup]);
 
   return (
-    <article className="relative w-full p-5 mb-6 min-h-[40vh] h-full rounded-lg overflow-hidden">
+    <article className="relative w-full p-5 mb-6 min-h-[40vh] h-full rounded-lg">
       <AnimatePresence mode="wait">
         <motion.div
           key={displayGroup || "empty"}
@@ -99,7 +99,7 @@ export const SkillCardGroup = ({
           >
             {selectedGroup
               ? t(`groups.${selectedGroup}.title`)
-              : t('general.title')}
+              : t("general.title")}
           </motion.h2>
 
           <motion.p
@@ -110,7 +110,7 @@ export const SkillCardGroup = ({
           >
             {selectedGroup
               ? t(`groups.${selectedGroup}.description`)
-              : t('general.description')}
+              : t("general.description")}
           </motion.p>
 
           <div className="mt-4 relative z-20">
@@ -118,7 +118,7 @@ export const SkillCardGroup = ({
             <div className="relative">
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
-                className={`w-full text-start flex items-center justify-between py-3 px-4 rounded-md 
+                className={`relative w-full text-start flex items-center justify-between py-3 px-4 rounded-md 
                   bg-white/10 backdrop-blur-sm border border-white/10 transition-all duration-200 
                   hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white/20
                   ${
@@ -143,147 +143,143 @@ export const SkillCardGroup = ({
                 >
                   <ChevronDown size={18} className="text-white/70" />
                 </motion.div>
-              </button>
 
-              {/* Improved dropdown menu */}
-              <AnimatePresence>
-                {dropdownOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -5, height: 0 }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                      height: "auto",
-                      transition: {
-                        opacity: { duration: 0.2 },
-                        y: { duration: 0.2 },
-                        height: { duration: 0.25 },
-                      },
-                    }}
-                    exit={{
-                      opacity: 0,
-                      y: -5,
-                      height: 0,
-                      transition: {
-                        opacity: { duration: 0.15 },
-                        y: { duration: 0.15 },
-                        height: { duration: 0.2 },
-                      },
-                    }}
-                    className="fixed w-full mt-1.5 bg-black/70 border border-white/10 
-                      backdrop-blur-lg rounded-md overflow-hidden z-50 shadow-xl"
-                    style={{
-                      width: "var(--dropdown-width)",
-                      left: "var(--dropdown-left)",
-                      top: "var(--dropdown-top)",
-                    }}
-                    ref={(node) => {
-                      if (node && dropdownOpen) {
-                        const button = node.previousElementSibling;
-                        if (button) {
-                          const rect = button.getBoundingClientRect();
-                          const spaceBelow = window.innerHeight - rect.bottom;
-                          const dropdownHeight =
-                            node.getBoundingClientRect().height;
+                {/* Improved dropdown menu */}
+                <AnimatePresence>
+                  {dropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -5, height: 0 }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                        height: "auto",
+                        transition: {
+                          opacity: { duration: 0.2 },
+                          y: { duration: 0.2 },
+                          height: { duration: 0.25 },
+                        },
+                      }}
+                      exit={{
+                        opacity: 0,
+                        y: -5,
+                        height: 0,
+                        transition: {
+                          opacity: { duration: 0.15 },
+                          y: { duration: 0.15 },
+                          height: { duration: 0.2 },
+                        },
+                      }}
+                      className="absolute w-full top-full left-0  mt-1.5 bg-black/70 border border-white/10 
+                        backdrop-blur-lg rounded-md overflow-hidden z-50 shadow-xl"
+                      ref={(node) => {
+                        if (node && dropdownOpen) {
+                          const button = node.previousElementSibling;
+                          if (button) {
+                            const rect = button.getBoundingClientRect();
+                            const spaceBelow = window.innerHeight - rect.bottom;
+                            const dropdownHeight =
+                              node.getBoundingClientRect().height;
 
-                          // Set custom properties for positioning
-                          node.style.setProperty(
-                            "--dropdown-width",
-                            `${rect.width}px`
-                          );
-                          node.style.setProperty(
-                            "--dropdown-left",
-                            `${rect.left}px`
-                          );
-
-                          // Position above or below based on available space
-                          if (
-                            spaceBelow < dropdownHeight &&
-                            rect.top > dropdownHeight
-                          ) {
-                            // Position above if not enough space below but enough space above
+                            // Set custom properties for positioning
                             node.style.setProperty(
-                              "--dropdown-top",
-                              `${rect.top - dropdownHeight - 6}px`
+                              "--dropdown-width",
+                              `${rect.width}px`
                             );
-                          } else {
-                            // Position below (default)
                             node.style.setProperty(
-                              "--dropdown-top",
-                              `${rect.bottom + 6}px`
+                              "--dropdown-left",
+                              `${rect.left}px`
                             );
+
+                            // Position above or below based on available space
+                            if (
+                              spaceBelow < dropdownHeight &&
+                              rect.top > dropdownHeight
+                            ) {
+                              // Position above if not enough space below but enough space above
+                              node.style.setProperty(
+                                "--dropdown-top",
+                                `${rect.top - dropdownHeight - 6}px`
+                              );
+                            } else {
+                              // Position below (default)
+                              node.style.setProperty(
+                                "--dropdown-top",
+                                `${rect.bottom + 6}px`
+                              );
+                            }
                           }
                         }
-                      }
-                    }}
-                    role="listbox"
-                  >
-                    <div className="max-h-72 overflow-y-auto py-1.5 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
-                      {Object.values(SkillGroup).map((group) => (
-                        <motion.button
-                          key={group}
-                          onClick={() => {
-                            setSelectedGroup(group);
-                            setDropdownOpen(false);
-                          }}
-                          className={`w-full text-start px-4 py-2.5 hover:bg-white/10 transition-colors 
+                      }}
+                      role="listbox"
+                    >
+                      <div className="max-h-72 overflow-y-auto py-1.5 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
+                        {Object.values(SkillGroup).map((group) => (
+                          <motion.button
+                            key={group}
+                            onClick={() => {
+                              setSelectedGroup(group);
+                              setDropdownOpen(false);
+                            }}
+                            className={`w-full text-start px-4 py-2.5 hover:bg-white/10 transition-colors 
                             group flex items-center justify-between ${
                               selectedGroup === group
                                 ? "bg-white/15 font-medium"
                                 : ""
                             }`}
-                          whileHover={{ x: 3 }}
-                          transition={{ duration: 0.15 }}
-                          role="option"
-                          aria-selected={selectedGroup === group}
-                        >
-                          <span className="flex items-center gap-2">
-                            <motion.div
-                              initial={
-                                selectedGroup !== group
-                                  ? { scale: 0, opacity: 0 }
-                                  : { scale: 1, opacity: 1 }
-                              }
-                              animate={
-                                selectedGroup === group
-                                  ? { scale: 1, opacity: 1 }
-                                  : { scale: 0, opacity: 0 }
-                              }
-                              className={`w-2 h-2 rounded-full bg-gradient-to-r ${
-                                group === SkillGroup.LANGUAGE
-                                  ? "from-indigo-400 to-blue-500"
-                                  : group === SkillGroup.FRONTEND
-                                  ? "from-cyan-400 to-blue-500"
-                                  : group === SkillGroup.BACKEND
-                                  ? "from-emerald-400 to-teal-500"
-                                  : group === SkillGroup.MOBILE
-                                  ? "from-orange-400 to-amber-500"
-                                  : group === SkillGroup.DATABASE
-                                  ? "from-red-400 to-rose-500"
-                                  : group === SkillGroup.CLOUD
-                                  ? "from-sky-400 to-blue-500"
-                                  : group === SkillGroup.DESIGN
-                                  ? "from-fuchsia-400 to-purple-500"
-                                  : group === SkillGroup.DEV_TOOLS
-                                  ? "from-violet-400 to-purple-500"
-                                  : "from-blue-400 to-purple-500"
-                              }`}
-                            />
-                            {skillGroupInfo[group].title}
-                          </span>
-                          <div
-                            className={`text-xs text-white/50 group-hover:text-white/70 transition-colors ${
-                              selectedGroup === group ? "text-white/70" : ""
-                            }`}
+                            whileHover={{ x: 3 }}
+                            transition={{ duration: 0.15 }}
+                            role="option"
+                            aria-selected={selectedGroup === group}
                           >
-                            {allSkilsByGroup[group].length} {t(`utils.skills`)}
-                          </div>
-                        </motion.button>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                            <span className="flex items-center gap-2">
+                              <motion.div
+                                initial={
+                                  selectedGroup !== group
+                                    ? { scale: 0, opacity: 0 }
+                                    : { scale: 1, opacity: 1 }
+                                }
+                                animate={
+                                  selectedGroup === group
+                                    ? { scale: 1, opacity: 1 }
+                                    : { scale: 0, opacity: 0 }
+                                }
+                                className={`w-2 h-2 rounded-full bg-gradient-to-r ${
+                                  group === SkillGroup.LANGUAGE
+                                    ? "from-indigo-400 to-blue-500"
+                                    : group === SkillGroup.FRONTEND
+                                    ? "from-cyan-400 to-blue-500"
+                                    : group === SkillGroup.BACKEND
+                                    ? "from-emerald-400 to-teal-500"
+                                    : group === SkillGroup.MOBILE
+                                    ? "from-orange-400 to-amber-500"
+                                    : group === SkillGroup.DATABASE
+                                    ? "from-red-400 to-rose-500"
+                                    : group === SkillGroup.CLOUD
+                                    ? "from-sky-400 to-blue-500"
+                                    : group === SkillGroup.DESIGN
+                                    ? "from-fuchsia-400 to-purple-500"
+                                    : group === SkillGroup.DEV_TOOLS
+                                    ? "from-violet-400 to-purple-500"
+                                    : "from-blue-400 to-purple-500"
+                                }`}
+                              />
+                              {skillGroupInfo[group].title}
+                            </span>
+                            <div
+                              className={`text-xs text-white/50 group-hover:text-white/70 transition-colors ${
+                                selectedGroup === group ? "text-white/70" : ""
+                              }`}
+                            >
+                              {allSkilsByGroup[group].length}{" "}
+                              {t(`utils.skills`)}
+                            </div>
+                          </motion.button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </button>
             </div>
 
             {/* Display skills for the selected group with improved animation */}
@@ -300,7 +296,8 @@ export const SkillCardGroup = ({
                     <div
                       className={`w-1 h-1 rounded-full bg-gradient-to-r ${titleGradient} mr-1.5`}
                     ></div>
-                    {t(`utils.skills`)} ({allSkilsByGroup[selectedGroup].length})
+                    {t(`utils.skills`)} ({allSkilsByGroup[selectedGroup].length}
+                    )
                   </h3>
                   <div className="flex flex-wrap gap-1.5">
                     {allSkilsByGroup[selectedGroup].map((skill, index) => (
