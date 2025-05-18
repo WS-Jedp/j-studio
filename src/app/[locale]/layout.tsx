@@ -59,19 +59,39 @@ const sfPro = localFont({
   variable: "--font-sf-pro", // Optional: define a CSS variable
 });
 
-
 export const metadata: Metadata = {
   title: "J Studio | Full Stack Software Engineer ",
-  description: "Full Stack Software Engineer from Colombia with international award-winning experience. Crafting seamless digital experiences through code, design, and innovative thinking. Building software solutions that inspire, connect, and transform lives.",
-  keywords: ["software engineer", "full stack developer", "UI/UX design", "digital experiences", "Colombia", "Medellín", "front-end", "back-end"],
+  description:
+    "Full Stack Software Engineer from Colombia with international award-winning experience. Crafting seamless digital experiences through code, design, and innovative thinking. Building software solutions that inspire, connect, and transform lives.",
+  keywords: [
+    "software engineer",
+    "full stack developer",
+    "UI/UX design",
+    "digital experiences",
+    "Colombia",
+    "Medellín",
+    "front-end",
+    "back-end",
+  ],
   creator: "Juan Esteban Deossa Pertuz",
-  authors: [{ name: "Juan Esteban Deossa Pertuz", url: "https://github.com/WS-Jedp" }],
+  authors: [
+    { name: "Juan Esteban Deossa Pertuz", url: "https://github.com/WS-Jedp" },
+  ],
   openGraph: {
     title: "Juan Esteban Deossa | Software Engineer",
-    description: "Full Stack Engineer crafting digital experiences from concept to scale",
-    images: ['/assets/icons/j-icon@2x.png'],
-    locale: 'en_US',
-    type: 'website',
+    description:
+      "Full Stack Engineer crafting digital experiences from concept to scale",
+    images: [
+      "/assets/images/banners/j-studio-banner-es.jpeg",
+      "/assets/images/banners/j-studio-banner-en.jpeg",
+      "/assets/images/banners/j-studio-banner-2-en.jpeg",
+      "/assets/images/banners/j-studio-banner-2-es.jpeg",
+      "/assets/images/banners/j-studio-banner-3-en.jpeg",
+      "/assets/images/banners/j-studio-banner-3-es.jpeg",
+      "/assets/icons/j-icon@2x.png",
+    ],
+    locale: "en_US",
+    type: "website",
   },
 };
 
