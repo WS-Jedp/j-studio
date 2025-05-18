@@ -56,7 +56,7 @@ export const JPersonalInformation = () => {
   return (
     <section
       ref={containerRef}
-      className="w-full min-h-[180vh] pt-[60vh] relative overflow-hidden z-50"
+      className="w-full min-h-[180vh] pt-[12vh] md:pt-[60vh] relative overflow-hidden z-50"
     >
       {/* Background decorative elements with parallax */}
 
