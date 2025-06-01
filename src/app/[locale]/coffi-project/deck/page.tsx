@@ -533,7 +533,7 @@ export default function CoffiProjectDeckPage() {
           className="fixed top-8 left-8 z-50 flex items-center gap-2 text-coffi-purple px-3 py-1 hover:bg-white/80 rounded-full transition-all duration-300 backdrop-blur-sm"
         >
           <ArrowLeft size={16} />
-          <span className="font-medium">{t("navigation.backToPortfolio")}</span>
+          <span className="font-medium">{t("navigation.backToIdea")}</span>
         </Link>
 
         {/* Hero Section */}
@@ -912,7 +912,7 @@ export default function CoffiProjectDeckPage() {
                   {t("slides.slide05.category")}
                 </span>
                 <h2 className="text-4xl md:text-6xl font-bold mb-8">
-                  {t("slides.slide05.title").split(" ")[0]} <span className="text-coffi-purple">{t("slides.slide05.title").split(" ")[1]}</span>
+                  {t("slides.slide05.title").split(" ")[0]} {t("slides.slide05.title").split(" ")[1]} <span className="text-coffi-purple">{t("slides.slide05.title").split(" ")[2]}</span>
                 </h2>
               </div>
 
@@ -1179,7 +1179,7 @@ export default function CoffiProjectDeckPage() {
                   {t("slides.slide08.category")}
                 </span>
                 <h2 className="text-4xl md:text-6xl font-bold mb-8">
-                  {t("slides.slide08.title").replace("Financiación", "")} <span className="text-coffi-purple">
+                  {t("slides.slide08.title").replace(locale === "es" ? "Financiación" : "Funding", "")} <span className="text-coffi-purple">
                     {locale === "es" ? "Financiación" : "Funding"}
                   </span>
                 </h2>
@@ -1572,7 +1572,8 @@ export default function CoffiProjectDeckPage() {
                 </span>
                 <h2 className="text-4xl md:text-6xl font-bold mb-8">
                   {t("slides.slide13.title").split(" ")[0]}{" "}
-                  <span className="text-coffi-purple">{t("slides.slide13.title").split(" ")[1]}</span>
+                  {t("slides.slide13.title").split(" ")[1]}{" "}
+                  <span className="text-coffi-purple">{t("slides.slide13.title").split(" ")[2]}{" "}</span>
                 </h2>
               </div>
 

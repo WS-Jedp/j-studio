@@ -1,6 +1,6 @@
 {
   "navigation": {
-    "backToPortfolio": "Check Portfolio"
+    "backToIdea": "The Idea"
   },
   "download": {
     "tooltip": "Download the full pitch deck",
@@ -85,7 +85,7 @@
     "slide05": {
       "number": "05",
       "category": "Monetization",
-      "title": "Business Model",
+      "title": "The Business Model",
       "b2c_freemium": {
         "title": "B2C - Freemium",
         "explorer": {
@@ -186,7 +186,7 @@
     "slide08": {
       "number": "08",
       "category": "Funding",
-      "title": "Funding Objective",
+      "title": "Funding Goal",
       "main_text": "More than capital, we seek key contact networks, mentoring, experience and global vision to launch an aggressive expansion strategy in key hubs for digital nomads.",
       "cities": ["Medellín", "Bogotá", "Mexico City", "São Paulo", "Buenos Aires"],
       "strategy_text": "We have strategically delayed the launch of our MVP because we understood that, for a solution like Coffi, it is crucial to first build a solid and scalable infrastructure.",
