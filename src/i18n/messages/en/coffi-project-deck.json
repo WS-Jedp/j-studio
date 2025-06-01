@@ -1,0 +1,301 @@
+{
+  "navigation": {
+    "backToPortfolio": "Check Portfolio"
+  },
+  "download": {
+    "tooltip": "Download the full pitch deck",
+    "filename": "coffi-pitch-deck.pdf",
+    "buttonText": "Download Pitch Deck"
+  },
+  "hero": {
+    "title": "Pitch Deck",
+    "subtitle": "Coworking 2.0: The living network where spaces respond to your context",
+    "logoAlt": "Coffi Logo",
+    "brandTagline": "Be Where You Thrive"
+  },
+  "slides": {
+    "slide01": {
+      "number": "01",
+      "category": "Introduction",
+      "title": "Founder & Vision",
+      "founder": {
+        "name": "Juan Esteban Deossa Pertuz",
+        "description": "Self-taught software engineer, entrepreneur and founder of Coffi. Committed dreamer to building technological solutions that transform the way we work, live and connect.",
+        "role": "Founder & CEO"
+      }
+    },
+    "slide02": {
+      "number": "02",
+      "category": "Concept",
+      "title": "What is Coffi",
+      "subtitle": "What WeWork dreamed of being.",
+      "coworking": {
+        "title": "Coworking 2.0",
+        "description": "A living network where spaces respond to your context, adapting to the purpose of your day and the real atmosphere of the place, creating work experiences connected with the present."
+      },
+      "infrastructure": {
+        "title": "Social Infrastructure",
+        "description": "It's not a directory. It's a social infrastructure, decentralized, asset-light, data-driven and emotionally intelligent for remote work."
+      }
+    },
+    "slide03": {
+      "number": "03",
+      "category": "Target Market",
+      "title": "Our Users",
+      "b2c": {
+        "title": "B2C - Digital Nomads",
+        "points": [
+          "Looking for ideal places to work or study",
+          "Value connectivity, comfort and atmosphere",
+          "Need real-time context"
+        ]
+      },
+      "b2b_spaces": {
+        "title": "B2B - Spaces",
+        "points": [
+          "Cafés, bookstores, coworkings",
+          "Want qualified visibility",
+          "Seek to build loyalty and improve reputation"
+        ]
+      },
+      "b2b_companies": {
+        "title": "B2B - Companies",
+        "points": [
+          "Gift memberships to employees",
+          "Enhance flexible productivity",
+          "Solution for hybrid work"
+        ]
+      }
+    },
+    "slide04": {
+      "number": "04",
+      "category": "Problem",
+      "title": "The Real Problem",
+      "b2c_problem": {
+        "title": "For Users (B2C)",
+        "description": "Finding a place is not the problem. The problem is finding the right place for that moment.",
+        "solution": "Coffi prevents wrong decisions by recommending spaces based on daily purpose, atmosphere and real-time context."
+      },
+      "b2b_problem": {
+        "title": "For Spaces (B2B)",
+        "description": "Spaces don't need more noise, they need relevant visibility.",
+        "solution": "Coffi turns them into active nodes where they can interact, build loyalty and stand out from digital saturation."
+      }
+    },
+    "slide05": {
+      "number": "05",
+      "category": "Monetization",
+      "title": "Business Model",
+      "b2c_freemium": {
+        "title": "B2C - Freemium",
+        "explorer": {
+          "title": "Explorer Plan (Free)",
+          "features": [
+            "Basic search",
+            "Live sessions",
+            "Basic Coffi points"
+          ]
+        },
+        "nomad": {
+          "title": "Nomad Plan",
+          "features": [
+            "Advanced and real-time filters",
+            "2x Coffi points",
+            "Possibility to be an Ambassador"
+          ]
+        }
+      },
+      "b2b_saas": {
+        "title": "B2B - Scalable SaaS",
+        "free_tier": {
+          "title": "Free Tier",
+          "features": [
+            "Organic visibility",
+            "Event publishing",
+            "Coffi Points integration"
+          ]
+        },
+        "premium_tier": {
+          "title": "Premium Tier",
+          "features": [
+            "Advanced analytics",
+            "Custom badges",
+            "Featured promotions"
+          ]
+        }
+      }
+    },
+    "slide06": {
+      "number": "06",
+      "category": "Differentiation",
+      "title": "Competitive Advantage",
+      "living_nodes": {
+        "title": "Living and Interactive Nodes",
+        "description": "Coffi turns workspaces into living and interactive nodes that update, respond and reward in real time."
+      },
+      "engagement_cycle": {
+        "title": "Engagement Cycle",
+        "description": "Unlike static directories, Coffi creates an engagement cycle between users and places, generating faster decisions and personalized experiences."
+      }
+    },
+    "slide07": {
+      "number": "07",
+      "category": "Current State",
+      "title": "2024 Roadmap",
+      "current_state": {
+        "title": "Current State",
+        "mvp_ready": {
+          "title": "MVP Ready",
+          "description": "MVP ready to launch in Medellín."
+        },
+        "growth_strategy": {
+          "title": "Growth Strategy",
+          "description": "Word-of-mouth strategy with Coffi Ambassadors and referral system."
+        }
+      },
+      "next_4_months": {
+        "title": "Next 4 Months",
+        "roadmap_items": [
+          {
+            "title": "Coffi Admin Dashboard (free)",
+            "description": "Launch of the panel for work-friendly spaces where they can promote their places (Each promotion campaign costs according to its size), publish and manage events and start interacting with the remote community from the platform."
+          },
+          {
+            "title": "Coffi Points redemption system",
+            "description": "Integration of the points system to allow users to redeem points in partner spaces (discounts, products, perks), and businesses to use those points to activate benefits within Coffi (plan discounts, visibility, badges)."
+          },
+          {
+            "title": "Real-time sessions system (v2)",
+            "description": "Evolution of our live sessions system, where users report and visualize place conditions in real time, with improvements in interaction between users and with the spaces themselves."
+          },
+          {
+            "title": "Community reviews and badges",
+            "description": "Development of a dynamic review system where users can rate their experience according to relevant criteria (atmosphere, Wi-Fi, noise, energy, etc.). This will be complemented with a badge system awarded by the community, such as: \"Best for Developers\", \"Ideal for Creatives\", \"Top Focus Spot\", \"Perfect for Meetings\", among others."
+          },
+          {
+            "title": "Scalable infrastructure for new cities",
+            "description": "Development of a robust, modular and scalable architecture that allows us to replicate Coffi in new cities or countries quickly, efficiently and resiliently. This point is critical and depends on funding to build the necessary technical team."
+          },
+          {
+            "title": "Local marketing campaigns",
+            "description": "Activation of specific campaigns in key cities with local marketing teams, content creators and Coffi ambassadors. The goal is to position Coffi as the evolution of coworking through real stories and human connections."
+          }
+        ]
+      }
+    },
+    "slide08": {
+      "number": "08",
+      "category": "Funding",
+      "title": "Funding Objective",
+      "main_text": "More than capital, we seek key contact networks, mentoring, experience and global vision to launch an aggressive expansion strategy in key hubs for digital nomads.",
+      "cities": ["Medellín", "Bogotá", "Mexico City", "São Paulo", "Buenos Aires"],
+      "strategy_text": "We have strategically delayed the launch of our MVP because we understood that, for a solution like Coffi, it is crucial to first build a solid and scalable infrastructure.",
+      "execution_text": "With the right funding, we can activate a new city in weeks, not years, following the same path as Airbnb."
+    },
+    "slide09": {
+      "number": "09",
+      "category": "Marketing",
+      "title": "Commercial Strategy",
+      "b2c_strategy": {
+        "title": "B2C Strategy",
+        "campaign": {
+          "title": "\"Where Do You Thrive?\"",
+          "description": "Campaign to segment users by purpose, profession and energy. Community building through real content and local ambassadors."
+        }
+      },
+      "b2b_strategy": {
+        "title": "B2B Strategy",
+        "campaign": {
+          "title": "\"Coworking 2.0 Has Arrived\"",
+          "description1": "Repositioning of post-WeWork coworking as a living, flexible, local-first and community-based network.",
+          "description2": "\"Coworking wasn't the problem. The model was.\" Coffi is Coworking 2.0, people-driven, emotion-based, designed for a remote generation that works with purpose from anywhere."
+        }
+      }
+    },
+    "slide10": {
+      "number": "10",
+      "category": "Key Metrics",
+      "title": "North Star Metrics",
+      "b2c_metric": {
+        "title": "B2C Metric",
+        "description": "Users who interact with a place session"
+      },
+      "b2b_metric": {
+        "title": "B2B Metric",
+        "description": "Number of contributions per users in a session per day"
+      }
+    },
+    "slide11": {
+      "number": "11",
+      "category": "Analysis",
+      "title": "Competitive Analysis",
+      "direct_competition": {
+        "title": "Direct Competition",
+        "competitors": ["WorkFrom", "LaptopFriendly", "LaptopFriendlyCafe"]
+      },
+      "indirect_competition": {
+        "title": "Indirect Competition",
+        "competitors": ["WeWork", "Gable", "TripAdvisor"]
+      },
+      "our_differential": {
+        "title": "Our Differential",
+        "description": "The place is an active agent, not a static point."
+      }
+    },
+    "slide12": {
+      "number": "12",
+      "category": "Expansion",
+      "title": "New Solutions",
+      "intro_text": "Just as Airbnb has expanded without leaving its technological core with solutions like Airbnb Luxe, for Work, experiences or services today, Coffi has this capacity to expand and evolve without losing its technological core",
+      "espresso": {
+        "title": "Espresso by Coffi (Coffi Events)",
+        "description": "Next iteration of Coffi, a solution to easily explore, discover and share events that connect local or niche communities, like a blockchain networking event, a web development meetup, or a sustainability talk."
+      },
+      "affogato": {
+        "title": "Affogato by Coffi (Coffi Nights)",
+        "description": "A solution to find nighttime experiences happening right now near you, before they get lost in the vastness of networks and their algorithms, a perfect solution for a night with friends, as a couple or simply to get to know the city where you are."
+      },
+      "core_tech": "Both solutions are built on the same technological core of Coffi: context, real-time interaction and community."
+    },
+    "slide13": {
+      "number": "13",
+      "category": "Tech Stack",
+      "title": "Technology and Development",
+      "developed_by": "Completely developed by the founder",
+      "tech_stack": {
+        "frontend": {
+          "title": "Frontend",
+          "tech": "Ionic + React",
+          "description": "Web, Android, iOS"
+        },
+        "backend": {
+          "title": "Backend",
+          "tech": "NestJS + Prisma",
+          "description": "Scalable API"
+        },
+        "infrastructure": {
+          "title": "Infrastructure",
+          "tech": "AWS + Redis",
+          "description": "MongoDB Atlas"
+        },
+        "landing": {
+          "title": "Landing",
+          "tech": "Next.js",
+          "description": "Optimized performance"
+        }
+      }
+    },
+    "slide14": {
+      "number": "14",
+      "category": "Final Vision",
+      "title": "Be Where You Thrive",
+      "vision_text": "Coffi is a tool to reconnect with our freedom to move, choose and prosper. Its architecture allows it to grow like Airbnb did: without losing focus, but expanding impact.",
+      "quote": "\"Because at the end of the day, what matters is being where we thrive.\""
+    }
+  },
+  "cta": {
+    "explore_coffi": "Explore Coffi",
+    "view_full_deck": "View Full Pitch Deck",
+    "follow_instagram": "Follow on Instagram"
+  }
+}
