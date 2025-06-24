@@ -1,0 +1,147 @@
+{
+  "navigation": {
+    "backToCoffi": "Volver a Coffi"
+  },
+  "download": {
+    "tooltip": "Descargar el concepto de coworking 2.0"
+  },
+  "hero": {
+    "title": "Coworking 2.0",
+    "subtitle": "La evolución del modelo tradicional de coworking hacia una experiencia más descentralizada, emocional, personalizada y basada en datos.",
+    "brandTagline": "Estar Donde Prosperas"
+  },
+  "sections": {
+    "evolution": {
+      "number": "01",
+      "category": "Evolución",
+      "title": "Más Allá del Coworking Tradicional",
+      "subtitle": "Coworking 2.0 no se trata solo de ofrecer escritorios compartidos, sino de crear un ecosistema inteligente que se adapta a las necesidades reales de los trabajadores remotos, nómadas digitales y profesionales híbridos.",
+      "description": "El modelo tradicional de espacios físicos fijos está evolucionando hacia experiencias ubicuas que se adaptan al contexto, creando una comunidad global conectada por intereses más que solo por ubicación."
+    },
+    "comparison": {
+      "number": "02",
+      "category": "Comparación",
+      "title": "Coworking 1.0 vs 2.0",
+      "subtitle": "Un cambio fundamental en cómo pensamos sobre el espacio de trabajo",
+      "comparison_table": {
+        "location": {
+          "title": "Ubicación",
+          "coworking_1": "Espacios físicos fijos",
+          "coworking_2": "Experiencias ubicuas, adaptables al contexto"
+        },
+        "community": {
+          "title": "Comunidad",
+          "coworking_1": "Personas que coinciden en el lugar",
+          "coworking_2": "Comunidad global, conectada por intereses"
+        },
+        "usage_model": {
+          "title": "Modelo de Uso",
+          "coworking_1": "Membresías mensuales",
+          "coworking_2": "Acceso flexible, por uso, día o propósito"
+        },
+        "technology": {
+          "title": "Tecnología",
+          "coworking_1": "Básica (WiFi, impresora)",
+          "coworking_2": "Datos en tiempo real, IA, personalización"
+        },
+        "environment": {
+          "title": "Ambiente",
+          "coworking_1": "Estático",
+          "coworking_2": "Ambiente adaptable según intención y energía"
+        },
+        "value_measurement": {
+          "title": "Medición de Valor",
+          "coworking_1": "Espacio y servicios",
+          "coworking_2": "Impacto en productividad, bienestar y conexión"
+        }
+      }
+    },
+    "key_elements": {
+      "number": "03",
+      "category": "Elementos Clave",
+      "title": "Elementos Principales del Coworking 2.0",
+      "decentralization": {
+        "title": "Descentralización y Ubicuidad",
+        "description": "El trabajo ya no gira en torno a una oficina, sino a lugares que potencian tu estado mental y tus objetivos del día. Puedes trabajar desde un café, un parque o una biblioteca según cómo te sientes o qué necesitas lograr."
+      },
+      "context": {
+        "title": "Contexto y Propósito",
+        "description": "No se trata de dónde estás, sino de por qué estás ahí. El espacio ideal para un día de enfoque profundo no es el mismo que para una lluvia de ideas creativa."
+      },
+      "real_time_data": {
+        "title": "Datos en Tiempo Real",
+        "description": "Información en vivo sobre ruido, ocupación, energía del lugar, conexión, etc. Recomendaciones dinámicas basadas en tu perfil, tu historial y el comportamiento de la comunidad."
+      },
+      "gamification": {
+        "title": "Gamificación y Comunidad",
+        "description": "Contribuir a la plataforma tiene beneficios: status, recompensas, impacto. El coworking se convierte en una experiencia colectiva, donde todos aportan."
+      },
+      "scalability": {
+        "title": "Escalabilidad sin Infraestructura",
+        "description": "A diferencia de las cadenas de coworking físico, Coworking 2.0 puede escalar globalmente sin necesidad de adquirir espacios. Usa tecnología, comunidad y alianzas con negocios locales."
+      }
+    },
+    "relevance": {
+      "number": "04",
+      "category": "Relevancia del Mercado",
+      "title": "¿Por qué es Relevante Ahora?",
+      "subtitle": "La tormenta perfecta para un nuevo paradigma",
+      "workforce_growth": {
+        "title": "Crecimiento de la Fuerza Laboral Remota",
+        "description": "La fuerza laboral remota crece rápidamente, y más del 70% de los trabajadores valoran la flexibilidad de ubicación como un beneficio clave."
+      },
+      "experience_demand": {
+        "title": "Demanda de Experiencias",
+        "description": "Las personas buscan experiencias de trabajo alineadas con su bienestar, energía emocional y metas diarias."
+      },
+      "traditional_shortfall": {
+        "title": "Limitaciones del Modelo Tradicional",
+        "description": "El modelo tradicional de coworking se queda corto ante esta nueva demanda, creando una oportunidad para la innovación."
+      }
+    },
+    "coffi_leadership": {
+      "number": "05",
+      "category": "Liderazgo",
+      "title": "Coffi Liderando la Revolución",
+      "subtitle": "Cómo Coffi está posicionado para crear y liderar esta tendencia mundial",
+      "vision": {
+        "title": "Creando el Futuro",
+        "description": "Coffi no solo se está adaptando al Coworking 2.0 - lo estamos creando. Nuestra plataforma encarna todos los elementos clave de esta evolución."
+      },
+      "technology": {
+        "title": "Base Tecnológica",
+        "description": "Recolección de datos en tiempo real, recomendaciones impulsadas por IA, y emparejamiento inteligente entre usuarios y espacios basado en contexto y propósito."
+      },
+      "community": {
+        "title": "Comunidad Global",
+        "description": "Construyendo una red que trasciende las fronteras físicas, conectando personas a través de intereses compartidos, estilos de trabajo y objetivos."
+      },
+      "partnerships": {
+        "title": "Alianzas Estratégicas",
+        "description": "Colaborando con negocios locales para crear una red descentralizada sin los gastos generales de poseer espacios físicos."
+      }
+    },
+    "implementation": {
+      "number": "06",
+      "category": "Implementación",
+      "title": "La Ventaja de Coffi",
+      "data_driven": {
+        "title": "Inteligencia Basada en Datos",
+        "description": "Nuestra plataforma aprende del comportamiento, preferencias y resultados de los usuarios para mejorar continuamente las recomendaciones y optimización de espacios."
+      },
+      "emotional_intelligence": {
+        "title": "Inteligencia Emocional",
+        "description": "Entendiendo no solo lo que los usuarios necesitan, sino cómo se sienten y qué energía requieren para una productividad óptima."
+      },
+      "contextual_awareness": {
+        "title": "Conciencia Contextual",
+        "description": "Emparejando usuarios con espacios basados en su tarea actual, estado de ánimo, hora del día y patrones de productividad personal."
+      }
+    }
+  },
+  "cta": {
+    "explore_coffi": "Explorar Coffi",
+    "view_full_deck": "Ver Pitch Deck Completo",
+    "instagram": "Seguir en Instagram"
+  }
+}

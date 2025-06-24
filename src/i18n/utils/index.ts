@@ -37,6 +37,9 @@ export async function loadMessages(locale: string) {
   const coffiDeck = (
     await import(`../../i18n/messages/${locale}/coffi-project-deck.json`)
   ).default;
+  const coworking2 = (
+    await import(`../../i18n/messages/${locale}/coworking-2-0.json`)
+  ).default;
 
 
   return {
@@ -53,5 +56,6 @@ export async function loadMessages(locale: string) {
     "platzi-master": platziMasters,
     "coffi-page": coffiPage,
     "coffi-project-deck": coffiDeck,
+    "coffi-coworking": coworking2,
   };
 }

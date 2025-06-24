@@ -141,7 +141,7 @@
     "slide07": {
       "number": "07",
       "category": "Current State",
-      "title": "2024 Roadmap",
+      "title": "2025 Roadmap",
       "current_state": {
         "title": "Current State",
         "mvp_ready": {
@@ -154,7 +154,7 @@
         }
       },
       "next_4_months": {
-        "title": "Next 4 Months",
+        "title": "Next 6 Months (Q3 - Q4)",
         "roadmap_items": [
           {
             "title": "Coffi Admin Dashboard (free)",

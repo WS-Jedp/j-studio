@@ -1,0 +1,147 @@
+{
+  "navigation": {
+    "backToCoffi": "Back to Coffi"
+  },
+  "download": {
+    "tooltip": "Download the coworking 2.0 concept"
+  },
+  "hero": {
+    "title": "Coworking 2.0",
+    "subtitle": "The evolution of the traditional coworking model towards a more decentralized, emotional, personalized and data-driven experience.",
+    "brandTagline": "Be Where You Thrive"
+  },
+  "sections": {
+    "evolution": {
+      "number": "01",
+      "category": "Evolution",
+      "title": "Beyond Traditional Coworking",
+      "subtitle": "Coworking 2.0 is not just about offering shared desks, it's about creating an intelligent ecosystem that adapts to the real needs of remote workers, digital nomads and hybrid professionals.",
+      "description": "The traditional model of fixed physical spaces is evolving into ubiquitous experiences that adapt to context, creating a global community connected by interests rather than just location."
+    },
+    "comparison": {
+      "number": "02",
+      "category": "Comparison",
+      "title": "Coworking 1.0 vs 2.0",
+      "subtitle": "A fundamental shift in how we think about workspace",
+      "comparison_table": {
+        "location": {
+          "title": "Location",
+          "coworking_1": "Fixed physical spaces",
+          "coworking_2": "Ubiquitous experiences, context-adaptive"
+        },
+        "community": {
+          "title": "Community", 
+          "coworking_1": "People who happen to be in the same place",
+          "coworking_2": "Global community connected by interests"
+        },
+        "usage_model": {
+          "title": "Usage Model",
+          "coworking_1": "Monthly memberships",
+          "coworking_2": "Flexible access, by use, day or purpose"
+        },
+        "technology": {
+          "title": "Technology",
+          "coworking_1": "Basic (WiFi, printer)",
+          "coworking_2": "Real-time data, AI, personalization"
+        },
+        "environment": {
+          "title": "Environment",
+          "coworking_1": "Static",
+          "coworking_2": "Adaptive according to intention and energy"
+        },
+        "value_measurement": {
+          "title": "Value Measurement",
+          "coworking_1": "Space and services",
+          "coworking_2": "Impact on productivity, wellbeing and connection"
+        }
+      }
+    },
+    "key_elements": {
+      "number": "03",
+      "category": "Core Elements",
+      "title": "Key Elements of Coworking 2.0",
+      "decentralization": {
+        "title": "Decentralization & Ubiquity",
+        "description": "Work no longer revolves around an office, but around places that enhance your mental state and daily goals. You can work from a café, park or library depending on how you feel or what you need to achieve."
+      },
+      "context": {
+        "title": "Context & Purpose",
+        "description": "It's not about where you are, but why you're there. The ideal space for deep focus is not the same as for creative brainstorming."
+      },
+      "real_time_data": {
+        "title": "Real-time Data",
+        "description": "Live information about noise, occupancy, place energy, connectivity, etc. Dynamic recommendations based on your profile, history and community behavior."
+      },
+      "gamification": {
+        "title": "Gamification & Community",
+        "description": "Contributing to the platform has benefits: status, rewards, impact. Coworking becomes a collective experience where everyone contributes."
+      },
+      "scalability": {
+        "title": "Scalability without Infrastructure",
+        "description": "Unlike physical coworking chains, Coworking 2.0 can scale globally without needing to acquire spaces. Uses technology, community and partnerships with local businesses."
+      }
+    },
+    "relevance": {
+      "number": "04",
+      "category": "Market Relevance",
+      "title": "Why is it Relevant Now?",
+      "subtitle": "The perfect storm for a new paradigm",
+      "workforce_growth": {
+        "title": "Remote Workforce Growth",
+        "description": "The remote workforce is growing rapidly, and more than 70% of workers value location flexibility as a key benefit."
+      },
+      "experience_demand": {
+        "title": "Experience-Driven Demand",
+        "description": "People seek work experiences aligned with their wellbeing, emotional energy and daily goals."
+      },
+      "traditional_shortfall": {
+        "title": "Traditional Model Shortfall",
+        "description": "The traditional coworking model falls short of this new demand, creating an opportunity for innovation."
+      }
+    },
+    "coffi_leadership": {
+      "number": "05",
+      "category": "Leadership",
+      "title": "Coffi Leading the Revolution",
+      "subtitle": "How Coffi is positioned to create and lead this worldwide trend",
+      "vision": {
+        "title": "Creating the Future",
+        "description": "Coffi is not just adapting to Coworking 2.0 - we are creating it. Our platform embodies all the key elements of this evolution."
+      },
+      "technology": {
+        "title": "Technology Foundation",
+        "description": "Real-time data collection, AI-powered recommendations, and intelligent matching between users and spaces based on context and purpose."
+      },
+      "community": {
+        "title": "Global Community",
+        "description": "Building a network that transcends physical boundaries, connecting people through shared interests, work styles, and goals."
+      },
+      "partnerships": {
+        "title": "Strategic Partnerships",
+        "description": "Collaborating with local businesses to create a decentralized network without the overhead of owning physical spaces."
+      }
+    },
+    "implementation": {
+      "number": "06",
+      "category": "Implementation",
+      "title": "The Coffi Advantage",
+      "data_driven": {
+        "title": "Data-Driven Intelligence",
+        "description": "Our platform learns from user behavior, preferences, and outcomes to continuously improve recommendations and space optimization."
+      },
+      "emotional_intelligence": {
+        "title": "Emotional Intelligence",
+        "description": "Understanding not just what users need, but how they feel and what energy they require for optimal productivity."
+      },
+      "contextual_awareness": {
+        "title": "Contextual Awareness",
+        "description": "Matching users with spaces based on their current task, mood, time of day, and personal productivity patterns."
+      }
+    }
+  },
+  "cta": {
+    "explore_coffi": "Explore Coffi",
+    "view_full_deck": "View Full Pitch Deck",
+    "instagram": "Follow on Instagram"
+  }
+}
