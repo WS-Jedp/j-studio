@@ -1,0 +1,173 @@
+{
+  "navigation": {
+    "back": "Back to Home"
+  },
+  "hero": {
+    "title": "EMAT Chile",
+    "subtitle": "Web Migration & Redesign Proposal",
+    "description": "A comprehensive digital transformation proposal to modernize EmatChile's online presence with cutting-edge technology and innovative design."
+  },
+  "mainContent": {
+    "quote": "Modernizing the digital experience of EmatChile, ensuring optimized infrastructure, modern visual interface, and fluid navigation.",
+    "overview": {
+      "sectionTitle": "Project Overview",
+      "title": "Digital Transformation",
+      "description": "This project aims to perform the complete migration of EmatChile's website from Azure to Namecheap, along with a visual and functional redesign that reflects current standards in the energy industry.",
+      "focus": "The approach is oriented towards optimizing performance, UX/UI structure, and online shopping experience through custom development on WordPress, using best practices in frontend and backend development."
+    },
+    "objective": {
+      "sectionTitle": "Main Goal",
+      "title": "Innovation & Sustainability",
+      "description": "To modernize the digital experience of EmatChile's website, ensuring optimized infrastructure, modern visual interface, and fluid navigation, with the purpose of transmitting the values of innovation, technology, and sustainability of the brand."
+    },
+    "scope": {
+      "sectionTitle": "Project Scope",
+      "title": "Complete Web Solution",
+      "items": [
+        "Complete website migration to new hosting (Namecheap)",
+        "Visual redesign of the main page (landing page)",
+        "WordPress environment and dependencies update",
+        "Implementation of new templates for products and online store",
+        "Technical review, optimization, and final site validation"
+      ]
+    },
+    "phases": {
+      "sectionTitle": "Project Phases",
+      "title": "7-Phase Development Plan",
+      "phase1": {
+        "title": "Landing Page Redesign",
+        "duration": "7 to 10 days",
+        "value": "$2,812,500 COP",
+        "description": "Creation of a new modern and adaptable visual design, aligned with brand values and sector references.",
+        "deliverables": [
+          "Visual design in Figma (desktop and mobile)",
+          "New menu structure, hero section, CTAs and visual components"
+        ],
+        "tools": "Figma, Illustrator, Photoshop, UX/UI principles, mobile-first design"
+      },
+      "phase2": {
+        "title": "WordPress Update & Migration Prep",
+        "duration": "4 to 6 days", 
+        "value": "$1,406,250 COP",
+        "description": "WordPress environment update to its latest version, plugin review, and database preparation for migration.",
+        "deliverables": [
+          "WordPress updated and functional in staging environment",
+          "Plugin and database compatibility report"
+        ],
+        "technologies": "WordPress 6.x, PHP 8.x, MySQL, WP Migrate DB, Duplicator"
+      },
+      "phase3": {
+        "title": "New Landing Page Implementation",
+        "duration": "5 to 7 days",
+        "value": "$1,687,500 COP", 
+        "description": "Development of the new main page based on the approved design, with optimized code and SEO best practices.",
+        "deliverables": [
+          "Complete responsive layout",
+          "Component integration in child theme"
+        ],
+        "technologies": "WordPress, PHP, HTML5, CSS3, JavaScript, ACF or Elementor"
+      },
+      "phase4": {
+        "title": "Complete Migration & Domain Change",
+        "duration": "3 to 4 days",
+        "value": "$843,750 COP",
+        "description": "Total site migration to Namecheap, DNS configuration, SSL certificates, and internal link verification.",
+        "deliverables": [
+          "Migrated and operational site",
+          "Pre and post-migration backups"
+        ],
+        "technologies": "Namecheap cPanel, SSL, DNS, WP migration tools"
+      },
+      "phase5": {
+        "title": "New Sections Design",
+        "duration": "5 to 7 days",
+        "value": "$1,968,750 COP",
+        "description": "Visual design of additional sections to be determined (product listings, individual views, etc.).",
+        "deliverables": [
+          "Approved UX/UI designs",
+          "Complementary visual components guide"
+        ],
+        "tools": "Figma, usability principles, modular design"
+      },
+      "phase6": {
+        "title": "New Sections Implementation", 
+        "duration": "7 to 10 days",
+        "value": "$2,812,500 COP",
+        "description": "Development and coding of the newly designed sections, integrated into the WordPress environment.",
+        "deliverables": [
+          "Functional and adaptive sections",
+          "WooCommerce integration (if applicable)"
+        ],
+        "technologies": "WordPress, PHP, HTML, CSS, WooCommerce, JavaScript"
+      },
+      "phase7": {
+        "title": "Final Validation & Optimization",
+        "duration": "3 to 4 days",
+        "value": "$1,125,000 COP",
+        "description": "Complete site review, usability testing, SEO optimization, and final performance tuning.",
+        "deliverables": [
+          "Optimized and validated site",
+          "Performance, SEO, and compatibility checklist"
+        ],
+        "tools": "Google Lighthouse, RankMath, GTMetrix"
+      }
+    },
+    "technologies": {
+      "sectionTitle": "Technologies Used",
+      "title": "Modern Tech Stack",
+      "cms": {
+        "title": "CMS & E-commerce",
+        "items": ["WordPress 6.x", "WooCommerce"]
+      },
+      "languages": {
+        "title": "Programming Languages",
+        "items": ["PHP 8.x", "HTML5", "CSS3", "JavaScript"]
+      },
+      "design": {
+        "title": "Design Tools",
+        "items": ["Figma", "Adobe Illustrator", "Photoshop"]
+      },
+      "migration": {
+        "title": "Migration & Hosting",
+        "items": ["WP Migrate DB", "Duplicator", "cPanel", "Namecheap"]
+      },
+      "optimization": {
+        "title": "SEO & Performance",
+        "items": ["Google Lighthouse", "RankMath", "GTMetrix"]
+      }
+    },
+    "timeline": {
+      "sectionTitle": "Timeline", 
+      "title": "November - December 2025",
+      "description": "Structured 7-phase development schedule ensuring quality delivery and milestone tracking."
+    },
+    "budget": {
+      "sectionTitle": "Investment",
+      "title": "Total Budget",
+      "total": "$12,656,250 COP",
+      "totalTime": "34 - 54 days",
+      "timeDescription": "Complete development timeline across all phases",
+      "paymentConditions": "Payment Terms",
+      "paymentTerms": [
+        "30% at project start",
+        "40% after completing Phase 4", 
+        "30% upon final project completion"
+      ]
+    },
+    "finalNotes": {
+      "sectionTitle": "Important Notes",
+      "title": "Project Guarantees",
+      "notes": [
+        "Budget includes design, development, migration, testing, and 2-week post-launch support",
+        "Does not include third-party premium plugin or theme licenses",
+        "Any new requirements outside the initial scope will be evaluated and quoted separately",
+        "Project will be executed under J-Studio supervision, guaranteeing quality, scalability, and visual coherence with EmatChile's identity"
+      ]
+    },
+    "conclusion": {
+      "title": "Ready to Transform Your Digital Presence?",
+      "description": "Let's work together to create a modern, efficient, and scalable web solution that reflects EmatChile's innovation and leadership in the energy sector.",
+      "cta": "Start Project"
+    }
+  }
+}

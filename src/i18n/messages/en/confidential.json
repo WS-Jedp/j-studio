@@ -1,0 +1,30 @@
+{
+  "header": {
+    "title": "Protected Content",
+    "description": "This {projectName} content is password protected"
+  },
+  "form": {
+    "label": "Access Password",
+    "placeholder": "Enter password...",
+    "deliverables": "Deliverables",
+    "tools": "Tools",
+    "technologies": "Technologies"
+  },
+  "buttons": {
+    "verifying": "Verifying...",
+    "accessBlocked": "Access Blocked",
+    "accessContent": "Access Content"
+  },
+  "errors": {
+    "tooManyAttempts": "Too many failed attempts. Please wait 5 minutes before trying again.",
+    "incorrectPassword": "Incorrect password. {remaining} attempts remaining.",
+    "attemptsSingle": "attempt",
+    "attemptsPlural": "attempts"
+  },
+  "status": {
+    "failedAttempts": "Failed attempts: {current}/3"
+  },
+  "footer": {
+    "poweredBy": "Secure access powered by J-Studio"
+  }
+}

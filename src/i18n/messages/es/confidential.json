@@ -1,0 +1,30 @@
+{
+  "header": {
+    "title": "Contenido Protegido",
+    "description": "Este contenido de {projectName} está protegido con contraseña"
+  },
+  "form": {
+    "label": "Contraseña de Acceso",
+    "placeholder": "Ingresa la contraseña...",
+    "deliverables": "Entregables",
+    "tools": "Herramientas",
+    "technologies": "Tecnologías"
+  },
+  "buttons": {
+    "verifying": "Verificando...",
+    "accessBlocked": "Acceso Bloqueado",
+    "accessContent": "Acceder al Contenido"
+  },
+  "errors": {
+    "tooManyAttempts": "Demasiados intentos fallidos. Por favor espera 5 minutos antes de intentar nuevamente.",
+    "incorrectPassword": "Contraseña incorrecta. {remaining} intentos restantes.",
+    "attemptsSingle": "intento",
+    "attemptsPlural": "intentos"
+  },
+  "status": {
+    "failedAttempts": "Intentos fallidos: {current}/3"
+  },
+  "footer": {
+    "poweredBy": "Acceso seguro powered by J-Studio"
+  }
+}

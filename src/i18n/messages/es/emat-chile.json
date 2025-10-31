@@ -1,0 +1,172 @@
+{
+  "navigation": {
+    "back": "Sobre J Studio"
+  },
+  "hero": {
+    "title": "EMAT Chile",
+    "subtitle": "Propuesta de Migración y Rediseño Web",
+    "description": "Una propuesta integral de transformación digital para modernizar la presencia online de EmatChile con tecnología de vanguardia y diseño innovador."
+  },
+  "mainContent": {
+    "quote": "Modernizar la experiencia digital del sitio web de EmatChile, asegurando una infraestructura optimizada, una interfaz visual moderna y una navegación fluida.",
+    "overview": {
+      "sectionTitle": "Descripción General",
+      "title": "Transformación Digital",
+      "description": "Este proyecto tiene como propósito realizar la migración completa del sitio web de EmatChile desde Azure a Namecheap, junto con un rediseño visual y funcional que refleje los estándares actuales de la industria energética.",
+      "focus": "El enfoque está orientado en optimizar el rendimiento, la estructura UX/UI y la experiencia de compra en línea, mediante un desarrollo a medida sobre WordPress, utilizando las mejores prácticas de desarrollo frontend y backend."
+    },
+    "objective": {
+      "sectionTitle": "Objetivo General",
+      "title": "Innovación y Sostenibilidad",
+      "description": "Modernizar la experiencia digital del sitio web de EmatChile, asegurando una infraestructura optimizada, una interfaz visual moderna y una navegación fluida, con el propósito de transmitir los valores de innovación, tecnología y sostenibilidad de la marca."
+    },
+    "scope": {
+      "sectionTitle": "Alcance del Proyecto",
+      "title": "Solución Web Completa",
+      "items": [
+        "Migración completa del sitio web a un nuevo hosting (Namecheap)",
+        "Rediseño visual de la página principal (landing page)",
+        "Actualización del entorno WordPress y sus dependencias",
+        "Implementación de nuevas plantillas para productos y tienda online",
+        "Revisión técnica, optimización y validación final del sitio"
+      ]
+    },
+    "phases": {
+      "sectionTitle": "Fases del Proyecto",
+      "title": "Plan de Desarrollo en 7 Fases",
+      "phase1": {
+        "title": "Rediseño de Landing Page",
+        "duration": "7 a 10 días",
+        "value": "$2,812,500 COP",
+        "description": "Creación de un nuevo diseño visual moderno y adaptable, alineado con los valores de la marca y las referencias del sector.",
+        "deliverables": [
+          "Diseño visual en Figma (desktop y mobile)",
+          "Nueva estructura de menús, hero section, CTAs y componentes visuales"
+        ],
+        "tools": "Figma, Illustrator, Photoshop, principios de UX/UI, mobile-first design"
+      },
+      "phase2": {
+        "title": "Actualización de WordPress y Preparación",
+        "duration": "4 a 6 días",
+        "value": "$1,406,250 COP",
+        "description": "Actualización del entorno WordPress a su versión más reciente, revisión de plugins y preparación de la base de datos para migración.",
+        "deliverables": [
+          "WordPress actualizado y funcional en entorno de staging",
+          "Informe de compatibilidad de plugins y base de datos"
+        ],
+        "technologies": "WordPress 6.x, PHP 8.x, MySQL, WP Migrate DB, Duplicator"
+      },
+      "phase3": {
+        "title": "Implementación de Nueva Landing Page",
+        "duration": "5 a 7 días",
+        "value": "$1,687,500 COP",
+        "description": "Desarrollo de la nueva página principal en base al diseño aprobado, con código optimizado y buenas prácticas de SEO.",
+        "deliverables": [
+          "Maquetación completa responsive",
+          "Integración de componentes en tema hijo (Child Theme)"
+        ],
+        "technologies": "WordPress, PHP, HTML5, CSS3, JavaScript, ACF o Elementor"
+      },
+      "phase4": {
+        "title": "Migración Completa y Cambio de Dominios",
+        "duration": "3 a 4 días",
+        "value": "$843,750 COP",
+        "description": "Migración total del sitio hacia Namecheap, configuración de DNS, certificados SSL y verificación de enlaces internos.",
+        "deliverables": [
+          "Sitio migrado y operativo",
+          "Backups previos y posteriores a la migración"
+        ],
+        "technologies": "Namecheap cPanel, SSL, DNS, herramientas de migración WP"
+      },
+      "phase5": {
+        "title": "Diseño de Nuevas Secciones",
+        "duration": "5 a 7 días",
+        "value": "$1,968,750 COP",
+        "description": "Diseño visual de secciones adicionales (listado de productos, vista individual de producto, vista de agendar acompañamiento).",
+        "deliverables": [
+          "Diseños UX/UI aprobados",
+          "Guía de componentes visuales complementarios"
+        ],
+        "tools": "Figma, principios de usabilidad, diseño modular"
+      },
+      "phase6": {
+        "title": "Implementación de Nuevas Secciones",
+        "duration": "7 a 10 días",
+        "value": "$2,812,500 COP",
+        "description": "Desarrollo y codificación de las nuevas secciones diseñadas, integradas al entorno WordPress.",
+        "deliverables": [
+          "Secciones funcionales y adaptativas",
+          "Integración con WooCommerce (si aplica)"
+        ],
+        "technologies": "WordPress, PHP, HTML, CSS, WooCommerce, JavaScript"
+      },
+      "phase7": {
+        "title": "Validación Final y Optimización",
+        "duration": "3 a 4 días",
+        "value": "$1,125,000 COP",
+        "description": "Revisión completa del sitio, pruebas de usabilidad, optimización SEO y performance final.",
+        "deliverables": [
+          "Sitio optimizado y validado",
+          "Checklist de rendimiento, SEO y compatibilidad"
+        ],
+        "tools": "Google Lighthouse, RankMath, GTMetrix"
+      }
+    },
+    "technologies": {
+      "sectionTitle": "Tecnologías Utilizadas",
+      "title": "Stack Tecnológico Moderno",
+      "cms": {
+        "title": "CMS y E-commerce",
+        "items": ["WordPress 6.x", "WooCommerce"]
+      },
+      "languages": {
+        "title": "Lenguajes de Programación",
+        "items": ["PHP 8.x", "HTML5", "CSS3", "JavaScript"]
+      },
+      "design": {
+        "title": "Herramientas de Diseño",
+        "items": ["Figma", "Adobe Illustrator", "Photoshop"]
+      },
+      "migration": {
+        "title": "Migración y Hosting",
+        "items": ["WP Migrate DB", "Duplicator", "cPanel", "Namecheap"]
+      },
+      "optimization": {
+        "title": "SEO y Performance",
+        "items": ["Google Lighthouse", "RankMath", "GTMetrix"]
+      }
+    },
+    "timeline": {
+      "sectionTitle": "Cronograma",
+      "title": "Noviembre - Diciembre 2025",
+      "description": "Cronograma estructurado de desarrollo en 7 fases asegurando entregas de calidad y seguimiento de hitos."
+    },
+    "budget": {
+      "sectionTitle": "Inversión",
+      "title": "Presupuesto Total",
+      "total": "$12,656,250 COP",
+      "totalTime": "34 - 48 días",
+      "timeDescription": "Tiempo total de desarrollo a través de todas las fases",
+      "paymentTerms": [
+        "30% al inicio del proyecto",
+        "40% tras finalizar Fase 4",
+        "30% al finalizar y entregar el proyecto completo"
+      ]
+    },
+    "finalNotes": {
+      "sectionTitle": "Observaciones Importantes",
+      "title": "Garantías del Proyecto",
+      "notes": [
+        "El presupuesto incluye diseño, desarrollo, migración, pruebas y soporte post-lanzamiento por 2 semanas",
+        "No incluye licencias de plugins o temas premium de terceros",
+        "Cualquier nuevo requerimiento fuera del alcance inicial será evaluado y cotizado aparte",
+        "El proyecto será ejecutado bajo la supervisión de J-Studio, garantizando calidad, escalabilidad y coherencia visual con la identidad de EmatChile"
+      ]
+    },
+    "conclusion": {
+      "title": "¿Listo para Transformar tu Presencia Digital?",
+      "description": "Trabajemos juntos para crear una solución web moderna, eficiente y escalable que refleje la innovación y liderazgo de EmatChile en el sector energético.",
+      "cta": "Iniciar Proyecto"
+    }
+  }
+}
