@@ -1,0 +1,200 @@
+{
+  "navigation": {
+    "back": "Volver al Inicio"
+  },
+  "hero": {
+    "title": "EMAT Chile v2",
+    "subtitle": "Propuesta de Migración y Rediseño Web (Presupuesto Reducido)",
+    "description": "Una propuesta integral de transformación digital ajustada con presupuesto reducido y trabajo medio tiempo para modernizar la presencia online de EmatChile."
+  },
+  "mainContent": {
+    "quote": "Migrar y modernizar el sitio web de EmatChile con un nuevo diseño profesional de landing page y optimización completa de infraestructura con presupuesto ajustado.",
+    "overview": {
+      "sectionTitle": "Descripción General",
+      "title": "Transformación Digital Ajustada",
+      "description": "Este proyecto consiste en la migración completa del sitio web de EmatChile desde Azure hacia Namecheap, junto con un rediseño profesional de su landing page y la posterior creación e implementación de nuevas secciones.",
+      "focus": "Se ha ajustado el presupuesto total a $9.300.000 COP, con un cronograma extendido ya que el desarrollo se realizará a medio tiempo, sin reducir calidad ni eliminar partes del alcance.",
+      "guarantee": "Las fases críticas (diseño de landing, actualización de WordPress, implementación y migración) estarán completadas antes del 20 de diciembre, garantizando que el sitio esté moderno, estable y operativo antes de fin de año."
+    },
+    "objective": {
+      "sectionTitle": "Objetivo General",
+      "title": "Modernización y Optimización",
+      "description": "Modernizar y optimizar el sitio web de EmatChile mediante un nuevo diseño visual modular y profesional, migración completa a Namecheap con configuración de hosting, DNS y SSL, actualización del entorno WordPress y dependencias, nuevas plantillas personalizadas para productos, tienda y secciones complementarias, optimización del rendimiento, SEO básico y compatibilidad móvil."
+    },
+    "scope": {
+      "sectionTitle": "Alcance del Proyecto",
+      "title": "Solución Completa Ajustada",
+      "items": [
+        "Migración de hosting y base de datos",
+        "Rediseño de landing page",
+        "Desarrollo frontend y backend a medida",
+        "Actualización completa de WordPress",
+        "Nuevas secciones (listado de productos, vista individual y otras por definir)",
+        "Validación, pruebas, optimización y soporte inicial"
+      ]
+    },
+    "timeline": {
+      "title": "18 nov 2025 → 21 feb 2026",
+      "description": "Cronograma extendido con desarrollo medio tiempo para optimizar costos manteniendo alcance completo.",
+      "result": "Resultado diciembre: Landing + Migración completadas"
+    },
+    "phases": {
+      "sectionTitle": "Plan de Desarrollo",
+      "title": "Plan de Desarrollo en 7 Fases",
+      "phase1": {
+        "title": "Rediseño de la Landing Page",
+        "duration": "2 semanas (medio tiempo)",
+        "dates": "18 nov – 2 dic",
+        "value": "$2,000,000 COP",
+        "description": "Diseño visual completamente nuevo basado en referencias de la industria (HDT Energy, IBC Solar, Power Warehouse).",
+        "deliverables": [
+          "Diseño final en Figma",
+          "Sistema visual y lineamientos básicos"
+        ],
+        "includes": [
+          "Diseño en Figma (desktop + mobile)",
+          "Nueva arquitectura visual",
+          "Menús, secciones, CTAs y héroe principal",
+          "UI en estilo moderno, limpio y corporativo"
+        ]
+      },
+      "phase2": {
+        "title": "Actualización de WordPress",
+        "duration": "1 semana",
+        "dates": "2 dic – 9 dic",
+        "value": "$1,200,000 COP",
+        "description": "Actualización de WordPress, plugins, optimización de base de datos y backups.",
+        "deliverables": [
+          "WordPress versión 6.x",
+          "Plugins actualizados",
+          "Respaldos completos"
+        ],
+        "includes": [
+          "Actualización de Core y plugins",
+          "Optimización de base de datos",
+          "Ajustes previos a migración"
+        ]
+      },
+      "phase3": {
+        "title": "Implementación de la Nueva Landing Page",
+        "duration": "1.5 semanas",
+        "dates": "12 dic – 20 dic",
+        "value": "$1,300,000 COP",
+        "description": "Desarrollo custom en un Child Theme, maquetación HTML/CSS/JS, integración con WordPress y ajustes responsive.",
+        "deliverables": [
+          "Landing 100% funcional",
+          "Diseño fiel al Figma",
+          "Performance base optimizado"
+        ]
+      },
+      "phase4": {
+        "title": "Migración a Namecheap y Cambio de Dominio",
+        "duration": "1 semana",
+        "dates": "20 dic – 27 dic",
+        "value": "$700,000 COP",
+        "description": "Migración completa del sitio con base de datos + archivos, configuración de dominios, DNS, certificados SSL y pruebas funcionales.",
+        "deliverables": [
+          "Sitio online en Namecheap",
+          "SSL configurado",
+          "DNS propagado correctamente"
+        ]
+      },
+      "phase5": {
+        "title": "Diseño de Nuevas Secciones",
+        "duration": "2 semanas",
+        "dates": "6 ene – 17 ene",
+        "value": "$1,400,000 COP",
+        "description": "Diseño de listado de productos, vista individual y secciones adicionales por definir.",
+        "deliverables": [
+          "Diseños Figma aprobados"
+        ]
+      },
+      "phase6": {
+        "title": "Implementación de Nuevas Secciones",
+        "duration": "3 semanas",
+        "dates": "20 ene – 7 feb",
+        "value": "$2,100,000 COP",
+        "description": "Desarrollo de plantillas personalizadas para WordPress y WooCommerce.",
+        "deliverables": [
+          "Nuevas secciones implementadas",
+          "Conexión completa con WooCommerce"
+        ]
+      },
+      "phase7": {
+        "title": "Validación Final y Optimización",
+        "duration": "2 semanas",
+        "dates": "10 feb – 21 feb",
+        "value": "$800,000 COP",
+        "description": "Optimización final: performance, SEO básico, responsive, correcciones finales.",
+        "deliverables": [
+          "Sitio final optimizado",
+          "Checklist de pruebas"
+        ]
+      }
+    },
+    "technologies": {
+      "sectionTitle": "Tecnologías Utilizadas",
+      "title": "Stack Tecnológico Moderno",
+      "cms": {
+        "title": "CMS y E-commerce",
+        "items": ["WordPress 6.x", "WooCommerce"]
+      },
+      "backend": {
+        "title": "Backend",
+        "items": ["PHP 8.x"]
+      },
+      "frontend": {
+        "title": "Frontend",
+        "items": ["HTML5", "CSS3", "JavaScript"]
+      },
+      "design": {
+        "title": "Herramientas de Diseño",
+        "items": ["Figma", "Adobe Illustrator"]
+      },
+      "migration": {
+        "title": "Migración",
+        "items": ["WP Migrate DB", "Duplicator"]
+      },
+      "hosting": {
+        "title": "Hosting",
+        "items": ["Namecheap", "cPanel", "SSL", "DNS"]
+      },
+      "versioning": {
+        "title": "Control de Versiones",
+        "items": ["GitHub"]
+      },
+      "performance": {
+        "title": "Performance",
+        "items": ["Google Lighthouse", "GTMetrix"]
+      }
+    },
+    "budget": {
+      "sectionTitle": "Inversión Final",
+      "title": "Presupuesto Total Ajustado",
+      "total": "$9,300,000 COP",
+      "totalTime": "18 nov 2025 → 21 feb 2026",
+      "timeDescription": "Cronograma de desarrollo medio tiempo manteniendo alcance completo",
+      "paymentConditions": "Esquema de Pagos",
+      "paymentTerms": [
+        "30% al inicio del proyecto (Fase 1-2) → $2,790,000",
+        "40% entrega landing + migración (Fase 3-4) → $3,720,000",
+        "30% entrega final (Fase 5-7) → $2,790,000"
+      ]
+    },
+    "finalNotes": {
+      "sectionTitle": "Observaciones Finales",
+      "title": "Garantías del Proyecto",
+      "notes": [
+        "El alcance se mantiene completo a pesar de la reducción del presupuesto",
+        "El cronograma se extiende porque el desarrollo se realizará en media jornada para optimizar costos",
+        "El sitio quedará operativo y actualizado antes del 27 de diciembre",
+        "El resto de mejoras avanzarán progresivamente en enero–febrero bajo un flujo ordenado y profesional"
+      ]
+    },
+    "conclusion": {
+      "title": "¿Listo para Comenzar tu Transformación Digital Optimizada?",
+      "description": "Trabajemos juntos con esta propuesta ajustada para crear una solución web moderna, eficiente y escalable que refleje la innovación y liderazgo de EmatChile en el sector energético.",
+      "cta": "Iniciar Proyecto"
+    }
+  }
+}
