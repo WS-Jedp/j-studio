@@ -1,0 +1,177 @@
+{
+  "navigation": {
+    "back": "Back"
+  },
+  "hero": {
+    "title": "Coffi",
+    "subtitle": "Be where you thrive",
+    "description": "The platform that is building Coworking 2.0 → a decentralized, intelligent and human network that connects remote workers and digital nomads with ideal spaces to thrive, anywhere in the world."
+  },
+  "sections": {
+    "valueProposition": {
+      "title": "Value Proposition",
+      "content": "Coffi helps remote workers and digital nomads find the perfect space for their daily purpose (work, study, connect or have fun), integrating contextual data in real time (environment, noise, connection, community, etc.) to offer more productive, human and connected work experiences.\n\nAt the same time, it allows cafes, coworkings and work-friendly places (the spaces) to stand out and build loyalty among similar communities through information, metrics and rewards in the Coffi network.",
+      "quote": "Coffi turns every city into a living coworking space."
+    },
+    "problem": {
+      "title": "Problem to Solve",
+      "subtitle": "Remote work is here to stay, but its infrastructure is not ready yet",
+      "points": {
+        "0": "There is no network or ecosystem that organizes, interprets and connects the new global work dynamic.",
+        "1": "Remote workers face uncertainty and lack of context when choosing where to work.",
+        "2": "Spaces (cafes, coworkings, hotels) fail to connect, build loyalty or attract their ideal audience.",
+        "3": "Companies do not offer adequate benefits to their remote teams, due to uncertainty and lack of remote work infrastructure, wasting the potential and wellbeing of their talent."
+      },
+      "conclusion": "The result: a fragmented, unproductive experience without community."
+    },
+    "solution": {
+      "title": "Solution",
+      "subtitle": "Coffi creates the contextual infrastructure for remote work, combining technology, community and environmental intelligence",
+      "features": {
+        "0": {
+          "title": "Smart Matching",
+          "description": "connects each user with the ideal space according to their context (purpose, mindset and profession)."
+        },
+        "1": {
+          "title": "Real-time Updates",
+          "description": "measures and shares data on noise, occupancy, atmosphere, Wi-Fi and energy of the place."
+        },
+        "2": {
+          "title": "Coffi Meetups & Events",
+          "description": "promotes meetings, collaboration and local community."
+        },
+        "3": {
+          "title": "Gamification (Coffi Points)",
+          "description": "rewards participation and contribution to the network."
+        }
+      }
+    },
+    "targetMarket": {
+      "title": "Target Market",
+      "users": "Digital nomads, freelancers, remote workers and university students (18-40 years old).",
+      "spaces": "Work-friendly businesses: cafes, coworkings, libraries, hotels and rooftops.",
+      "companies": "Companies with remote teams (B2B2C): companies seeking to offer tangible benefits to their remote employees.",
+      "region": "Initial LATAM market: Key remote work hubs → Medellín, Bogotá, CDMX, Buenos Aires and São Paulo.",
+      "marketSize": {
+        "title": "Market Size (2025)",
+        "nomads": "+40 million digital nomads worldwide.",
+        "coworking": "Global coworking market: USD 40 billion.",
+        "latam": "LATAM: next global remote epicenter."
+      }
+    },
+    "businessModel": {
+      "title": "Business Model",
+      "models": {
+        "0": {
+          "type": "B2C – Freemium for users",
+          "description": "Free access + premium plans with benefits, statistics and personalized recommendations."
+        },
+        "1": {
+          "type": "B2B – SaaS for spaces",
+          "description": "Monthly subscription plans for work-friendly spaces with visibility, analytics, community management and positioning tools."
+        },
+        "2": {
+          "type": "B2B2C – Connection between companies and spaces (future)",
+          "description": "Companies will be able to offer Coffi benefits to their remote employees through:",
+          "features": {
+            "0": "Corporate dashboard with usage, productivity and wellbeing metrics.",
+            "1": "Credits in Coffi Points for their employees to consume in allied spaces.",
+            "2": "Partnerships with local spaces to guarantee productive experiences consistent with corporate culture."
+          }
+        }
+      }
+    },
+    "competition": {
+      "title": "Competition",
+      "competitors": {
+        "0": {
+          "name": "Workfrom",
+          "focus": "Static directory of places",
+          "differentiator": "Coffi is contextual and real-time"
+        },
+        "1": {
+          "name": "Coworker",
+          "focus": "Focused on coworkings",
+          "differentiator": "Coffi integrates cafes, rooftops, hotels"
+        },
+        "2": {
+          "name": "WeWork / Croissant",
+          "focus": "Centralized spaces",
+          "differentiator": "Coffi is decentralized and collaborative"
+        },
+        "3": {
+          "name": "Woba (Brazil)",
+          "focus": "Connects companies with coworkings",
+          "differentiator": "Coffi connects companies, people and all types of spaces, with human and real-time focus"
+        },
+        "4": {
+          "name": "Google Maps",
+          "focus": "Generic information",
+          "differentiator": "Coffi offers live, human and contextual information"
+        }
+      }
+    },
+    "team": {
+      "title": "Work Team",
+      "members": {
+        "0": {
+          "name": "Juan Esteban Deossa Pertuz",
+          "role": "Co-founder & CEO",
+          "description": "Full-stack software engineer with experience in building scalable platforms and user-centered digital products. Combines technical vision and creative sensitivity to lead the architecture, strategy and evolution of Coffi. His multidisciplinary approach, between technology and design, drives the creation of an intelligent ecosystem for remote work."
+        },
+        "1": {
+          "name": "Andres Felipe Echavarría Molina",
+          "role": "Co-founder & CFO",
+          "description": "Financial engineer with extensive experience leading teams, technology projects and business models. Founder of Quantum Developers, brings strategic vision, financial structuring and operational direction to scale Coffi sustainably, connecting companies, spaces and remote teams."
+        },
+        "2": {
+          "name": "Esteban Suarez",
+          "role": "Co-founder & CCO",
+          "description": "UI/UX designer specialized in intuitive and people-centered digital experiences. Leads the visual identity and complete user experience at Coffi, transforming insights and real needs into clear, human interfaces consistent with the platform's global vision."
+        }
+      }
+    },
+    "marketing": {
+      "title": "Marketing and Sales Strategy",
+      "strategies": {
+        "0": "Go-To-Market Medellín: model validation with allied spaces and active community of digital nomads.",
+        "1": "Coffi Ambassadors: local leaders who expand the network city by city.",
+        "2": "\"Where Do You Thrive?\" Campaign — digital campaigns focused on purpose and exploration for digital professionals and their preferred work space.",
+        "3": "B2B Partnerships: with coworkings, hotels and universities."
+      }
+    },
+    "impact": {
+      "title": "Social and Environmental Impact",
+      "description": "Coffi promotes a sustainable model of distributed work, reducing unnecessary travel and fostering conscious use of existing urban spaces.\n\nFurthermore, it boosts the local economy, energizing small businesses and fostering collaborative and inclusive communities."
+    },
+    "financing": {
+      "title": "Financing",
+      "amount": "We are seeking an initial investment of USD 15,000 – 20,000 destined to completely validate the Product–Market Fit in Medellín and the Metropolitan Area, consolidating the Coffi network as a reference for new remote work in the region.",
+      "keyAreas": {
+        "title": "This stage will be key to:",
+        "areas": {
+          "0": "Perfect the MVP and its real-time infrastructure.",
+          "1": "Scale the local user base (B2C and B2B).",
+          "2": "Implement the SaaS model for work-friendly spaces.",
+          "3": "Optimize the rewards system and Coffi Points."
+        }
+      },
+      "beyond": "Beyond capital, we seek a strategic network of mentors, allies and experts who share our vision:",
+      "seeking": {
+        "0": "Mentorship in growth strategy and international scalability.",
+        "1": "Support in expansion to global digital nomad hubs (CDMX, Buenos Aires, São Paulo).",
+        "2": "Key connections with investors, partners and leading spaces in LATAM."
+      },
+      "philosophy": "Coffi is not just looking for investment, it seeks to build with its allies the network that will make the future of remote work possible."
+    },
+    "conclusion": {
+      "title": "Be Where You Thrive",
+      "description": "Coffi is not just an app, it's a living network that is building the future of remote work.",
+      "cta": "Visit Coffi"
+    }
+  },
+  "pdf": {
+    "export": "Export to PDF",
+    "title": "Coffi One Pager - Business Plan"
+  }
+}

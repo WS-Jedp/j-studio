@@ -40,6 +40,9 @@ export async function loadMessages(locale: string) {
   const coworking2 = (
     await import(`../../i18n/messages/${locale}/coworking-2-0.json`)
   ).default;
+  const coffiOnePager = (
+    await import(`../../i18n/messages/${locale}/coffi-one-pager.json`)
+  ).default;
 
   const ematChile = (
     await import(`../../i18n/messages/${locale}/emat-chile.json`)
@@ -68,6 +71,7 @@ export async function loadMessages(locale: string) {
     "coffi-page": coffiPage,
     "coffi-project-deck": coffiDeck,
     "coffi-coworking": coworking2,
+    "coffi-one-pager": coffiOnePager,
     "emat-chile": ematChile,
     "emat-chile-v2": ematChilev2,
     confidential,
