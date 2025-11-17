@@ -1,0 +1,161 @@
+{
+  "navigation": {
+    "back": "Volver a Coffi"
+  },
+  "hero": {
+    "title": "Para Negocios",
+    "subtitle": "Coffi Points & Nomad Contextual Credits",
+    "description": "La nueva economía de lealtad para espacios work-friendly"
+  },
+  "introduction": {
+    "text": "Coffi está construyendo una red viva y descentralizada donde cada espacio work-friendly —café, coworking, rooftop, librería, hotel— se convierte en un nodo activo dentro del ecosistema del trabajo remoto.",
+    "highlight": "Nomad Contextual Credits son la moneda de contribución dentro de esa red.",
+    "description": "Una forma simple, humana y poderosa de conectar los intereses de los usuarios y los espacios en un mismo ciclo de valor."
+  },
+  "problem": {
+    "title": "El Problema",
+    "description": "Los espacios compiten cada día con cientos de opciones:",
+    "challenges": {
+      "attract": "¿Cómo atraer a los usuarios que realmente vienen a trabajar o estudiar?",
+      "retain": "¿Cómo fidelizarlos sin invertir en infraestructura costosa?",
+      "standout": "¿Cómo destacarse en un mercado saturado?",
+      "understand": "¿Cómo entender quiénes son, cómo se comportan y qué buscan?",
+      "community": "¿Cómo construir comunidad sin depender de redes sociales o contenido diario?"
+    },
+    "userChallenges": "Por otro lado, los usuarios tampoco tienen incentivos reales para contribuir:",
+    "userPoints": {
+      "noReward": "No ganan nada por actualizar el ambiente.",
+      "noIncentive": "No sienten recompensa por descubrir nuevos espacios.",
+      "noSystem": "No existe un sistema que valore su aporte al ecosistema."
+    },
+    "conclusion": {
+      "users": "Los usuarios quieren pertenecer.",
+      "spaces": "Los espacios quieren entenderlos y fidelizarlos.",
+      "bridge": "Pero no existe un puente."
+    }
+  },
+  "solution": {
+    "title": "La Solución: Nomad Contextual Credits",
+    "description": "Coffi crea ese puente.",
+    "explanation": "Los Nomad Contextual Credits —representados por los Coffi Points— permiten que usuarios y espacios participen en una economía compartida donde ambos ganan.",
+    "forUsers": {
+      "title": "Para los usuarios",
+      "description": "Los créditos se ganan cada vez que actualizan el contexto real de un espacio o descubren uno nuevo. Se convierten en recompensas, descuentos y experiencias exclusivas."
+    },
+    "forSpaces": {
+      "title": "Para los espacios",
+      "description": "Esos mismos créditos se convierten en:",
+      "benefits": [
+        "Lealtad inmediata",
+        "Visibilidad dentro de Coffi",
+        "Data valiosa",
+        "Futuras herramientas del dashboard",
+        "Una comunidad que vuelve porque siente que aporta y recibe"
+      ]
+    },
+    "ecosystem": "Un ecosistema donde todos contribuyen, todos ganan y todos prosperan."
+  },
+  "howItWorks": {
+    "title": "Cómo Funciona",
+    "steps": {
+      "qr": {
+        "title": "El código QR del espacio",
+        "description": "Cada espacio recibe un QR personalizado para ubicarlo donde se hace el pago o entrega. El usuario lo escanea y Coffi abre automáticamente la pantalla de redención del espacio."
+      },
+      "choice": {
+        "title": "Elección del beneficio",
+        "description": "Si el usuario tiene cuenta, verá las opciones de descuento configuradas por el espacio:",
+        "examples": [
+          "5% → 500 Coffi Points",
+          "10% → 700 Coffi Points",
+          "15% → 1000 Coffi Points"
+        ],
+        "note": "Cada espacio define sus reglas. Los planes Nomad y Wanderlust pueden tener beneficios exclusivos."
+      },
+      "transfer": {
+        "title": "Transferencia contextual de puntos",
+        "description": "Cuando el usuario elige un descuento:",
+        "process": [
+          "Los puntos se transfieren al espacio",
+          "El espacio aplica el descuento manualmente",
+          "Coffi registra toda la transacción para el historial del espacio y del usuario"
+        ]
+      },
+      "cycle": {
+        "title": "Un ciclo perfecto",
+        "description": "El usuario regresa porque hay incentivos. El espacio gana lealtad y datos reales. Coffi mantiene vivo el ecosistema con información contextual."
+      }
+    }
+  },
+  "userFlow": {
+    "title": "Flujo UX/UI para el Usuario",
+    "description": "Escanea el QR → Ve descuentos → Selecciona uno → Confirma → Muestra la pantalla al staff → Recibe incentivo → Sigue aportando al ecosistema.",
+    "qualities": "Simple. Intuitivo. Sin fricción."
+  },
+  "spacesBenefits": {
+    "title": "Lo que Gana el Espacio",
+    "benefits": {
+      "loyalty": {
+        "title": "Fidelización real",
+        "description": "Los usuarios vuelven porque cada acción construye valor. Tienen un motivo real para elegir tu espacio sobre cualquier otro."
+      },
+      "visibility": {
+        "title": "Visibilidad dentro de Coffi",
+        "description": "Tu espacio aparece frente a miles de usuarios buscando dónde trabajar o estudiar. Cada sesión te posiciona dentro del mapa vivo del trabajo remoto."
+      },
+      "understanding": {
+        "title": "Entendimiento del usuario",
+        "description": "Cada mes recibirás un Reporte Mensual con:",
+        "items": [
+          "Perfiles y profesiones de tus usuarios",
+          "Horarios de mayor actividad productiva",
+          "Tiempos de permanencia",
+          "Nivel de ruido, ocupación, energía y propósito",
+          "Cuántos descuentos se redimieron",
+          "Cuántos puntos recibió tu espacio"
+        ],
+        "conclusion": "Información real para tomar mejores decisiones."
+      },
+      "community": {
+        "title": "Construcción de comunidad",
+        "description": "Los usuarios se sienten parte del lugar. Contribuyen. Lo recomiendan. Regresan con intención."
+      },
+      "future": {
+        "title": "Futuro: herramientas del Dashboard",
+        "description": "Como aliado temprano tendrás acceso a:",
+        "tools": [
+          "Dashboard en tiempo real",
+          "Campañas de visibilidad",
+          "Fidelización automática",
+          "Ranking local",
+          "Insights avanzados",
+          "Recomendaciones accionables"
+        ]
+      }
+    }
+  },
+  "impact": {
+    "title": "El Impacto: Convertir tu Espacio en un Destino Preferido",
+    "description": "Coffi no es un directorio. Ni una app de reseñas. Ni un programa de puntos tradicional.",
+    "definition": "Coffi es infraestructura:",
+    "explanation": "Una capa viva que une usuarios, espacios y ciudades.",
+    "pioneer": "Los espacios que se unan ahora serán los pioneros de este ecosistema.",
+    "feeling": "Y los usuarios lo sentirán:",
+    "quote": "Aquí me reconocen. Aquí pertenezco. Aquí vuelvo."
+  },
+  "joinEcosystem": {
+    "title": "Únete al Ecosistema de Coffi",
+    "steps": [
+      "Recibe tu QR.",
+      "Configura tus descuentos.",
+      "Activa tu espacio en Coffi.",
+      "Empieza a recibir visitas, puntos, datos y comunidad."
+    ],
+    "offer": "Los primeros espacios tendrán 3 meses de Premium gratis cuando lancemos el dashboard.",
+    "cta": "Únete al Ecosistema"
+  },
+  "footer": {
+    "tagline": "Coffi — Donde los Espacios Work-Friendly Prosperan",
+    "motto": "Be Where You Thrive."
+  }
+}
