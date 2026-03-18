@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CTX Frame — Context-Driven Development</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=JetBrains+Mono:wght@300;400;500;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --ink:     #0d0d0d;
+  --ink2:    #111;
+  --surface: #161616;
+  --rule:    #1f1f1f;
+  --rule2:   #2a2a2a;
+  --text:    #e6e1d8;
+  --text2:   #7a756e;
+  --text3:   #3a3733;
+  --accent:  #8bff7a;
+  --accent2: rgba(139,255,122,0.08);
+  --accent3: rgba(139,255,122,0.04);
+  --red:     #e05252;
+}
+
+body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ─ grain overlay ─ */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; opacity: 0.5;
+}
+
+/* ─ type ─ */
+.serif { font-family: 'Cormorant Garamond', serif; }
+.mono  { font-family: 'JetBrains Mono', monospace; }
+
+/* ─ nav ─ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 56px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+}
+nav.scrolled {
+  background: rgba(13,13,13,0.92);
+  backdrop-filter: blur(16px);
+  border-color: var(--rule);
+}
+.nav-wordmark {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px; font-weight: 600;
+  color: var(--text); text-decoration: none;
+  letter-spacing: -0.01em;
+}
+.nav-wordmark span { color: var(--accent); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-size: 13px; color: var(--text2);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+
+/* ─ layout ─ */
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 56px; }
+.wrap-narrow { max-width: 760px; margin: 0 auto; padding: 0 56px; }
+
+/* ─ hero ─ */
+#hero {
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 0 96px;
+  position: relative; overflow: hidden;
+}
+
+.hero-backdrop {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 60%, rgba(139,255,122,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 30%, rgba(139,255,122,0.02) 0%, transparent 50%);
+}
+
+.hero-grid-lines {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.012) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 70%, transparent 100%);
+}
+
+.hero-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+  opacity: 0; transform: translateY(12px);
+  animation: up 0.7s ease 0.2s forwards;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(56px, 8vw, 108px);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin-bottom: 36px;
+  color: var(--text);
+  opacity: 0; transform: translateY(20px);
+  animation: up 0.9s ease 0.35s forwards;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-thesis {
+  font-size: 19px; font-weight: 300;
+  color: var(--text2);
+  max-width: 580px;
+  line-height: 1.7;
+  opacity: 0; transform: translateY(16px);
+  animation: up 0.9s ease 0.5s forwards;
+}
+
+.hero-thesis strong { color: var(--text); font-weight: 400; }
+
+.hero-scroll {
+  position: absolute; bottom: 40px; left: 56px;
+  display: flex; align-items: center; gap: 10px;
+  opacity: 0; animation: up 0.7s ease 1s forwards;
+}
+.hero-scroll-line {
+  width: 40px; height: 1px;
+  background: var(--text3);
+}
+.hero-scroll span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.1em;
+  color: var(--text3); text-transform: uppercase;
+}
+
+@keyframes up {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─ section base ─ */
+.section {
+  padding: 112px 0;
+  border-top: 1px solid var(--rule);
+  position: relative;
+}
+
+.section-index {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 48px;
+  display: flex; align-items: center; gap: 16px;
+}
+.section-index::after {
+  content: ''; flex: 1; height: 1px;
+  background: var(--rule);
+  max-width: 60px;
+}
+
+.section-claim {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin-bottom: 40px;
+  color: var(--text);
+}
+.section-claim em { font-style: italic; color: var(--accent); }
+.section-claim strong { font-weight: 500; }
+
+.body-text {
+  font-size: 17px; font-weight: 300;
+  color: var(--text2);
+  line-height: 1.75;
+  max-width: 620px;
+}
+.body-text + .body-text { margin-top: 24px; }
+.body-text strong { color: var(--text); font-weight: 400; }
+.body-text em { font-style: italic; color: var(--text); }
+
+/* ─ section: la ia si puede ─ */
+.ai-capable-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 64px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.capable-item {
+  background: var(--ink2);
+  padding: 28px 32px;
+  display: flex; align-items: flex-start; gap: 16px;
+}
+.capable-check {
+  width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px;
+  border-radius: 50%;
+  background: var(--accent2);
+  border: 1px solid rgba(139,255,122,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; color: var(--accent);
+}
+.capable-text {
+  font-size: 15px; font-weight: 300;
+  color: var(--text2); line-height: 1.5;
+}
+.capable-text strong { color: var(--text); font-weight: 400; }
+
+.ai-divider {
+  margin-top: 56px;
+  padding: 28px 36px;
+  background: var(--surface);
+  border: 1px solid var(--rule2);
+  border-radius: 10px;
+  max-width: 640px;
+}
+.ai-divider-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 300;
+  font-style: italic;
+  color: var(--text2);
+  line-height: 1.5;
+}
+.ai-divider-text strong {
+  color: var(--text);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* ─ section: lo que no existe ─ */
+.missing-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-top: 64px;
+}
+.missing-col { display: flex; flex-direction: column; gap: 0; }
+.missing-col-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--rule);
+}
+.missing-col-label.exists { color: var(--text3); }
+.missing-col-label.missing { color: var(--accent); }
+
+.exists-items { display: flex; flex-direction: column; gap: 10px; }
+.exists-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  font-size: 14px; color: var(--text2);
+  font-family: 'JetBrains Mono', monospace;
+}
+.exists-item::before {
+  content: '·'; color: var(--text3); font-size: 16px;
+}
+
+.missing-items { display: flex; flex-direction: column; gap: 10px; }
+.missing-item {
+  padding: 14px 18px;
+  border-radius: 8px;
+  background: var(--accent3);
+  border: 1px solid rgba(139,255,122,0.1);
+  font-size: 14px; color: var(--text2); line-height: 1.5;
+}
+.missing-item strong { color: var(--text); font-weight: 400; display: block; margin-bottom: 3px; font-size: 13px; }
+
+.half-map {
+  margin-top: 56px;
+  padding: 24px 32px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--red);
+  border-radius: 8px;
+  max-width: 600px;
+}
+.half-map p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px; font-weight: 300;
+  font-style: italic;
+  color: var(--text2);
+  line-height: 1.5;
+}
+.half-map p strong {
+  color: var(--text); font-style: normal; font-weight: 500;
+}
+
+/* ─ section: el problema real ─ */
+.problem-statement {
+  margin-top: 56px;
+  max-width: 680px;
+}
+.ps-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 300;
+  color: var(--text2);
+  line-height: 1.4;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.ps-line:first-child { padding-top: 0; }
+.ps-line.highlight { color: var(--text); }
+.ps-line strong { font-weight: 500; font-style: italic; }
+.ps-line em { color: var(--accent); font-style: italic; }
+
+/* ─ section: CDD ─ (THE BIG ONE) */
+#cdd {
+  padding: 0;
+  border-top: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.cdd-intro {
+  padding: 112px 0 80px;
+}
+
+.cdd-inversion {
+  background: var(--surface);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 0;
+  overflow: hidden;
+}
+
+.cdd-inversion-inner {
+  max-width: 1080px; margin: 0 auto; padding: 0 56px;
+}
+
+.flows-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+}
+
+.flow-row {
+  padding: 56px 0;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  align-items: center;
+  border-bottom: 1px solid var(--rule);
+  transition: opacity 0.5s;
+}
+.flow-row:last-child { border-bottom: none; }
+.flow-row.dimmed { opacity: 0.35; }
+
+.flow-meta {}
+.flow-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.flow-type.old { color: var(--text3); }
+.flow-type.new { color: var(--accent); }
+.flow-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 400;
+  color: var(--text2);
+}
+
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.flow-node {
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  transition: all 0.4s;
+  white-space: nowrap;
+}
+.flow-node.old-node {
+  background: var(--ink2);
+  border: 1px solid var(--rule2);
+  color: var(--text3);
+}
+.flow-node.new-node {
+  background: var(--accent2);
+  border: 1px solid rgba(139,255,122,0.2);
+  color: var(--accent);
+}
+.flow-node.center-node {
+  background: var(--surface);
+  border: 1px solid var(--rule2);
+  color: var(--text2);
+}
+.flow-arrow {
+  padding: 0 12px;
+  color: var(--text3);
+  font-size: 14px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.flow-row.new-flow .flow-arrow { color: rgba(139,255,122,0.3); }
+
+.cdd-insight {
+  padding: 72px 0;
+  max-width: 1080px; margin: 0 auto; padding-left: 56px; padding-right: 56px;
+}
+
+.insight-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.3;
+  color: var(--text2);
+  max-width: 720px;
+  position: relative;
+  padding-left: 28px;
+  border-left: 2px solid var(--accent);
+}
+.insight-quote strong {
+  color: var(--text);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.cdd-pillars {
+  padding: 72px 0 112px;
+  border-top: 1px solid var(--rule);
+  background: var(--ink);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 56px;
+}
+.pillar {
+  background: var(--ink2);
+  padding: 40px 36px;
+  display: flex; flex-direction: column; gap: 16px;
+  transition: background 0.25s;
+}
+.pillar:hover { background: var(--surface); }
+.pillar-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.pillar-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 400;
+  color: var(--text);
+  line-height: 1.2;
+}
+.pillar-body {
+  font-size: 14px; font-weight: 300;
+  color: var(--text2); line-height: 1.65;
+}
+.pillar-body strong { color: var(--text); font-weight: 400; }
+
+/* ─ section: jerarquía ─ */
+.hierarchy-flow {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.h-level {
+  background: var(--ink2);
+  padding: 28px 36px;
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 32px;
+  align-items: center;
+  transition: background 0.2s;
+  cursor: default;
+}
+.h-level:hover { background: var(--surface); }
+.h-kind {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent);
+}
+.h-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 400;
+  color: var(--text);
+}
+.h-desc {
+  font-size: 14px; font-weight: 300;
+  color: var(--text2); line-height: 1.5;
+}
+.h-question {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text3);
+  text-align: right;
+  max-width: 260px;
+  line-height: 1.4;
+}
+
+/* ─ section: no es documentación ─ */
+.not-docs-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 64px;
+}
+.not-docs-col {
+  background: var(--ink2);
+  padding: 40px 36px;
+}
+.not-docs-col.docs-col { opacity: 0.6; }
+.ndc-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.ndc-label.docs { color: var(--text3); }
+.ndc-label.ctx { color: var(--accent); }
+.ndc-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 400;
+  color: var(--text);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.ndc-body {
+  font-size: 14px; font-weight: 300;
+  color: var(--text2); line-height: 1.65;
+}
+.ndc-example {
+  margin-top: 24px;
+  padding: 14px 16px;
+  background: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--text3);
+  line-height: 1.6;
+}
+.ndc-example span { color: var(--accent); }
+
+/* ─ section: erosión ─ */
+.erosion-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 720px;
+  margin-top: 56px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.erosion-item {
+  padding: 28px 36px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--ink2);
+  transition: background 0.2s;
+}
+.erosion-item:last-child { border-bottom: none; }
+.erosion-item:hover { background: var(--surface); }
+.erosion-trigger {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em;
+  color: var(--text3); text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.erosion-cost {
+  font-size: 15px; font-weight: 300;
+  color: var(--text2); line-height: 1.5;
+}
+.erosion-cost strong { color: var(--text); font-weight: 400; }
+
+/* ─ cta ─ */
+#cta {
+  padding: 128px 0;
+  border-top: 1px solid var(--rule);
+  position: relative;
+  overflow: hidden;
+}
+.cta-glow {
+  position: absolute;
+  width: 600px; height: 300px;
+  background: radial-gradient(ellipse, rgba(139,255,122,0.06) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.cta-wrap { position: relative; z-index: 2; }
+.cta-claim {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 5.5vw, 72px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin-bottom: 28px;
+}
+.cta-claim em { font-style: italic; color: var(--accent); }
+.cta-sub {
+  font-size: 17px; font-weight: 300;
+  color: var(--text2);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 14px; font-weight: 500;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #0d0d0d;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(139,255,122,0.2);
+}
+
+/* ─ footer ─ */
+footer {
+  padding: 28px 56px;
+  border-top: 1px solid var(--rule);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-mark {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; color: var(--text3);
+}
+.footer-mark span { color: var(--accent); }
+.footer-note {
+  font-size: 12px; color: var(--text3);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ─ scroll reveal ─ */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.d1 { transition-delay: 0.1s; }
+.reveal.d2 { transition-delay: 0.2s; }
+.reveal.d3 { transition-delay: 0.3s; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ─ responsive ─ */
+@media (max-width: 860px) {
+  .wrap, .wrap-narrow { padding: 0 24px; }
+  nav { padding: 18px 24px; }
+  .nav-links { display: none; }
+  .hero-scroll { left: 24px; }
+  .section { padding: 80px 0; }
+  .ai-capable-grid { grid-template-columns: 1fr; }
+  .missing-split { grid-template-columns: 1fr; }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .not-docs-split { grid-template-columns: 1fr; }
+  .h-level { grid-template-columns: 1fr; gap: 8px; }
+  .h-question { text-align: left; max-width: none; }
+  .flow-row { grid-template-columns: 1fr; gap: 20px; }
+  footer { flex-direction: column; gap: 10px; padding: 24px; }
+  .cdd-inversion-inner { padding: 0 24px; }
+  .cdd-insight { padding-left: 24px; padding-right: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-wordmark">CTX<span>.</span>Frame</a>
+  <ul class="nav-links">
+    <li><a href="#problem">El problema</a></li>
+    <li><a href="#cdd">CDD</a></li>
+    <li><a href="#hierarchy">La jerarquía</a></li>
+    <li><a href="#not-docs">Intención ejecutable</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-backdrop"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="wrap">
+    <p class="hero-label">Context-Driven Development</p>
+    <h1 class="hero-title">
+      La IA ya puede<br>
+      leer tu código.<br>
+      El problema es<br>
+      <em>lo que el código<br>no contiene.</em>
+    </h1>
+    <p class="hero-thesis">
+      Los equipos de ingeniería tienen contexto técnico. La IA puede leerlo.
+      Lo que no existe en ningún archivo es la intención de producto —
+      <strong>el porqué detrás de cada límite, cada regla, cada frontera entre dominios.</strong>
+      CTX Frame le da a ese conocimiento un hogar.
+    </p>
+  </div>
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    <span>Leer el caso</span>
+  </div>
+</section>
+
+<!-- 01 LA IA SÍ PUEDE -->
+<section id="ai-can" class="section">
+  <div class="wrap">
+    <div class="section-index reveal">01 — Punto de partida</div>
+    <h2 class="section-claim reveal">
+      La IA es extraordinariamente<br>
+      capaz. <em>Esto no es el problema.</em>
+    </h2>
+    <p class="body-text reveal">
+      Los modelos actuales pueden inferir arquitecturas, navegar dependencias complejas,
+      y generar código coherente con lo que ya existe en el repositorio.
+      El contexto técnico tampoco es el problema — los equipos ya tienen READMEs,
+      diagramas, specs de API, comentarios. La IA puede leer todo eso.
+    </p>
+
+    <div class="ai-capable-grid reveal d1">
+      <div class="capable-item">
+        <div class="capable-check">✓</div>
+        <div class="capable-text"><strong>Lee arquitecturas</strong> e infiere patrones de diseño desde el código existente</div>
+      </div>
+      <div class="capable-item">
+        <div class="capable-check">✓</div>
+        <div class="capable-text"><strong>Navega dependencias</strong> entre módulos, servicios, y capas de abstracción</div>
+      </div>
+      <div class="capable-item">
+        <div class="capable-check">✓</div>
+        <div class="capable-text"><strong>Genera implementaciones</strong> coherentes con los patrones del repositorio</div>
+      </div>
+      <div class="capable-item">
+        <div class="capable-check">✓</div>
+        <div class="capable-text"><strong>Lee documentación técnica</strong> — READMEs, specs, comentarios, diagramas</div>
+      </div>
+    </div>
+
+    <div class="ai-divider reveal d2">
+      <p class="ai-divider-text">
+        Todo eso es <strong>contexto técnico</strong>. Lo que la IA no puede leer
+        es el contexto que nunca fue escrito.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 LO QUE NO EXISTE -->
+<section id="problem" class="section">
+  <div class="wrap">
+    <div class="section-index reveal">02 — El mapa incompleto</div>
+    <h2 class="section-claim reveal">
+      El código documenta<br>
+      el <em>qué</em>.<br>
+      Nunca el <em>porqué</em>.
+    </h2>
+
+    <div class="missing-split">
+      <div class="missing-col reveal">
+        <div class="missing-col-label exists">Contexto técnico — existe</div>
+        <div class="exists-items">
+          <div class="exists-item">Arquitectura del sistema</div>
+          <div class="exists-item">READMEs y documentación</div>
+          <div class="exists-item">Specs de API y contratos</div>
+          <div class="exists-item">Comentarios en el código</div>
+          <div class="exists-item">Diagramas de dependencias</div>
+        </div>
+      </div>
+      <div class="missing-col reveal d1">
+        <div class="missing-col-label missing">Contexto intencional — no existe</div>
+        <div class="missing-items">
+          <div class="missing-item">
+            <strong>Por qué este módulo tiene este límite</strong>
+            y no uno diferente
+          </div>
+          <div class="missing-item">
+            <strong>Qué regla de negocio</strong>
+            está detrás de esta validación
+          </div>
+          <div class="missing-item">
+            <strong>Qué puede cambiar libremente</strong>
+            y qué tiene consecuencias en regulación
+          </div>
+          <div class="missing-item">
+            <strong>Por qué este flujo fue diseñado así</strong>
+            y no de la forma más obvia
+          </div>
+          <div class="missing-item">
+            <strong>Cuál es la intención de producto</strong>
+            detrás de esta feature
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="half-map reveal d2">
+      <p>La IA opera con <strong>la mitad del mapa</strong>. Puede leer la implementación. No puede leer la intención.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 EL PROBLEMA REAL -->
+<section id="real-problem" class="section">
+  <div class="wrap-narrow">
+    <div class="section-index reveal">03 — El problema real</div>
+    <h2 class="section-claim reveal">
+      La IA no improvisa<br>
+      <em>mal.</em> Improvisa<br>
+      razonablemente bien.
+    </h2>
+    <p class="body-text reveal">
+      Y eso es exactamente el problema. Cuando falta contexto intencional, el modelo hace
+      lo que parece correcto técnicamente. La mayoría de las veces, el código funciona.
+      Pasa los tests. Se ve bien en el diff.
+    </p>
+
+    <div class="problem-statement reveal d1">
+      <div class="ps-line">Pero puede estar violando una restricción de negocio que <strong>nadie escribió en ningún lugar.</strong></div>
+      <div class="ps-line">Puede estar acoplando dos dominios que <strong>deben permanecer separados.</strong></div>
+      <div class="ps-line">Puede estar tomando la decisión más obvia — <strong>que fue descartada hace ocho meses</strong> por una razón que solo tres personas recuerdan.</div>
+      <div class="ps-line highlight">El problema no es que la IA genere código malo.<br>Es que genera código que <em>no puede saber si es correcto.</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 CDD — THE BIG MOMENT -->
+<section id="cdd">
+  <div class="cdd-intro">
+    <div class="wrap">
+      <div class="section-index reveal">04 — La inversión</div>
+      <h2 class="section-claim reveal">
+        Context-Driven<br>
+        Development
+      </h2>
+      <p class="body-text reveal">
+        Cuando el contexto intencional existe como artefacto de primera clase,
+        cambia algo más profundo que la calidad de los outputs de la IA.
+        <strong>Cambia el orden en que ocurre el desarrollo.</strong>
+      </p>
+    </div>
+  </div>
+
+  <div class="cdd-inversion">
+    <div class="cdd-inversion-inner">
+      <div class="flows-container">
+
+        <div class="flow-row old-flow dimmed" id="flow-old">
+          <div class="flow-meta">
+            <div class="flow-type old">Flujo tradicional</div>
+            <div class="flow-name">incluso con IA</div>
+          </div>
+          <div class="flow-diagram">
+            <div class="flow-node old-node">Idea</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node center-node">conversación con la IA</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node old-node">código</div>
+          </div>
+        </div>
+
+        <div class="flow-row new-flow" id="flow-new">
+          <div class="flow-meta">
+            <div class="flow-type new">Context-Driven Development</div>
+            <div class="flow-name">el nuevo orden</div>
+          </div>
+          <div class="flow-diagram">
+            <div class="flow-node new-node">Idea</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node new-node">contexto intencional</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node center-node">la IA refleja el cambio</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-node new-node">código correcto</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="cdd-insight">
+    <p class="insight-quote reveal">
+      El código deja de ser la interfaz primaria del sistema.
+      <strong>El contexto intencional lo es.</strong>
+    </p>
+  </div>
+
+  <div class="cdd-pillars">
+    <div class="wrap">
+      <p class="body-text reveal" style="max-width:640px; margin-bottom: 8px;">
+        En CTX Frame, la unidad de trabajo no es un prompt. No es un commit.
+        Es un <strong>cambio en el contexto intencional</strong>.
+        El contexto viene primero. Siempre. Lo que esto garantiza:
+      </p>
+      <div class="pillars-grid">
+        <div class="pillar reveal">
+          <div class="pillar-num">01 —</div>
+          <div class="pillar-title">La intención antes del código</div>
+          <div class="pillar-body">El ingeniero edita el archivo de contexto. Define el nuevo comportamiento, sus restricciones, sus contratos. <strong>La IA no actúa hasta que la intención está escrita.</strong></div>
+        </div>
+        <div class="pillar reveal d1">
+          <div class="pillar-num">02 —</div>
+          <div class="pillar-title">Impacto visible antes de actuar</div>
+          <div class="pillar-body">Las dependencias son explícitas en el contexto. Si el cambio afecta a otro módulo, <strong>eso es visible antes de que se escriba una línea de código</strong>. No se descubre en producción.</div>
+        </div>
+        <div class="pillar reveal d2">
+          <div class="pillar-num">03 —</div>
+          <div class="pillar-title">Correcto por construcción</div>
+          <div class="pillar-body">La IA opera dentro de los guardrails del contexto. Las restricciones no son inferidas del código — <strong>están escritas. No pueden ser ignoradas accidentalmente.</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 JERARQUÍA -->
+<section id="hierarchy" class="section">
+  <div class="wrap">
+    <div class="section-index reveal">05 — La estructura</div>
+    <h2 class="section-claim reveal">
+      La jerarquía<br>
+      de la intención.
+    </h2>
+    <p class="body-text reveal">
+      No toda intención opera a la misma escala. Cada nivel tiene su propio contrato —
+      responde preguntas distintas y es legible de forma independiente.
+    </p>
+
+    <div class="hierarchy-flow reveal d1">
+      <div class="h-level">
+        <div class="h-kind">app</div>
+        <div>
+          <div class="h-name">Application</div>
+          <div class="h-desc">Por qué existe el producto. Principios globales, restricciones de arquitectura, comportamiento que el modelo puede y no puede modificar.</div>
+        </div>
+        <div class="h-question">¿Por qué existe este sistema?</div>
+      </div>
+      <div class="h-level">
+        <div class="h-kind">capability</div>
+        <div>
+          <div class="h-name">Capability</div>
+          <div class="h-desc">Un dominio transversal compartido por múltiples módulos. Sus límites, sus invariantes, sus restricciones de acceso.</div>
+        </div>
+        <div class="h-question">¿A qué dominio pertenece este cambio?</div>
+      </div>
+      <div class="h-level">
+        <div class="h-kind">module</div>
+        <div>
+          <div class="h-name">Module</div>
+          <div class="h-desc">Qué posee este dominio, qué no posee, y por qué esa frontera existe. Ownership explícito.</div>
+        </div>
+        <div class="h-question">¿Qué es de este módulo y qué no?</div>
+      </div>
+      <div class="h-level">
+        <div class="h-kind">feature</div>
+        <div>
+          <div class="h-name">Feature</div>
+          <div class="h-desc">El comportamiento concreto: propósito, flujos, contratos de entrada y salida, guardrails no negociables.</div>
+        </div>
+        <div class="h-question">¿Qué problema resuelve y cómo?</div>
+      </div>
+      <div class="h-level">
+        <div class="h-kind">spec</div>
+        <div>
+          <div class="h-name">Spec</div>
+          <div class="h-desc">El detalle técnico exacto que no debe perderse en ninguna refactorización. Secuencias, algoritmos, invariantes.</div>
+        </div>
+        <div class="h-question">¿Qué exactitud debe preservarse?</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 NO ES DOCUMENTACIÓN -->
+<section id="not-docs" class="section">
+  <div class="wrap">
+    <div class="section-index reveal">06 — La distinción crítica</div>
+    <h2 class="section-claim reveal">
+      No es documentación.<br>
+      Es <em>intención ejecutable.</em>
+    </h2>
+    <p class="body-text reveal">
+      La documentación describe lo que ya existe.
+      El contexto intencional define <strong>lo que debe ser cierto siempre</strong> —
+      independientemente de cómo evolucione la implementación.
+    </p>
+
+    <div class="not-docs-split">
+      <div class="not-docs-col docs-col reveal">
+        <div class="ndc-label docs">Documentación técnica</div>
+        <div class="ndc-title">Describe lo que fue construido</div>
+        <div class="ndc-body">
+          Vive en wikis, READMEs, y comentarios.
+          Se escribe después del código.
+          Envejece con cada refactor.
+          No tiene contrato — puede decir cualquier cosa.
+        </div>
+        <div class="ndc-example">
+          # PaymentService<br>
+          Handles payment processing<br>
+          and settlement logic.
+        </div>
+      </div>
+      <div class="not-docs-col reveal d1">
+        <div class="ndc-label ctx">Contexto intencional CTX Frame</div>
+        <div class="ndc-title">Define lo que debe ser cierto siempre</div>
+        <div class="ndc-body">
+          Vive en el repositorio junto al código.
+          Se escribe antes del código.
+          No cambia con los refactors — cambia cuando la intención cambia.
+          Tiene contrato estricto — la IA lo puede validar y respetar.
+        </div>
+        <div class="ndc-example">
+          <span>guardrails:</span><br>
+          &nbsp;&nbsp;- "Never process without KYC"<br>
+          &nbsp;&nbsp;- "Fee shown before confirm"<br>
+          <span>depends_on:</span><br>
+          &nbsp;&nbsp;- global66.compliance.kyc
+        </div>
+      </div>
+    </div>
+
+    <p class="body-text reveal d2" style="margin-top: 48px;">
+      Un módulo de pagos que nunca debe procesar una transacción sin validación KYC —
+      eso no cambia porque alguien migre de REST a gRPC.
+      Esa restricción vive en el contexto intencional, no en el código.
+      <strong>Y la IA lo sabe antes de tocar cualquier archivo.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- 07 LA EROSIÓN -->
+<section id="erosion" class="section">
+  <div class="wrap">
+    <div class="section-index reveal">07 — El costo de no tenerlo</div>
+    <h2 class="section-claim reveal">
+      No es un colapso.<br>
+      Es una <em>erosión lenta.</em>
+    </h2>
+
+    <div class="erosion-items reveal d1">
+      <div class="erosion-item">
+        <div class="erosion-trigger">Cada vez que llega un ingeniero nuevo</div>
+        <div class="erosion-cost">Pasa semanas reconstruyendo el mapa intencional que <strong>solo existe en las cabezas del equipo original</strong>. El sistema funciona. Nadie sabe bien por qué.</div>
+      </div>
+      <div class="erosion-item">
+        <div class="erosion-trigger">Cada sesión de trabajo con IA</div>
+        <div class="erosion-cost">El ingeniero gasta tiempo explicando el contexto que <strong>debería estar escrito</strong>. Desde cero. Cada vez. El contexto desaparece cuando cierra el chat.</div>
+      </div>
+      <div class="erosion-item">
+        <div class="erosion-trigger">Cada cambio cross-módulo</div>
+        <div class="erosion-cost">Alguien lo descubre en producción porque nadie tenía <strong>visibilidad del vínculo</strong>. Las dependencias existen en el código — no en ningún lugar legible antes de actuar.</div>
+      </div>
+      <div class="erosion-item">
+        <div class="erosion-trigger">Cada decisión de diseño no documentada</div>
+        <div class="erosion-cost">Se repite el error que fue descartado hace ocho meses. <strong>La razón solo la recuerdan tres personas.</strong> Una de ellas ya no está en el equipo.</div>
+      </div>
+    </div>
+
+    <p class="body-text reveal d2" style="margin-top: 48px;">
+      El sistema funciona. Pero cada cambio cuesta más de lo que debería.
+      Y la brecha se amplía a medida que el sistema crece.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-glow"></div>
+  <div class="wrap cta-wrap reveal">
+    <h2 class="cta-claim">
+      El contexto intencional<br>
+      es <em>primera clase.</em><br>
+      O no existe.
+    </h2>
+    <p class="cta-sub">
+      CTX Frame es el sistema que le da al contexto intencional de producto
+      un hogar estructurado, versionado, y legible por cualquier modelo —
+      antes de que el código exista.
+    </p>
+    <a href="#problem" class="btn btn-primary">Leer el caso completo →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-mark">CTX<span>.</span>Frame</div>
+  <div class="footer-note">Context-Driven Development — built for engineers who build intentionally.</div>
+</footer>
+
+<script>
+// Nav scroll state
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Scroll reveal
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -48px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// CDD flow animation — dim old flow on scroll past it
+const flowObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    const old = document.getElementById('flow-old');
+    const nw  = document.getElementById('flow-new');
+    if (e.isIntersecting) {
+      // Animate: start both faded, then reveal new
+      old.classList.add('dimmed');
+      nw.classList.remove('dimmed');
+    }
+  });
+}, { threshold: 0.5 });
+
+const inversionEl = document.querySelector('.cdd-inversion');
+if (inversionEl) flowObs.observe(inversionEl);
+
+// Staggered flow node entrance
+const flowNodes = document.querySelectorAll('.flow-node.new-node');
+const nodeObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      flowNodes.forEach((node, i) => {
+        setTimeout(() => {
+          node.style.opacity = '1';
+          node.style.transform = 'translateY(0)';
+        }, i * 100);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+
+flowNodes.forEach(n => {
+  n.style.opacity = '0';
+  n.style.transform = 'translateY(8px)';
+  n.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+});
+if (inversionEl) nodeObs.observe(inversionEl);
+</script>
+</body>
+</html>

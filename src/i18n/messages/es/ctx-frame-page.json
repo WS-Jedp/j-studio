@@ -1,0 +1,193 @@
+{
+  "navigation": {
+    "back": "Volver"
+  },
+  "hero": {
+    "tagline": "Desarrollo Orientado por Contexto",
+    "title": "CTX Frame",
+    "description": "La capa de contexto intencional entre el pensamiento de producto y el código generado por IA.",
+    "ctaDemo": "Explorar el Demo"
+  },
+  "thesis": {
+    "quote": "La IA ya puede leer tu código. El problema es lo que el código no contiene."
+  },
+  "gap": {
+    "sectionTitle": "01 — El mapa incompleto",
+    "title": "El código documenta el qué. Nunca el porqué.",
+    "exists": {
+      "label": "Contexto técnico — existe",
+      "items": [
+        "Arquitectura del sistema",
+        "READMEs y documentación",
+        "Specs de API y contratos",
+        "Comentarios en el código",
+        "Diagramas de dependencias"
+      ]
+    },
+    "missing": {
+      "label": "Contexto intencional — no existe",
+      "items": [
+        {
+          "title": "Por qué este módulo tiene este límite",
+          "body": "y no uno diferente"
+        },
+        {
+          "title": "Qué regla de negocio",
+          "body": "está detrás de esta validación"
+        },
+        {
+          "title": "Qué puede cambiar libremente",
+          "body": "y qué tiene consecuencias en regulación"
+        },
+        {
+          "title": "Por qué este flujo fue diseñado así",
+          "body": "y no de la forma más obvia"
+        },
+        {
+          "title": "Cuál es la intención de producto",
+          "body": "detrás de esta feature"
+        }
+      ]
+    },
+    "halfMap": "La IA opera con la mitad del mapa. Puede leer la implementación. No puede leer la intención."
+  },
+  "problem": {
+    "sectionTitle": "02 — El problema real",
+    "title": "La IA no improvisa mal. Improvisa razonablemente bien.",
+    "subtitle": "Y eso es exactamente el problema.",
+    "body": "Cuando falta contexto intencional, el modelo hace lo que parece técnicamente correcto. La mayoría de las veces, el código funciona. Pasa los tests. Se ve bien en el diff.",
+    "lines": [
+      "Pero puede estar violando una restricción de negocio que nadie escribió en ningún lugar.",
+      "Puede estar acoplando dos dominios que deben permanecer separados.",
+      "Puede estar tomando la decisión más obvia — que fue descartada hace ocho meses por una razón que solo tres personas recuerdan."
+    ],
+    "conclusion": "El problema no es que la IA genere código malo. Es que genera código que no puede saber si es correcto."
+  },
+  "cdd": {
+    "sectionTitle": "03 — La inversión",
+    "title": "Context-Driven Development",
+    "subtitle": "Cuando el contexto intencional existe como artefacto de primera clase, cambia algo más profundo que la calidad de los outputs de la IA. Cambia el orden en que ocurre el desarrollo.",
+    "traditional": {
+      "label": "Flujo tradicional — incluso con IA",
+      "steps": ["Idea", "conversación con la IA", "código"]
+    },
+    "new": {
+      "label": "Context-Driven Development",
+      "steps": ["Idea", "contexto intencional", "la IA refleja el cambio", "código correcto"]
+    },
+    "insight": "El código deja de ser la interfaz primaria del sistema. El contexto intencional lo es.",
+    "pillars": [
+      {
+        "num": "01",
+        "title": "La intención antes del código",
+        "body": "El ingeniero edita el archivo de contexto. Define el nuevo comportamiento, sus restricciones, sus contratos. La IA no actúa hasta que la intención está escrita."
+      },
+      {
+        "num": "02",
+        "title": "Impacto visible antes de actuar",
+        "body": "Las dependencias son explícitas en el contexto. Si el cambio afecta a otro módulo, eso es visible antes de que se escriba una línea de código. No se descubre en producción."
+      },
+      {
+        "num": "03",
+        "title": "Correcto por construcción",
+        "body": "La IA opera dentro de los guardrails del contexto. Las restricciones de producto no son inferidas del código — están escritas. No pueden ser ignoradas accidentalmente."
+      }
+    ]
+  },
+  "demo": {
+    "sectionTitle": "04 — Vélo en acción",
+    "title": "Edita el contexto. El código sigue.",
+    "subtitle": "Cada escenario muestra cómo un cambio en el contexto intencional impulsa un cambio correspondiente en el código generado.",
+    "contextLabel": "context.md",
+    "codeLabel": "payments.ts — generado por IA",
+    "scenarios": [
+      {
+        "id": "base",
+        "label": "Módulo base",
+        "description": "Un módulo limpio sin guardrails definidos. La IA genera código mínimo y directo."
+      },
+      {
+        "id": "kyc",
+        "label": "+ Guardrail KYC",
+        "description": "Agrega un guardrail de cumplimiento. La IA envuelve el flujo completo en la verificación requerida — sin pedírselo explícitamente en un prompt."
+      },
+      {
+        "id": "scope",
+        "label": "+ Frontera de scope",
+        "description": "Define los límites de ownership. La IA respeta el scope del módulo y delega correctamente al módulo de compliance."
+      },
+      {
+        "id": "feature-body",
+        "label": "Feature con body",
+        "description": "Un context file completo: frontmatter YAML + body markdown con flows y un @ pointer. La IA sigue la estructura de flows, no solo los guardrails."
+      },
+      {
+        "id": "spec-algorithm",
+        "label": "Spec — algoritmo exacto",
+        "description": "Un spec context precisa un detalle de implementación exacto. La IA preserva los thresholds, invariantes y el orden definidos en el body — sin pedírselo en un prompt."
+      }
+    ]
+  },
+  "hierarchy": {
+    "sectionTitle": "05 — La estructura",
+    "title": "La jerarquía de la intención.",
+    "subtitle": "No toda intención opera a la misma escala. Cada nivel responde preguntas distintas y es legible de forma independiente.",
+    "levels": [
+      {
+        "kind": "app",
+        "name": "Application",
+        "desc": "Por qué existe el producto. Principios globales, restricciones de arquitectura, comportamiento que el modelo puede y no puede modificar.",
+        "question": "¿Por qué existe este sistema?"
+      },
+      {
+        "kind": "capability",
+        "name": "Capability",
+        "desc": "Un dominio transversal compartido por múltiples módulos. Sus límites, sus invariantes, sus restricciones de acceso.",
+        "question": "¿A qué dominio pertenece este cambio?"
+      },
+      {
+        "kind": "module",
+        "name": "Module",
+        "desc": "Qué posee este dominio, qué no posee, y por qué esa frontera existe. Ownership explícito.",
+        "question": "¿Qué es de este módulo y qué no?"
+      },
+      {
+        "kind": "feature",
+        "name": "Feature",
+        "desc": "El comportamiento concreto: propósito, flujos, contratos de entrada y salida, guardrails no negociables.",
+        "question": "¿Qué problema resuelve y cómo?"
+      },
+      {
+        "kind": "spec",
+        "name": "Spec",
+        "desc": "El detalle técnico exacto que no debe perderse en ninguna refactorización. Secuencias, algoritmos, invariantes.",
+        "question": "¿Qué exactitud debe preservarse?"
+      }
+    ]
+  },
+  "notDocs": {
+    "sectionTitle": "06 — La distinción crítica",
+    "title": "No es documentación. Es intención ejecutable.",
+    "body": "La documentación describe lo que ya existe. El contexto intencional define lo que debe ser cierto siempre — independientemente de cómo evolucione la implementación.",
+    "docs": {
+      "label": "Documentación técnica",
+      "title": "Describe lo que fue construido",
+      "body": "Vive en wikis, READMEs y comentarios. Se escribe después del código. Envejece con cada refactor. No tiene contrato — puede decir cualquier cosa."
+    },
+    "ctx": {
+      "label": "Contexto intencional CTX Frame",
+      "title": "Define lo que debe ser cierto siempre",
+      "body": "Vive en el repositorio junto al código. Se escribe antes del código. No cambia con los refactors — cambia cuando la intención cambia. Contrato estricto — la IA lo puede validar y respetar."
+    }
+  },
+  "closing": {
+    "sectionTitle": "07 — Por qué lo construí",
+    "title0": "Me cansé de ver",
+    "title1": "código correcto",
+    "title2": "romper",
+    "title3": "la intención correcta.",
+    "body": "Cada sistema que construí chocó contra la misma pared: código técnicamente sólido que violaba decisiones de producto que nadie pensó en escribir. CTX Frame es mi respuesta a esa pared.",
+    "github": "Ver en GitHub",
+    "readNarrative": "Leer la narrativa completa"
+  }
+}

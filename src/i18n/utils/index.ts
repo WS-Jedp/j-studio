@@ -59,6 +59,14 @@ export async function loadMessages(locale: string) {
     await import(`../../i18n/messages/${locale}/confidential.json`)
   ).default;
 
+  const ctxFrameContainer = (
+    await import(`../../i18n/messages/${locale}/ctx-frame-container.json`)
+  ).default;
+
+  const ctxFramePage = (
+    await import(`../../i18n/messages/${locale}/ctx-frame-page.json`)
+  ).default;
+
   return {
     introduction,
     "about-j": aboutJ,
@@ -79,5 +87,7 @@ export async function loadMessages(locale: string) {
     "emat-chile": ematChile,
     "emat-chile-v2": ematChilev2,
     confidential,
+    "ctx-container": ctxFrameContainer,
+    "ctx-frame-page": ctxFramePage,
   };
 }

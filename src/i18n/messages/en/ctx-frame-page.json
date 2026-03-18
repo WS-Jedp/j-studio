@@ -1,0 +1,193 @@
+{
+  "navigation": {
+    "back": "Back"
+  },
+  "hero": {
+    "tagline": "Context-Driven Development",
+    "title": "CTX Frame",
+    "description": "The intentional context layer between product thinking and AI-generated code.",
+    "ctaDemo": "Explore the Demo"
+  },
+  "thesis": {
+    "quote": "AI can already read your code. The problem is what the code doesn't contain."
+  },
+  "gap": {
+    "sectionTitle": "01 — The incomplete map",
+    "title": "Code documents the what. Never the why.",
+    "exists": {
+      "label": "Technical context — exists",
+      "items": [
+        "System architecture",
+        "READMEs and documentation",
+        "API specs and contracts",
+        "Code comments",
+        "Dependency diagrams"
+      ]
+    },
+    "missing": {
+      "label": "Intentional context — doesn't exist",
+      "items": [
+        {
+          "title": "Why this module has this boundary",
+          "body": "and not a different one"
+        },
+        {
+          "title": "What business rule",
+          "body": "is behind this validation"
+        },
+        {
+          "title": "What can change freely",
+          "body": "and what has regulatory consequences"
+        },
+        {
+          "title": "Why this flow was designed this way",
+          "body": "and not the more obvious one"
+        },
+        {
+          "title": "What is the product intent",
+          "body": "behind this feature"
+        }
+      ]
+    },
+    "halfMap": "The AI operates with half the map. It can read the implementation. It cannot read the intent."
+  },
+  "problem": {
+    "sectionTitle": "02 — The real problem",
+    "title": "The AI doesn't improvise badly. It improvises reasonably well.",
+    "subtitle": "And that's exactly the problem.",
+    "body": "When intentional context is missing, the model does what looks technically correct. Most of the time, the code works. It passes tests. It looks good in the diff.",
+    "lines": [
+      "But it might be violating a business constraint nobody wrote down anywhere.",
+      "It might be coupling two domains that must remain separated.",
+      "It might be making the most obvious design decision — which was rejected eight months ago for a reason only three people remember."
+    ],
+    "conclusion": "The problem isn't that the AI generates bad code. It's that it generates code that cannot know if it's correct."
+  },
+  "cdd": {
+    "sectionTitle": "03 — The inversion",
+    "title": "Context-Driven Development",
+    "subtitle": "When intentional context exists as a first-class artifact, something deeper than AI output quality changes. The order in which development happens changes.",
+    "traditional": {
+      "label": "Traditional flow — even with AI",
+      "steps": ["Idea", "conversation with AI", "code"]
+    },
+    "new": {
+      "label": "Context-Driven Development",
+      "steps": ["Idea", "intentional context", "AI reflects the change", "correct code"]
+    },
+    "insight": "Code stops being the primary interface of the system. Intentional context is.",
+    "pillars": [
+      {
+        "num": "01",
+        "title": "Intent before code",
+        "body": "The engineer edits the context file. Defines the new behavior, its restrictions, its contracts. The AI doesn't act until the intent is written."
+      },
+      {
+        "num": "02",
+        "title": "Visible impact before acting",
+        "body": "Dependencies are explicit in the context. If a change affects another module, that's visible before a single line of code is written. Not discovered in production."
+      },
+      {
+        "num": "03",
+        "title": "Correct by construction",
+        "body": "The AI operates within the context's guardrails. Product constraints aren't inferred from code — they're written. They can't be accidentally ignored."
+      }
+    ]
+  },
+  "demo": {
+    "sectionTitle": "04 — See it in action",
+    "title": "Edit the context. The code follows.",
+    "subtitle": "Each scenario shows how a change in intentional context drives a corresponding change in the generated code.",
+    "contextLabel": "context.md",
+    "codeLabel": "payments.ts — AI generated",
+    "scenarios": [
+      {
+        "id": "base",
+        "label": "Base module",
+        "description": "A clean module with no guardrails defined yet. The AI generates minimal, direct code."
+      },
+      {
+        "id": "kyc",
+        "label": "+ KYC guardrail",
+        "description": "Add a compliance guardrail. The AI wraps the entire flow in the required verification — without being asked explicitly in a prompt."
+      },
+      {
+        "id": "scope",
+        "label": "+ Scope boundary",
+        "description": "Define ownership boundaries. The AI respects the module's scope and delegates correctly to the compliance module."
+      },
+      {
+        "id": "feature-body",
+        "label": "Feature with body",
+        "description": "A complete feature context file: YAML frontmatter + markdown body with flows and an @ pointer. The AI follows the flow structure, not just the guardrails."
+      },
+      {
+        "id": "spec-algorithm",
+        "label": "Spec — exact algorithm",
+        "description": "A spec context narrows to a precise implementation detail. The AI preserves exact thresholds, invariants, and order defined in the body — without being asked in a prompt."
+      }
+    ]
+  },
+  "hierarchy": {
+    "sectionTitle": "05 — The structure",
+    "title": "The hierarchy of intent.",
+    "subtitle": "Not all intent operates at the same scale. Each level answers different questions and is independently readable.",
+    "levels": [
+      {
+        "kind": "app",
+        "name": "Application",
+        "desc": "Why the product exists. Global principles, architecture constraints, behavior the model can and cannot modify.",
+        "question": "Why does this system exist?"
+      },
+      {
+        "kind": "capability",
+        "name": "Capability",
+        "desc": "A cross-cutting domain shared by multiple modules. Its boundaries, invariants, access restrictions.",
+        "question": "What domain does this change belong to?"
+      },
+      {
+        "kind": "module",
+        "name": "Module",
+        "desc": "What this domain owns, what it doesn't own, and why that boundary exists. Explicit ownership.",
+        "question": "What belongs to this module and what doesn't?"
+      },
+      {
+        "kind": "feature",
+        "name": "Feature",
+        "desc": "The concrete behavior: purpose, flows, input/output contracts, non-negotiable guardrails.",
+        "question": "What problem does it solve and how?"
+      },
+      {
+        "kind": "spec",
+        "name": "Spec",
+        "desc": "The exact technical detail that must not be lost in any refactoring. Sequences, algorithms, invariants.",
+        "question": "What precision must be preserved?"
+      }
+    ]
+  },
+  "notDocs": {
+    "sectionTitle": "06 — The critical distinction",
+    "title": "Not documentation. Executable intent.",
+    "body": "Documentation describes what already exists. Intentional context defines what must always be true — regardless of how the implementation evolves.",
+    "docs": {
+      "label": "Technical documentation",
+      "title": "Describes what was built",
+      "body": "Lives in wikis, READMEs, and comments. Written after the code. Ages with every refactor. No contract — it can say anything."
+    },
+    "ctx": {
+      "label": "CTX Frame intentional context",
+      "title": "Defines what must always be true",
+      "body": "Lives in the repository alongside the code. Written before the code. Doesn't change with refactors — changes when intent changes. Strict contract — AI can validate and respect it."
+    }
+  },
+  "closing": {
+    "sectionTitle": "07 — Why I built this",
+    "title0": "I got tired of watching",
+    "title1": "correct code",
+    "title2": "break",
+    "title3": "correct intent.",
+    "body": "Every system I've built hit the same wall: technically sound code that violated product decisions nobody thought to write down. CTX Frame is my answer to that wall.",
+    "github": "View on GitHub",
+    "readNarrative": "Read the full narrative"
+  }
+}

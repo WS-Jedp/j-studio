@@ -1,0 +1,23 @@
+{
+  "ctxFrame": {
+    "title": "CTX Frame",
+    "description": "Un workflow para convertir el contexto intencional de producto en un artefacto de primera clase — estructurado, versionado y legible por cualquier IA antes de escribir una sola línea de código."
+  },
+  "ctxBanner": {
+    "tagline": "Desarrollo Orientado por Contexto",
+    "title": "La IA lee tu código. No tu intención.",
+    "description": "Construí CTX Frame porque el código técnicamente correcto seguía violando decisiones de producto que nadie escribió. El diff se veía limpio. La intención estaba rota. CTX Frame le da al contexto intencional un hogar permanente en el repositorio.",
+    "github": "GitHub",
+    "learnMore": "Explora el Pensamiento Detrás de CTX Frame"
+  },
+  "ctxConcept": {
+    "title": "El contexto antes del código. Siempre.",
+    "description": "La unidad de trabajo es un cambio en el contexto intencional — no un prompt, no un commit. La IA lee ese cambio y lo traduce a código dentro de los guardrails que el contexto define.",
+    "step1": "Idea",
+    "step2": "Contexto Intencional",
+    "step3": "Código Correcto",
+    "label1": "Flujo Tradicional",
+    "label2": "Context-Driven",
+    "cta": "Leer el caso completo"
+  }
+}

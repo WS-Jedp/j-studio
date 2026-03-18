@@ -2,6 +2,7 @@
 
 import AboutJ from "@/containers/about-j";
 import CoffiProject from "@/containers/coffi-project";
+import CTXFrame from "@/containers/ctx-frame";
 import { Contact } from "@/containers/contact";
 import Introduction from "@/containers/introduction";
 import { JPersonalInformation } from "@/containers/j-personal-information";
@@ -121,6 +122,7 @@ export default function Home() {
       </section>
 
       <CoffiProject />
+      <CTXFrame />
       <SkillsAndTools />
       <Contact />
 

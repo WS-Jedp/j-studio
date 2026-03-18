@@ -23,6 +23,15 @@
   --color-coffi-gradient: linear-gradient(to right, var(--color-coffi-blue), var(--color-coffi-purple));
   --color-coffi-gradient-reverse: linear-gradient(to right, var(--color-coffi-purple), var(--color-coffi-blue));
 
+  --color-ctx-paper: #F7F5F0;
+  --color-ctx-paper-dark: #EEEBE3;
+  --color-ctx-ink: #0D0D0D;
+  --color-ctx-lead: #4A4A4A;
+  --color-ctx-graphite: #8A8A8A;
+  --color-ctx-rule: #D0CBC0;
+  --color-ctx-signal: #0B5FDE;
+  --color-ctx-signal-light: #E8F2FF;
+
   --font-sf-pro: var(--font-sf-pro);
   --font-tn-roman: var(--font-tn-roman);
 }
